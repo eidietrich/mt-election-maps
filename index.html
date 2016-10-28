@@ -9,8 +9,8 @@
       fill: white;
       text-anchor: middle;
     }
-    .county {
-      fill: #bbb;
+    .districts {
+      /*fill: #bbb;*/
       stroke: #666;
       border-width: 1px;
     }
@@ -24,12 +24,14 @@
 </head>
 <body>
   <div id="viz-container">
-    <div id="map" style="height: 400px;">
+    <div id="choropleth" style="height: 400px;"></div>
+    <div id="circleshade" style="height: 400px;"></div>
   </div>
 
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://d3js.org/topojson.v1.min.js"></script>
-  <script src="js/mt-county-circle-pop.js"></script>
+  <script src="js/Choropleth.js"></script>
+  <script src="js/CircleShadeMap.js"></script>
   <script type="text/javascript">
     // Universal objects
     var globals = {
@@ -52,10 +54,20 @@
       .await(drawAll);
 
     function drawAll (error, counties, countyVotes) {
-      var map = new MapGen({
-          'element': '#map',
+      var map = new Choropleth({
+          'element': '#choropleth',
           'data': {
-            'counties': counties,
+            'districts': counties,
+            'votes': countyVotes
+          },
+          'width': 500,
+          'height': 400
+        }, globals);
+
+      var map = new CircleShadeMap({
+          'element': '#circleshade',
+          'data': {
+            'districts': counties,
             'votes': countyVotes
           },
           'width': 500,
