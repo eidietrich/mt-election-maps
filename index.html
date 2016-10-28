@@ -30,4 +30,38 @@
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://d3js.org/topojson.v1.min.js"></script>
   <script src="js/mt-county-circle-pop.js"></script>
+  <script type="text/javascript">
+    // Universal objects
+    var globals = {
+      scale: d3.scaleLinear().range([0,1600]),
+      voterScale: function(number){
+        // returns radius for proportional area, I think
+        return Math.sqrt(this.scale(number));
+      },
+      colorScale: d3.scaleLinear()
+        .domain([0,0.35,0.5,0.65,1]) // Fraction vote for Obama in 2012
+        .range(["#b2182b","#d6604d","#756bb1","#4393c3","#2166ac"])
+        .interpolate(d3.interpolateLab),
+      format: d3.format(".0%")
+    };
+
+    // Queue up multiple data files to load
+    d3.queue()
+      .defer(d3.json, './../data/mt_counties.geojson')
+      .defer(d3.json, './../data/2012_election_county_data.json')
+      .await(drawAll);
+
+    function drawAll (error, counties, countyVotes) {
+      var map = new MapGen({
+          'element': '#map',
+          'data': {
+            'counties': counties,
+            'votes': countyVotes
+          },
+          'width': 500,
+          'height': 400
+        }, globals);
+    }
+
+  </script>
 </html>
