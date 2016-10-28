@@ -1,13 +1,18 @@
+// Base Choropleth map
+// expects data in geojson format, with the following in properties:
+// - centerCoords: [lon, lat] array with centroid (for label placement)
+// - votersForA: mapped dimension (with color)
+// - votesCast: denominator for mapped dimension
+
 var Choropleth = function (props, globals){
   this.data = props.data;
   this.element = props.element;
   this.width = props.width;
   this.height = props.height;
 
-  // console.log(this.data.districts);
-  // console.log(this.data.votes);
+  console.log(this.data);
 
-  this.mergeData()
+  // this.mergeData()
   this.draw()
 }
 Choropleth.prototype.draw = function() {
@@ -19,14 +24,14 @@ Choropleth.prototype.draw = function() {
 
   // Initialize projection & path
   var projection = d3.geoMercator()
-    .fitExtent([[10,10],[this.width, this.height]], this.data.districts);
+    .fitExtent([[10,10],[this.width, this.height]], this.data);
   var path = d3.geoPath()
     .projection(projection);
 
   // Draw map of districts
   var districts = this.svg.append("g")
     .selectAll("path")
-    .data(this.data.districts.features)
+    .data(this.data.features)
     .enter();
 
   districts.append("path")
@@ -45,29 +50,4 @@ Choropleth.prototype.draw = function() {
       return globals.format(votesForA / votesCast);
     })
     .attr("class","label");
-
-  // Add circles, scaled by voter numbers, colored by turnout
-  globals.scale.domain(d3.extent(this.data.districts.features, function(d){
-    return d.properties.voters;
-  }));
   }
-Choropleth.prototype.mergeData = function(){
-  // Join data on NAME
-  var joinLabel = 'NAME';
-
-  var that = this;
-  this.data.districts.features.forEach(function(district){
-    that.data.votes.forEach(function(d){
-      if (d[joinLabel] == district.properties[joinLabel]){
-        district.properties.voters = d["reg_voters"];
-        district.properties.votesCast = d["votes_cast"];
-        district.properties.votesForA = d["tester_votes"];
-      };
-    });
-  });
-
-  // Create centerCoords
-  this.data.districts.features.forEach(function(district){
-    district.properties.centerCoords = [+district.properties["center_lon"], +district.properties["center_lat"]];
-  });
-}

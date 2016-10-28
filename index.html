@@ -30,7 +30,7 @@
   </div>
 
   <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="https://d3js.org/topojson.v1.min.js"></script>
+  <!-- <script src="https://d3js.org/topojson.v1.min.js"></script> -->
   <script src="js/Choropleth.js"></script>
   <script src="js/CircleShadeMap.js"></script>
   <script type="text/javascript">
@@ -42,7 +42,7 @@
         return Math.sqrt(this.scale(number));
       },
       colorScale: d3.scaleLinear()
-        .domain([0,0.35,0.5,0.65,1]) // Fraction vote for Obama in 2012
+        .domain([0,0.35,0.5,0.65,1])
         .range(["#b2182b","#d6604d","#756bb1","#4393c3","#2166ac"])
         .interpolate(d3.interpolateLab),
       format: d3.format(".0%")
@@ -51,29 +51,74 @@
     // Queue up multiple data files to load
     d3.queue()
       .defer(d3.json, './../data/mt_counties.geojson')
+      .defer(d3.json, './../data/gc_precincts.geojson')
       .defer(d3.json, './../data/2012_election_county_data.json')
-      .await(drawAll);
+      .defer(d3.json, './../data/fake_election_precincts.json')
+      .await(main);
 
-    function drawAll (error, counties, countyVotes) {
-      var map = new Choropleth({
+    function main (error, counties, gcPrecincts, countyVotes, precinctVotes) {
+
+      var countiesMerged = mergeData(counties, countyVotes, 'NAME', {
+        'voters': 'reg_voters',
+        'votesCast': 'votes_cast',
+        'toPlot': 'tester_votes'
+      });
+      var countyMap = new Choropleth({
           'element': '#choropleth',
-          'data': {
-            'districts': counties,
-            'votes': countyVotes
-          },
+          'data': countiesMerged,
           'width': 500,
           'height': 400
         }, globals);
 
-      var map = new CircleShadeMap({
-          'element': '#circleshade',
-          'data': {
-            'districts': counties,
-            'votes': countyVotes
-          },
+      var precinctsMerged = mergeData(gcPrecincts, precinctVotes, 'PRECINCT', {
+        'voters': 'VOTERS',
+        'votesCast': 'VOTERS',
+        'toPlot': 'A_VOTES'
+      })
+      var gcPrecinctsMap = new Choropleth({
+          'element': '#choropleth',
+          'data': precinctsMerged,
           'width': 500,
           'height': 400
         }, globals);
+
+      // var map = new CircleShadeMap({
+      //     'element': '#circleshade',
+      //     'data': {
+      //       'districts': counties,
+      //       'votes': countyVotes
+      //     },
+      //     'width': 500,
+      //     'height': 400
+      //   }, globals);
+    }
+
+    function mergeData (geoJson, joinData, joinKey, dims) {
+      // Takes geojson spatial data object and performs a left merge from joinData array
+      // Assumes geojson.properties has "center_lon" and "center_lat" centroid fields
+      // Returns merged geojson object
+
+      // To look at: Add filtering here?
+
+      var outGeoJson = geoJson;
+
+      // shift centroid coordinates to centerCoords array
+      outGeoJson.features.forEach(function(district){
+        district.properties.centerCoords = [+district.properties["center_lon"], +district.properties["center_lat"]];
+      });
+
+      // Perform merge
+      outGeoJson.features.forEach(function(district){
+        joinData.forEach(function(d){
+          if (d[joinKey] == district.properties[joinKey]){
+            district.properties.voters = d[dims.voters];
+            district.properties.votesCast = d[dims.votesCast];
+            district.properties.votesForA = d[dims.toPlot];
+          }
+        });
+      });
+
+      return outGeoJson;
     }
 
   </script>

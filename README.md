@@ -7,13 +7,15 @@ Structured (currently) as an index.html entrance point that pulls in different m
 ## Setup
 
 Geographies:
-- Montana Counties --> Key = County name (all caps)
+- Montana Counties --> Key = County name (all caps) 'NAME'
+- Gallatin County precincts --> key = 'PRECINCT'
 - (TODO) Montana House Districts
 - (TODO) Montana Senate Districts (aggregated House Districts)
-- (TODO) Gallatin County precincts --> key = 
+
 
 Filler data: 
 - County-level vote tallies
+- Gallatin County precincts
 - (TODO) Other geographies
 
 
@@ -23,4 +25,5 @@ Filler data:
 - Brainstorm other diagram types
 - Look at cartograms?
 - Add to node-based development environment?
-- Switch to local d3 / topojson scripts
+- Switch to local d3 script
+- Update CircleShadeMap.js for refactored data handling

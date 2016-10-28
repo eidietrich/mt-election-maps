@@ -1,0 +1,194 @@
+[
+  {
+    "PRECINCT": "61B",
+    "HOUSE_DIST": 61,
+    "VOTERS": 2193,
+    "A_VOTES": 1500
+  },
+  {
+    "PRECINCT": "69D",
+    "HOUSE_DIST": 69,
+    "VOTERS": 1472,
+    "A_VOTES": 1000
+  },
+  {
+    "PRECINCT": "67A",
+    "HOUSE_DIST": 67,
+    "VOTERS": 1702,
+    "A_VOTES": 450
+  },
+  {
+    "PRECINCT": "68A",
+    "HOUSE_DIST": 68,
+    "VOTERS": 2481,
+    "A_VOTES": 1500
+  },
+  {
+    "PRECINCT": "65C",
+    "HOUSE_DIST": 65,
+    "VOTERS": 2361,
+    "A_VOTES": 2000
+  },
+  {
+    "PRECINCT": "66B",
+    "HOUSE_DIST": 66,
+    "VOTERS": 2837,
+    "A_VOTES": 1300
+  },
+  {
+    "PRECINCT": "63A",
+    "HOUSE_DIST": 63,
+    "VOTERS": 2454,
+    "A_VOTES": 600
+  },
+  {
+    "PRECINCT": "62D",
+    "HOUSE_DIST": 62,
+    "VOTERS": 2211,
+    "A_VOTES": 450
+  },
+  {
+    "PRECINCT": "64B",
+    "HOUSE_DIST": 64,
+    "VOTERS": 1826,
+    "A_VOTES": 360
+  },
+  {
+    "PRECINCT": "59A",
+    "HOUSE_DIST": 59,
+    "VOTERS": 396,
+    "A_VOTES": 200
+  },
+  {
+    "PRECINCT": "64A",
+    "HOUSE_DIST": 64,
+    "VOTERS": 1239,
+    "A_VOTES": 1000
+  },
+  {
+    "PRECINCT": "64C",
+    "HOUSE_DIST": 64,
+    "VOTERS": 2302,
+    "A_VOTES": 2000
+  },
+  {
+    "PRECINCT": "69A",
+    "HOUSE_DIST": 69,
+    "VOTERS": 2005,
+    "A_VOTES": 500
+  },
+  {
+    "PRECINCT": "69B",
+    "HOUSE_DIST": 69,
+    "VOTERS": 1715,
+    "A_VOTES": 1200
+  },
+  {
+    "PRECINCT": "69C",
+    "HOUSE_DIST": 69,
+    "VOTERS": 1825,
+    "A_VOTES": 890
+  },
+  {
+    "PRECINCT": "64D",
+    "HOUSE_DIST": 64,
+    "VOTERS": 2547,
+    "A_VOTES": 2400
+  },
+  {
+    "PRECINCT": "68C",
+    "HOUSE_DIST": 68,
+    "VOTERS": 2146,
+    "A_VOTES": 1700
+  },
+  {
+    "PRECINCT": "67B",
+    "HOUSE_DIST": 67,
+    "VOTERS": 2565,
+    "A_VOTES": 1000
+  },
+  {
+    "PRECINCT": "68B",
+    "HOUSE_DIST": 68,
+    "VOTERS": 2132,
+    "A_VOTES": 1000
+  },
+  {
+    "PRECINCT": "67C",
+    "HOUSE_DIST": 67,
+    "VOTERS": 2664,
+    "A_VOTES": 2000
+  },
+  {
+    "PRECINCT": "65A",
+    "HOUSE_DIST": 65,
+    "VOTERS": 2707,
+    "A_VOTES": 500
+  },
+  {
+    "PRECINCT": "65B",
+    "HOUSE_DIST": 65,
+    "VOTERS": 2640,
+    "A_VOTES": 1200
+  },
+  {
+    "PRECINCT": "66A",
+    "HOUSE_DIST": 66,
+    "VOTERS": 2722,
+    "A_VOTES": 890
+  },
+  {
+    "PRECINCT": "66C",
+    "HOUSE_DIST": 66,
+    "VOTERS": 2841,
+    "A_VOTES": 2400
+  },
+  {
+    "PRECINCT": "63C",
+    "HOUSE_DIST": 63,
+    "VOTERS": 2567,
+    "A_VOTES": 1700
+  },
+  {
+    "PRECINCT": "63B",
+    "HOUSE_DIST": 63,
+    "VOTERS": 2574,
+    "A_VOTES": 1000
+  },
+  {
+    "PRECINCT": "62A",
+    "HOUSE_DIST": 62,
+    "VOTERS": 2196,
+    "A_VOTES": 1000
+  },
+  {
+    "PRECINCT": "62B",
+    "HOUSE_DIST": 62,
+    "VOTERS": 2231,
+    "A_VOTES": 2000
+  },
+  {
+    "PRECINCT": "62C",
+    "HOUSE_DIST": 62,
+    "VOTERS": 2155,
+    "A_VOTES": 500
+  },
+  {
+    "PRECINCT": "61A",
+    "HOUSE_DIST": 61,
+    "VOTERS": 2092,
+    "A_VOTES": 1200
+  },
+  {
+    "PRECINCT": "61D",
+    "HOUSE_DIST": 61,
+    "VOTERS": 2148,
+    "A_VOTES": 890
+  },
+  {
+    "PRECINCT": "61C",
+    "HOUSE_DIST": 61,
+    "VOTERS": 2150,
+    "A_VOTES": 2400
+  }
+]
