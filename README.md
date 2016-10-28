@@ -27,3 +27,8 @@ Filler data:
 - Add to node-based development environment?
 - Switch to local d3 script
 - Update CircleShadeMap.js for refactored data handling
+- Add responsiveness to base template
+
+## References
+
+http://ejb.github.io/2016/05/23/a-better-way-to-structure-d3-code.html
