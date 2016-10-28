@@ -22,3 +22,5 @@ Filler data:
 - Add aggregate vote count bars (think through bond measures versus 2-way, 3-way races, etc.)
 - Brainstorm other diagram types
 - Look at cartograms?
+- Add to node-based development environment?
+- Switch to local d3 / topojson scripts
