@@ -35,13 +35,14 @@
   <div id="viz-container">
     <div id="chart1"></div>
     <div id="chart2"></div>
+    <div id="chart3"></div>
   </div>
 
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <!-- <script src="https://d3js.org/topojson.v1.min.js"></script> -->
+  <script src="js/d3.min.js"></script>
   <script src="js/Choropleth.js"></script>
   <script src="js/CircleShadeMap.js"></script>
   <script src="js/BarGraph.js"></script>
+  <script src="js/OpposingBarGraph.js"></script>
   <script type="text/javascript">
     // Universal functions
     var globals = {
@@ -69,7 +70,12 @@
 
       var countyBar = new BarGraph({
         'element': document.querySelector('#chart1'),
-        'data': prepForBar(countyVotes, 'reg_voters', ['tester_votes', 'rehberg_votes']),
+        'data': prepForBar(countyVotes, 'reg_voters', ['tester_votes', 'rehberg_votes','cox_votes']),
+        'height': 100
+      })
+      var countyOpposing = new OpposingBarGraph({
+        'element': document.querySelector('#chart2'),
+        'data': prepForBar(countyVotes, 'reg_voters', ['tester_votes', 'rehberg_votes','cox_votes']),
         'height': 100
       })
 
@@ -79,7 +85,7 @@
         'toPlot': 'tester_votes'
       });
       var countyMap = new Choropleth({
-          'element': document.querySelector('#chart2'),
+          'element': document.querySelector('#chart3'),
           'data': countiesMerged,
           'height': 400
         });
@@ -109,9 +115,8 @@
       // For resizing
       d3.select(window).on('resize', function(){
         countyBar.draw();
+        countyOpposing.draw();
         countyMap.draw();
-
-        // gcPrecinctsMap.draw();
       })
     }
 
@@ -155,7 +160,7 @@
       //   ]
       // }
 
-        // For summing values
+      // For summing values
       var sum = function(items, prop){
         return items.reduce(function(a, b){
           return a + b[prop];
@@ -167,19 +172,12 @@
         'results': []
       };
 
-      console.log(data);
-
-
-
       preppedData.max = sum(data, maxDim);
       issueArray.forEach(function(name){
         preppedData.results.push({
           "name": name,
           "votes": sum(data, name)});
       })
-
-      console.log(preppedData);
-
       return preppedData;
     }
 

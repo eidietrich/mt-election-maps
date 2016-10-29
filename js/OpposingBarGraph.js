@@ -1,4 +1,5 @@
-// BarGraph
+// Opposing Bar Graph
+// Presents top two vote-getting choices in opposition
 
 // expects data in array with following structure:
 
@@ -11,16 +12,24 @@
 //   ]
 // }
 
-var BarGraph = function (props){
+var OpposingBarGraph = function (props){
   this.data = props.data;
   this.element = props.element;
   this.height = props.height;
-  this.margin = {top: 20, bottom: 20, right: 30, left: 100};
+  this.margin = {top: 20, bottom: 20, right: 20, left: 20};
+  this.innerMargin = 15; // space between axis and bar
 
   this.draw()
 }
-BarGraph.prototype.draw = function() {
+OpposingBarGraph.prototype.draw = function() {
   d3.select(this.element).html("");
+
+  // Filter to top two results
+  // Assuming first two are top two
+  // this.data.results.sort(function(a,b){
+  //   return b.votes - a.votes;
+  // });
+  this.data.results = this.data.results.slice(0,2)
 
   // Set up canvas dimensions
   this.width = this.element.getBoundingClientRect().width;
@@ -39,10 +48,6 @@ BarGraph.prototype.draw = function() {
   this.xScale = d3.scaleLinear()
     .range([0, this.plotWidth])
     .domain([0, 1]);
-  this.yScale = d3.scaleBand()
-    .range([0, this.plotHeight])
-    .padding(0.3)
-    .domain(this.data.results.map(function(d) { return d.name; }));
   this.colorScale = d3.scaleOrdinal()
     .domain(this.data.results.map(function(d) { return d.name; }))
     .range(["#b2182b","#2166ac","#31a354"])
@@ -50,8 +55,6 @@ BarGraph.prototype.draw = function() {
   // Create axes
   this.xAxis = d3.axisBottom(this.xScale)
     .ticks(10, globals.format);
-  this.yAxis = d3.axisLeft(this.yScale);
-
   this.xGridLines = d3.axisTop(this.xScale)
     .ticks(5)
     .tickSize(-this.plotHeight)
@@ -62,24 +65,28 @@ BarGraph.prototype.draw = function() {
     .attr("class","grid")
     .call(this.xGridLines)
 
-  // Draw bars
-  var that = this;
-  this.plot.append("g")
-    .selectAll('.bar')
-    .data(this.data.results).enter()
-    .append("rect")
+  // Draw left bar
+  var bar = this.data.results[0];
+  this.plot.append("rect")
     .attr("class","bar")
-    .attr("fill", function(d){ return that.colorScale(d.name); })
+    .attr("fill", this.colorScale(bar.name))
     .attr("x", 0)
-    .attr("y", function(d){ return that.yScale(d.name); })
-    .attr("width", function(d){ return that.xScale(d.votes / that.data.max); })
-    .attr("height", that.yScale.bandwidth());
+    .attr("width", this.xScale(bar.votes / this.data.max))
+    .attr("y", this.innerMargin)
+    .attr("height", this.plotHeight - 2 * this.innerMargin);
+
+  // Draw right bar
+  bar = this.data.results[1];
+  this.plot.append("rect")
+    .attr("class","bar")
+    .attr("fill", this.colorScale(bar.name))
+    .attr("x", this.plotWidth - this.xScale(bar.votes / this.data.max))
+    .attr("width", this.xScale(bar.votes / this.data.max))
+    .attr("y", this.innerMargin)
+    .attr("height", this.plotHeight - 2 * this.innerMargin);
 
   // Draw axes
   this.plot.append("g")
     .attr("transform", "translate(" + 0 + "," + this.plotHeight + ")")
     .call(this.xAxis);
-  this.plot.append("g")
-    .call(this.yAxis);
-
 }
