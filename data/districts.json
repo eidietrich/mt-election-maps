@@ -1,0 +1,2322 @@
+[
+  {
+    "key": "Western Montana",
+    "values": [
+      {
+        "key": "SD 1",
+        "values": [
+          {
+            "number": "1",
+            "district": "SD 1",
+            "dist_type": "SD",
+            "incum_last": "VINCENT",
+            "incum_first": "CHAS",
+            "incum_party": "R",
+            "incum_address": "34 PAUL BUNYAN LN",
+            "incum_city": "LIBBY",
+            "incum_state": "MT",
+            "incum_zip": "59923-7990",
+            "district_label": "Western Montana",
+            "district_counties": "Lincoln"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "1",
+            "district": "HD 1",
+            "dist_type": "HD",
+            "incum_last": "BENNETT",
+            "incum_first": "JERRY",
+            "incum_party": "R",
+            "incum_address": "784 TAYLOR RD",
+            "incum_city": "LIBBY",
+            "incum_state": "MT",
+            "incum_zip": "59923-8458"
+          },
+          {
+            "number": "2",
+            "district": "HD 2",
+            "dist_type": "HD",
+            "incum_last": "CUFFE",
+            "incum_first": "MIKE",
+            "incum_party": "R",
+            "incum_address": "PO BOX 1685",
+            "incum_city": "EUREKA",
+            "incum_state": "MT",
+            "incum_zip": "59917-1685"
+          }
+        ]
+      },
+      {
+        "key": "SD 7",
+        "values": [
+          {
+            "number": "7",
+            "district": "SD 7",
+            "dist_type": "SD",
+            "incum_last": "FIELDER",
+            "incum_first": "JENNIFER",
+            "incum_party": "R",
+            "incum_address": "PO BOX 2558",
+            "incum_city": "THOMPSON FALLS",
+            "incum_state": "MT",
+            "incum_zip": "59873-2558",
+            "district_label": "Western Montana",
+            "district_counties": "Flathead, Sanders, Mineral, Missoula"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "13",
+            "district": "HD 13",
+            "dist_type": "HD",
+            "incum_last": "BROWN",
+            "incum_first": "BOB",
+            "incum_party": "R",
+            "incum_address": "PO BOX 1907",
+            "incum_city": "THOMPSON FALLS",
+            "incum_state": "MT",
+            "incum_zip": "59873-1907"
+          },
+          {
+            "number": "14",
+            "district": "HD 14",
+            "dist_type": "HD",
+            "incum_last": "SCHWADERER",
+            "incum_first": "NICHOLAS",
+            "incum_party": "R",
+            "incum_address": "PO BOX 370",
+            "incum_city": "SUPERIOR",
+            "incum_state": "MT",
+            "incum_zip": "59872-0370"
+          }
+        ]
+      },
+      {
+        "key": "SD 43",
+        "values": [
+          {
+            "number": "43",
+            "district": "SD 43",
+            "dist_type": "SD",
+            "incum_last": "CONNELL",
+            "incum_first": "PAT",
+            "incum_party": "R",
+            "incum_address": "567 TIFFANY LN",
+            "incum_city": "HAMILTON",
+            "incum_state": "MT",
+            "incum_zip": "59840-9241",
+            "district_label": "Western Montana",
+            "district_counties": "Ravalli"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "85",
+            "district": "HD 85",
+            "dist_type": "HD",
+            "incum_last": "MANZELLA",
+            "incum_first": "THERESA",
+            "incum_party": "R",
+            "incum_address": "640 GOLD CREEK LOOP",
+            "incum_city": "HAMILTON",
+            "incum_state": "MT",
+            "incum_zip": "59840-9742"
+          },
+          {
+            "number": "86",
+            "district": "HD 86",
+            "dist_type": "HD",
+            "incum_last": "EHLI",
+            "incum_first": "RON",
+            "incum_party": "R",
+            "incum_address": "PO BOX 765",
+            "incum_city": "HAMILTON",
+            "incum_state": "MT",
+            "incum_zip": "59840-0765"
+          }
+        ]
+      },
+      {
+        "key": "SD 44",
+        "values": [
+          {
+            "number": "44",
+            "district": "SD 44",
+            "dist_type": "SD",
+            "incum_last": "THOMAS",
+            "incum_first": "FRED",
+            "incum_party": "R",
+            "incum_address": "1004 S BURNT FORK RD",
+            "incum_city": "STEVENSVILLE",
+            "incum_state": "MT",
+            "incum_zip": "59870-6658",
+            "district_label": "Western Montana",
+            "district_counties": "Ravalli"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "87",
+            "district": "HD 87",
+            "dist_type": "HD",
+            "incum_last": "BALLANCE",
+            "incum_first": "NANCY",
+            "incum_party": "R",
+            "incum_address": "PO BOX 314",
+            "incum_city": "HAMILTON",
+            "incum_state": "MT",
+            "incum_zip": "59840-0314"
+          },
+          {
+            "number": "88",
+            "district": "HD 88",
+            "dist_type": "HD",
+            "incum_last": "GREEF",
+            "incum_first": "EDWARD",
+            "incum_party": "R",
+            "incum_address": "PO BOX 1327",
+            "incum_city": "FLORENCE",
+            "incum_state": "MT",
+            "incum_zip": "59833-1327"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Kalispell / Whitefish",
+    "values": [
+      {
+        "key": "SD 2",
+        "values": [
+          {
+            "number": "2",
+            "district": "SD 2",
+            "dist_type": "SD",
+            "incum_last": "BROWN",
+            "incum_first": "DEE",
+            "incum_party": "R",
+            "incum_address": "PO BOX 444",
+            "incum_city": "HUNGRY HORSE",
+            "incum_state": "MT",
+            "incum_zip": "59919-0444",
+            "district_label": "Kalispell / Whitefish",
+            "district_counties": "Flathead"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "3",
+            "district": "HD 3",
+            "dist_type": "HD",
+            "incum_last": "PERRY",
+            "incum_first": "ZAC",
+            "incum_party": "D",
+            "incum_address": "PO BOX 268",
+            "incum_city": "HUNGRY HORSE",
+            "incum_state": "MT",
+            "incum_zip": "59919-0268"
+          },
+          {
+            "number": "4",
+            "district": "HD 4",
+            "dist_type": "HD",
+            "incum_last": "REGIER",
+            "incum_first": "KEITH",
+            "incum_party": "R",
+            "incum_address": "1078 STILLWATER RD",
+            "incum_city": "KALISPELL",
+            "incum_state": "MT",
+            "incum_zip": "59901-6902"
+          }
+        ]
+      },
+      {
+        "key": "SD 3",
+        "values": [
+          {
+            "number": "3",
+            "district": "SD 3",
+            "dist_type": "SD",
+            "incum_last": "TUTVEDT",
+            "incum_first": "BRUCE",
+            "incum_party": "R",
+            "incum_address": "2335 W VALLEY DR",
+            "incum_city": "KALISPELL",
+            "incum_state": "MT",
+            "incum_zip": "59901-6958",
+            "district_label": "Kalispell / Whitefish",
+            "district_counties": "Flathead"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "5",
+            "district": "HD 5",
+            "dist_type": "HD",
+            "incum_last": "LIESER",
+            "incum_first": "ED",
+            "incum_party": "D",
+            "incum_address": "1355 LION MOUNTAIN DR",
+            "incum_city": "WHITEFISH",
+            "incum_state": "MT",
+            "incum_zip": "59937-8072"
+          },
+          {
+            "number": "6",
+            "district": "HD 6",
+            "dist_type": "HD",
+            "incum_last": "GLIMM",
+            "incum_first": "CARL",
+            "incum_party": "R",
+            "incum_address": "5107 ASHLEY LAKE RD",
+            "incum_city": "KILA",
+            "incum_state": "MT",
+            "incum_zip": "59920"
+          }
+        ]
+      },
+      {
+        "key": "SD 4",
+        "values": [
+          {
+            "number": "4",
+            "district": "SD 4",
+            "dist_type": "SD",
+            "incum_last": "BLASDEL",
+            "incum_first": "MARK",
+            "incum_party": "R",
+            "incum_address": "PO BOX 1493",
+            "incum_city": "KALISPELL",
+            "incum_state": "MT",
+            "incum_zip": "59903-1493",
+            "district_label": "Kalispell / Whitefish",
+            "district_counties": "Flathead"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "7",
+            "district": "HD 7",
+            "dist_type": "HD",
+            "incum_last": "GARNER",
+            "incum_first": "FRANK",
+            "incum_party": "R",
+            "incum_address": "PO BOX 10176",
+            "incum_city": "KALISPELL",
+            "incum_state": "MT",
+            "incum_zip": "59904-0176"
+          },
+          {
+            "number": "8",
+            "district": "HD 8",
+            "dist_type": "HD",
+            "incum_last": "LAVIN",
+            "incum_first": "STEVE",
+            "incum_party": "R",
+            "incum_address": "PO BOX 11241",
+            "incum_city": "KALISPELL",
+            "incum_state": "MT",
+            "incum_zip": "59904-4241"
+          }
+        ]
+      },
+      {
+        "key": "SD 5",
+        "values": [
+          {
+            "number": "5",
+            "district": "SD 5",
+            "dist_type": "SD",
+            "incum_last": "KEENAN",
+            "incum_first": "BOB",
+            "incum_party": "R",
+            "incum_address": "PO BOX 697",
+            "incum_city": "BIGFORK",
+            "incum_state": "MT",
+            "incum_zip": "59911-0697",
+            "district_label": "Kalispell / Whitefish",
+            "district_counties": "Flathead, Lake"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "9",
+            "district": "HD 9",
+            "dist_type": "HD",
+            "incum_last": "BRODEHL",
+            "incum_first": "RANDY",
+            "incum_party": "R",
+            "incum_address": "16 WHITE BARK",
+            "incum_city": "KALISPELL",
+            "incum_state": "MT",
+            "incum_zip": "59901-2122"
+          },
+          {
+            "number": "10",
+            "district": "HD 10",
+            "dist_type": "HD",
+            "incum_last": "NOLAND",
+            "incum_first": "MARK",
+            "incum_party": "R",
+            "incum_address": "PO BOX 1852",
+            "incum_city": "BIGFORK",
+            "incum_state": "MT",
+            "incum_zip": "59911-1852"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Flathead",
+    "values": [
+      {
+        "key": "SD 6",
+        "values": [
+          {
+            "number": "6",
+            "district": "SD 6",
+            "dist_type": "SD",
+            "incum_last": "TAYLOR",
+            "incum_first": "JANNA",
+            "incum_party": "R",
+            "incum_address": "PO BOX 233",
+            "incum_city": "DAYTON",
+            "incum_state": "MT",
+            "incum_zip": "59914-0233",
+            "district_label": "Flathead",
+            "district_counties": "Flathead, Lake"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "11",
+            "district": "HD 11",
+            "dist_type": "HD",
+            "incum_last": "OLSZEWSKI",
+            "incum_first": "ALBERT",
+            "incum_party": "R",
+            "incum_address": "PO BOX 11243",
+            "incum_city": "KALISPELL",
+            "incum_state": "MT",
+            "incum_zip": "59904-1243"
+          },
+          {
+            "number": "12",
+            "district": "HD 12",
+            "dist_type": "HD",
+            "incum_last": "HERTZ",
+            "incum_first": "GREG",
+            "incum_party": "R",
+            "incum_address": "PO BOX 1747",
+            "incum_city": "POLSON",
+            "incum_state": "MT",
+            "incum_zip": "59860-1747"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "North-central Montana",
+    "values": [
+      {
+        "key": "SD 8",
+        "values": [
+          {
+            "number": "8",
+            "district": "SD 8",
+            "dist_type": "SD",
+            "incum_last": "WHITFORD",
+            "incum_first": "LEA",
+            "incum_party": "D",
+            "incum_address": "221 ED WILLIAMS RD",
+            "incum_city": "CUT BANK",
+            "incum_state": "MT",
+            "incum_zip": "59427-9144",
+            "district_label": "North-central Montana",
+            "district_counties": "Flathead, Lake, Glacier, Pondera"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "15",
+            "district": "HD 15",
+            "dist_type": "HD",
+            "incum_last": "KIPP III",
+            "incum_first": "GEORGE",
+            "incum_party": "D",
+            "incum_address": "PO BOX 191",
+            "incum_city": "HEART BUTTE",
+            "incum_state": "MT",
+            "incum_zip": "59448-0191"
+          },
+          {
+            "number": "16",
+            "district": "HD 16",
+            "dist_type": "HD",
+            "incum_last": "WEBBER",
+            "incum_first": "SUSAN",
+            "incum_party": "D",
+            "incum_address": "PO BOX 1011",
+            "incum_city": "BROWNING",
+            "incum_state": "MT",
+            "incum_zip": "59417-1011"
+          }
+        ]
+      },
+      {
+        "key": "SD 9",
+        "values": [
+          {
+            "number": "9",
+            "district": "SD 9",
+            "dist_type": "SD",
+            "incum_last": "JONES",
+            "incum_first": "LLEW",
+            "incum_party": "R",
+            "incum_address": "1102 4TH AVE SW",
+            "incum_city": "CONRAD",
+            "incum_state": "MT",
+            "incum_zip": "59425-1919",
+            "district_label": "North-central Montana",
+            "district_counties": "Glacier, Lewis & Clark, Teton, Pondera, Toole"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "17",
+            "district": "HD 17",
+            "dist_type": "HD",
+            "incum_last": "CLARK",
+            "incum_first": "CHRISTY",
+            "incum_party": "R",
+            "incum_address": "5529 LAKE HELENA DR",
+            "incum_city": "HELENA",
+            "incum_state": "MT",
+            "incum_zip": "59602"
+          },
+          {
+            "number": "18",
+            "district": "HD 18",
+            "dist_type": "HD",
+            "incum_last": "COOK",
+            "incum_first": "ROB",
+            "incum_party": "R",
+            "incum_address": "223 1ST AVE SW",
+            "incum_city": "CONRAD",
+            "incum_state": "MT",
+            "incum_zip": "59425-1805"
+          }
+        ]
+      },
+      {
+        "key": "SD 14",
+        "values": [
+          {
+            "number": "14",
+            "district": "SD 14",
+            "dist_type": "SD",
+            "incum_last": "HANSEN",
+            "incum_first": "KRISTIN",
+            "incum_party": "R",
+            "incum_address": "PO BOX 1957",
+            "incum_city": "HAVRE",
+            "incum_state": "MT",
+            "incum_zip": "59501-1957",
+            "district_label": "North-central Montana",
+            "district_counties": "Cascade, Chouteau, Liberty, Hill"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "27",
+            "district": "HD 27",
+            "dist_type": "HD",
+            "incum_last": "HOLLANDSWORTH",
+            "incum_first": "ROY",
+            "incum_party": "R",
+            "incum_address": "1463 PRAIRIE DR",
+            "incum_city": "BRADY",
+            "incum_state": "MT",
+            "incum_zip": "59416-8928"
+          },
+          {
+            "number": "28",
+            "district": "HD 28",
+            "dist_type": "HD",
+            "incum_last": "HESS",
+            "incum_first": "STEPHANIE",
+            "incum_party": "R",
+            "incum_address": "PO BOX 28",
+            "incum_city": "HAVRE",
+            "incum_state": "MT",
+            "incum_zip": "59501-0028"
+          }
+        ]
+      },
+      {
+        "key": "SD 16",
+        "values": [
+          {
+            "number": "16",
+            "district": "SD 16",
+            "dist_type": "SD",
+            "incum_last": "WINDY BOY",
+            "incum_first": "JONATHAN",
+            "incum_party": "D",
+            "incum_address": "PO BOX 195",
+            "incum_city": "BOX ELDER",
+            "incum_state": "MT",
+            "incum_zip": "59521-0269",
+            "district_label": "North-central Montana",
+            "district_counties": "Roosevelt, Valley, Phillips, Blaine, Hill, Chouteau"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "31",
+            "district": "HD 31",
+            "dist_type": "HD",
+            "incum_last": "SMITH",
+            "incum_first": "BRIDGET",
+            "incum_party": "D",
+            "incum_address": "516 HILL ST",
+            "incum_city": "WOLF POINT",
+            "incum_state": "MT",
+            "incum_zip": "59201-1245"
+          },
+          {
+            "number": "32",
+            "district": "HD 32",
+            "dist_type": "HD",
+            "incum_last": "MEYERS",
+            "incum_first": "G. BRUCE",
+            "incum_party": "R",
+            "incum_address": "PO BOX 3016",
+            "incum_city": "BOX ELDER",
+            "incum_state": "MT",
+            "incum_zip": "59521-3016"
+          }
+        ]
+      },
+      {
+        "key": "SD 17",
+        "values": [
+          {
+            "number": "17",
+            "district": "SD 17",
+            "dist_type": "SD",
+            "incum_last": "BRENDEN",
+            "incum_first": "JOHN",
+            "incum_party": "R",
+            "incum_address": "PO BOX 970",
+            "incum_city": "SCOBEY",
+            "incum_state": "MT",
+            "incum_zip": "59263-0970",
+            "district_label": "North-central Montana",
+            "district_counties": "Hill, Blaine, Phillips, Valley, Roosevelt, Daniels, Sheridan"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "33",
+            "district": "HD 33",
+            "dist_type": "HD",
+            "incum_last": "LANG",
+            "incum_first": "MIKE",
+            "incum_party": "R",
+            "incum_address": "PO BOX 109",
+            "incum_city": "MALTA",
+            "incum_state": "MT",
+            "incum_zip": "59538-0109"
+          },
+          {
+            "number": "34",
+            "district": "HD 34",
+            "dist_type": "HD",
+            "incum_last": "KNUDSEN",
+            "incum_first": "AUSTIN",
+            "incum_party": "R",
+            "incum_address": "PO BOX 624",
+            "incum_city": "CULBERTSON",
+            "incum_state": "MT",
+            "incum_zip": "59218-0624"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Great Falls",
+    "values": [
+      {
+        "key": "SD 10",
+        "values": [
+          {
+            "number": "10",
+            "district": "SD 10",
+            "dist_type": "SD",
+            "incum_last": "RIPLEY",
+            "incum_first": "RICK",
+            "incum_party": "R",
+            "incum_address": "8920 MT HIGHWAY 200",
+            "incum_city": "WOLF CREEK",
+            "incum_state": "MT",
+            "incum_zip": "59648-8639",
+            "district_label": "Great Falls",
+            "district_counties": "Cascade"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "19",
+            "district": "HD 19",
+            "dist_type": "HD",
+            "incum_last": "PINOCCI",
+            "incum_first": "RANDALL",
+            "incum_party": "R",
+            "incum_address": "66 SUN RIVER CASCADE RD",
+            "incum_city": "SUN RIVER",
+            "incum_state": "MT",
+            "incum_zip": "59483-9749"
+          },
+          {
+            "number": "20",
+            "district": "HD 20",
+            "dist_type": "HD",
+            "incum_last": "FITZPATRICK",
+            "incum_first": "STEVE",
+            "incum_party": "R",
+            "incum_address": "3203 15TH AVE S",
+            "incum_city": "GREAT FALLS",
+            "incum_state": "MT",
+            "incum_zip": "59405-5416"
+          }
+        ]
+      },
+      {
+        "key": "SD 11",
+        "values": [
+          {
+            "number": "11",
+            "district": "SD 11",
+            "dist_type": "SD",
+            "incum_last": "BUTTREY",
+            "incum_first": "EDWARD",
+            "incum_party": "R",
+            "incum_address": "27 GRANITE HILL LN",
+            "incum_city": "GREAT FALLS",
+            "incum_state": "MT",
+            "incum_zip": "59405-8041",
+            "district_label": "Great Falls",
+            "district_counties": "Cascade"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "21",
+            "district": "HD 21",
+            "dist_type": "HD",
+            "incum_last": "JACOBSON",
+            "incum_first": "TOM",
+            "incum_party": "D",
+            "incum_address": "521 RIVERVIEW DR E",
+            "incum_city": "GREAT FALLS",
+            "incum_state": "MT",
+            "incum_zip": "59404-1634"
+          },
+          {
+            "number": "22",
+            "district": "HD 22",
+            "dist_type": "HD",
+            "incum_last": "MEHLHOFF",
+            "incum_first": "ROBERT",
+            "incum_party": "D",
+            "incum_address": "407 9TH ST NW",
+            "incum_city": "GREAT FALLS",
+            "incum_state": "MT",
+            "incum_zip": "59404-2333"
+          }
+        ]
+      },
+      {
+        "key": "SD 12",
+        "values": [
+          {
+            "number": "12",
+            "district": "SD 12",
+            "dist_type": "SD",
+            "incum_last": "MOE",
+            "incum_first": "MARY SHEEHY",
+            "incum_party": "D",
+            "incum_address": "8 PROSPECT DR",
+            "incum_city": "GREAT FALLS",
+            "incum_state": "MT",
+            "incum_zip": "59405-4120",
+            "district_label": "Great Falls",
+            "district_counties": "Cascade"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "23",
+            "district": "HD 23",
+            "dist_type": "HD",
+            "incum_last": "MCKAMEY",
+            "incum_first": "WENDY",
+            "incum_party": "R",
+            "incum_address": "33 UPPER MILLEGAN RD",
+            "incum_city": "GREAT FALLS",
+            "incum_state": "MT",
+            "incum_zip": "59405-8427"
+          },
+          {
+            "number": "24",
+            "district": "HD 24",
+            "dist_type": "HD",
+            "incum_last": "PRICE",
+            "incum_first": "JEAN",
+            "incum_party": "D",
+            "incum_address": "422 15TH ST S",
+            "incum_city": "GREAT FALLS",
+            "incum_state": "MT",
+            "incum_zip": "59405-2424"
+          }
+        ]
+      },
+      {
+        "key": "SD 13",
+        "values": [
+          {
+            "number": "13",
+            "district": "SD 13",
+            "dist_type": "SD",
+            "incum_last": "HOVEN",
+            "incum_first": "BRIAN",
+            "incum_party": "R",
+            "incum_address": "1501 MEADOWLARK DR",
+            "incum_city": "GREAT FALLS",
+            "incum_state": "MT",
+            "incum_zip": "59404-3325",
+            "district_label": "Great Falls",
+            "district_counties": "Cascade"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "25",
+            "district": "HD 25",
+            "dist_type": "HD",
+            "incum_last": "SCHREINER",
+            "incum_first": "CASEY",
+            "incum_party": "D",
+            "incum_address": "2223 6TH AVE N",
+            "incum_city": "GREAT FALLS",
+            "incum_state": "MT",
+            "incum_zip": "59401-1819"
+          },
+          {
+            "number": "26",
+            "district": "HD 26",
+            "dist_type": "HD",
+            "incum_last": "TROPILA",
+            "incum_first": "MITCH",
+            "incum_party": "D",
+            "incum_address": "PO BOX 929",
+            "incum_city": "GREAT FALLS",
+            "incum_state": "MT",
+            "incum_zip": "59403-0929"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Central Montana",
+    "values": [
+      {
+        "key": "SD 15",
+        "values": [
+          {
+            "number": "15",
+            "district": "SD 15",
+            "dist_type": "SD",
+            "incum_last": "HAMLETT",
+            "incum_first": "BRADLEY MAXON",
+            "incum_party": "D",
+            "incum_address": "PO BOX 49",
+            "incum_city": "CASCADE",
+            "incum_state": "MT",
+            "incum_zip": "59421-0049",
+            "district_label": "Central Montana",
+            "district_counties": "Petroleum, Fergus, Golden Valley, Wheatland, Meagher, Judith Basin, Cascade"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "29",
+            "district": "HD 29",
+            "dist_type": "HD",
+            "incum_last": "HARRIS",
+            "incum_first": "BILL",
+            "incum_party": "R",
+            "incum_address": "PO BOX 205",
+            "incum_city": "WINNETT",
+            "incum_state": "MT",
+            "incum_zip": "59087-0205"
+          },
+          {
+            "number": "30",
+            "district": "HD 30",
+            "dist_type": "HD",
+            "incum_last": "OSMUNDSON",
+            "incum_first": "RYAN",
+            "incum_party": "R",
+            "incum_address": "1394 S BUFFALO CANYON RD",
+            "incum_city": "BUFFALO",
+            "incum_state": "MT",
+            "incum_zip": "59418-8005"
+          }
+        ]
+      },
+      {
+        "key": "SD 35",
+        "values": [
+          {
+            "number": "35",
+            "district": "SD 35",
+            "dist_type": "SD",
+            "incum_last": "SALES",
+            "incum_first": "SCOTT",
+            "incum_party": "R",
+            "incum_address": "PO BOX 11163",
+            "incum_city": "BOZEMAN",
+            "incum_state": "MT",
+            "incum_zip": "59719-1163",
+            "district_label": "Central Montana",
+            "district_counties": "Gallatin, Broadwater, Lewis & Clark"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "69",
+            "district": "HD 69",
+            "dist_type": "HD",
+            "incum_last": "MONFORTON",
+            "incum_first": "MATTHEW",
+            "incum_party": "R",
+            "incum_address": "32 KELLY CT",
+            "incum_city": "BOZEMAN",
+            "incum_state": "MT",
+            "incum_zip": "59718-7630"
+          },
+          {
+            "number": "70",
+            "district": "HD 70",
+            "dist_type": "HD",
+            "incum_last": "FLYNN",
+            "incum_first": "KELLY",
+            "incum_party": "R",
+            "incum_address": "PO BOX 233",
+            "incum_city": "TOWNSEND",
+            "incum_state": "MT",
+            "incum_zip": "59644-0233"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Eastern Montana",
+    "values": [
+      {
+        "key": "SD 18",
+        "values": [
+          {
+            "number": "18",
+            "district": "SD 18",
+            "dist_type": "SD",
+            "incum_last": "ROSENDALE",
+            "incum_first": "MATTHEW",
+            "incum_party": "R",
+            "incum_address": "1954 HIGHWAY 16",
+            "incum_city": "GLENDIVE",
+            "incum_state": "MT",
+            "incum_zip": "59330-9218",
+            "district_label": "Eastern Montana",
+            "district_counties": "Richland, Dawson, Wibaux"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "35",
+            "district": "HD 35",
+            "dist_type": "HD",
+            "incum_last": "STAFFANSON",
+            "incum_first": "SCOTT",
+            "incum_party": "R",
+            "incum_address": "34704 COUNTY ROAD 122",
+            "incum_city": "SIDNEY",
+            "incum_state": "MT",
+            "incum_zip": "59270-6353"
+          },
+          {
+            "number": "36",
+            "district": "HD 36",
+            "dist_type": "HD",
+            "incum_last": "DOANE",
+            "incum_first": "ALAN",
+            "incum_party": "R",
+            "incum_address": "268 COUNTY ROAD 521",
+            "incum_city": "BLOOMFIELD",
+            "incum_state": "MT",
+            "incum_zip": "59315-9500"
+          }
+        ]
+      },
+      {
+        "key": "SD 19",
+        "values": [
+          {
+            "number": "19",
+            "district": "SD 19",
+            "dist_type": "SD",
+            "incum_last": "MOORE",
+            "incum_first": "FREDERICK ( ERIC )",
+            "incum_party": "R",
+            "incum_address": "487 SIGNAL BUTTE RD",
+            "incum_city": "MILES CITY",
+            "incum_state": "MT",
+            "incum_zip": "59301-9205",
+            "district_label": "Eastern Montana",
+            "district_counties": "McCone, Garfield, Prairie, Custer, Fallon, Carter, Powder River"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "37",
+            "district": "HD 37",
+            "dist_type": "HD",
+            "incum_last": "RANDALL",
+            "incum_first": "LEE",
+            "incum_party": "R",
+            "incum_address": "101 RANDALL LN",
+            "incum_city": "BROADUS",
+            "incum_state": "MT",
+            "incum_zip": "59317-9519"
+          },
+          {
+            "number": "38",
+            "district": "HD 38",
+            "dist_type": "HD",
+            "incum_last": "HOLMLUND",
+            "incum_first": "KENNETH",
+            "incum_party": "R",
+            "incum_address": "1612 TOMPY ST",
+            "incum_city": "MILES CITY",
+            "incum_state": "MT",
+            "incum_zip": "59301-4431"
+          }
+        ]
+      },
+      {
+        "key": "SD 20",
+        "values": [
+          {
+            "number": "20",
+            "district": "SD 20",
+            "dist_type": "SD",
+            "incum_last": "ANKNEY",
+            "incum_first": "DUANE",
+            "incum_party": "R",
+            "incum_address": "PO BOX 2138",
+            "incum_city": "COLSTRIP",
+            "incum_state": "MT",
+            "incum_zip": "59323-2138",
+            "district_label": "Eastern Montana",
+            "district_counties": "Custer, Rosebud, Big Horn, Yellowstone, Musselshell"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "39",
+            "district": "HD 39",
+            "dist_type": "HD",
+            "incum_last": "CUSTER",
+            "incum_first": "GERALDINE",
+            "incum_party": "R",
+            "incum_address": "PO BOX 1075",
+            "incum_city": "FORSYTH",
+            "incum_state": "MT",
+            "incum_zip": "59327-1075"
+          },
+          {
+            "number": "40",
+            "district": "HD 40",
+            "dist_type": "HD",
+            "incum_last": "BERRY",
+            "incum_first": "TOM",
+            "incum_party": "R",
+            "incum_address": "PO BOX 277",
+            "incum_city": "ROUNDUP",
+            "incum_state": "MT",
+            "incum_zip": "59072-0277"
+          }
+        ]
+      },
+      {
+        "key": "SD 21",
+        "values": [
+          {
+            "number": "21",
+            "district": "SD 21",
+            "dist_type": "SD",
+            "incum_last": "STEWART-PEREGOY",
+            "incum_first": "SHARON",
+            "incum_party": "D",
+            "incum_address": "PO BOX 211",
+            "incum_city": "CROW AGENCY",
+            "incum_state": "MT",
+            "incum_zip": "59022-0211",
+            "district_label": "Eastern Montana",
+            "district_counties": "Powder River, Rosebud, Big Horn, Yellowstone"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "41",
+            "district": "HD 41",
+            "dist_type": "HD",
+            "incum_last": "PEPPERS",
+            "incum_first": "RAE",
+            "incum_party": "D",
+            "incum_address": "PO BOX 497",
+            "incum_city": "LAME DEER",
+            "incum_state": "MT",
+            "incum_zip": "59043-0497"
+          },
+          {
+            "number": "42",
+            "district": "HD 42",
+            "dist_type": "HD",
+            "incum_last": "PEASE-LOPEZ",
+            "incum_first": "CAROLYN",
+            "incum_party": "D",
+            "incum_address": "5723 US HIGHWAY 87 E",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59101-9074"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Billings",
+    "values": [
+      {
+        "key": "SD 22",
+        "values": [
+          {
+            "number": "22",
+            "district": "SD 22",
+            "dist_type": "SD",
+            "incum_last": "KARY",
+            "incum_first": "DOUG",
+            "incum_party": "R",
+            "incum_address": "415 W WICKS LN",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59105-3457",
+            "district_label": "Billings",
+            "district_counties": "Yellowstone"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "43",
+            "district": "HD 43",
+            "dist_type": "HD",
+            "incum_last": "FISCUS",
+            "incum_first": "CLAYTON",
+            "incum_party": "R",
+            "incum_address": "1800 MARY ST",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59105-4804"
+          },
+          {
+            "number": "44",
+            "district": "HD 44",
+            "dist_type": "HD",
+            "incum_last": "MORTENSEN",
+            "incum_first": "DALE",
+            "incum_party": "R",
+            "incum_address": "446 CARAVAN AVE",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59105-2839"
+          }
+        ]
+      },
+      {
+        "key": "SD 23",
+        "values": [
+          {
+            "number": "23",
+            "district": "SD 23",
+            "dist_type": "SD",
+            "incum_last": "WEBB",
+            "incum_first": "ROGER",
+            "incum_party": "R",
+            "incum_address": "1132 GINGER AVE",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59105-2062",
+            "district_label": "Billings",
+            "district_counties": "Yellowstone"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "45",
+            "district": "HD 45",
+            "dist_type": "HD",
+            "incum_last": "ZOLNIKOV",
+            "incum_first": "DANIEL",
+            "incum_party": "R",
+            "incum_address": "PO BOX 50403",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59105-0403"
+          },
+          {
+            "number": "46",
+            "district": "HD 46",
+            "dist_type": "HD",
+            "incum_last": "JONES",
+            "incum_first": "DONALD",
+            "incum_party": "R",
+            "incum_address": "1945 CLARK AVE",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59102-4019"
+          }
+        ]
+      },
+      {
+        "key": "SD 24",
+        "values": [
+          {
+            "number": "24",
+            "district": "SD 24",
+            "dist_type": "SD",
+            "incum_last": "MCNALLY",
+            "incum_first": "MARY",
+            "incum_party": "D",
+            "incum_address": "PO BOX 20584",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59104-0584",
+            "district_label": "Billings",
+            "district_counties": "Yellowstone"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "47",
+            "district": "HD 47",
+            "dist_type": "HD",
+            "incum_last": "KELKER",
+            "incum_first": "KATHY",
+            "incum_party": "D",
+            "incum_address": "2438 RIMROCK RD",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59102-0556"
+          },
+          {
+            "number": "48",
+            "district": "HD 48",
+            "dist_type": "HD",
+            "incum_last": "KARJALA",
+            "incum_first": "JESSICA",
+            "incum_party": "D",
+            "incum_address": "6125 MASTERS BLVD",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59106-1036"
+          }
+        ]
+      },
+      {
+        "key": "SD 25",
+        "values": [
+          {
+            "number": "25",
+            "district": "SD 25",
+            "dist_type": "SD",
+            "incum_last": "DRISCOLL",
+            "incum_first": "ROBYN",
+            "incum_party": "D",
+            "incum_address": "404 HOULE DR",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59102-4861",
+            "district_label": "Billings",
+            "district_counties": "Yellowstone"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "49",
+            "district": "HD 49",
+            "dist_type": "HD",
+            "incum_last": "MCCARTHY",
+            "incum_first": "KELLY",
+            "incum_party": "D",
+            "incum_address": "625 YELLOWSTONE AVE",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59101-1624"
+          },
+          {
+            "number": "50",
+            "district": "HD 50",
+            "dist_type": "HD",
+            "incum_last": "COURT",
+            "incum_first": "VIRGINIA",
+            "incum_party": "D",
+            "incum_address": "18 HEATHERWOOD LN",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59102-2449"
+          }
+        ]
+      },
+      {
+        "key": "SD 26",
+        "values": [
+          {
+            "number": "26",
+            "district": "SD 26",
+            "dist_type": "SD",
+            "incum_last": "ARNTZEN",
+            "incum_first": "ELSIE",
+            "incum_party": "R",
+            "incum_address": "2323 AZALEA LN",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59102-2516",
+            "district_label": "Billings",
+            "district_counties": "Yellowstone"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "51",
+            "district": "HD 51",
+            "dist_type": "HD",
+            "incum_last": "MACDONALD",
+            "incum_first": "MARGARET ( MARGIE )",
+            "incum_party": "D",
+            "incum_address": "4111 JUNE DR",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59106-1565"
+          },
+          {
+            "number": "52",
+            "district": "HD 52",
+            "dist_type": "HD",
+            "incum_last": "HAGSTROM",
+            "incum_first": "DAVE",
+            "incum_party": "R",
+            "incum_address": "324 S 31ST ST",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59101-3942"
+          }
+        ]
+      },
+      {
+        "key": "SD 27",
+        "values": [
+          {
+            "number": "27",
+            "district": "SD 27",
+            "dist_type": "SD",
+            "incum_last": "SMITH",
+            "incum_first": "CARY",
+            "incum_party": "R",
+            "incum_address": "6133 TIMBERCOVE DR",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59106",
+            "district_label": "Billings",
+            "district_counties": "Yellowstone"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "53",
+            "district": "HD 53",
+            "dist_type": "HD",
+            "incum_last": "LASZLOFFY",
+            "incum_first": "SARAH",
+            "incum_party": "R",
+            "incum_address": "PO BOX 80613",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59108-0613"
+          },
+          {
+            "number": "54",
+            "district": "HD 54",
+            "dist_type": "HD",
+            "incum_last": "ESSMANN",
+            "incum_first": "JEFF",
+            "incum_party": "R",
+            "incum_address": "PO BOX 80945",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59108-0945"
+          }
+        ]
+      },
+      {
+        "key": "SD 28",
+        "values": [
+          {
+            "number": "28",
+            "district": "SD 28",
+            "dist_type": "SD",
+            "incum_last": "BROWN",
+            "incum_first": "TAYLOR",
+            "incum_party": "R",
+            "incum_address": "775 SQUAW CREEK RD",
+            "incum_city": "HUNTLEY",
+            "incum_state": "MT",
+            "incum_zip": "59037-9219",
+            "district_label": "Billings",
+            "district_counties": "Yellowstone"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "55",
+            "district": "HD 55",
+            "dist_type": "HD",
+            "incum_last": "RICCI",
+            "incum_first": "VINCE",
+            "incum_party": "R",
+            "incum_address": "1231 5TH AVE",
+            "incum_city": "LAUREL",
+            "incum_state": "MT",
+            "incum_zip": "59044-9602"
+          },
+          {
+            "number": "56",
+            "district": "HD 56",
+            "dist_type": "HD",
+            "incum_last": "RICHMOND",
+            "incum_first": "TOM",
+            "incum_party": "R",
+            "incum_address": "3103 WESTFIELD DR",
+            "incum_city": "BILLINGS",
+            "incum_state": "MT",
+            "incum_zip": "59106-1402"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "South-central Montana",
+    "values": [
+      {
+        "key": "SD 29",
+        "values": [
+          {
+            "number": "29",
+            "district": "SD 29",
+            "dist_type": "SD",
+            "incum_last": "HOWARD",
+            "incum_first": "DAVID",
+            "incum_party": "R",
+            "incum_address": "PO BOX 10",
+            "incum_city": "PARK CITY",
+            "incum_state": "MT",
+            "incum_zip": "59063-0010",
+            "district_label": "South-central Montana",
+            "district_counties": "Carbon, Stillwater, Sweet Grass"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "57",
+            "district": "HD 57",
+            "dist_type": "HD",
+            "incum_last": "MANDEVILLE",
+            "incum_first": "FORREST",
+            "incum_party": "R",
+            "incum_address": "PO BOX 337",
+            "incum_city": "COLUMBUS",
+            "incum_state": "MT",
+            "incum_zip": "59019-0337"
+          },
+          {
+            "number": "58",
+            "district": "HD 58",
+            "dist_type": "HD",
+            "incum_last": "BERGLEE",
+            "incum_first": "SETH",
+            "incum_party": "R",
+            "incum_address": "PO BOX 340",
+            "incum_city": "JOLIET",
+            "incum_state": "MT",
+            "incum_zip": "59041-0340"
+          }
+        ]
+      },
+      {
+        "key": "SD 30",
+        "values": [
+          {
+            "number": "30",
+            "district": "SD 30",
+            "dist_type": "SD",
+            "incum_last": "SWANDAL",
+            "incum_first": "NELS",
+            "incum_party": "R",
+            "incum_address": "PO BOX 147",
+            "incum_city": "WILSALL",
+            "incum_state": "MT",
+            "incum_zip": "59086-0147",
+            "district_label": "South-central Montana",
+            "district_counties": "Sweet Grass, Park, Gallatin"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "59",
+            "district": "HD 59",
+            "dist_type": "HD",
+            "incum_last": "REDFIELD",
+            "incum_first": "ALAN",
+            "incum_party": "R",
+            "incum_address": "538 MILL CREEK RD",
+            "incum_city": "LIVINGSTON",
+            "incum_state": "MT",
+            "incum_zip": "59047-8709"
+          },
+          {
+            "number": "60",
+            "district": "HD 60",
+            "dist_type": "HD",
+            "incum_last": "LAMM",
+            "incum_first": "DEBRA",
+            "incum_party": "R",
+            "incum_address": "PO BOX 1390",
+            "incum_city": "LIVINGSTON",
+            "incum_state": "MT",
+            "incum_zip": "59047-1390"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Bozeman",
+    "values": [
+      {
+        "key": "SD 31",
+        "values": [
+          {
+            "number": "31",
+            "district": "SD 31",
+            "dist_type": "SD",
+            "incum_last": "PHILLIPS",
+            "incum_first": "MIKE",
+            "incum_party": "D",
+            "incum_address": "9 W ARNOLD ST",
+            "incum_city": "BOZEMAN",
+            "incum_state": "MT",
+            "incum_zip": "59715-6127",
+            "district_label": "Bozeman",
+            "district_counties": "Gallatin"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "61",
+            "district": "HD 61",
+            "dist_type": "HD",
+            "incum_last": "WILLIAMS",
+            "incum_first": "KATHLEEN",
+            "incum_party": "D",
+            "incum_address": "PO BOX 548",
+            "incum_city": "BOZEMAN",
+            "incum_state": "MT",
+            "incum_zip": "59771-0548"
+          },
+          {
+            "number": "62",
+            "district": "HD 62",
+            "dist_type": "HD",
+            "incum_last": "WOODS",
+            "incum_first": "TOM",
+            "incum_party": "D",
+            "incum_address": "1447 CHERRY DR",
+            "incum_city": "BOZEMAN",
+            "incum_state": "MT",
+            "incum_zip": "59715-5924"
+          }
+        ]
+      },
+      {
+        "key": "SD 32",
+        "values": [
+          {
+            "number": "32",
+            "district": "SD 32",
+            "dist_type": "SD",
+            "incum_last": "HINKLE",
+            "incum_first": "JEDEDIAH",
+            "incum_party": "R",
+            "incum_address": "2451 DAWS DR APT B",
+            "incum_city": "BOZEMAN",
+            "incum_state": "MT",
+            "incum_zip": "59718-6982",
+            "district_label": "Bozeman",
+            "district_counties": "Gallatin"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "63",
+            "district": "HD 63",
+            "dist_type": "HD",
+            "incum_last": "BROWN",
+            "incum_first": "ZACH",
+            "incum_party": "D",
+            "incum_address": "601 S TRACY AVE",
+            "incum_city": "BOZEMAN",
+            "incum_state": "MT",
+            "incum_zip": "59715-5321"
+          },
+          {
+            "number": "64",
+            "district": "HD 64",
+            "dist_type": "HD",
+            "incum_last": "WHITE",
+            "incum_first": "KERRY",
+            "incum_party": "R",
+            "incum_address": "4000 BLACKWOOD RD",
+            "incum_city": "BOZEMAN",
+            "incum_state": "MT",
+            "incum_zip": "59718-7621"
+          }
+        ]
+      },
+      {
+        "key": "SD 33",
+        "values": [
+          {
+            "number": "33",
+            "district": "SD 33",
+            "dist_type": "SD",
+            "incum_last": "POMNICHOWSKI",
+            "incum_first": "JP",
+            "incum_party": "D",
+            "incum_address": "222 WESTRIDGE DR",
+            "incum_city": "BOZEMAN",
+            "incum_state": "MT",
+            "incum_zip": "59715-6025",
+            "district_label": "Bozeman",
+            "district_counties": "Gallatin"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "65",
+            "district": "HD 65",
+            "dist_type": "HD",
+            "incum_last": "POPE",
+            "incum_first": "CHRISTOPHER",
+            "incum_party": "D",
+            "incum_address": "1508 S WILLSON AVE",
+            "incum_city": "BOZEMAN",
+            "incum_state": "MT",
+            "incum_zip": "59715-5563"
+          },
+          {
+            "number": "66",
+            "district": "HD 66",
+            "dist_type": "HD",
+            "incum_last": "HAYMAN",
+            "incum_first": "DENISE",
+            "incum_party": "D",
+            "incum_address": "PO BOX 6115",
+            "incum_city": "BOZEMAN",
+            "incum_state": "MT",
+            "incum_zip": "59771-6155"
+          }
+        ]
+      },
+      {
+        "key": "SD 34",
+        "values": [
+          {
+            "number": "34",
+            "district": "SD 34",
+            "dist_type": "SD",
+            "incum_last": "VANCE",
+            "incum_first": "GORDON",
+            "incum_party": "R",
+            "incum_address": "305 STILLWATER AVE",
+            "incum_city": "BELGRADE",
+            "incum_state": "MT",
+            "incum_zip": "59718",
+            "district_label": "Bozeman",
+            "district_counties": "Gallatin"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "67",
+            "district": "HD 67",
+            "dist_type": "HD",
+            "incum_last": "BURNETT",
+            "incum_first": "TOM",
+            "incum_party": "R",
+            "incum_address": "4143 RAIN ROPER DR",
+            "incum_city": "BOZEMAN",
+            "incum_state": "MT",
+            "incum_zip": "59715-0634"
+          },
+          {
+            "number": "68",
+            "district": "HD 68",
+            "dist_type": "HD",
+            "incum_last": "WITTICH",
+            "incum_first": "ART",
+            "incum_party": "R",
+            "incum_address": "3116 SOURDOUGH RD",
+            "incum_city": "BOZEMAN",
+            "incum_state": "MT",
+            "incum_zip": "59715-9260"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Southwest Montana",
+    "values": [
+      {
+        "key": "SD 36",
+        "values": [
+          {
+            "number": "36",
+            "district": "SD 36",
+            "dist_type": "SD",
+            "incum_last": "BARRETT",
+            "incum_first": "DEBBY",
+            "incum_party": "R",
+            "incum_address": "18580 MT HIGHWAY 324",
+            "incum_city": "DILLON",
+            "incum_state": "MT",
+            "incum_zip": "59725-8031",
+            "district_label": "Southwest Montana",
+            "district_counties": "Madison, Beaverhead, Silver Bow, Jefferson"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "71",
+            "district": "HD 71",
+            "dist_type": "HD",
+            "incum_last": "SHAW",
+            "incum_first": "RAY",
+            "incum_party": "R",
+            "incum_address": "251 BIVENS CREEK RD",
+            "incum_city": "SHERIDAN",
+            "incum_state": "MT",
+            "incum_zip": "59749-9638"
+          },
+          {
+            "number": "72",
+            "district": "HD 72",
+            "dist_type": "HD",
+            "incum_last": "WELBORN",
+            "incum_first": "JEFFREY",
+            "incum_party": "R",
+            "incum_address": "PO BOX 790",
+            "incum_city": "DILLON",
+            "incum_state": "MT",
+            "incum_zip": "59725-0790"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Butte / Anaconda",
+    "values": [
+      {
+        "key": "SD 37",
+        "values": [
+          {
+            "number": "37",
+            "district": "SD 37",
+            "dist_type": "SD",
+            "incum_last": "SESSO",
+            "incum_first": "JON",
+            "incum_party": "D",
+            "incum_address": "811 W GALENA ST",
+            "incum_city": "BUTTE",
+            "incum_state": "MT",
+            "incum_zip": "59701-1540",
+            "district_label": "Butte / Anaconda",
+            "district_counties": "Silver Bow"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "73",
+            "district": "HD 73",
+            "dist_type": "HD",
+            "incum_last": "MCCLAFFERTY",
+            "incum_first": "EDIE",
+            "incum_party": "D",
+            "incum_address": "1311 STUART AVE",
+            "incum_city": "BUTTE",
+            "incum_state": "MT",
+            "incum_zip": "59701-5014"
+          },
+          {
+            "number": "74",
+            "district": "HD 74",
+            "dist_type": "HD",
+            "incum_last": "NOONAN",
+            "incum_first": "PAT",
+            "incum_party": "D",
+            "incum_address": "PO BOX 90",
+            "incum_city": "RAMSAY",
+            "incum_state": "MT",
+            "incum_zip": "59748-0090"
+          }
+        ]
+      },
+      {
+        "key": "SD 38",
+        "values": [
+          {
+            "number": "38",
+            "district": "SD 38",
+            "dist_type": "SD",
+            "incum_last": "KEANE",
+            "incum_first": "JIM",
+            "incum_party": "D",
+            "incum_address": "2131 WALL ST",
+            "incum_city": "BUTTE",
+            "incum_state": "MT",
+            "incum_zip": "59701-5527",
+            "district_label": "Butte / Anaconda",
+            "district_counties": "Silver Bow, Jefferson"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "75",
+            "district": "HD 75",
+            "dist_type": "HD",
+            "incum_last": "WAGONER",
+            "incum_first": "KIRK",
+            "incum_party": "R",
+            "incum_address": "1 JACKSON CREEK RD #2347",
+            "incum_city": "CLANCY",
+            "incum_state": "MT",
+            "incum_zip": "59634-9714"
+          },
+          {
+            "number": "76",
+            "district": "HD 76",
+            "dist_type": "HD",
+            "incum_last": "LYNCH",
+            "incum_first": "RYAN",
+            "incum_party": "D",
+            "incum_address": "PO BOX 934",
+            "incum_city": "BUTTE",
+            "incum_state": "MT",
+            "incum_zip": "59703-0934"
+          }
+        ]
+      },
+      {
+        "key": "SD 39",
+        "values": [
+          {
+            "number": "39",
+            "district": "SD 39",
+            "dist_type": "SD",
+            "incum_last": "VUCKOVICH",
+            "incum_first": "GENE",
+            "incum_party": "D",
+            "incum_address": "1205 W 3RD ST",
+            "incum_city": "ANACONDA",
+            "incum_state": "MT",
+            "incum_zip": "59711-1801",
+            "district_label": "Butte / Anaconda",
+            "district_counties": "Granite, Deer Lodge, Silver Bow, Powell"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "77",
+            "district": "HD 77",
+            "dist_type": "HD",
+            "incum_last": "SWANSON",
+            "incum_first": "KATHY",
+            "incum_party": "D",
+            "incum_address": "308 E 6TH ST",
+            "incum_city": "ANACONDA",
+            "incum_state": "MT",
+            "incum_zip": "59711-3016"
+          },
+          {
+            "number": "78",
+            "district": "HD 78",
+            "dist_type": "HD",
+            "incum_last": "PIERSON",
+            "incum_first": "GORDON",
+            "incum_party": "D",
+            "incum_address": "603 WASHINGTON ST",
+            "incum_city": "DEER LODGE",
+            "incum_state": "MT",
+            "incum_zip": "59722-1347"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Helena",
+    "values": [
+      {
+        "key": "SD 40",
+        "values": [
+          {
+            "number": "40",
+            "district": "SD 40",
+            "dist_type": "SD",
+            "incum_last": "KAUFMANN",
+            "incum_first": "CHRISTINE",
+            "incum_party": "D",
+            "incum_address": "825 BRECKINRIDGE ST",
+            "incum_city": "HELENA",
+            "incum_state": "MT",
+            "incum_zip": "59601-4433",
+            "district_label": "Helena",
+            "district_counties": "Powell, Lewis & Clark"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "79",
+            "district": "HD 79",
+            "dist_type": "HD",
+            "incum_last": "ECK",
+            "incum_first": "JENNY",
+            "incum_party": "D",
+            "incum_address": "PO BOX 1206",
+            "incum_city": "HELENA",
+            "incum_state": "MT",
+            "incum_zip": "59624-1206"
+          },
+          {
+            "number": "80",
+            "district": "HD 80",
+            "dist_type": "HD",
+            "incum_last": "MILLER",
+            "incum_first": "MIKE",
+            "incum_party": "R",
+            "incum_address": "20906 MT HIGHWAY 141",
+            "incum_city": "HELMVILLE",
+            "incum_state": "MT",
+            "incum_zip": "59843-9025"
+          }
+        ]
+      },
+      {
+        "key": "SD 41",
+        "values": [
+          {
+            "number": "41",
+            "district": "SD 41",
+            "dist_type": "SD",
+            "incum_last": "CAFERRO",
+            "incum_first": "MARY",
+            "incum_party": "D",
+            "incum_address": "607 N DAVIS ST",
+            "incum_city": "HELENA",
+            "incum_state": "MT",
+            "incum_zip": "59601-3737",
+            "district_label": "Helena",
+            "district_counties": "Lewis & Clark"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "81",
+            "district": "HD 81",
+            "dist_type": "HD",
+            "incum_last": "ELLIS",
+            "incum_first": "JANET",
+            "incum_party": "D",
+            "incum_address": "PO BOX 385",
+            "incum_city": "HELENA",
+            "incum_state": "MT",
+            "incum_zip": "59624-0385"
+          },
+          {
+            "number": "82",
+            "district": "HD 82",
+            "dist_type": "HD",
+            "incum_last": "FUNK",
+            "incum_first": "MOFFIE",
+            "incum_party": "D",
+            "incum_address": "825 8th AVE",
+            "incum_city": "HELENA",
+            "incum_state": "MT",
+            "incum_zip": "59601-3716"
+          }
+        ]
+      },
+      {
+        "key": "SD 42",
+        "values": [
+          {
+            "number": "42",
+            "district": "SD 42",
+            "dist_type": "SD",
+            "incum_last": "COHENOUR",
+            "incum_first": "JILL",
+            "incum_party": "D",
+            "incum_address": "2610 COLT DR",
+            "incum_city": "EAST HELENA",
+            "incum_state": "MT",
+            "incum_zip": "59635-3442",
+            "district_label": "Helena",
+            "district_counties": "Lewis & Clark"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "83",
+            "district": "HD 83",
+            "dist_type": "HD",
+            "incum_last": "HUNTER",
+            "incum_first": "CHUCK",
+            "incum_party": "D",
+            "incum_address": "717 DEARBORN AVE",
+            "incum_city": "HELENA",
+            "incum_state": "MT",
+            "incum_zip": "59601-2712"
+          },
+          {
+            "number": "84",
+            "district": "HD 84",
+            "dist_type": "HD",
+            "incum_last": "DUNWELL",
+            "incum_first": "MARY ANN",
+            "incum_party": "D",
+            "incum_address": "2520 LOOKOUT CIR",
+            "incum_city": "HELENA",
+            "incum_state": "MT",
+            "incum_zip": "59601-5615"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Missoula",
+    "values": [
+      {
+        "key": "SD 45",
+        "values": [
+          {
+            "number": "45",
+            "district": "SD 45",
+            "dist_type": "SD",
+            "incum_last": "BARRETT",
+            "incum_first": "DICK",
+            "incum_party": "D",
+            "incum_address": "219 AGNES AVE",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59801-8730",
+            "district_label": "Missoula",
+            "district_counties": "Missoula"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "89",
+            "district": "HD 89",
+            "dist_type": "HD",
+            "incum_last": "MCCONNELL",
+            "incum_first": "NATE",
+            "incum_party": "D",
+            "incum_address": "PO BOX 8511",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59807-8511"
+          },
+          {
+            "number": "90",
+            "district": "HD 90",
+            "dist_type": "HD",
+            "incum_last": "HILL",
+            "incum_first": "ELLIE BOLDMAN",
+            "incum_party": "D",
+            "incum_address": "501 DALY AVE",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59801-4412"
+          }
+        ]
+      },
+      {
+        "key": "SD 46",
+        "values": [
+          {
+            "number": "46",
+            "district": "SD 46",
+            "dist_type": "SD",
+            "incum_last": "MALEK",
+            "incum_first": "SUE",
+            "incum_party": "D",
+            "incum_address": "1400 PRAIRIE WAY",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59802-3420",
+            "district_label": "Missoula",
+            "district_counties": "Missoula"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "91",
+            "district": "HD 91",
+            "dist_type": "HD",
+            "incum_last": "BENNETT",
+            "incum_first": "BRYCE",
+            "incum_party": "D",
+            "incum_address": "118 WEST ALDER STREET APT 306",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59802-4233"
+          },
+          {
+            "number": "92",
+            "district": "HD 92",
+            "dist_type": "HD",
+            "incum_last": "MOORE",
+            "incum_first": "DAVID ( DOC )",
+            "incum_party": "R",
+            "incum_address": "3919 PAXSON ST",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59801-8941"
+          }
+        ]
+      },
+      {
+        "key": "SD 47",
+        "values": [
+          {
+            "number": "47",
+            "district": "SD 47",
+            "dist_type": "SD",
+            "incum_last": "LARSEN",
+            "incum_first": "CLIFF",
+            "incum_party": "D",
+            "incum_address": "8925 LAVALLE CREEK RD",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59808-9324",
+            "district_label": "Missoula",
+            "district_counties": "Missoula, Lake"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "93",
+            "district": "HD 93",
+            "dist_type": "HD",
+            "incum_last": "SALOMON",
+            "incum_first": "DANIEL",
+            "incum_party": "R",
+            "incum_address": "42470 SALOMON RD",
+            "incum_city": "RONAN",
+            "incum_state": "MT",
+            "incum_zip": "59864-9272"
+          },
+          {
+            "number": "94",
+            "district": "HD 94",
+            "dist_type": "HD",
+            "incum_last": "DUDIK",
+            "incum_first": "KIMBERLY",
+            "incum_party": "D",
+            "incum_address": "PO BOX 16712",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59808-6712"
+          }
+        ]
+      },
+      {
+        "key": "SD 48",
+        "values": [
+          {
+            "number": "48",
+            "district": "SD 48",
+            "dist_type": "SD",
+            "incum_last": "WOLKEN",
+            "incum_first": "CYNTHIA",
+            "incum_party": "D",
+            "incum_address": "PO BOX 16503",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59808-6503",
+            "district_label": "Missoula",
+            "district_counties": "Missoula"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "95",
+            "district": "HD 95",
+            "dist_type": "HD",
+            "incum_last": "WILSON",
+            "incum_first": "NANCY",
+            "incum_party": "D",
+            "incum_address": "332 S 1ST ST W APT A",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59801-1802"
+          },
+          {
+            "number": "96",
+            "district": "HD 96",
+            "dist_type": "HD",
+            "incum_last": "PERSON",
+            "incum_first": "ANDREW",
+            "incum_party": "D",
+            "incum_address": "PO BOX 8452",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59807-8452"
+          }
+        ]
+      },
+      {
+        "key": "SD 49",
+        "values": [
+          {
+            "number": "49",
+            "district": "SD 49",
+            "dist_type": "SD",
+            "incum_last": "SANDS",
+            "incum_first": "DIANE",
+            "incum_party": "D",
+            "incum_address": "4487 NICOLE CT",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59803-2791",
+            "district_label": "Missoula",
+            "district_counties": "Missoula"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "97",
+            "district": "HD 97",
+            "dist_type": "HD",
+            "incum_last": "TSCHIDA",
+            "incum_first": "BRAD",
+            "incum_party": "R",
+            "incum_address": "10825 MULLAN RD",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59808-9479"
+          },
+          {
+            "number": "98",
+            "district": "HD 98",
+            "dist_type": "HD",
+            "incum_last": "CURDY",
+            "incum_first": "WILLIS",
+            "incum_party": "D",
+            "incum_address": "11280 KONA RANCH RD",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59804-9790"
+          }
+        ]
+      },
+      {
+        "key": "SD 50",
+        "values": [
+          {
+            "number": "50",
+            "district": "SD 50",
+            "dist_type": "SD",
+            "incum_last": "FACEY",
+            "incum_first": "TOM",
+            "incum_party": "D",
+            "incum_address": "418 PLYMOUTH ST",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59801-4133",
+            "district_label": "Missoula",
+            "district_counties": "Missoula"
+          }
+        ],
+        "house_districts": [
+          {
+            "number": "99",
+            "district": "HD 99",
+            "dist_type": "HD",
+            "incum_last": "STEENBERG",
+            "incum_first": "TOM",
+            "incum_party": "D",
+            "incum_address": "4802 ASPEN DR",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59802-5218"
+          },
+          {
+            "number": "100",
+            "district": "HD 100",
+            "dist_type": "HD",
+            "incum_last": "OLSEN",
+            "incum_first": "ANDREA",
+            "incum_party": "D",
+            "incum_address": "622 ROLLINS ST",
+            "incum_city": "MISSOULA",
+            "incum_state": "MT",
+            "incum_zip": "59801-3719"
+          }
+        ]
+      }
+    ]
+  }
+]

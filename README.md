@@ -18,15 +18,35 @@ Filler data:
 - Gallatin County precincts
 - (TODO) Other geographies
 
+## Brainstorming
+
+Need to think about how to represent partial vote counts (easier with a cartogram or other diagram?)
+
+Look at scaling counties by population for one view?
+
+Important issues at a county level:
+- L&J Bond (city and county measures)
+- Skinner-Leland
+- Local house/senate races?
+
+Important at a state level
+- Gov Race
+    + County or HD-level map
+- U.S. House Race
+- MT House & Senate power balances (even if nothing's going to change)
+
+Necessary templates:
+- County choropleth (done)
+- House District choropleth (done)
+- county-scale cartogram (maybe?)
+- state-scale cartogram (use House Districts, since they're roughly equal pop) 
 
 ## TODO:
-- Refactor data merge out of individual map type classes
-- Add aggregate vote count bars (think through bond measures versus 2-way, 3-way races, etc.)
 - Brainstorm other diagram types
 - Look at cartograms?
 - Add to node-based development environment? (Webpack?)
-- Switch to local d3 script
 - Update CircleShadeMap.js for refactored data handling & responsiveness
+
 
 ## References
 
