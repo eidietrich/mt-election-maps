@@ -8,13 +8,10 @@
 var Choropleth = function (props){
   this.data = props.data;
   this.element = props.element;
-
   this.height = props.height;
 
-  console.log(this.element);
-  console.log(this.element.getBoundingClientRect().width);
-  this.width = this.element.getBoundingClientRect().width;
-
+  // console.log(this.element);
+  // console.log(this.element.getBoundingClientRect().width);
   // console.log(this.data);
   this.draw()
 }
@@ -22,8 +19,6 @@ Choropleth.prototype.draw = function() {
 
   d3.select(this.element).html("");
   this.width = this.element.getBoundingClientRect().width;
-
-
 
   // Make svg
   this.svg = d3.select(this.element)

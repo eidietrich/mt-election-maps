@@ -17,6 +17,10 @@
     .circle {
       opacity: 0.9;
     }
+    .grid line{
+      stroke: #bbb;
+      opacity: 0.8;
+    }
     #viz-container {
       margin: auto;
       padding-left: 10px
@@ -37,6 +41,7 @@
   <!-- <script src="https://d3js.org/topojson.v1.min.js"></script> -->
   <script src="js/Choropleth.js"></script>
   <script src="js/CircleShadeMap.js"></script>
+  <script src="js/BarGraph.js"></script>
   <script type="text/javascript">
     // Universal functions
     var globals = {
@@ -62,28 +67,35 @@
 
     function main (error, counties, gcPrecincts, countyVotes, precinctVotes) {
 
+      var countyBar = new BarGraph({
+        'element': document.querySelector('#chart1'),
+        'data': prepForBar(countyVotes, 'reg_voters', ['tester_votes', 'rehberg_votes']),
+        'height': 100
+      })
+
       var countiesMerged = mergeData(counties, countyVotes, 'NAME', {
         'voters': 'reg_voters',
         'votesCast': 'votes_cast',
         'toPlot': 'tester_votes'
       });
       var countyMap = new Choropleth({
-          'element': document.querySelector('#chart1'),
+          'element': document.querySelector('#chart2'),
           'data': countiesMerged,
           'height': 400
         });
 
-      var precinctsMerged = mergeData(gcPrecincts, precinctVotes, 'PRECINCT', {
-        'voters': 'VOTERS',
-        'votesCast': 'VOTERS',
-        'toPlot': 'A_VOTES'
-      })
-      var gcPrecinctsMap = new Choropleth({
-          'element': document.querySelector('#chart2'),
-          'data': precinctsMerged,
-          'height': 400
-        });
+      // var precinctsMerged = mergeData(gcPrecincts, precinctVotes, 'PRECINCT', {
+      //   'voters': 'VOTERS',
+      //   'votesCast': 'VOTERS',
+      //   'toPlot': 'A_VOTES'
+      // })
+      // var gcPrecinctsMap = new Choropleth({
+      //     'element': document.querySelector('#chart2'),
+      //     'data': precinctsMerged,
+      //     'height': 400
+      //   });
 
+      // OLD -------
       // var map = new CircleShadeMap({
       //     'element': '#circleshade',
       //     'data': {
@@ -96,8 +108,10 @@
 
       // For resizing
       d3.select(window).on('resize', function(){
+        countyBar.draw();
         countyMap.draw();
-        gcPrecinctsMap.draw();
+
+        // gcPrecinctsMap.draw();
       })
     }
 
@@ -127,6 +141,46 @@
       });
 
       return outGeoJson;
+    }
+    function prepForBar (data, maxDim, issueArray) {
+      // THIS IS HALF-FUNCTIONAL
+      // Produce object for BarGraph class to plot
+      // Form of:
+      // var preppedData = {
+      //   max: 100,
+      //   results: [
+      //     {'name': 'issueA', 'votes': 45},
+      //     {'name': 'issueB', 'votes': 34},
+      //     {'name': 'issueC', 'votes': 5}
+      //   ]
+      // }
+
+        // For summing values
+      var sum = function(items, prop){
+        return items.reduce(function(a, b){
+          return a + b[prop];
+        }, 0);
+      };
+
+      var preppedData = {
+        'max': null,
+        'results': []
+      };
+
+      console.log(data);
+
+
+
+      preppedData.max = sum(data, maxDim);
+      issueArray.forEach(function(name){
+        preppedData.results.push({
+          "name": name,
+          "votes": sum(data, name)});
+      })
+
+      console.log(preppedData);
+
+      return preppedData;
     }
 
   </script>
