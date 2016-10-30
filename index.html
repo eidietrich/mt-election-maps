@@ -43,6 +43,8 @@
   <script src="js/CircleShadeMap.js"></script>
   <script src="js/BarGraph.js"></script>
   <script src="js/OpposingBarGraph.js"></script>
+  <script src="js/DistrictArray.js"></script>
+  <script src="js/Cartogram.js"></script>
   <script type="text/javascript">
     // Universal functions
     var globals = {
@@ -64,31 +66,45 @@
       .defer(d3.json, './../data/gc_precincts.geojson')
       .defer(d3.json, './../data/2012_election_county_data.json')
       .defer(d3.json, './../data/fake_election_precincts.json')
+      .defer(d3.json, './../data/districts.json')
+      .defer(d3.json, './../data/mt-sen-carto-coords.json')
       .await(main);
 
-    function main (error, counties, gcPrecincts, countyVotes, precinctVotes) {
+    function main (error, counties, gcPrecincts, countyVotes, precinctVotes, districts, cartoSen) {
 
-      var countyBar = new BarGraph({
+      var cartogram = new Cartogram({
         'element': document.querySelector('#chart1'),
-        'data': prepForBar(countyVotes, 'reg_voters', ['tester_votes', 'rehberg_votes','cox_votes']),
-        'height': 100
-      })
-      var countyOpposing = new OpposingBarGraph({
-        'element': document.querySelector('#chart2'),
-        'data': prepForBar(countyVotes, 'reg_voters', ['tester_votes', 'rehberg_votes','cox_votes']),
-        'height': 100
+        'data': cartoSen,
+        'height': 500
       })
 
-      var countiesMerged = mergeData(counties, countyVotes, 'NAME', {
-        'voters': 'reg_voters',
-        'votesCast': 'votes_cast',
-        'toPlot': 'tester_votes'
-      });
-      var countyMap = new Choropleth({
-          'element': document.querySelector('#chart3'),
-          'data': countiesMerged,
-          'height': 400
-        });
+      // var districts = new DistrictArray({
+      //   'element': document.querySelector('#chart1'),
+      //   'data': districts,
+      //   'height': 1500
+      // });
+
+      // var countyBar = new BarGraph({
+      //   'element': document.querySelector('#chart1'),
+      //   'data': prepForBar(countyVotes, 'reg_voters', ['tester_votes', 'rehberg_votes','cox_votes']),
+      //   'height': 100
+      // })
+      // var countyOpposing = new OpposingBarGraph({
+      //   'element': document.querySelector('#chart2'),
+      //   'data': prepForBar(countyVotes, 'reg_voters', ['tester_votes', 'rehberg_votes','cox_votes']),
+      //   'height': 100
+      // })
+
+      // var countiesMerged = mergeData(counties, countyVotes, 'NAME', {
+      //   'voters': 'reg_voters',
+      //   'votesCast': 'votes_cast',
+      //   'toPlot': 'tester_votes'
+      // });
+      // var countyMap = new Choropleth({
+      //     'element': document.querySelector('#chart2'),
+      //     'data': countiesMerged,
+      //     'height': 400
+      //   });
 
       // var precinctsMerged = mergeData(gcPrecincts, precinctVotes, 'PRECINCT', {
       //   'voters': 'VOTERS',
@@ -114,9 +130,7 @@
 
       // For resizing
       d3.select(window).on('resize', function(){
-        countyBar.draw();
-        countyOpposing.draw();
-        countyMap.draw();
+        cartogram.draw();
       })
     }
 
