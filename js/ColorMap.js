@@ -14,14 +14,11 @@ var senateMap = new ColorMap({
       })
 */
 
-// Global vars - TODO: Move these to functions calls
+// Global vars - TODO: Move these to functions calls in index.html
 // var colorBy = function(d) { return globals.colorByParty(d.properties.incum_party) };
 var colorBy = function(d) { return globals.colorByRegion(d.properties.district_label); };
 
 var featureLabel = function(d) { return d.properties.district; };
-// var featureLabel = null;
-
-// Make choropleth obsolete by adding a custom c
 
 var ColorMap = function (props){
   this.data = props.data;
@@ -73,45 +70,3 @@ ColorMap.prototype.draw = function() {
     .attr("fill", "black")
     .text(featureLabel)
 }
-
-
-  // // Old Code for drawing directly from json
-
-  // // Scales to translate x & y coords into pixel dimensions
-  // // Single scale because blocks are square
-  // this.scale = d3.scaleLinear()
-  //   .range([0, this.plotWidth])
-  //   .domain([0, 20]) // TODO: un-hardcode
-
-
-  // // CURRENT CODE ASSUME FIRST DIMENSION IS MINIMUM
-  // // TODO: Add functions to test data integrity
-  // // TODO: Add data join so it's possible to color by SD data (region, incumbent, etc.)
-
-  // // Determine rectangle dimensions, [width, height]
-  // var that = this;
-  // this.data.forEach(function(d){
-  //   d.dims = [
-  //     that.blockDim + Math.abs(d.coords[0][0] - d.coords[1][0]),
-  //     that.blockDim + Math.abs(d.coords[0][1] - d.coords[1][1])
-  //   ]
-  // });
-
-  // // Draw rectangles
-
-  // this.districts = this.plot.append("g")
-  //   .selectAll('.district')
-  //   .data(this.data).enter()
-  //   .append("g").attr("class", "district");
-  // this.districts.append("rect")
-  //   .attr("fill", "green")
-  //   .attr("stroke", "gray")
-  //   .attr("x", function(d) { return that.scale(d.coords[0][0]); })
-  //   .attr("y", function(d) { return that.scale(d.coords[0][1]); })
-  //   .attr("width", function(d) { return that.scale(d.dims[0]); })
-  //   .attr("height", function(d) { return that.scale(d.dims[1]); })
-  // this.districts.append("text")
-  //   .attr("class", "label")
-  //   .attr("x", function(d) { return that.scale(d.coords[0][0] + d.dims[0] / 2); })
-  //   .attr("y", function(d) { return that.scale(d.coords[0][1] + d.dims[1] / 2); })
-  //   .text(function(d) { return d.sd; })

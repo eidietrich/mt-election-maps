@@ -1,22 +1,28 @@
-# Montana Elections
+# Visualizing Montana's politics
 
 Sandbox for building d3 visualizations to display Montana / Gallatin County election data
 
 Structured (currently) as an index.html entrance point that pulls in different map types as self-contained classes from independent files.
 
-## Setup
+## Data structure
 
-Geographies:
-- Montana Counties --> Key = County name (all caps) 'NAME'
-- Gallatin County precincts --> key = 'PRECINCT'
-- (TODO) Montana House Districts
-- (TODO) Montana Senate Districts (aggregated House Districts)
+- Geographies (stored as geojson)
+    + MT Counties (feature key = "NAME")
+    + MT House Districts (feature key = 'number')
+    + MT Senate Districts (feature key = 'number')
+    + Gallatin County precincts (feature key = 'PRECINCT')
+    + MT Senate District cartogram (feature key = 'sd')
+    + (TODO) MT House District cartogram (feature key = ??)
+    + (Possible TODO) MT County cartogram
 
+- Non geographic static data
+    + 2012 county-level election data
+    + placeholder GC precinct-level data
+    + Senate district info (e.g incumbents)
+    + House district info (e.g. incumbents)
 
-Filler data: 
-- County-level vote tallies
-- Gallatin County precincts
-- (TODO) Other geographies
+- Potentially dynamic data
+    + Waiting on Becker's work with AP election API
 
 ## Brainstorming
 
@@ -39,39 +45,8 @@ Necessary templates:
 - County choropleth (done)
 - House District choropleth (done)
 - county-scale cartogram (maybe?)
-- state-scale cartogram (use House Districts, since they're roughly equal pop) 
+- state-scale cartogram (done, sort of) 
 
-Data structure for house district-level display
-
-Senate district
-GeoJSON, with a properties: "HD" link to House District
-
-District
-- Senate district
-    + SD
-- House districts
-    + HD1
-    + HD2
-
-## Data structure
-
-- Geographies (stored as geojson)
-    + MT Counties --> GeoJSON (feature key = ??)
-    + MT House Districts (feature key = 'number')
-    + MT Senate Districts (feature key = 'number')
-    + Gallatin County precincts (feature key = 'PRECINCT')
-    + MT Senate District cartogram (feature key = 'sd')
-    + (TODO) MT House District cartogram (feature key = ??)
-    + (Possible TODO) MT County cartogram
-
-- Non geographic static data
-    + 2012 county-level election data
-    + placeholder GC precinct-level data
-    + Senate district info (e.g incumbents)
-    + House district info (e.g. incumbents)
-
-- Potentially dynamic data
-    + Waiting on Becker's work with AP election API
 
 ## TODO:
 - Add to node-based development environment? (Webpack?)
