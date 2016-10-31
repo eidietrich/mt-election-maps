@@ -81,7 +81,6 @@ District
 - Break colorBy and featureLabel functions out of ColorMap global space into props
 - Make choropleth obsolete by adding a custom colorBy function to ColorMap
 - Figure out how to work data linkages between house and senate districts
-- Break data processing functions out into separate .js file
 - Remove mergeData (replaced by bindToGeoJson)
 - Make house cartogram
 - Refine senate cartogram — figure out how to automate the process
