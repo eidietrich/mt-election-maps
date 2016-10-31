@@ -10,14 +10,14 @@ var fs = require('fs');
 
 var cartoFile = './raw_data/mt-sen-carto-coords.json';
 
-var outFile = './data/sen-carto.geojson';
+var outFile = './geodata/sen-carto.geojson';
 
 var geoJson = {
   "type": "FeatureCollection",
   "features": []
 }
 
-var shapeWidth = 0.9; // Non-1 to provide a buffer between shapes
+var shapeWidth = 1.0; // Non-1 to provide a buffer between shapes
 
 function writeAsJson(filePath, object){
   let json = JSON.stringify(object, null, 2);

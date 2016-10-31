@@ -55,31 +55,37 @@ District
 
 ## Data structure
 
-- Geographies
+- Geographies (stored as geojson)
     + MT Counties --> GeoJSON (feature key = ??)
-    + MT House Districts --> GeoJSON (feature key = ??)
-    + MT Senate Districts --> GeoJSON (feature key = ??)
-    + Gallatin County precincts --> GeoJSON (feature key = ??)
-    + MT Senate District cartogram --> (TODO: Transform to pseudo-geoJSON) (feature key = ??)
-    + MT House District cartogram (feature key = ??)
-    + (Possibly TODO) MT County cartogram
-
-NB: Geographies also need to have centroid coordinates included in properties fields for labeling and such
-OR implement bounding box center solution from here: http://stackoverflow.com/questions/12062561/calculate-svg-path-centroid-with-d3-js
+    + MT House Districts (feature key = 'number')
+    + MT Senate Districts (feature key = 'number')
+    + Gallatin County precincts (feature key = 'PRECINCT')
+    + MT Senate District cartogram (feature key = 'sd')
+    + (TODO) MT House District cartogram (feature key = ??)
+    + (Possible TODO) MT County cartogram
 
 - Non geographic static data
     + 2012 county-level election data
-    + fake GC precinct-level data
-    + 
+    + placeholder GC precinct-level data
+    + Senate district info (e.g incumbents)
+    + House district info (e.g. incumbents)
 
 - Potentially dynamic data
     + Waiting on Becker's work with AP election API
 
 ## TODO:
-- Brainstorm other diagram types
-- Look at cartograms?
 - Add to node-based development environment? (Webpack?)
 - Update CircleShadeMap.js for refactored data handling & responsiveness
+- Retool DistrictArray.js so it doesn't take hideous data input (have it take multiple files, and move data nesting into the class)
+- Delete districts.js (blegh)
+- Break colorBy and featureLabel functions out of ColorMap global space into props
+- Make choropleth obsolete by adding a custom colorBy function to ColorMap
+- Figure out how to work data linkages between house and senate districts
+- Break data processing functions out into separate .js file
+- Remove mergeData (replaced by bindToGeoJson)
+- Make house cartogram
+- Refine senate cartogram — figure out how to automate the process
+- Make local scope map Class (for honing in on particular places)
 
 
 ## References

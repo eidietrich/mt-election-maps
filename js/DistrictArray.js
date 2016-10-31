@@ -28,7 +28,6 @@ DistrictArray.prototype.draw = function() {
     .data(this.data).enter()
     .append('g').attr("class","region")
     .attr("transform", function(d,i) { return "translate(" + 10 + "," + (20 + i * 90) + ")"; });
-
   this.regions.append('text')
     .text(function(d){ return d.key; });
 
@@ -55,59 +54,3 @@ DistrictArray.prototype.draw = function() {
     .attr("fill",function(d){ return d.incum_party === 'R' ? "red" : "blue"; });
 
 }
-// DistrictArray.prototype.drawRegion = function(selection, data) {
-//   // THIS DOESN'T SEEM TO BE WORKING - MAYBE TRY A DIFFERENT APPROACH
-//   console.log(selection);
-//   console.log(data);
-// }
-// DistrictArray.prototype.drawDistrict = function(selection, data) {
-//   // draws for a specific district
-//   return null;
-// }
-// DistrictArray.prototype.drawSeat = function(selection, data) {
-//   // draws for a specific seat
-//   return null
-// }
-
-
-  // Make section for each region
-
-  // For each region, display districts
-
-  // Three stacked squares, (senate district, HDa, HDb)
-
-
-
-  // FROM template
-  // Make svg
-
-
-  // // Initialize projection & path
-  // var projection = d3.geoMercator()
-  //   .fitExtent([[10,10],[this.width, this.height]], this.data);
-  // var path = d3.geoPath()
-  //   .projection(projection);
-
-  // // Draw map of districts
-  // var districts = this.svg.append("g")
-  //   .selectAll("path")
-  //   .data(this.data.features)
-  //   .enter();
-  // districts.append("path")
-  //   .attr("d", path)
-  //   .attr("fill", function(d){
-  //     votesForA = d.properties.votesForA;
-  //     votesCast = d.properties.votesCast;
-  //     return globals.colorScale(votesForA / votesCast);
-  //   })
-  //   .attr("class", "districts")
-
-  // // Add labels
-  // districts.append("text")
-  //   .attr("transform", function(d) {return "translate(" + projection(d.properties.centerCoords) + ")"; })
-  //   .text(function(d){
-  //     votesForA = d.properties.votesForA;
-  //     votesCast = d.properties.votesCast;
-  //     return globals.format(votesForA / votesCast);
-  //   })
-  //   .attr("class","label");

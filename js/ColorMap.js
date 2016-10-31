@@ -1,11 +1,29 @@
-// Cartogram
+// ColorMap
 
-// Draws cartogram (of senate districts currently)
+// Draws map with color
+// (Also works for cartograms when data is provided as a geojson)
 
 // Expects data as a geojson
 
+/* Sample initialization
+var senateMap = new ColorMap({
+        'element': document.querySelector('#chart2'),
+        'data': bindToGeoJson(mtSenDistricts, mtSenData, 'number', 'number',
+            ['district', 'incum_party', 'district_label']),
+        'aspectRatio': .6
+      })
+*/
 
-var Cartogram = function (props){
+// Global vars - TODO: Move these to functions calls
+// var colorBy = function(d) { return globals.colorByParty(d.properties.incum_party) };
+var colorBy = function(d) { return globals.colorByRegion(d.properties.district_label); };
+
+var featureLabel = function(d) { return d.properties.district; };
+// var featureLabel = null;
+
+// Make choropleth obsolete by adding a custom c
+
+var ColorMap = function (props){
   this.data = props.data;
   this.element = props.element;
   this.height = props.height;
@@ -16,7 +34,7 @@ var Cartogram = function (props){
 
   this.draw()
 }
-Cartogram.prototype.draw = function() {
+ColorMap.prototype.draw = function() {
 
   d3.select(this.element).html("");
   this.width = this.element.getBoundingClientRect().width;
@@ -46,15 +64,14 @@ Cartogram.prototype.draw = function() {
     .enter();
   districts.append("path")
     .attr("d", path)
-    .attr("fill", function(d) { return globals.colorByParty(d.properties.incum_party); })
-    // .attr("fill", function(d) { return globals.colorByRegion(d.properties.district_label); })
+    .attr("fill", colorBy)
     .attr("class", "districts")
   districts.append("text")
     .attr("x", function(d){ return path.centroid(d)[0]; })
     .attr("y", function(d) { return path.centroid(d)[1]; })
     .attr("text-anchor", "middle")
     .attr("fill", "black")
-    // .text(function(d) { return d.properties.district; })
+    .text(featureLabel)
 }
 
 
