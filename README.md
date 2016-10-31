@@ -41,6 +41,40 @@ Necessary templates:
 - county-scale cartogram (maybe?)
 - state-scale cartogram (use House Districts, since they're roughly equal pop) 
 
+Data structure for house district-level display
+
+Senate district
+GeoJSON, with a properties: "HD" link to House District
+
+District
+- Senate district
+    + SD
+- House districts
+    + HD1
+    + HD2
+
+## Data structure
+
+- Geographies
+    + MT Counties --> GeoJSON (feature key = ??)
+    + MT House Districts --> GeoJSON (feature key = ??)
+    + MT Senate Districts --> GeoJSON (feature key = ??)
+    + Gallatin County precincts --> GeoJSON (feature key = ??)
+    + MT Senate District cartogram --> (TODO: Transform to pseudo-geoJSON) (feature key = ??)
+    + MT House District cartogram (feature key = ??)
+    + (Possibly TODO) MT County cartogram
+
+NB: Geographies also need to have centroid coordinates included in properties fields for labeling and such
+OR implement bounding box center solution from here: http://stackoverflow.com/questions/12062561/calculate-svg-path-centroid-with-d3-js
+
+- Non geographic static data
+    + 2012 county-level election data
+    + fake GC precinct-level data
+    + 
+
+- Potentially dynamic data
+    + Waiting on Becker's work with AP election API
+
 ## TODO:
 - Brainstorm other diagram types
 - Look at cartograms?

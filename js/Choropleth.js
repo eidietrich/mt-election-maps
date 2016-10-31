@@ -16,7 +16,6 @@ var Choropleth = function (props){
   this.draw()
 }
 Choropleth.prototype.draw = function() {
-
   d3.select(this.element).html("");
   this.width = this.element.getBoundingClientRect().width;
 

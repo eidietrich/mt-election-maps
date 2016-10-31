@@ -67,7 +67,7 @@
       .defer(d3.json, './../data/2012_election_county_data.json')
       .defer(d3.json, './../data/fake_election_precincts.json')
       .defer(d3.json, './../data/districts.json')
-      .defer(d3.json, './../data/mt-sen-carto-coords.json')
+      .defer(d3.json, './../data/sen-carto.geojson')
       .await(main);
 
     function main (error, counties, gcPrecincts, countyVotes, precinctVotes, districts, cartoSen) {
