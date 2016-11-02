@@ -8,8 +8,8 @@
 <body>
   <div id="chart1"></div>
   <div id="viz-container">
-    <div id="chart1"></div>
-    <div id="chart2"></div>
+    <div id="senateMap"></div>
+    <div id="senateMap2"></div>
     <div id="chart3"></div>
     <div id="chart4"></div>
   </div>
@@ -52,10 +52,11 @@
       ) {
 
       var comboData = bindToGeoJson(mtSenDistricts, mtSenData, 'number', 'number', ['district', 'incum_party', 'district_label']);
-      Panel('#viz-container',
+      var comboData2 = bindToGeoJson(mtHouseDistricts, mtHouseData, 'number', 'number', ['district', 'incum_party', 'district_label']);
+      Panel(
         [
           {'id': 'senateMap', 'Template': ColorMap, 'data': comboData },
-          {'id': 'senateMap2', 'Template': ColorMap, 'data': comboData }
+          {'id': 'senateMap2', 'Template': ColorMap, 'data': comboData2 }
         ]
       );
 

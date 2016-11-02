@@ -122,7 +122,6 @@ Necessary templates:
 - Refine senate cartogram — figure out how to automate the process
 - Make local scope map Class (for honing in on particular places)
 - Change index.html to routing page
-- Add tab-generation function (mostly done)
 
 Conversation w Becker, Nov 1, pm:
 - He'll make dashboard template - with tabs for each race
