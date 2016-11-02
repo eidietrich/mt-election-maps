@@ -1,0 +1,24 @@
+.label {
+  font: 10px sans-serif;
+  fill: white;
+  text-anchor: middle;
+}
+.districts {
+  /*fill: #bbb;*/
+  stroke: #fff;
+  border-width: 1px;
+}
+.circle {
+  opacity: 0.9;
+}
+.grid line{
+  stroke: #bbb;
+  opacity: 0.8;
+}
+#viz-container {
+  margin: auto;
+  padding-left: 10px
+  padding-right: 10px;
+  width: 100%;
+  max-width: 1000px;
+}

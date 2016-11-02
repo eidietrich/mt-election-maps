@@ -4,6 +4,7 @@ Sandbox for building d3 visualizations to display Montana / Gallatin County elec
 
 Structured (currently) as an index.html entrance point that pulls in different map types as self-contained classes from independent files.
 
+
 ## Data structure
 
 - Geographies (stored as geojson)
@@ -24,7 +25,67 @@ Structured (currently) as an index.html entrance point that pulls in different m
 - Potentially dynamic data
     + Waiting on Becker's work with AP election API
 
+## Election app pages
+
+Index has what?
+
+1. /governor - Montana Governor - Bullock v Gianforte v Others
+    - County-level choropleth
+    - Population-based cartogram (hopefully)
+    - Tabulated votes
+2. /us-house - Montana U.S. House - Zinke v Juneau v others
+    - County-level choropleth
+    - Population-based cartogram (hopefully)
+    - Tabulated votes
+3. /president U.S. President - Clinton v Trump v Others
+    - County-level choropleth
+    - Population-based cartogram (hopefully)
+    - Tabulated votes
+4. /mt-house - Montana House
+    - House district choropleth
+    - House district cartogram
+    - Tabulated votes - competitive seats labeled
+5. /mt-senate - Montana Senate
+    - Senate district choropleth
+    - Senate district cartogram
+    - Tabulated votes - competitive seats labeled
+6. /medical-marijuana - Medical Marijuana - Yes v no
+    - County-level choropleth
+    - Population-based cartogram (hopefully)
+    - Tabulated votes
+7. /anti-trapping - Anti-Trapping - Yes v no
+    - County-level choropleth
+    - Population-based cartogram (hopefully)
+    - Tabulated votes
+8. /gallatin-county-commission - Gallatin County Commission - Skinner v Leland
+    - Gallatin County precinct choropleth
+    - Table
+9. /law-and-justice Law and Justice - Yes v no on city and county measures
+    - Gallatin County precinct choropleth for city
+    - Gallatin County precinct choropleth for county
+    - Tablulated votes
+
+
 ## Brainstorming
+
+- 10 most competitive house seats - based on 2014 results
+- X most competitive senate seats - based on 2014 results
+
+Things to present on election night
+
+Present state-level race
+- MT House 
+- MT Senate
+- Presidential - include libertarian votes (Map third part-votes alone, too)
+- Bullock-Gianforte
+- Zinke-Juneau
+- Medical Marijuana
+- Anti-trapping
+
+Gallatin County level
+- Leland-Skinner
+- L&J
+- 
 
 Need to think about how to represent partial vote counts (easier with a cartogram or other diagram?)
 
@@ -60,6 +121,14 @@ Necessary templates:
 - Make house cartogram
 - Refine senate cartogram — figure out how to automate the process
 - Make local scope map Class (for honing in on particular places)
+- Change index.html to routing page
+- Add tab-generation function (mostly done)
+
+Conversation w Becker, Nov 1, pm:
+- He'll make dashboard template - with tabs for each race
+- I need to make self-contained javascript functions rendering each graphic using data.
+- Make a function that generates each tab, pulls in each graph.
+- Include an on-tab refresh button that checks for new data, re-renders graphs if there's new data
 
 
 ## References
