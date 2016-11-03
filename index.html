@@ -8,8 +8,8 @@
 <body>
   <div id="chart1"></div>
   <div id="viz-container">
-    <div id="senateMap"></div>
-    <div id="senateMap2"></div>
+    <div id="chart1"></div>
+    <div id="chart2"></div>
     <div id="chart3"></div>
     <div id="chart4"></div>
   </div>
@@ -18,6 +18,7 @@
 
   <script src="js/data-wrangling.js"></script>
   <script src="js/globals.js"></script>
+  <script src="js/Dashboard.js"></script>
   <script src="js/Panel.js"></script>
 
   <script src="js/Choropleth.js"></script>
@@ -28,21 +29,57 @@
   <script src="js/Cartogram.js"></script>
   <script src="js/ColorMap.js"></script>
   <script type="text/javascript">
-    // Queue up multiple data files to load
-    d3.queue()
-      // Geodata
-      .defer(d3.json, './../geodata/mt_counties.geojson')
-      .defer(d3.json, './../geodata/gc_precincts.geojson')
-      .defer(d3.json, './../geodata/mt_senate_districts.geojson')
-      .defer(d3.json, './../geodata/mt_house_districts.geojson')
-      .defer(d3.json, './../geodata/sen-carto.geojson')
-      // Other data
-      .defer(d3.json, './../data/2012_election_county_data.json')
-      .defer(d3.json, './../data/fake_election_precincts.json')
-      .defer(d3.json, './../data/districts.json')
-      .defer(d3.csv, './../data/mt-senate.csv')
-      .defer(d3.csv, './../data/mt-house.csv')
-      .await(main);
+
+  var dataFiles = [
+    // Array of files for Dashboard to pull in
+    // Geodata
+    {'name': 'mtSenDistricts', 'file': './../geodata/mt_senate_districts.geojson', 'loader': d3.json},
+    {'name': 'mtHouseDistricts', 'file': './../geodata/mt_house_districts.geojson', 'loader': d3.json},
+    // Other data
+    {'name': 'mtSenData', 'file': './../data/mt-senate.csv', 'loader': d3.csv},
+    {'name': 'mtHouseData', 'file': './../data/mt-house.csv', 'loader': d3.csv},
+  ];
+  var dataJoins = [
+    // Array of data processing functions for Dashboard to run on data refresh
+    // TODO: Figure out how to make this more concise?
+    {
+      'name': 'comboSenDistricts',
+      'functName': bindToGeoJson,
+      'geoData': 'mtSenDistricts', 'joinData': 'mtSenData',
+      'geoKey': 'number', 'joinKey': 'number',
+      'includeCols': ['district', 'incum_party', 'district_label']
+    },{
+      'name': 'comboHouseDistricts',
+      'functName': bindToGeoJson,
+      'geoData': 'mtHouseDistricts', 'joinData': 'mtHouseData',
+      'geoKey': 'number', 'joinKey': 'number',
+      'includeCols': ['district', 'incum_party', 'district_label']
+    }
+  ];
+  var initialPanel = {
+    'name': 'panel1',
+    'design': [
+      {'id': 'chart1', 'Template': ColorMap, 'data': 'comboSenDistricts' },
+      {'id': 'chart2', 'Template': ColorMap, 'data': 'comboHouseDistricts' }
+    ]
+  };
+  var dashboard = new Dashboard(dataFiles, dataJoins, initialPanel);
+
+    // // Queue up multiple data files to load
+    // d3.queue()
+    //   // Geodata
+    //   .defer(d3.json, './../geodata/mt_counties.geojson')
+    //   .defer(d3.json, './../geodata/gc_precincts.geojson')
+    //   .defer(d3.json, './../geodata/mt_senate_districts.geojson')
+    //   .defer(d3.json, './../geodata/mt_house_districts.geojson')
+    //   .defer(d3.json, './../geodata/sen-carto.geojson')
+    //   // Other data
+    //   .defer(d3.json, './../data/2012_election_county_data.json')
+    //   .defer(d3.json, './../data/fake_election_precincts.json')
+    //   .defer(d3.json, './../data/districts.json')
+    //   .defer(d3.csv, './../data/mt-senate.csv')
+    //   .defer(d3.csv, './../data/mt-house.csv')
+    //   .await(main);
 
     function main (error,
       // Geodata
@@ -51,14 +88,14 @@
       countyVotes, precinctVotes, districts, mtSenData, mtHouseData
       ) {
 
-      var comboData = bindToGeoJson(mtSenDistricts, mtSenData, 'number', 'number', ['district', 'incum_party', 'district_label']);
-      var comboData2 = bindToGeoJson(mtHouseDistricts, mtHouseData, 'number', 'number', ['district', 'incum_party', 'district_label']);
-      Panel(
-        [
-          {'id': 'senateMap', 'Template': ColorMap, 'data': comboData },
-          {'id': 'senateMap2', 'Template': ColorMap, 'data': comboData2 }
-        ]
-      );
+      // var comboData = bindToGeoJson(mtSenDistricts, mtSenData, 'number', 'number', ['district', 'incum_party', 'district_label']);
+      // var comboData2 = bindToGeoJson(mtHouseDistricts, mtHouseData, 'number', 'number', ['district', 'incum_party', 'district_label']);
+      // Panel(
+      //   [
+      //     {'id': 'senateMap', 'Template': ColorMap, 'data': comboData },
+      //     {'id': 'senateMap2', 'Template': ColorMap, 'data': comboData2 }
+      //   ]
+      // );
 
       // var cartogram = new ColorMap({
       //   'element': document.querySelector('#chart1'),

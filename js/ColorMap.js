@@ -21,6 +21,8 @@ var colorBy = function(d) { return globals.colorByParty(d.properties.incum_party
 var featureLabel = function(d) { return d.properties.district; };
 
 var ColorMap = function (props){
+  console.log('ColorMap called');
+
   this.data = props.data;
   this.element = props.element;
   this.height = props.height;
