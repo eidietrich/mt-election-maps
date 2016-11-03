@@ -113,7 +113,7 @@ Necessary templates:
 - Add to node-based development environment? (Webpack?)
 - Update CircleShadeMap.js for refactored data handling & responsiveness
 - Retool DistrictArray.js so it doesn't take hideous data input (have it take multiple files, and move data nesting into the class)
-- Delete districts.js (blegh)
+- Delete districts.json (blegh)
 - Break colorBy and featureLabel functions out of ColorMap global space into props
 - Make choropleth obsolete by adding a custom colorBy function to ColorMap
 - Figure out how to work data linkages between house and senate districts
@@ -121,7 +121,8 @@ Necessary templates:
 - Make house cartogram
 - Refine senate cartogram — figure out how to automate the process
 - Make local scope map Class (for honing in on particular places)
-- Change index.html to routing page
+- Add 'refresh' button to render class
+- Tweak Dashboard >> Panel >> Component pathway to allow custom props being passed to components (e.g. colorScales and such)
 
 Conversation w Becker, Nov 1, pm:
 - He'll make dashboard template - with tabs for each race

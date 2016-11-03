@@ -6,15 +6,27 @@
   <link rel="stylesheet" type="text/css" href="./../css/main.css">
 </head>
 <body>
-  <div id="chart1"></div>
+  <ul class="nav nav-tabs"">
+    <li role="presentation" id="mtGov" onclick="handleTabClick(this);" class="active"><a href="#">MT Gov</a></li>
+    <li role="presentation" id="usHouse" onclick="handleTabClick(this);"><a href="#">US House Seat</a></li>
+    <li role="presentation" id="usPresident" onclick="handleTabClick(this);"><a href="#">US Presidency</a></li>
+    <li role="presentation" id="mtSenate" onclick="handleTabClick(this);"><a href="#">Montana Senate</a></li>
+    <li role="presentation" id="mtHouse" onclick="handleTabClick(this);"><a href="#">Montana House</a></li>
+    <li role="presentation" id="medMarijuana" onclick="handleTabClick(this);"><a href="#">I-marijuana</a></li>
+    <li role="presentation" id="antiTrapping" onclick="handleTabClick(this);"><a href="#">I-trapping</a></li>
+    <li role="presentation" id="gcCommission" onclick="handleTabClick(this);"><a href="#">Gallatin County Commission</a></li>
+    <li role="presentation" id="lawCenter" onclick="handleTabClick(this);"><a href="#">L&amp;J Bond</a></li>
+  </ul>
   <div id="viz-container">
-    <div id="chart1"></div>
-    <div id="chart2"></div>
-    <div id="chart3"></div>
-    <div id="chart4"></div>
+    <div id="chart1" class="chart-container"></div>
+    <div id="chart2" class="chart-container"></div>
+    <div id="chart3" class="chart-container"></div>
+    <div id="chart4" class="chart-container"></div>
   </div>
 
+
   <script src="js/d3.min.js"></script>
+  <script src="js/jquery-3.1.1.min.js"></script>
 
   <script src="js/data-wrangling.js"></script>
   <script src="js/globals.js"></script>
@@ -28,13 +40,36 @@
   <script src="js/DistrictArray.js"></script>
   <script src="js/Cartogram.js"></script>
   <script src="js/ColorMap.js"></script>
+  <script src="js/Text.js"></script>
   <script type="text/javascript">
+
+  var main = function(){
+    // Main function, called at bottom of file here
+  }
+
+  var renderPane = function(paneId){
+    // clear contents of chart-container divs and render pane with given id
+    $('.chart-container').empty();
+    dashboard.render(panels[paneId]);
+  }
+
+  var handleTabClick = function(e){
+    // Adjust tab bar classses
+    $(e).addClass('active');
+    $(e).siblings().removeClass('active');
+    renderPane(e.id);
+  }
 
   var dataFiles = [
     // Array of files for Dashboard to pull in
     // Geodata
     {'name': 'mtSenDistricts', 'file': './../geodata/mt_senate_districts.geojson', 'loader': d3.json},
     {'name': 'mtHouseDistricts', 'file': './../geodata/mt_house_districts.geojson', 'loader': d3.json},
+    {'name': 'mtCounties', 'file': './../geodata/mt_counties.geojson', 'loader': d3.json},
+    // Add: Senate cartogram
+    // Add: House cartogram
+    // Add: Gallatin County precincts
+
     // Other data
     {'name': 'mtSenData', 'file': './../data/mt-senate.csv', 'loader': d3.csv},
     {'name': 'mtHouseData', 'file': './../data/mt-house.csv', 'loader': d3.csv},
@@ -43,27 +78,110 @@
     // Array of data processing functions for Dashboard to run on data refresh
     // TODO: Figure out how to make this more concise?
     {
-      'name': 'comboSenDistricts',
+      'name': 'mtSenDistSenate',
       'functName': bindToGeoJson,
       'geoData': 'mtSenDistricts', 'joinData': 'mtSenData',
       'geoKey': 'number', 'joinKey': 'number',
       'includeCols': ['district', 'incum_party', 'district_label']
     },{
-      'name': 'comboHouseDistricts',
+      'name': 'mtHouseDistHouse',
       'functName': bindToGeoJson,
       'geoData': 'mtHouseDistricts', 'joinData': 'mtHouseData',
       'geoKey': 'number', 'joinKey': 'number',
       'includeCols': ['district', 'incum_party', 'district_label']
     }
   ];
-  var initialPanel = {
-    'name': 'panel1',
-    'design': [
-      {'id': 'chart1', 'Template': ColorMap, 'data': 'comboSenDistricts' },
-      {'id': 'chart2', 'Template': ColorMap, 'data': 'comboHouseDistricts' }
-    ]
-  };
-  var dashboard = new Dashboard(dataFiles, dataJoins, initialPanel);
+  // var initialPanel = {
+  //   'name': 'panel1',
+  //   'design': [
+  //     {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtSenDistSenate' },
+  //     {'id': 'chart2', 'Template': Text, 'dataVar': 'mtHouseDistHouse' },
+  //     {'id': 'chart3', 'Template': Text, 'dataVar': 'mtHouseDistHouse' }
+  //   ]
+  // };
+
+  /* each panel object essentially gives Dashboard.js >> Panel.js a list of components to render
+  'id' is the id for the anchor the component will attach to
+  'Template' refers to the component class used to create the chart (or text element)
+  'dataVar' is a string used to reference data stored in Dashboard.data. It should match the name of of either a directly loaded data file in dataFiles above, or a name in dataJoins
+  'data' (alternative) is a way to pass data directly into the component via props.data (may not work currently)
+
+  */
+
+  var panels = {
+    'mtGov': {
+      'name': 'mtGov',
+      'design': [
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' },
+        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoGov' }
+      ]
+    },
+    'usHouse': {
+      'name': 'usHouse',
+      'design': [
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' },
+        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoUsHouse' }
+      ]
+    },
+    'usPresident': {
+      'name': 'usPresident',
+      'design': [
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' },,
+        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoUsPres' }
+      ]
+    },
+    'mtSenate': {
+      'name': 'mtSenate',
+      'design': [
+        // MT Senate control
+        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtSenDistSenate' },
+        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' }
+      ]
+    },
+    'mtHouse': {
+      'name': 'mtHouse',
+      'design': [
+        // MT house control
+        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtHouseDistHouse' },
+        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtHouseCartoHouse' }
+        // Add table
+      ]
+    },
+    'medMarijuana': {
+      'name': 'medMarijuana',
+      'design': [
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' },,
+        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoMarij' }
+      ]
+    },
+    'antiTrapping': {
+      'name': 'antiTrapping',
+      'design': [
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' },,
+        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoTrapping' }
+        // Tabulated
+      ]
+    },
+    // 'gcCommission': {
+    //   'name': 'gcCommission',
+    //   'design': [
+    //     {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'gcPrecinctCommish' },
+    //     // Tabulated
+    //   ]
+    // },
+    // 'lawCenter': {
+    //   'name': 'lawCenter',
+    //   'design': [
+    //     {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'gcPrecinctLaw' },
+    //     {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'bznPrecinctLaw' }
+    //     // Tabluated
+    //   ]
+    // }
+  }
+
+  var dashboard = new Dashboard(dataFiles, dataJoins, panels.mtGov);
+
+  main();
 
     // // Queue up multiple data files to load
     // d3.queue()
@@ -81,12 +199,12 @@
     //   .defer(d3.csv, './../data/mt-house.csv')
     //   .await(main);
 
-    function main (error,
-      // Geodata
-      counties, gcPrecincts, mtSenDistricts, mtHouseDistricts, mtSenCartoDisplay,
-      // Other data
-      countyVotes, precinctVotes, districts, mtSenData, mtHouseData
-      ) {
+    // function main (error,
+    //   // Geodata
+    //   counties, gcPrecincts, mtSenDistricts, mtHouseDistricts, mtSenCartoDisplay,
+    //   // Other data
+    //   countyVotes, precinctVotes, districts, mtSenData, mtHouseData
+    //   ) {
 
       // var comboData = bindToGeoJson(mtSenDistricts, mtSenData, 'number', 'number', ['district', 'incum_party', 'district_label']);
       // var comboData2 = bindToGeoJson(mtHouseDistricts, mtHouseData, 'number', 'number', ['district', 'incum_party', 'district_label']);
@@ -168,9 +286,9 @@
       //     'height': 400
       //   }, globals);
 
-      // For resizing
-      d3.select(window).on('resize', function(){
-      })
-    }
+    //   // For resizing
+    //   d3.select(window).on('resize', function(){
+    //   })
+    // }
   </script>
 </html>

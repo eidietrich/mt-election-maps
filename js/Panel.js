@@ -4,20 +4,8 @@
 // Renders a list of components into a target container
 // components is an array of components of form:
 // {'id': 'anchorElement', 'Template': TemplateClassToUse, 'data': dataToPassIn }
-//
-//
-// Will handle data routing in panel object
-//
-
-// NOTES: Expects to have d3 available
 
 var Panel = function (components){
-  /*
-  targetId = css selector for anchor div
-  object Array = array of components to render
-  */
-
-  // TODO: Add function to check to make sure anchor divs exist, throw error otherwise
 
   // Render each chart on respective anchor div
   console.log('Panel called');

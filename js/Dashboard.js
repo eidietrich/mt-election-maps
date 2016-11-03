@@ -6,7 +6,9 @@
 // Routes into Panel objects
 
 // dataFiles is an array of {variable: 'name', file: 'path', loader: 'd3.csv or d3.json'}
-// Panels is an array of panel specs to render
+
+// initialPanel is the first panel to render
+// Expected usage is calling dashboardName.render(panel) from index on panel change
 
 var Dashboard = function (dataFiles, dataJoins, initialPanel) {
   var that = this;
@@ -44,11 +46,12 @@ Dashboard.prototype.getData = function(){
       that.data[d.name] = fileContents[i];
     });
 
+    console.log('ready to process data')
     that.processData();
   });
 }
 Dashboard.prototype.processData = function(){
-  // Runs specified data transforms / joins, adding results to data variable
+  // Runs specified data transforms / joins, adding results to data object
   console.log('processData started')
   var that = this;
   this.dataJoins.forEach(function(d){
@@ -62,9 +65,11 @@ Dashboard.prototype.render = function(panel){
   console.log('rendering started')
   var that = this;
 
+  // console.log(this.data.mtCounties);
+
   // Bind data for each component
   panel.design.forEach(function(component){
-    component.data = that.data[component.data];
+    component.data = that.data[component.dataVar];
   })
 
   // Render panel of components
