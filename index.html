@@ -7,15 +7,13 @@
 </head>
 <body>
   <ul class="nav nav-tabs"">
-    <li role="presentation" id="mtGov" onclick="handleTabClick(this);" class="active"><a href="#">MT Gov</a></li>
-    <li role="presentation" id="usHouse" onclick="handleTabClick(this);"><a href="#">US House Seat</a></li>
+    <li role="presentation" id="mtGov" onclick="handleTabClick(this);" class="active"><a href="#">Montana Governor</a></li>
+    <li role="presentation" id="usHouse" onclick="handleTabClick(this);"><a href="#">US Rep</a></li>
     <li role="presentation" id="usPresident" onclick="handleTabClick(this);"><a href="#">US Presidency</a></li>
     <li role="presentation" id="mtSenate" onclick="handleTabClick(this);"><a href="#">Montana Senate</a></li>
     <li role="presentation" id="mtHouse" onclick="handleTabClick(this);"><a href="#">Montana House</a></li>
     <li role="presentation" id="medMarijuana" onclick="handleTabClick(this);"><a href="#">I-182</a></li>
     <li role="presentation" id="antiTrapping" onclick="handleTabClick(this);"><a href="#">I-777</a></li>
-<!--     <li role="presentation" id="gcCommission" onclick="handleTabClick(this);"><a href="#">Gallatin County Commission</a></li>
-    <li role="presentation" id="lawCenter" onclick="handleTabClick(this);"><a href="#">L&amp;J Bond</a></li> -->
   </ul>
   <div id="viz-container">
     <div id="chart1" class="chart-container"></div>
@@ -33,12 +31,10 @@
   <script src="js/Dashboard.js"></script>
   <script src="js/Panel.js"></script>
 
-  <script src="js/Choropleth.js"></script>
   <script src="js/CircleShadeMap.js"></script>
   <script src="js/BarGraph.js"></script>
   <script src="js/OpposingBarGraph.js"></script>
   <script src="js/DistrictArray.js"></script>
-  <script src="js/Cartogram.js"></script>
   <script src="js/ColorMap.js"></script>
   <script src="js/Text.js"></script>
   <script type="text/javascript">
@@ -46,20 +42,6 @@
   var main = function(){
     // Main function, called at bottom of file here
     dashboard = new Dashboard(dataFiles, dataJoins, panels.mtGov);
-
-    // d3.json('./test/livedata-byrace-novotes.json', function(dataByRace){
-    //   console.log('race', dataByRace);
-    // });
-    // d3.json('./test/livedata-bycounty-novotes.json', function(dataByCounty){
-    //   // console.log('county', dataByCounty);
-    //   var govByCounty = filterCountyByRace(dataByCounty, RACE_IDS['mtGov'])
-    //   d3.json('./../geodata/mt_counties.geojson', function(mtCounties){
-    //     var combined = addRaceToCountyGeoJson(mtCounties, govByCounty);
-    //     console.log(combined);
-    //   });
-      // console.log(filterCountyByRace(dataByCounty, RACE_IDS['i177']))
-      // console.log(filterCountyByRace(dataByCounty, RACE_IDS['i181']))
-    // });
   }
 
   var renderPane = function(paneId){
@@ -76,18 +58,6 @@
   }
 
   var dashboard;
-
-  // // OLD
-  // var RACE_IDS = {
-  //   'mtGov': '001450005632',
-  //   'i177': '002450001213',
-  //   'i181': '002450001215',
-  //   'usPres': '001450005633',
-  //   'usHouse': '001450005517',
-  //   'lawJusticeCenter': null,
-  //   'gcCommission': null,
-
-  // }
 
   var dataFiles = [
     // Array of files for Dashboard to pull in
@@ -150,11 +120,14 @@
   //   ]
   // };
 
-  /* each panel object essentially gives Dashboard.js >> Panel.js a list of components to render
+  /*
+
+  Each panel object gives Dashboard.js >> Panel.js a list of components to render
   'id' is the id for the anchor the component will attach to
   'Template' refers to the component class used to create the chart (or text element)
   'dataVar' is a string used to reference data stored in Dashboard.data. It should match the name of of either a directly loaded data file in dataFiles above, or a name in dataJoins
-  'data' (alternative) is a way to pass data directly into the component via props.data (may not work currently)
+  'data' (optional) is a way to pass data directly into the component via props.data (may not work currently)
+  'props' object hands the Template constructor additional properties
 
   */
 
@@ -163,20 +136,29 @@
       'name': 'mtGov',
       'design': [
         {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtGovByCounty',
-          'props': { 'aspectRatio': 0.6 }
+          'props': {
+            'aspectRatio': 0.6,
+            'colorBy': function(d) { console.log(d); return 'green'; }
+          }
         } ]
     },
     'usHouse': {
       'name': 'usRep',
       'design': [
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' },
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
+        'props': {
+          'aspectRatio': 0.6,
+        } },
         // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoUsHouse' }
       ]
     },
     'usPresident': {
       'name': 'usPresident',
       'design': [
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' },,
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
+        'props': {
+          'aspectRatio': 0.6,
+        } },
         // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoUsPres' }
       ]
     },
@@ -184,7 +166,13 @@
       'name': 'mtSenate',
       'design': [
         // MT Senate control
-        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtSenDistSenate' },
+        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtSenDistSenate',
+        'props': {
+          'aspectRatio': 0.6,
+          'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
+          // 'featureLabel': function(d) { return d.properties.district; },
+          }
+        },
         // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' }
       ]
     },
@@ -192,7 +180,13 @@
       'name': 'mtHouse',
       'design': [
         // MT house control
-        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtHouseDistHouse' },
+        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtHouseDistHouse',
+        'props': {
+          'aspectRatio': 0.6,
+          'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
+          // 'featureLabel': function(d) { return d.properties.district; },
+        }
+      }
         // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtHouseCartoHouse' }
         // Add table
       ]
@@ -200,33 +194,26 @@
     'medMarijuana': {
       'name': 'medMarijuana',
       'design': [
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' },,
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
+         'props': {
+          'aspectRatio': 0.6,
+        }
+      },
         // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoMarij' }
       ]
     },
     'antiTrapping': {
       'name': 'antiTrapping',
       'design': [
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' },,
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
+        'props' : {
+          'aspectRatio': 0.6,
+        }
+      },
         // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoTrapping' }
         // Tabulated
       ]
-    },
-    // 'gcCommission': {
-    //   'name': 'gcCommission',
-    //   'design': [
-    //     {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'gcPrecinctCommish' },
-    //     // Tabulated
-    //   ]
-    // },
-    // 'lawCenter': {
-    //   'name': 'lawCenter',
-    //   'design': [
-    //     {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'gcPrecinctLaw' },
-    //     {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'bznPrecinctLaw' }
-    //     // Tabluated
-    //   ]
-    // }
+    }
   }
 
   main();

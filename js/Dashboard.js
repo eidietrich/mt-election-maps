@@ -12,7 +12,6 @@
 
 var Dashboard = function (dataFiles, dataJoins, initialPanel) {
   var that = this;
-  // initialize state
 
   this.dataJoins = dataJoins;
   this.currentPanel = initialPanel;
@@ -25,7 +24,6 @@ var Dashboard = function (dataFiles, dataJoins, initialPanel) {
     that.data[d.name] = null;
   });
 
-  // console.log(this.data);
   this.getData(); // collects data and then renders
 }
 Dashboard.prototype.getData = function(){
@@ -51,32 +49,27 @@ Dashboard.prototype.getData = function(){
 }
 Dashboard.prototype.processData = function(){
   // Runs specified data transforms / joins, adding results to data object
-  console.log('processData started')
 
-  function applyDataJoin(dataJoin){
-    var functName = dataJoin.functName,
-      geoData = that.data[dataJoin.geoData],
-      joinData = that.data[dataJoin.joinData],
-      otherArgs = dataJoin.otherArgs;
+  function applyDataJoin(d){
+    // Helper function for unpacking arguments into join function
+    var functName = d.functName,
+      geoData = that.data[d.geoData],
+      joinData = that.data[d.joinData],
+      otherArgs = d.otherArgs;
     var args = [geoData, joinData].concat(otherArgs);
     return functName.apply(this, args);
   }
 
   var that = this;
-
-  this.dataJoins.forEach(function(d){
-    // that.data[d.name] = d.functName(that.data[d.geoData], that.data[d.joinData], d.geoKey, d.joinKey, d.includeCols);
-    that.data[d.name] = applyDataJoin(d);
+  this.dataJoins.forEach(function(dataJoin){
+    that.data[dataJoin.name] = applyDataJoin(dataJoin);
   })
 
   this.render(this.currentPanel);
 }
 Dashboard.prototype.render = function(panel){
   // Renders panels as specified
-  // console.log('rendering started')
   var that = this;
-
-  // console.log(this.data.mtCounties);
 
   // Bind data for each component
   panel.design.forEach(function(component){

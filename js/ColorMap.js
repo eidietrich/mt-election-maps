@@ -14,11 +14,11 @@ var senateMap = new ColorMap({
       })
 */
 
-// Global vars - TODO: Move these to functions calls in index.html
-var colorBy = function(d) { return globals.colorByParty(d.properties.incum_party) };
-// var colorBy = function(d) { return globals.colorByRegion(d.properties.district_label); };
-
-var featureLabel = function(d) { return d.properties.district; };
+ /*  Possible settings for colorLable and featureLabel:
+  colorLabel = function(d) { return globals.colorByParty(d.properties.incum_party) };
+  colorLabel = function(d) { return globals.colorByRegion(d.properties.district_label); };
+  featureLabel = function(d) { return d.properties.district; };
+  */
 
 var ColorMap = function (props){
   console.log('ColorMap called');
@@ -30,9 +30,23 @@ var ColorMap = function (props){
   this.aspectRatio = props.aspectRatio;
   this.margin = {top: 20, bottom: 20, right: 30, left: 30};
 
+  // set colorBy and featureLabel props, or default
+
+  if (props.colorBy){
+    this.colorBy = props.colorBy;
+  } else {
+    this.colorBy = "gray";
+  }
+  if (props.featureLabel) {
+    this.featureLabel = props.featureLabel;
+  } else {
+    this.featureLabel = null;
+  }
+
   // console.log(this.data);
 
   this.draw()
+  // this.addTooltip() // TODO
 }
 ColorMap.prototype.draw = function() {
 
@@ -58,18 +72,33 @@ ColorMap.prototype.draw = function() {
     .projection(projection);
 
   // Draw map of districts
-  var districts = this.plot.append("g")
+  this.districts = this.plot.append("g")
     .selectAll("path")
     .data(this.data.features)
     .enter();
-  districts.append("path")
+  this.districts.append("path")
     .attr("d", path)
-    .attr("fill", colorBy)
+    .attr("fill", this.colorBy)
     .attr("class", "districts")
-  districts.append("text")
+
+  // Add text labels
+  this.districts.append("text")
     .attr("x", function(d){ return path.centroid(d)[0]; })
     .attr("y", function(d) { return path.centroid(d)[1]; })
     .attr("text-anchor", "middle")
     .attr("fill", "white")
-    .text(featureLabel)
+    .text(this.featureLabel)
 }
+// ColorMap.prototype.draw = function(){
+//   // TODO: FINISH THIS
+//   // Add tooltip
+//   // this.tooltip = d3.select(this.element)
+//   //   .append('div')
+//   //   .attr("class","tooltip hidden")
+
+//   // this.districts
+//   //   .on('mousemove', function(d){
+
+//   //   })
+//   //   .on('mouseout')
+// }

@@ -102,11 +102,12 @@ Important at a state level
 - U.S. House Race
 - MT House & Senate power balances (even if nothing's going to change)
 
-Necessary templates:
+Necessary map templates:
 - County choropleth (done)
 - House District choropleth (done)
 - county-scale cartogram (maybe?)
 - state-scale cartogram (done, sort of) 
+
 
 
 ## TODO:
@@ -114,7 +115,6 @@ Necessary templates:
 - Update CircleShadeMap.js for refactored data handling & responsiveness
 - Retool DistrictArray.js so it doesn't take hideous data input (have it take multiple files, and move data nesting into the class)
 - Delete districts.json (blegh)
-- Break colorBy and featureLabel functions out of ColorMap global space into props
 - Make choropleth obsolete by adding a custom colorBy function to ColorMap
 - Figure out how to work data linkages between house and senate districts
 - Remove mergeData (replaced by bindToGeoJson)
@@ -122,7 +122,15 @@ Necessary templates:
 - Refine senate cartogram — figure out how to automate the process
 - Make local scope map Class (for honing in on particular places)
 - Add 'refresh' button to render class
-- Tweak Dashboard >> Panel >> Component pathway to allow custom props being passed to components (e.g. colorScales and such)
+- Make House / Senate district table
+- Make county-level data table - RaceByCounty.js
+- Make house and senate district data table - RaceByDistrict.js
+- Make 'control of house/senate' bar graph - ChamberControl.js
+- Make 'who's ahead' bar chart  for state-level races and ballot measures
+- Figure out how to translate county-level candidate objects into a meaningful color for chart — who's ahead and by how much
+- Figure out how to work tooltips and such
+- Make temporary 'all precincts' and 'partial precincts' data for testing
+- Clean up data-wrangling.js
 
 Conversation w Becker, Nov 1, pm:
 - He'll make dashboard template - with tabs for each race
@@ -130,6 +138,8 @@ Conversation w Becker, Nov 1, pm:
 - Make a function that generates each tab, pulls in each graph.
 - Include an on-tab refresh button that checks for new data, re-renders graphs if there's new data
 
+Workplan:
+- Put together tabulations first, then figure out what/how to present in maps
 
 ## References
 

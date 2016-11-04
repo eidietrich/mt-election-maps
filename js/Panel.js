@@ -25,7 +25,6 @@ var Panel = function (components){
     }
     // Add anything in component.props to spec
     for (var attr in component.props) { spec[attr] = component.props[attr]}
-    console.log('spec', spec);
     that.charts.push(new component.Template(spec));
   });
 
