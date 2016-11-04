@@ -12,10 +12,10 @@
     <li role="presentation" id="usPresident" onclick="handleTabClick(this);"><a href="#">US Presidency</a></li>
     <li role="presentation" id="mtSenate" onclick="handleTabClick(this);"><a href="#">Montana Senate</a></li>
     <li role="presentation" id="mtHouse" onclick="handleTabClick(this);"><a href="#">Montana House</a></li>
-    <li role="presentation" id="medMarijuana" onclick="handleTabClick(this);"><a href="#">I-marijuana</a></li>
-    <li role="presentation" id="antiTrapping" onclick="handleTabClick(this);"><a href="#">I-trapping</a></li>
-    <li role="presentation" id="gcCommission" onclick="handleTabClick(this);"><a href="#">Gallatin County Commission</a></li>
-    <li role="presentation" id="lawCenter" onclick="handleTabClick(this);"><a href="#">L&amp;J Bond</a></li>
+    <li role="presentation" id="medMarijuana" onclick="handleTabClick(this);"><a href="#">I-182</a></li>
+    <li role="presentation" id="antiTrapping" onclick="handleTabClick(this);"><a href="#">I-777</a></li>
+<!--     <li role="presentation" id="gcCommission" onclick="handleTabClick(this);"><a href="#">Gallatin County Commission</a></li>
+    <li role="presentation" id="lawCenter" onclick="handleTabClick(this);"><a href="#">L&amp;J Bond</a></li> -->
   </ul>
   <div id="viz-container">
     <div id="chart1" class="chart-container"></div>
@@ -45,6 +45,21 @@
 
   var main = function(){
     // Main function, called at bottom of file here
+    dashboard = new Dashboard(dataFiles, dataJoins, panels.mtGov);
+
+    // d3.json('./test/livedata-byrace-novotes.json', function(dataByRace){
+    //   console.log('race', dataByRace);
+    // });
+    // d3.json('./test/livedata-bycounty-novotes.json', function(dataByCounty){
+    //   // console.log('county', dataByCounty);
+    //   var govByCounty = filterCountyByRace(dataByCounty, RACE_IDS['mtGov'])
+    //   d3.json('./../geodata/mt_counties.geojson', function(mtCounties){
+    //     var combined = addRaceToCountyGeoJson(mtCounties, govByCounty);
+    //     console.log(combined);
+    //   });
+      // console.log(filterCountyByRace(dataByCounty, RACE_IDS['i177']))
+      // console.log(filterCountyByRace(dataByCounty, RACE_IDS['i181']))
+    // });
   }
 
   var renderPane = function(paneId){
@@ -60,6 +75,20 @@
     renderPane(e.id);
   }
 
+  var dashboard;
+
+  // // OLD
+  // var RACE_IDS = {
+  //   'mtGov': '001450005632',
+  //   'i177': '002450001213',
+  //   'i181': '002450001215',
+  //   'usPres': '001450005633',
+  //   'usHouse': '001450005517',
+  //   'lawJusticeCenter': null,
+  //   'gcCommission': null,
+
+  // }
+
   var dataFiles = [
     // Array of files for Dashboard to pull in
     // Geodata
@@ -70,26 +99,47 @@
     // Add: House cartogram
     // Add: Gallatin County precincts
 
-    // Other data
+    // Static data
     {'name': 'mtSenData', 'file': './../data/mt-senate.csv', 'loader': d3.csv},
     {'name': 'mtHouseData', 'file': './../data/mt-house.csv', 'loader': d3.csv},
+
+    // Live data
+    // TODO: Switch this from test data
+    {'name': 'races', 'file': './test/livedata-byrace-novotes.json', 'loader': d3.json},
+    {'name': 'counties', 'file': './test/livedata-bycounty-novotes.json', 'loader': d3.json},
+
   ];
   var dataJoins = [
     // Array of data processing functions for Dashboard to run on data refresh
-    // TODO: Figure out how to make this more concise?
+    // See data-wrangling.js for function documentation
     {
       'name': 'mtSenDistSenate',
-      'functName': bindToGeoJson,
+      'functName': bindFlatToGeoJson,
       'geoData': 'mtSenDistricts', 'joinData': 'mtSenData',
-      'geoKey': 'number', 'joinKey': 'number',
-      'includeCols': ['district', 'incum_party', 'district_label']
+      'otherArgs': ['number','number', ['district', 'incum_party', 'district_label']]
     },{
       'name': 'mtHouseDistHouse',
-      'functName': bindToGeoJson,
+      'functName': bindFlatToGeoJson,
       'geoData': 'mtHouseDistricts', 'joinData': 'mtHouseData',
-      'geoKey': 'number', 'joinKey': 'number',
-      'includeCols': ['district', 'incum_party', 'district_label']
+      'otherArgs': ['number','number', ['district', 'incum_party', 'district_label']]
+    },{
+      'name': 'mtGovByCounty',
+      'functName': prepForCountyMap,
+      'geoData': 'mtCounties', 'joinData': 'counties',
+      'otherArgs': ['mtGov']
+    },{
+      'name': 'usPresByCounty',
+      'functName': prepForCountyMap,
+      'geoData': 'mtCounties', 'joinData': 'counties',
+      'otherArgs': ['usPresident']
+    },{
+      'name': 'usRepByCounty',
+      'functName': prepForCountyMap,
+      'geoData': 'mtCounties', 'joinData': 'counties',
+      'otherArgs': ['usRep']
     }
+    // ADD antiTrappingByCounty
+    // ADD medMarijuanaByCounty
   ];
   // var initialPanel = {
   //   'name': 'panel1',
@@ -112,12 +162,12 @@
     'mtGov': {
       'name': 'mtGov',
       'design': [
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' },
-        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoGov' }
-      ]
+        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtGovByCounty',
+          'props': { 'aspectRatio': 0.6 }
+        } ]
     },
     'usHouse': {
-      'name': 'usHouse',
+      'name': 'usRep',
       'design': [
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' },
         // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoUsHouse' }
@@ -178,8 +228,6 @@
     //   ]
     // }
   }
-
-  var dashboard = new Dashboard(dataFiles, dataJoins, panels.mtGov);
 
   main();
 

@@ -8,7 +8,7 @@
 var Panel = function (components){
 
   // Render each chart on respective anchor div
-  console.log('Panel called');
+  // console.log('Panel called');
 
   // Break out of function if components is null
   if (!components) {
@@ -18,12 +18,15 @@ var Panel = function (components){
 
   this.charts = [];
   var that = this;
-  components.forEach(function(object, i){
-    that.charts.push(new object.Template({
-      'element': document.querySelector('#' + object.id),
-      'data': object.data,
-      'aspectRatio': 0.6
-    }));
+  components.forEach(function(component, i){
+    var spec = {
+      'element': document.querySelector('#' + component.id),
+      'data': component.data
+    }
+    // Add anything in component.props to spec
+    for (var attr in component.props) { spec[attr] = component.props[attr]}
+    console.log('spec', spec);
+    that.charts.push(new component.Template(spec));
   });
 
   // Responsiveness

@@ -1,6 +1,16 @@
 // data-wrangling.js
 // Collection of functions for prepping / wrangling data
 
+var RACE_IDS = {
+    'mtGov': '001450005632',
+    'antiTrapping': '002450001213',
+    'medMarijuana': '002450001215',
+    'usPresident': '001450005633',
+    'usRep': '001450005517',
+    'lawJusticeCenter': null,
+    'gcCommission': null,
+  }
+
 function mergeData (geoJson, joinData, joinKey, dims) {
   // Takes geojson spatial data object and performs a left merge from joinData array
   // Assumes geojson.properties has "center_lon" and "center_lat" centroid fields
@@ -29,9 +39,10 @@ function mergeData (geoJson, joinData, joinKey, dims) {
 
   return outGeoJson;
 }
-function bindToGeoJson(geoJson, data, geoKey, dataKey, includeCols){
+function bindFlatToGeoJson(geoJson, data, geoKey, dataKey, includeCols){
   // Similar to mergeData -- binds "flat" json data (e.g. from a .csv import) to a geoJson object
   // include cols is an array of fields from the merging data to include
+
   var combined = geoJson;
   combined.features.forEach(function(feature){
     data.forEach(function(row){
@@ -77,4 +88,51 @@ function prepForBar (data, maxDim, issueArray) {
       "votes": sum(data, name)});
   })
   return preppedData;
+}
+
+function prepForCountyMap(countyGeo, votesByCounty, raceName){
+  var data = filterCountyByRace(votesByCounty, RACE_IDS[raceName]);
+  var merged = addRaceToCountyGeoJson(countyGeo, data);
+  return merged;
+}
+
+function filterCountyByRace (countyData, raceId){
+  // prep a data object with county race and 'updated' tag
+  outData = {
+    'updated': countyData.last_update,
+    'counties': [],
+  }
+  countyData.records.forEach(function(record){
+    county = {
+      'name': record.name.toUpperCase(), // uppercase to simplify join
+      'candidates': null,
+      'precincts': null,
+      'precinctsReporting': null
+    }
+    record.races.forEach(function(race){
+      if(race.race_id === raceId){
+        county.candidates = race.candidates;
+        county.precincts = +race.total_precincts;
+        county.precinctsReporting = +race.num_reporting;
+      };
+    });
+    outData.counties.push(county);
+  });
+  return outData;
+}
+function addRaceToCountyGeoJson(geoJson, countiesForRace){
+  var geoKey = "NAME",
+    dataKey = "name"
+
+  var combined = geoJson;
+  combined.features.forEach(function(feature){
+    countiesForRace.counties.forEach(function(county){
+      if (String(county[dataKey]) === String(feature.properties[geoKey])){
+        feature.properties.candidates = county.candidates;
+        feature.properties.precincts = county.precincts;
+        feature.properties.precinctsReporting = county.precinctsReporting;
+      }
+    });
+  });
+  return combined;
 }
