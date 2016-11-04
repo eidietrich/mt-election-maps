@@ -136,3 +136,19 @@ function addRaceToCountyGeoJson(geoJson, countiesForRace){
   });
   return combined;
 }
+// function calcRanks(candidates){
+//   // Sort and rank candidates in array of candidate objects
+
+//   console.log(candidates);
+//   candidates.forEach(function(d){
+//     d.votes = +d.votes
+//   })
+//   candidates.sort(function(a,b){
+//     return a.votes - b.votes;
+//   })
+//   // add rank
+//   candidates.forEach(function(d,i){
+//     d.rank = i + 1;
+//   });
+//   console.log(candidates);
+// }

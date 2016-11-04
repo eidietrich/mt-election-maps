@@ -22,26 +22,34 @@
     <div id="chart4" class="chart-container"></div>
   </div>
 
-
+  <!-- Libraries -->
   <script src="js/d3.min.js"></script>
   <script src="js/jquery-3.1.1.min.js"></script>
 
+  <!-- Interface scripts -->
   <script src="js/data-wrangling.js"></script>
   <script src="js/globals.js"></script>
   <script src="js/Dashboard.js"></script>
   <script src="js/Panel.js"></script>
 
+  <!-- Component scripts -->
   <script src="js/CircleShadeMap.js"></script>
   <script src="js/BarGraph.js"></script>
   <script src="js/OpposingBarGraph.js"></script>
   <script src="js/DistrictArray.js"></script>
   <script src="js/ColorMap.js"></script>
   <script src="js/Text.js"></script>
+  <script src="js/TableByCounty.js"></script>
+
+
   <script type="text/javascript">
 
   var main = function(){
     // Main function, called at bottom of file here
-    dashboard = new Dashboard(dataFiles, dataJoins, panels.mtGov);
+    // dashboard = new Dashboard(dataFiles, dataJoins, panels.mtGov);
+
+    // Test
+    dashboard = new Dashboard(dataFiles, dataJoins, testPanel);
   }
 
   var renderPane = function(paneId){
@@ -111,14 +119,13 @@
     // ADD antiTrappingByCounty
     // ADD medMarijuanaByCounty
   ];
-  // var initialPanel = {
-  //   'name': 'panel1',
-  //   'design': [
-  //     {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtSenDistSenate' },
-  //     {'id': 'chart2', 'Template': Text, 'dataVar': 'mtHouseDistHouse' },
-  //     {'id': 'chart3', 'Template': Text, 'dataVar': 'mtHouseDistHouse' }
-  //   ]
-  // };
+  var testPanel = {
+    'name': 'panel1',
+    'design': [
+      {'id': 'chart1', 'Template': TableByCounty, 'dataVar': 'mtGovByCounty',
+      'props': {} },
+    ]
+  };
 
   /*
 
