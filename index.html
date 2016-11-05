@@ -8,7 +8,7 @@
 <body>
   <ul class="nav nav-tabs"">
     <li role="presentation" id="mtGov" onclick="handleTabClick(this);" class="active"><a href="#">Montana Governor</a></li>
-    <li role="presentation" id="usHouse" onclick="handleTabClick(this);"><a href="#">US Rep</a></li>
+    <li role="presentation" id="usRep" onclick="handleTabClick(this);"><a href="#">US Rep</a></li>
     <li role="presentation" id="usPresident" onclick="handleTabClick(this);"><a href="#">US Presidency</a></li>
     <li role="presentation" id="mtSenate" onclick="handleTabClick(this);"><a href="#">Montana Senate</a></li>
     <li role="presentation" id="mtHouse" onclick="handleTabClick(this);"><a href="#">Montana House</a></li>
@@ -67,6 +67,16 @@
 
   var dashboard;
 
+  // Supplemental info (e.g. party, incumbency)
+  // TODO: Look at breaking this out into a separate file
+  var extraCandidateInfo = {
+    'usRep' : {
+      'ZINKE' : {'party': 'R', 'incumbent': 'yes'},
+      'JUNEAU': {'party': 'D', 'incumbent': 'no'},
+      'BRECKENRIDGE' : {'party': 'L', 'incumbent': 'no'}
+    },
+  }
+
   var dataFiles = [
     // Array of files for Dashboard to pull in
     // Geodata
@@ -123,7 +133,9 @@
     'name': 'panel1',
     'design': [
       {'id': 'chart1', 'Template': TableByCounty, 'dataVar': 'mtGovByCounty',
-      'props': {} },
+      'props': {
+        'extraCandidateInfo': extraCandidateInfo['usRep']
+      } },
     ]
   };
 
@@ -149,7 +161,7 @@
           }
         } ]
     },
-    'usHouse': {
+    'usRep': {
       'name': 'usRep',
       'design': [
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
