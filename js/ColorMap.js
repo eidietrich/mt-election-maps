@@ -21,7 +21,7 @@ var senateMap = new ColorMap({
   */
 
 var ColorMap = function (props){
-  console.log('ColorMap called');
+  // console.log('ColorMap called');
 
   this.data = props.data;
   this.element = props.element;
@@ -29,6 +29,12 @@ var ColorMap = function (props){
   this.heightNotDefined = !props.height;
   this.aspectRatio = props.aspectRatio;
   this.margin = {top: 20, bottom: 20, right: 30, left: 30};
+
+  console.log('ColorMap called with', this.data);
+
+  // Supporting text
+  this.title = props.title || "";
+  this.cutline = props.cutline || "";
 
   // set colorBy and featureLabel props, or default
 
@@ -57,6 +63,11 @@ ColorMap.prototype.draw = function() {
   }
   this.plotHeight = this.height - this.margin.top - this.margin.bottom;
   this.plotWidth = this.width - this.margin.left - this.margin.right;
+
+  d3.select(this.element).append("h3")
+    .html(this.title)
+  d3.select(this.element).append("p")
+    .html(this.cutline)
 
   this.svg = d3.select(this.element)
     .append('svg')

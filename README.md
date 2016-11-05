@@ -123,7 +123,7 @@ Necessary map templates:
 - Make local scope map Class (for honing in on particular places)
 - Add 'refresh' button to render class
 - Make House / Senate district table
-- Make county-level data table - RaceByCounty.js
+- Make county-level data table - TableByCounty.js
 - Make house and senate district data table - RaceByDistrict.js
 - Make 'control of house/senate' bar graph - ChamberControl.js
 - Make 'who's ahead' bar chart  for state-level races and ballot measures
@@ -131,6 +131,7 @@ Necessary map templates:
 - Figure out how to work tooltips and such
 - Make temporary 'all precincts' and 'partial precincts' data for testing
 - Clean up data-wrangling.js
+- TODO: Track down bug where race-filtered data is getting overwritten by the most recently transformed race
 
 Conversation w Becker, Nov 1, pm:
 - He'll make dashboard template - with tabs for each race

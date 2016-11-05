@@ -9,14 +9,19 @@ var TableByCounty = function (props){
 
   // data variables
   this.data = props.data; // input data, as geoJson
+  // Supporting text
+  this.title = props.title || "";
+  this.cutline = props.cutline || "";
+
   // container for data passed to draw function
+  this.race = props.race; // race to display
   this.tableData = {'columns': [], 'rows': []};
   // supplemental info (e.g. party, incumbency)
   this.extraCandidateInfo = props.extraCandidateInfo;
   this.candidateKeys = []; // array of candidates, by last name
   this.candidates = []; // array of candidates in race, by info objects
 
-  console.log(this.data);
+  console.log('TableByCounty called with', this.data);
   this.shapeData();
   this.draw();
 }
@@ -55,7 +60,7 @@ TableByCounty.prototype.shapeData = function() {
     // TODO: Add in sorting by party? R, D, L, other
 
     that.data.features.forEach(function(feature){
-      feature.properties.candidates.forEach(function(d){
+      feature.properties[that.race].candidates.forEach(function(d){
         var key = d.candidate_last;
         if (that.candidateKeys.indexOf(key) < 0) {
           that.candidateKeys.push(key);
@@ -77,7 +82,7 @@ TableByCounty.prototype.shapeData = function() {
 
   getCandidates();
   // console.log(this.candidateKeys);
-  // console.log(this.candidates);
+  console.log(this.candidates);
 
   // sort county data by number of precincts, descending
   this.data.features.sort(function(a,b){
@@ -85,7 +90,7 @@ TableByCounty.prototype.shapeData = function() {
   });
 
   this.data.features.forEach(function(feature){
-    var properties = feature.properties;
+    var properties = feature.properties[that.race];
 
     var row = {};
     // values and display separated here in the hope of making
@@ -97,7 +102,7 @@ TableByCounty.prototype.shapeData = function() {
     };
     row.display = {
       'County': feature.properties.NAME,
-      'Precincts<br />Reporting':  row.values.precinctsReporting + '/' + row.values.precincts,
+      'Precincts In':  row.values.precinctsReporting + '/' + row.values.precincts,
     };
 
     // Add values for each candidate
@@ -119,6 +124,12 @@ TableByCounty.prototype.draw = function() {
   var that = this;
   d3.select(this.element).html("");
   this.width = this.element.getBoundingClientRect().width;
+
+  d3.select(this.element).append("h3")
+    .html(this.title)
+  d3.select(this.element).append("p")
+    .html(this.cutline)
+
 
   var table = d3.select(this.element)
     .append('table')

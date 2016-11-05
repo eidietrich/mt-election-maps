@@ -65,6 +65,7 @@ Dashboard.prototype.processData = function(){
     that.data[dataJoin.name] = applyDataJoin(dataJoin);
   })
 
+  // console.log(this.data);
   this.render(this.currentPanel);
 }
 Dashboard.prototype.render = function(panel){
@@ -77,5 +78,6 @@ Dashboard.prototype.render = function(panel){
   })
 
   // Render panel of components
+  console.log('rendering', panel.name)
   this.panels[panel.name] = new Panel(panel.design);
 }

@@ -7,6 +7,7 @@
 </head>
 <body>
   <ul class="nav nav-tabs"">
+    <li role="presentation" id="home" onclick="handleTabClick(this);" class="active"><a href="#">Overview</a></li>
     <li role="presentation" id="mtGov" onclick="handleTabClick(this);" class="active"><a href="#">Montana Governor</a></li>
     <li role="presentation" id="usRep" onclick="handleTabClick(this);"><a href="#">US Rep</a></li>
     <li role="presentation" id="usPresident" onclick="handleTabClick(this);"><a href="#">US Presidency</a></li>
@@ -49,7 +50,7 @@
     // dashboard = new Dashboard(dataFiles, dataJoins, panels.mtGov);
 
     // Test
-    dashboard = new Dashboard(dataFiles, dataJoins, testPanel);
+    dashboard = new Dashboard(dataFiles, dataJoins, panels['home']);
   }
 
   var renderPane = function(paneId){
@@ -70,22 +71,33 @@
   // Supplemental info (e.g. party, incumbency)
   // TODO: Look at breaking this out into a separate file
   var extraCandidateInfo = {
+    'mtGov': {
+      'BULLOCK': {'party': 'D', 'incumbent': 'yes'},
+      'GIANFORTE': {'party': 'R', 'incumbent': 'no'},
+      'DUNLAP': {'party': 'L', 'incumbent': 'no'},
+    },
     'usRep' : {
       'ZINKE' : {'party': 'R', 'incumbent': 'yes'},
       'JUNEAU': {'party': 'D', 'incumbent': 'no'},
-      'BRECKENRIDGE' : {'party': 'L', 'incumbent': 'no'}
+      'BRECKENRIDGE' : {'party': 'L', 'incumbent': 'no'},
     },
+    'usPresident': {
+      'CLINTON': {'party': 'D', 'incumbent': 'no'},
+      'TRUMP': {'party': 'R', 'incumbent': 'no'},
+      'JOHNSON': {'party': 'L', 'incumbent': 'no'},
+      'STEIN': {'party': 'G', 'incumbent': 'no'},
+      'DE LA FUENTE': {'party': null, 'incumbent': 'no'},
+    }
   }
 
+  // Array of files for Dashboard to pull in
   var dataFiles = [
-    // Array of files for Dashboard to pull in
     // Geodata
     {'name': 'mtSenDistricts', 'file': './../geodata/mt_senate_districts.geojson', 'loader': d3.json},
     {'name': 'mtHouseDistricts', 'file': './../geodata/mt_house_districts.geojson', 'loader': d3.json},
     {'name': 'mtCounties', 'file': './../geodata/mt_counties.geojson', 'loader': d3.json},
     // Add: Senate cartogram
     // Add: House cartogram
-    // Add: Gallatin County precincts
 
     // Static data
     {'name': 'mtSenData', 'file': './../data/mt-senate.csv', 'loader': d3.csv},
@@ -105,39 +117,30 @@
       'functName': bindFlatToGeoJson,
       'geoData': 'mtSenDistricts', 'joinData': 'mtSenData',
       'otherArgs': ['number','number', ['district', 'incum_party', 'district_label']]
-    },{
+    },
+    {
       'name': 'mtHouseDistHouse',
       'functName': bindFlatToGeoJson,
       'geoData': 'mtHouseDistricts', 'joinData': 'mtHouseData',
       'otherArgs': ['number','number', ['district', 'incum_party', 'district_label']]
-    },{
-      'name': 'mtGovByCounty',
-      'functName': prepForCountyMap,
+    },
+    {
+      // Should add race-keyed results entries to geoJson properties field
+      'name': 'mtResultsByCounty',
+      'functName': mergeResultsByCounty,
       'geoData': 'mtCounties', 'joinData': 'counties',
-      'otherArgs': ['mtGov']
-    },{
-      'name': 'usPresByCounty',
-      'functName': prepForCountyMap,
-      'geoData': 'mtCounties', 'joinData': 'counties',
-      'otherArgs': ['usPresident']
-    },{
-      'name': 'usRepByCounty',
-      'functName': prepForCountyMap,
-      'geoData': 'mtCounties', 'joinData': 'counties',
-      'otherArgs': ['usRep']
+      'otherArgs': [['mtGov','usPresident','usRep','antiTrapping','medMarijuana']]
     }
-    // ADD antiTrappingByCounty
-    // ADD medMarijuanaByCounty
   ];
-  var testPanel = {
-    'name': 'panel1',
-    'design': [
-      {'id': 'chart1', 'Template': TableByCounty, 'dataVar': 'mtGovByCounty',
-      'props': {
-        'extraCandidateInfo': extraCandidateInfo['usRep']
-      } },
-    ]
-  };
+  // var testPanel = {
+  //   'name': 'panel1',
+  //   'design': [
+  //     {'id': 'chart1', 'Template': TableByCounty, 'dataVar': 'usRepByCounty',
+  //     'props': {
+  //       'extraCandidateInfo': extraCandidateInfo['usRep']
+  //     } },
+  //   ]
+  // };
 
   /*
 
@@ -151,15 +154,30 @@
   */
 
   var panels = {
+    'home': { // TODO: Make this an overview of various races
+      'name': 'home',
+      'design': [
+
+
+      ]
+    },
     'mtGov': {
       'name': 'mtGov',
       'design': [
-        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtGovByCounty',
+        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtResultsByCounty',
           'props': {
             'aspectRatio': 0.6,
-            'colorBy': function(d) { console.log(d); return 'green'; }
+            'colorBy': function(d) { return 'green'; }
           }
-        } ]
+        },
+        {'id': 'chart2', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
+        'props': {
+          'race': 'mtGov',
+          'extraCandidateInfo': extraCandidateInfo['mtGov'],
+          'title': "Title here",
+          'cutline': "This is a cutline"
+        } },
+      ]
     },
     'usRep': {
       'name': 'usRep',
@@ -167,6 +185,13 @@
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
         'props': {
           'aspectRatio': 0.6,
+        } },
+        {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
+        'props': {
+          'race': 'usPresident',
+          'extraCandidateInfo': extraCandidateInfo['usRep'],
+          'title': "Title here",
+          'cutline': "This is a cutline"
         } },
         // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoUsHouse' }
       ]
@@ -177,6 +202,13 @@
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
         'props': {
           'aspectRatio': 0.6,
+        } },
+        {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
+        'props': {
+          'race': 'usPresident',
+          'extraCandidateInfo': extraCandidateInfo['usPresident'],
+          'title': "Title here",
+          'cutline': "This is a cutline"
         } },
         // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoUsPres' }
       ]
@@ -216,8 +248,16 @@
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
          'props': {
           'aspectRatio': 0.6,
-        }
-      },
+          }
+        },
+        {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
+          'props': {
+            'race': 'medMarijuana',
+            'extraCandidateInfo': {},
+            'title': "Title here",
+            'cutline': "This is a cutline"
+          }
+        },
         // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoMarij' }
       ]
     },
@@ -225,10 +265,18 @@
       'name': 'antiTrapping',
       'design': [
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
-        'props' : {
+         'props': {
           'aspectRatio': 0.6,
-        }
-      },
+          }
+        },
+        {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
+          'props': {
+            'race': 'antiTrapping',
+            'extraCandidateInfo': {},
+            'title': "Title here",
+            'cutline': "This is a cutline"
+          }
+        },
         // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoTrapping' }
         // Tabulated
       ]

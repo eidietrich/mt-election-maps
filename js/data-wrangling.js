@@ -89,38 +89,119 @@ function prepForBar (data, maxDim, issueArray) {
   })
   return preppedData;
 }
-
-function prepForCountyMap(countyGeo, votesByCounty, raceName){
-  var data = filterCountyByRace(votesByCounty, RACE_IDS[raceName]);
-  var merged = addRaceToCountyGeoJson(countyGeo, data);
-  return merged;
+function getLastUpdate(){
+  // TODO: Write this
 }
 
-function filterCountyByRace (countyData, raceId){
-  // prep a data object with county race and 'updated' tag
-  outData = {
-    'updated': countyData.last_update,
-    'counties': [],
-  }
-  countyData.records.forEach(function(record){
-    county = {
-      'name': record.name.toUpperCase(), // uppercase to simplify join
-      'candidates': null,
-      'precincts': null,
-      'precinctsReporting': null
-    }
-    record.races.forEach(function(race){
-      if(race.race_id === raceId){
-        county.candidates = race.candidates;
-        county.precincts = +race.total_precincts;
-        county.precinctsReporting = +race.num_reporting;
-      };
+function mergeResultsByCounty(countyGeo, countyResults, raceNames){
+  // add results object to countyGeo properties for each raceName in raceNames
+  // console.log('mergeResultsIn', countyGeo, countyResults, raceNames)
+
+  raceNames.forEach(function(raceName){
+    countyGeo.features.forEach(function(county){
+      var countyName = county.properties.NAME;
+      county.properties[raceName] = getRaceResults(countyResults, countyName, raceName);
     });
-    outData.counties.push(county);
   });
-  return outData;
+
+  // console.log('mergeResultsOut', countyGeo);
+  return countyGeo;
 }
-function addRaceToCountyGeoJson(geoJson, countiesForRace){
+
+function getRaceResults(countyResults, countyName, raceName){
+  // gets results for specific county and race
+  var raceId = RACE_IDS[raceName];
+  // console.log('getRaceIn', countyResults, countyName)
+
+  var results = {}
+
+  countyResults.records.forEach(function(countyResult){
+    // Match to countyName
+    if (countyResult.name.toUpperCase() === countyName){
+      results.county = countyResult.name;
+      countyResult.races.forEach(function(race){
+        if (race.race_id === raceId){
+          results.candidates = parseCandidates(race.candidates);
+          results.precincts = +race.total_precincts;
+          results.precinctsReporting = +race.num_reporting;
+        }
+      });
+    }
+  });
+  // console.log('getRaceOut', countyName, raceName, results);
+  return results;
+}
+function parseCandidates(candidateObj){
+  // TODO: WRITE THIS
+  // Will add vote totals, ranks, supplemental info, etc.
+  return candidateObj;
+}
+
+
+  // // var raceResults =
+  // console.log(votesByCounty)
+  // votesByCounty.records.forEach(function(record){
+  //   var county = {
+  //     'name': record.name.toUpperCase(), // uppercase to simplify join
+  //     'candidates': null,
+  //     'precincts': null,
+  //     'precinctsReporting': null
+  //   }
+  //   record.races.forEach(function(race){
+  //     if(race.race_id === raceId){
+  //       county.candidates = race.candidates;
+  //       county.precincts = +race.total_precincts;
+  //       county.precinctsReporting = +race.num_reporting;
+  //     };
+  //   });
+  //   outData.counties.push(county);
+  // })
+
+
+
+// OBSOLETE FUNCTIONS, I think
+// function prepForCountyMap(countyGeo, votesByCounty, raceName){
+//   var raceId = RACE_IDS[raceName];
+
+//   // TESTING
+//   console.log('start test')
+//   getRaceResults(votesByCounty, raceName)
+//   console.log('end test')
+
+//   // END TEST
+//   var filtered = filterCountyByRace(votesByCounty, raceId);
+//   console.log('filtered', raceName, filtered)
+//   var merged = addRaceToCountyGeoJson(countyGeo, filtered, raceName);
+//   // ^ Problem with filtered data overwrite is in here
+//   console.log('merged', raceName, merged)
+//   return merged;
+// }
+
+// function filterCountyByRace (countyData, raceId){
+//   // prep a data object with county race and 'updated' tag
+//   outData = {
+//     'updated': countyData.last_update,
+//     'counties': [],
+//   }
+//   countyData.records.forEach(function(record){
+//     county = {
+//       'name': record.name.toUpperCase(), // uppercase to simplify join
+//       'candidates': null,
+//       'precincts': null,
+//       'precinctsReporting': null
+//     }
+//     record.races.forEach(function(race){
+//       if(race.race_id === raceId){
+//         county.candidates = race.candidates;
+//         county.precincts = +race.total_precincts;
+//         county.precinctsReporting = +race.num_reporting;
+//       };
+//     });
+//     outData.counties.push(county);
+//   });
+//   return outData;
+// }
+function addRaceToCountyGeoJson(geoJson, countiesForRace, raceName){
   var geoKey = "NAME",
     dataKey = "name"
 
@@ -128,12 +209,13 @@ function addRaceToCountyGeoJson(geoJson, countiesForRace){
   combined.features.forEach(function(feature){
     countiesForRace.counties.forEach(function(county){
       if (String(county[dataKey]) === String(feature.properties[geoKey])){
-        feature.properties.candidates = county.candidates;
+        feature.properties[raceName] = county.candidates;
         feature.properties.precincts = county.precincts;
         feature.properties.precinctsReporting = county.precinctsReporting;
       }
     });
   });
+  console.log(combined);
   return combined;
 }
 // function calcRanks(candidates){
