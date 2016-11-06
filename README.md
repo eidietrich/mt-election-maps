@@ -128,10 +128,16 @@ Necessary map templates:
 - Make 'control of house/senate' bar graph - ChamberControl.js
 - Make 'who's ahead' bar chart  for state-level races and ballot measures
 - Figure out how to translate county-level candidate objects into a meaningful color for chart — who's ahead and by how much
+    + color scale based on percentage ahead, gray for zero votes counted
 - Figure out how to work tooltips and such
-- Make temporary 'all precincts' and 'partial precincts' data for testing
 - Clean up data-wrangling.js
-- TODO: Track down bug where race-filtered data is getting overwritten by the most recently transformed race
+- Order candidates by party (R, D, L, G, others, write-in) --> Put in candidate-parse function
+- Clean up design of everything
+
+- Bar chart
+    + Add vote counts to bars
+    + Play with limits on horizontal scale (60% of vote, 80%?)
+    + Add 50% line
 
 Conversation w Becker, Nov 1, pm:
 - He'll make dashboard template - with tabs for each race

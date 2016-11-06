@@ -12,8 +12,7 @@ var Panel = function (components){
 
   // Break out of function if components is null
   if (!components) {
-    console.log('no panel to render!')
-    return null;
+    console.log('no panel to render!');
   }
 
   this.charts = [];

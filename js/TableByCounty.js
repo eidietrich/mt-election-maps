@@ -31,8 +31,7 @@ TableByCounty.prototype.shapeData = function() {
   function getVotesFor(objectArray, lastName){
     var votes;
     objectArray.forEach(function(d){
-      // console.log(d.candidate_last, lastName);
-      if (d.candidate_last === lastName){
+      if (d.name === lastName){
         votes = +d.votes;
       }
     });
@@ -55,32 +54,19 @@ TableByCounty.prototype.shapeData = function() {
     if (denom === 0){ return 'n/a %'; }
     return d3.format(".0%")(numer / denom);
   }
-  function getCandidates(){
-    // List candidates in race, add supplemental data
-    // TODO: Add in sorting by party? R, D, L, other
-
+  function makeTableArrays(){
+    // create arrays of candidates and keys (last name)
     that.data.features.forEach(function(feature){
-      feature.properties[that.race].candidates.forEach(function(d){
-        var key = d.candidate_last;
+      feature.properties[that.race].candidates.forEach(function(candidate){
+        var key = candidate.name;
         if (that.candidateKeys.indexOf(key) < 0) {
           that.candidateKeys.push(key);
-          var candidateInfo = {
-            'fullName': d.candidate_first + " " + d.candidate_last,
-            'lastName': key,
-            'party': null,
-            'incumbent': 'no'
-          };
-          if (key in that.extraCandidateInfo) {
-            candidateInfo.party = that.extraCandidateInfo[key].party;
-            candidateInfo.incumbent = that.extraCandidateInfo[key].incumbent;
-          }
-          that.candidates.push(candidateInfo);
+          that.candidates.push(candidate);
         }
       });
     });
   }
-
-  getCandidates();
+  makeTableArrays();
   // console.log(this.candidateKeys);
   // console.log(this.candidates);
 

@@ -8,7 +8,7 @@
 <body>
   <ul class="nav nav-tabs"">
     <li role="presentation" id="home" onclick="handleTabClick(this);" class="active"><a href="#">Overview</a></li>
-    <li role="presentation" id="mtGov" onclick="handleTabClick(this);" class="active"><a href="#">Montana Governor</a></li>
+    <li role="presentation" id="mtGov" onclick="handleTabClick(this);"><a href="#">Montana Governor</a></li>
     <li role="presentation" id="usRep" onclick="handleTabClick(this);"><a href="#">US Rep</a></li>
     <li role="presentation" id="usPresident" onclick="handleTabClick(this);"><a href="#">US Presidency</a></li>
     <li role="presentation" id="mtSenate" onclick="handleTabClick(this);"><a href="#">Montana Senate</a></li>
@@ -35,9 +35,9 @@
   <script src="js/Panel.js"></script>
 
   <!-- Component scripts -->
-  <script src="js/CircleShadeMap.js"></script>
+  <!-- <script src="js/CircleShadeMap.js"></script> -->
   <script src="js/BarGraph.js"></script>
-  <script src="js/OpposingBarGraph.js"></script>
+  <!-- <script src="js/OpposingBarGraph.js"></script> -->
   <script src="js/DistrictArray.js"></script>
   <script src="js/ColorMap.js"></script>
   <script src="js/Text.js"></script>
@@ -69,28 +69,6 @@
 
   var dashboard;
 
-  // Supplemental info (e.g. party, incumbency)
-  // TODO: Look at breaking this out into a separate file
-  var extraCandidateInfo = {
-    'mtGov': {
-      'BULLOCK': {'party': 'D', 'incumbent': 'yes'},
-      'GIANFORTE': {'party': 'R', 'incumbent': 'no'},
-      'DUNLAP': {'party': 'L', 'incumbent': 'no'},
-    },
-    'usRep' : {
-      'ZINKE' : {'party': 'R', 'incumbent': 'yes'},
-      'JUNEAU': {'party': 'D', 'incumbent': 'no'},
-      'BRECKENRIDGE' : {'party': 'L', 'incumbent': 'no'},
-    },
-    'usPresident': {
-      'CLINTON': {'party': 'D', 'incumbent': 'no'},
-      'TRUMP': {'party': 'R', 'incumbent': 'no'},
-      'JOHNSON': {'party': 'L', 'incumbent': 'no'},
-      'STEIN': {'party': 'G', 'incumbent': 'no'},
-      'DE LA FUENTE': {'party': null, 'incumbent': 'no'},
-    }
-  }
-
   // Array of files for Dashboard to pull in
   var dataFiles = [
     // Geodata
@@ -101,8 +79,8 @@
     // Add: House cartogram
 
     // Static data
-    {'name': 'mtSenData', 'file': './../data/mt-senate.csv', 'loader': d3.csv},
-    {'name': 'mtHouseData', 'file': './../data/mt-house.csv', 'loader': d3.csv},
+    // {'name': 'mtSenData', 'file': './../data/mt-senate.csv', 'loader': d3.csv},
+    // {'name': 'mtHouseData', 'file': './../data/mt-house.csv', 'loader': d3.csv},
 
     // Live data
     // TODO: Switch this from test data
@@ -113,18 +91,6 @@
   var dataJoins = [
     // Array of data processing functions for Dashboard to run on data refresh
     // See data-wrangling.js for function documentation
-    {
-      'name': 'mtSenDistSenate',
-      'functName': bindFlatToGeoJson,
-      'geoData': 'mtSenDistricts', 'joinData': 'mtSenData',
-      'otherArgs': ['number','number', ['district', 'incum_party', 'district_label']]
-    },
-    {
-      'name': 'mtHouseDistHouse',
-      'functName': bindFlatToGeoJson,
-      'geoData': 'mtHouseDistricts', 'joinData': 'mtHouseData',
-      'otherArgs': ['number','number', ['district', 'incum_party', 'district_label']]
-    },
     {
       // Should add race-keyed results entries to geoJson properties field
       'name': 'mtResultsByCounty',
@@ -217,7 +183,7 @@
       'design': [
         {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'mtGovResults',
           'props': {
-            'height': 200,
+            'height': 150,
             'title': "Title here",
             'cutline': "This is a cutline",
           }
@@ -245,7 +211,7 @@
       'design': [
         {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'usRepResults',
           'props': {
-            'height': 200,
+            'height': 150,
             'title': "US House of Representatives vote",
             'cutline': "This is a cutline",
           }
@@ -292,7 +258,7 @@
       'name': 'mtSenate',
       'design': [
         // MT Senate control
-        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtSenDistSenate',
+        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtSenDistricts',
         'props': {
           'aspectRatio': 0.6,
           'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
@@ -306,7 +272,7 @@
       'name': 'mtHouse',
       'design': [
         // MT house control
-        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtHouseDistHouse',
+        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtHouseDistricts',
         'props': {
           'aspectRatio': 0.6,
           'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
@@ -322,7 +288,7 @@
       'design': [
         {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'medMarijuanaResults',
           'props': {
-            'height': 200,
+            'height': 100,
             'title': "Title here",
             'cutline': "This is a cutline",
           }
@@ -348,7 +314,7 @@
       'design': [
         {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'antiTrappingResults',
           'props': {
-            'height': 200,
+            'height': 100,
             'title': "Title here",
             'cutline': "This is a cutline",
           }
@@ -373,113 +339,5 @@
   }
 
   main();
-
-    // // Queue up multiple data files to load
-    // d3.queue()
-    //   // Geodata
-    //   .defer(d3.json, './../geodata/mt_counties.geojson')
-    //   .defer(d3.json, './../geodata/gc_precincts.geojson')
-    //   .defer(d3.json, './../geodata/mt_senate_districts.geojson')
-    //   .defer(d3.json, './../geodata/mt_house_districts.geojson')
-    //   .defer(d3.json, './../geodata/sen-carto.geojson')
-    //   // Other data
-    //   .defer(d3.json, './../data/2012_election_county_data.json')
-    //   .defer(d3.json, './../data/fake_election_precincts.json')
-    //   .defer(d3.json, './../data/districts.json')
-    //   .defer(d3.csv, './../data/mt-senate.csv')
-    //   .defer(d3.csv, './../data/mt-house.csv')
-    //   .await(main);
-
-    // function main (error,
-    //   // Geodata
-    //   counties, gcPrecincts, mtSenDistricts, mtHouseDistricts, mtSenCartoDisplay,
-    //   // Other data
-    //   countyVotes, precinctVotes, districts, mtSenData, mtHouseData
-    //   ) {
-
-      // var comboData = bindToGeoJson(mtSenDistricts, mtSenData, 'number', 'number', ['district', 'incum_party', 'district_label']);
-      // var comboData2 = bindToGeoJson(mtHouseDistricts, mtHouseData, 'number', 'number', ['district', 'incum_party', 'district_label']);
-      // Panel(
-      //   [
-      //     {'id': 'senateMap', 'Template': ColorMap, 'data': comboData },
-      //     {'id': 'senateMap2', 'Template': ColorMap, 'data': comboData2 }
-      //   ]
-      // );
-
-      // var cartogram = new ColorMap({
-      //   'element': document.querySelector('#chart1'),
-      //   'data': bindToGeoJson(mtSenCartoDisplay, mtSenData, 'sd', 'number',
-      //       ['district', 'incum_party', 'district_label']),
-      //   'aspectRatio': .6, // h / w
-      // });
-
-      // var senateMap = new ColorMap({
-      //   'element': document.querySelector('#chart1'),
-      //   'data': bindToGeoJson(mtSenDistricts, mtSenData, 'number', 'number',
-      //       ['district', 'incum_party', 'district_label']),
-      //   'aspectRatio': .6
-      // })
-
-      // var houseMap = new ColorMap({
-      //   'element': document.querySelector('#chart3'),
-      //   'data': bindToGeoJson(mtHouseDistricts, mtHouseData, 'number', 'number',
-      //       ['district', 'incum_party', 'district_label']),
-      //   'aspectRatio': .6
-      // })
-
-      // var districts = new DistrictArray({
-      //   'element': document.querySelector('#chart4'),
-      //   'data': districts,
-      //   'height': 1500
-      // });
-
-      // var countyBar = new BarGraph({
-      //   'element': document.querySelector('#chart1'),
-      //   'data': prepForBar(countyVotes, 'reg_voters', ['tester_votes', 'rehberg_votes','cox_votes']),
-      //   'height': 100
-      // })
-      // var countyOpposing = new OpposingBarGraph({
-      //   'element': document.querySelector('#chart2'),
-      //   'data': prepForBar(countyVotes, 'reg_voters', ['tester_votes', 'rehberg_votes','cox_votes']),
-      //   'height': 100
-      // })
-
-      // var countiesMerged = mergeData(counties, countyVotes, 'NAME', {
-      //   'voters': 'reg_voters',
-      //   'votesCast': 'votes_cast',
-      //   'toPlot': 'tester_votes'
-      // });
-      // var countyMap = new Choropleth({
-      //     'element': document.querySelector('#chart3'),
-      //     'data': countiesMerged,
-      //     'height': 400
-      //   });
-
-      // var precinctsMerged = mergeData(gcPrecincts, precinctVotes, 'PRECINCT', {
-      //   'voters': 'VOTERS',
-      //   'votesCast': 'VOTERS',
-      //   'toPlot': 'A_VOTES'
-      // })
-      // var gcPrecinctsMap = new Choropleth({
-      //     'element': document.querySelector('#chart2'),
-      //     'data': precinctsMerged,
-      //     'height': 400
-      //   });
-
-      // OLD -------
-      // var map = new CircleShadeMap({
-      //     'element': '#circleshade',
-      //     'data': {
-      //       'districts': counties,
-      //       'votes': countyVotes
-      //     },
-      //     'width': 500,
-      //     'height': 400
-      //   }, globals);
-
-    //   // For resizing
-    //   d3.select(window).on('resize', function(){
-    //   })
-    // }
   </script>
 </html>
