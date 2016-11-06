@@ -2,7 +2,7 @@
 
 // SPEC
 // Maintains a global data story
-// Has 'refresh call' that checks for new data, updates
+// Has 'refresh call' that checks for new data, updates (TODO)
 // Routes into Panel objects
 
 // dataFiles is an array of {variable: 'name', file: 'path', loader: 'd3.csv or d3.json'}
@@ -65,7 +65,7 @@ Dashboard.prototype.processData = function(){
     that.data[dataJoin.name] = applyDataJoin(dataJoin);
   })
 
-  // console.log(this.data);
+  console.log('dashboard data', this.data);
   this.render(this.currentPanel);
 }
 Dashboard.prototype.render = function(panel){

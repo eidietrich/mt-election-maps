@@ -1,0 +1,5917 @@
+{
+  "status": "Fetching data",
+  "params": [],
+  "last_update": "2016-11-03 16:41:00",
+  "races": [
+    {
+      "id": "4424",
+      "race_id": "001450005632",
+      "race_name": "GOVERNOR & LT. GOVERNOR MT",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "16",
+          "unit_name": "Beaverhead"
+        },
+        {
+          "num_reporting": 9,
+          "total_precincts": "19",
+          "unit_name": "Big Horn"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "8",
+          "unit_name": "Blaine"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "5",
+          "unit_name": "Broadwater"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "13",
+          "unit_name": "Carbon"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Carter"
+        },
+        {
+          "num_reporting": 19,
+          "total_precincts": "23",
+          "unit_name": "Cascade"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "9",
+          "unit_name": "Chouteau"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "14",
+          "unit_name": "Custer"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Daniels"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "7",
+          "unit_name": "Dawson"
+        },
+        {
+          "num_reporting": 11,
+          "total_precincts": "14",
+          "unit_name": "Deer Lodge"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Fallon"
+        },
+        {
+          "num_reporting": 15,
+          "total_precincts": "16",
+          "unit_name": "Fergus"
+        },
+        {
+          "num_reporting": 34,
+          "total_precincts": "42",
+          "unit_name": "Flathead"
+        },
+        {
+          "num_reporting": 22,
+          "total_precincts": "32",
+          "unit_name": "Gallatin"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Garfield"
+        },
+        {
+          "num_reporting": 10,
+          "total_precincts": "16",
+          "unit_name": "Glacier"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "2",
+          "unit_name": "Golden Valley"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "4",
+          "unit_name": "Granite"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "17",
+          "unit_name": "Hill"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "10",
+          "unit_name": "Jefferson"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "4",
+          "unit_name": "Judith Basin"
+        },
+        {
+          "num_reporting": 18,
+          "total_precincts": "20",
+          "unit_name": "Lake"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "37",
+          "unit_name": "Lewis & Clark"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Liberty"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "14",
+          "unit_name": "Lincoln"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "8",
+          "unit_name": "Madison"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "3",
+          "unit_name": "McCone"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Meagher"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "6",
+          "unit_name": "Mineral"
+        },
+        {
+          "num_reporting": 50,
+          "total_precincts": "52",
+          "unit_name": "Missoula"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "6",
+          "unit_name": "Musselshell"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "11",
+          "unit_name": "Park"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Petroleum"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "13",
+          "unit_name": "Phillips"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "8",
+          "unit_name": "Pondera"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "7",
+          "unit_name": "Powder River"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "13",
+          "unit_name": "Powell"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Prairie"
+        },
+        {
+          "num_reporting": 11,
+          "total_precincts": "24",
+          "unit_name": "Ravalli"
+        },
+        {
+          "num_reporting": 10,
+          "total_precincts": "13",
+          "unit_name": "Richland"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "12",
+          "unit_name": "Roosevelt"
+        },
+        {
+          "num_reporting": 11,
+          "total_precincts": "12",
+          "unit_name": "Rosebud"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "9",
+          "unit_name": "Sanders"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "6",
+          "unit_name": "Sheridan"
+        },
+        {
+          "num_reporting": 21,
+          "total_precincts": "31",
+          "unit_name": "Silver Bow"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "8",
+          "unit_name": "Stillwater"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Sweet Grass"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "5",
+          "unit_name": "Teton"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "5",
+          "unit_name": "Toole"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "3",
+          "unit_name": "Treasure"
+        },
+        {
+          "num_reporting": 8,
+          "total_precincts": "8",
+          "unit_name": "Valley"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Wheatland"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Wibaux"
+        },
+        {
+          "num_reporting": 36,
+          "total_precincts": "44",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 119747
+        },
+        {
+          "candidate_id": "6587",
+          "candidate_first": "TED",
+          "candidate_last": "DUNLAP",
+          "votes": 109766
+        },
+        {
+          "candidate_id": "6035",
+          "candidate_first": "GREG",
+          "candidate_last": "GIANFORTE",
+          "votes": 86060
+        },
+        {
+          "candidate_id": "5849",
+          "candidate_first": "STEVE",
+          "candidate_last": "BULLOCK",
+          "votes": 49331
+        }
+      ]
+    },
+    {
+      "id": "4542",
+      "race_id": "002450001213",
+      "race_name": "INITIATIVE NO. 177 - PROHIBIT THE USE OF TRAPS AND SNARES FOR ANIMALS BY THE PUBLIC ON ANY PUBLIC LANDS WITHIN MONTANA, WITH CERTAIN EXCEPTIONS. MT",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 9,
+          "total_precincts": "16",
+          "unit_name": "Beaverhead"
+        },
+        {
+          "num_reporting": 13,
+          "total_precincts": "19",
+          "unit_name": "Big Horn"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "8",
+          "unit_name": "Blaine"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Broadwater"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "13",
+          "unit_name": "Carbon"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "4",
+          "unit_name": "Carter"
+        },
+        {
+          "num_reporting": 20,
+          "total_precincts": "23",
+          "unit_name": "Cascade"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "9",
+          "unit_name": "Chouteau"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "14",
+          "unit_name": "Custer"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Daniels"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "7",
+          "unit_name": "Dawson"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "14",
+          "unit_name": "Deer Lodge"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Fallon"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "16",
+          "unit_name": "Fergus"
+        },
+        {
+          "num_reporting": 11,
+          "total_precincts": "42",
+          "unit_name": "Flathead"
+        },
+        {
+          "num_reporting": 29,
+          "total_precincts": "32",
+          "unit_name": "Gallatin"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Garfield"
+        },
+        {
+          "num_reporting": 10,
+          "total_precincts": "16",
+          "unit_name": "Glacier"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "2",
+          "unit_name": "Golden Valley"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Granite"
+        },
+        {
+          "num_reporting": 11,
+          "total_precincts": "17",
+          "unit_name": "Hill"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "10",
+          "unit_name": "Jefferson"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "4",
+          "unit_name": "Judith Basin"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "20",
+          "unit_name": "Lake"
+        },
+        {
+          "num_reporting": 31,
+          "total_precincts": "37",
+          "unit_name": "Lewis & Clark"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Liberty"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "14",
+          "unit_name": "Lincoln"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "8",
+          "unit_name": "Madison"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "3",
+          "unit_name": "McCone"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Meagher"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "6",
+          "unit_name": "Mineral"
+        },
+        {
+          "num_reporting": 24,
+          "total_precincts": "52",
+          "unit_name": "Missoula"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "6",
+          "unit_name": "Musselshell"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "11",
+          "unit_name": "Park"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Petroleum"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "13",
+          "unit_name": "Phillips"
+        },
+        {
+          "num_reporting": 8,
+          "total_precincts": "8",
+          "unit_name": "Pondera"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "7",
+          "unit_name": "Powder River"
+        },
+        {
+          "num_reporting": 10,
+          "total_precincts": "13",
+          "unit_name": "Powell"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Prairie"
+        },
+        {
+          "num_reporting": 17,
+          "total_precincts": "24",
+          "unit_name": "Ravalli"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "13",
+          "unit_name": "Richland"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "12",
+          "unit_name": "Roosevelt"
+        },
+        {
+          "num_reporting": 9,
+          "total_precincts": "12",
+          "unit_name": "Rosebud"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "9",
+          "unit_name": "Sanders"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "6",
+          "unit_name": "Sheridan"
+        },
+        {
+          "num_reporting": 29,
+          "total_precincts": "31",
+          "unit_name": "Silver Bow"
+        },
+        {
+          "num_reporting": 6,
+          "total_precincts": "8",
+          "unit_name": "Stillwater"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "5",
+          "unit_name": "Sweet Grass"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "5",
+          "unit_name": "Teton"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Toole"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "3",
+          "unit_name": "Treasure"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "8",
+          "unit_name": "Valley"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "5",
+          "unit_name": "Wheatland"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Wibaux"
+        },
+        {
+          "num_reporting": 38,
+          "total_precincts": "44",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9002",
+          "candidate_first": "",
+          "candidate_last": "NO ON INITIATIVE I-177",
+          "votes": 147253
+        },
+        {
+          "candidate_id": "9001",
+          "candidate_first": "",
+          "candidate_last": "YES ON INITIATIVE I-177",
+          "votes": 18794
+        }
+      ]
+    },
+    {
+      "id": "4544",
+      "race_id": "002450001215",
+      "race_name": "INITIATIVE NO. 182 - EXPAND ACCESS TO MEDICAL MARIJUANA. MT",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 8,
+          "total_precincts": "16",
+          "unit_name": "Beaverhead"
+        },
+        {
+          "num_reporting": 8,
+          "total_precincts": "19",
+          "unit_name": "Big Horn"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "8",
+          "unit_name": "Blaine"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Broadwater"
+        },
+        {
+          "num_reporting": 13,
+          "total_precincts": "13",
+          "unit_name": "Carbon"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Carter"
+        },
+        {
+          "num_reporting": 8,
+          "total_precincts": "23",
+          "unit_name": "Cascade"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "9",
+          "unit_name": "Chouteau"
+        },
+        {
+          "num_reporting": 9,
+          "total_precincts": "14",
+          "unit_name": "Custer"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Daniels"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "7",
+          "unit_name": "Dawson"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "14",
+          "unit_name": "Deer Lodge"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Fallon"
+        },
+        {
+          "num_reporting": 11,
+          "total_precincts": "16",
+          "unit_name": "Fergus"
+        },
+        {
+          "num_reporting": 41,
+          "total_precincts": "42",
+          "unit_name": "Flathead"
+        },
+        {
+          "num_reporting": 15,
+          "total_precincts": "32",
+          "unit_name": "Gallatin"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Garfield"
+        },
+        {
+          "num_reporting": 9,
+          "total_precincts": "16",
+          "unit_name": "Glacier"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "2",
+          "unit_name": "Golden Valley"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Granite"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "17",
+          "unit_name": "Hill"
+        },
+        {
+          "num_reporting": 10,
+          "total_precincts": "10",
+          "unit_name": "Jefferson"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Judith Basin"
+        },
+        {
+          "num_reporting": 9,
+          "total_precincts": "20",
+          "unit_name": "Lake"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "37",
+          "unit_name": "Lewis & Clark"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "4",
+          "unit_name": "Liberty"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "14",
+          "unit_name": "Lincoln"
+        },
+        {
+          "num_reporting": 8,
+          "total_precincts": "8",
+          "unit_name": "Madison"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "3",
+          "unit_name": "McCone"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Meagher"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "6",
+          "unit_name": "Mineral"
+        },
+        {
+          "num_reporting": 29,
+          "total_precincts": "52",
+          "unit_name": "Missoula"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "6",
+          "unit_name": "Musselshell"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "11",
+          "unit_name": "Park"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "1",
+          "unit_name": "Petroleum"
+        },
+        {
+          "num_reporting": 6,
+          "total_precincts": "13",
+          "unit_name": "Phillips"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "8",
+          "unit_name": "Pondera"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "7",
+          "unit_name": "Powder River"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "13",
+          "unit_name": "Powell"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Prairie"
+        },
+        {
+          "num_reporting": 21,
+          "total_precincts": "24",
+          "unit_name": "Ravalli"
+        },
+        {
+          "num_reporting": 13,
+          "total_precincts": "13",
+          "unit_name": "Richland"
+        },
+        {
+          "num_reporting": 9,
+          "total_precincts": "12",
+          "unit_name": "Roosevelt"
+        },
+        {
+          "num_reporting": 10,
+          "total_precincts": "12",
+          "unit_name": "Rosebud"
+        },
+        {
+          "num_reporting": 8,
+          "total_precincts": "9",
+          "unit_name": "Sanders"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "6",
+          "unit_name": "Sheridan"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "31",
+          "unit_name": "Silver Bow"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "8",
+          "unit_name": "Stillwater"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Sweet Grass"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "5",
+          "unit_name": "Teton"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "5",
+          "unit_name": "Toole"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "3",
+          "unit_name": "Treasure"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "8",
+          "unit_name": "Valley"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "5",
+          "unit_name": "Wheatland"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Wibaux"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "44",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9002",
+          "candidate_first": "",
+          "candidate_last": "NO ON INITIATIVE I-182",
+          "votes": 59460
+        },
+        {
+          "candidate_id": "9001",
+          "candidate_first": "",
+          "candidate_last": "YES ON INITIATIVE I-182",
+          "votes": 152227
+        }
+      ]
+    },
+    {
+      "id": "4546",
+      "race_id": "002450001217",
+      "race_name": "LAW AND JUSTICE FACILITIES   CITY OF BOZEMAN MILL LEVY CW-BOZ",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "17",
+          "unit_name": "Gallatin"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9002",
+          "candidate_first": "",
+          "candidate_last": "MILL LEVY - NO",
+          "votes": 40
+        },
+        {
+          "candidate_id": "9001",
+          "candidate_first": "",
+          "candidate_last": "MILL LEVY - YES",
+          "votes": 102
+        }
+      ]
+    },
+    {
+      "id": "4545",
+      "race_id": "002450001216",
+      "race_name": "LAW AND JUSTICE FACILITIES   COUNTY BOND ELECTION 16",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 27,
+          "total_precincts": "32",
+          "unit_name": "Gallatin"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9002",
+          "candidate_first": "",
+          "candidate_last": "BONDS - NO",
+          "votes": 21511
+        },
+        {
+          "candidate_id": "9001",
+          "candidate_first": "",
+          "candidate_last": "BONDS - YES",
+          "votes": 1439
+        }
+      ]
+    },
+    {
+      "id": "4425",
+      "race_id": "001450005633",
+      "race_name": "PRESIDENT AND VICE PRESIDENT MT",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 16,
+          "total_precincts": "16",
+          "unit_name": "Beaverhead"
+        },
+        {
+          "num_reporting": 9,
+          "total_precincts": "19",
+          "unit_name": "Big Horn"
+        },
+        {
+          "num_reporting": 8,
+          "total_precincts": "8",
+          "unit_name": "Blaine"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Broadwater"
+        },
+        {
+          "num_reporting": 13,
+          "total_precincts": "13",
+          "unit_name": "Carbon"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Carter"
+        },
+        {
+          "num_reporting": 18,
+          "total_precincts": "23",
+          "unit_name": "Cascade"
+        },
+        {
+          "num_reporting": 8,
+          "total_precincts": "9",
+          "unit_name": "Chouteau"
+        },
+        {
+          "num_reporting": 9,
+          "total_precincts": "14",
+          "unit_name": "Custer"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Daniels"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "7",
+          "unit_name": "Dawson"
+        },
+        {
+          "num_reporting": 10,
+          "total_precincts": "14",
+          "unit_name": "Deer Lodge"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Fallon"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "16",
+          "unit_name": "Fergus"
+        },
+        {
+          "num_reporting": 38,
+          "total_precincts": "42",
+          "unit_name": "Flathead"
+        },
+        {
+          "num_reporting": 30,
+          "total_precincts": "32",
+          "unit_name": "Gallatin"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Garfield"
+        },
+        {
+          "num_reporting": 6,
+          "total_precincts": "16",
+          "unit_name": "Glacier"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "2",
+          "unit_name": "Golden Valley"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Granite"
+        },
+        {
+          "num_reporting": 10,
+          "total_precincts": "17",
+          "unit_name": "Hill"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "10",
+          "unit_name": "Jefferson"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Judith Basin"
+        },
+        {
+          "num_reporting": 8,
+          "total_precincts": "20",
+          "unit_name": "Lake"
+        },
+        {
+          "num_reporting": 35,
+          "total_precincts": "37",
+          "unit_name": "Lewis & Clark"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Liberty"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "14",
+          "unit_name": "Lincoln"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "8",
+          "unit_name": "Madison"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "3",
+          "unit_name": "McCone"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Meagher"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "6",
+          "unit_name": "Mineral"
+        },
+        {
+          "num_reporting": 16,
+          "total_precincts": "52",
+          "unit_name": "Missoula"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "6",
+          "unit_name": "Musselshell"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "11",
+          "unit_name": "Park"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Petroleum"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "13",
+          "unit_name": "Phillips"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "8",
+          "unit_name": "Pondera"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "7",
+          "unit_name": "Powder River"
+        },
+        {
+          "num_reporting": 10,
+          "total_precincts": "13",
+          "unit_name": "Powell"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Prairie"
+        },
+        {
+          "num_reporting": 15,
+          "total_precincts": "24",
+          "unit_name": "Ravalli"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "13",
+          "unit_name": "Richland"
+        },
+        {
+          "num_reporting": 9,
+          "total_precincts": "12",
+          "unit_name": "Roosevelt"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "12",
+          "unit_name": "Rosebud"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "9",
+          "unit_name": "Sanders"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "6",
+          "unit_name": "Sheridan"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "31",
+          "unit_name": "Silver Bow"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "8",
+          "unit_name": "Stillwater"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Sweet Grass"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Teton"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Toole"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "3",
+          "unit_name": "Treasure"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "8",
+          "unit_name": "Valley"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Wheatland"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "1",
+          "unit_name": "Wibaux"
+        },
+        {
+          "num_reporting": 36,
+          "total_precincts": "44",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 289494
+        },
+        {
+          "candidate_id": "6697",
+          "candidate_first": "JILL",
+          "candidate_last": "STEIN",
+          "votes": 2273
+        },
+        {
+          "candidate_id": "6696",
+          "candidate_first": "\"ROCKY\" ROQUE",
+          "candidate_last": "DE LA FUENTE",
+          "votes": 68981
+        },
+        {
+          "candidate_id": "6583",
+          "candidate_first": "GARY",
+          "candidate_last": "JOHNSON",
+          "votes": 1821
+        },
+        {
+          "candidate_id": "6581",
+          "candidate_first": "DONALD",
+          "candidate_last": "TRUMP",
+          "votes": 29436
+        },
+        {
+          "candidate_id": "6579",
+          "candidate_first": "HILLARY",
+          "candidate_last": "CLINTON",
+          "votes": 4386
+        }
+      ]
+    },
+    {
+      "id": "4319",
+      "race_id": "001450005518",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 1 HD 001",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "5",
+          "unit_name": "Lincoln"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 482
+        },
+        {
+          "candidate_id": "5982",
+          "candidate_first": "STEVE",
+          "candidate_last": "HAARSTICK",
+          "votes": 417
+        },
+        {
+          "candidate_id": "5779",
+          "candidate_first": "STEVE",
+          "candidate_last": "GUNDERSON",
+          "votes": 9
+        }
+      ]
+    },
+    {
+      "id": "4320",
+      "race_id": "001450005519",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 10 HD 010",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "3",
+          "unit_name": "Flathead"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "3",
+          "unit_name": "Lake"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1881
+        },
+        {
+          "candidate_id": "6625",
+          "candidate_first": "JAMES",
+          "candidate_last": "SWANSON",
+          "votes": 901
+        },
+        {
+          "candidate_id": "5616",
+          "candidate_first": "MARK RAY",
+          "candidate_last": "NOLAND",
+          "votes": 47
+        }
+      ]
+    },
+    {
+      "id": "4321",
+      "race_id": "001450005520",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 100 HD 100",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "4",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 229
+        },
+        {
+          "candidate_id": "5786",
+          "candidate_first": "DAVID \"DOC\"",
+          "candidate_last": "MOORE",
+          "votes": 598
+        },
+        {
+          "candidate_id": "5669",
+          "candidate_first": "ANDREA",
+          "candidate_last": "OLSEN",
+          "votes": 134
+        }
+      ]
+    },
+    {
+      "id": "4322",
+      "race_id": "001450005521",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 11 HD 011",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Flathead"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 483
+        },
+        {
+          "candidate_id": "6215",
+          "candidate_first": "EILEEN",
+          "candidate_last": "BECH",
+          "votes": 962
+        },
+        {
+          "candidate_id": "5712",
+          "candidate_first": "DEREK",
+          "candidate_last": "SKEES",
+          "votes": 386
+        }
+      ]
+    },
+    {
+      "id": "4323",
+      "race_id": "001450005522",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 12 HD 012",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "7",
+          "unit_name": "Lake"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1861
+        },
+        {
+          "candidate_id": "5713",
+          "candidate_first": "SUSAN",
+          "candidate_last": "EVANS",
+          "votes": 1136
+        },
+        {
+          "candidate_id": "5617",
+          "candidate_first": "GREG",
+          "candidate_last": "HERTZ",
+          "votes": 594
+        }
+      ]
+    },
+    {
+      "id": "4324",
+      "race_id": "001450005523",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 13 HD 013",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "3",
+          "unit_name": "Flathead"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "5",
+          "unit_name": "Sanders"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 50
+        },
+        {
+          "candidate_id": "6216",
+          "candidate_first": "DEBRA",
+          "candidate_last": "ACHATZ",
+          "votes": 593
+        },
+        {
+          "candidate_id": "5618",
+          "candidate_first": "BOB",
+          "candidate_last": "BROWN",
+          "votes": 2758
+        }
+      ]
+    },
+    {
+      "id": "4325",
+      "race_id": "001450005524",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 14 HD 014",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "6",
+          "unit_name": "Mineral"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "2",
+          "unit_name": "Missoula"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Sanders"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 3018
+        },
+        {
+          "candidate_id": "6217",
+          "candidate_first": "DENLEY",
+          "candidate_last": "LOGE",
+          "votes": 493
+        },
+        {
+          "candidate_id": "5858",
+          "candidate_first": "BRYAN",
+          "candidate_last": "FOSTER",
+          "votes": 96
+        }
+      ]
+    },
+    {
+      "id": "4326",
+      "race_id": "001450005525",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 15 HD 015",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "2",
+          "unit_name": "Glacier"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Lake"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Pondera"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1419
+        },
+        {
+          "candidate_id": "5646",
+          "candidate_first": "GEORGE",
+          "candidate_last": "KIPP",
+          "votes": 547
+        }
+      ]
+    },
+    {
+      "id": "4327",
+      "race_id": "001450005526",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 16 HD 016",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "11",
+          "unit_name": "Glacier"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1415
+        },
+        {
+          "candidate_id": "5777",
+          "candidate_first": "SUSAN",
+          "candidate_last": "WEBBER",
+          "votes": 500
+        }
+      ]
+    },
+    {
+      "id": "4328",
+      "race_id": "001450005527",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 17 HD 017",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "4",
+          "unit_name": "Lewis & Clark"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Pondera"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "5",
+          "unit_name": "Teton"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 5003
+        },
+        {
+          "candidate_id": "5988",
+          "candidate_first": "BARNETT",
+          "candidate_last": "SPORKIN-MORRISON",
+          "votes": 3294
+        },
+        {
+          "candidate_id": "5718",
+          "candidate_first": "ROSS",
+          "candidate_last": "FITZGERALD",
+          "votes": 557
+        }
+      ]
+    },
+    {
+      "id": "4329",
+      "race_id": "001450005528",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 18 HD 018",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "3",
+          "unit_name": "Glacier"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "3",
+          "unit_name": "Pondera"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "5",
+          "unit_name": "Toole"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 4864
+        },
+        {
+          "candidate_id": "5619",
+          "candidate_first": "ROB",
+          "candidate_last": "COOK",
+          "votes": 1283
+        }
+      ]
+    },
+    {
+      "id": "4330",
+      "race_id": "001450005529",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 19 HD 019",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 8,
+          "total_precincts": "9",
+          "unit_name": "Cascade"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 4677
+        },
+        {
+          "candidate_id": "5720",
+          "candidate_first": "ELAINE",
+          "candidate_last": "OLSEN",
+          "votes": 3124
+        },
+        {
+          "candidate_id": "5719",
+          "candidate_first": "WENDY",
+          "candidate_last": "MCKAMEY",
+          "votes": 53
+        }
+      ]
+    },
+    {
+      "id": "4331",
+      "race_id": "001450005530",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 2 HD 002",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "9",
+          "unit_name": "Lincoln"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 63
+        },
+        {
+          "candidate_id": "5983",
+          "candidate_first": "DAVID",
+          "candidate_last": "MCGARRY",
+          "votes": 356
+        },
+        {
+          "candidate_id": "5611",
+          "candidate_first": "MIKE",
+          "candidate_last": "CUFFE",
+          "votes": 483
+        }
+      ]
+    },
+    {
+      "id": "4332",
+      "race_id": "001450005531",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 20 HD 020",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "2",
+          "unit_name": "Cascade"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 865
+        },
+        {
+          "candidate_id": "5991",
+          "candidate_first": "AMY",
+          "candidate_last": "RAPP",
+          "votes": 16
+        },
+        {
+          "candidate_id": "5721",
+          "candidate_first": "FRED",
+          "candidate_last": "ANDERSON",
+          "votes": 61
+        }
+      ]
+    },
+    {
+      "id": "4333",
+      "race_id": "001450005532",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 21 HD 021",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "2",
+          "unit_name": "Cascade"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5647",
+          "candidate_first": "TOM",
+          "candidate_last": "JACOBSON",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4334",
+      "race_id": "001450005533",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 22 HD 022",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "3",
+          "unit_name": "Cascade"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1296
+        },
+        {
+          "candidate_id": "5859",
+          "candidate_first": "ALBERT",
+          "candidate_last": "FERDERER",
+          "votes": 238
+        },
+        {
+          "candidate_id": "5723",
+          "candidate_first": "LOLA",
+          "candidate_last": "SHELDON-GALLOWAY",
+          "votes": 260
+        }
+      ]
+    },
+    {
+      "id": "4335",
+      "race_id": "001450005534",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 23 HD 023",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Cascade"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 772
+        },
+        {
+          "candidate_id": "5781",
+          "candidate_first": "BRAD",
+          "candidate_last": "HAMLETT",
+          "votes": 30
+        },
+        {
+          "candidate_id": "5724",
+          "candidate_first": "MARK",
+          "candidate_last": "DUNN",
+          "votes": 50
+        }
+      ]
+    },
+    {
+      "id": "4336",
+      "race_id": "001450005535",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 24 HD 024",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "1",
+          "unit_name": "Cascade"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5725",
+          "candidate_first": "WILLIAM",
+          "candidate_last": "RAAEN",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5648",
+          "candidate_first": "JEAN",
+          "candidate_last": "PRICE",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4337",
+      "race_id": "001450005536",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 25 HD 025",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "1",
+          "unit_name": "Cascade"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5727",
+          "candidate_first": "JEREMY",
+          "candidate_last": "TREBAS",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5726",
+          "candidate_first": "GARRETT",
+          "candidate_last": "LANKFORD",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4338",
+      "race_id": "001450005537",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 26 HD 026",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "2",
+          "unit_name": "Cascade"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 595
+        },
+        {
+          "candidate_id": "6219",
+          "candidate_first": "MICHAEL",
+          "candidate_last": "COOPER",
+          "votes": 377
+        },
+        {
+          "candidate_id": "5728",
+          "candidate_first": "CASEY",
+          "candidate_last": "SCHREINER",
+          "votes": 2
+        }
+      ]
+    },
+    {
+      "id": "4339",
+      "race_id": "001450005538",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 27 HD 027",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "1",
+          "unit_name": "Cascade"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "8",
+          "unit_name": "Chouteau"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Hill"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Liberty"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 3583
+        },
+        {
+          "candidate_id": "5993",
+          "candidate_first": "RYAN",
+          "candidate_last": "ROMINGER",
+          "votes": 374
+        },
+        {
+          "candidate_id": "5730",
+          "candidate_first": "JAMES",
+          "candidate_last": "O'HARA",
+          "votes": 327
+        }
+      ]
+    },
+    {
+      "id": "4340",
+      "race_id": "001450005539",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 28 HD 028",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "9",
+          "unit_name": "Hill"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 720
+        },
+        {
+          "candidate_id": "5731",
+          "candidate_first": "JACOB",
+          "candidate_last": "BACHMEIER",
+          "votes": 290
+        },
+        {
+          "candidate_id": "5621",
+          "candidate_first": "STEPHANIE",
+          "candidate_last": "HESS",
+          "votes": 1784
+        }
+      ]
+    },
+    {
+      "id": "4341",
+      "race_id": "001450005540",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 29 HD 029",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 7,
+          "total_precincts": "12",
+          "unit_name": "Fergus"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "1",
+          "unit_name": "Petroleum"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 238
+        },
+        {
+          "candidate_id": "5861",
+          "candidate_first": "DRYN",
+          "candidate_last": "DURLEY",
+          "votes": 6227
+        },
+        {
+          "candidate_id": "5732",
+          "candidate_first": "DAN",
+          "candidate_last": "BARTEL",
+          "votes": 112
+        }
+      ]
+    },
+    {
+      "id": "4342",
+      "race_id": "001450005541",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 3 HD 003",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "5",
+          "unit_name": "Flathead"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1441
+        },
+        {
+          "candidate_id": "5706",
+          "candidate_first": "TAYLOR",
+          "candidate_last": "ROSE",
+          "votes": 395
+        },
+        {
+          "candidate_id": "5645",
+          "candidate_first": "ZAC",
+          "candidate_last": "PERRY",
+          "votes": 520
+        }
+      ]
+    },
+    {
+      "id": "4343",
+      "race_id": "001450005542",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 30 HD 030",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Cascade"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Fergus"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "2",
+          "unit_name": "Golden Valley"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Judith Basin"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Meagher"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "5",
+          "unit_name": "Wheatland"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 2022
+        },
+        {
+          "candidate_id": "5862",
+          "candidate_first": "LINDA",
+          "candidate_last": "JOHNSON",
+          "votes": 4552
+        },
+        {
+          "candidate_id": "5734",
+          "candidate_first": "E. WYLIE",
+          "candidate_last": "GALT",
+          "votes": 4369
+        }
+      ]
+    },
+    {
+      "id": "4344",
+      "race_id": "001450005543",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 31 HD 031",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "7",
+          "unit_name": "Roosevelt"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "2",
+          "unit_name": "Valley"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 348
+        },
+        {
+          "candidate_id": "5649",
+          "candidate_first": "BRIDGET",
+          "candidate_last": "SMITH",
+          "votes": 1147
+        }
+      ]
+    },
+    {
+      "id": "4345",
+      "race_id": "001450005544",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 32 HD 032",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "5",
+          "unit_name": "Blaine"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "1",
+          "unit_name": "Chouteau"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "3",
+          "unit_name": "Hill"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "6",
+          "unit_name": "Phillips"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 4008
+        },
+        {
+          "candidate_id": "5863",
+          "candidate_first": "JONATHAN",
+          "candidate_last": "WINDY BOY",
+          "votes": 1038
+        }
+      ]
+    },
+    {
+      "id": "4346",
+      "race_id": "001450005545",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 33 HD 033",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "3",
+          "unit_name": "Blaine"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Hill"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "7",
+          "unit_name": "Phillips"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "2",
+          "unit_name": "Valley"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 7356
+        },
+        {
+          "candidate_id": "5864",
+          "candidate_first": "MIKE",
+          "candidate_last": "FINLEY",
+          "votes": 910
+        },
+        {
+          "candidate_id": "5736",
+          "candidate_first": "CASEY",
+          "candidate_last": "KNUDSEN",
+          "votes": 495
+        }
+      ]
+    },
+    {
+      "id": "4347",
+      "race_id": "001450005546",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 34 HD 034",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "4",
+          "unit_name": "Daniels"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Roosevelt"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "6",
+          "unit_name": "Sheridan"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Valley"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 6704
+        },
+        {
+          "candidate_id": "5995",
+          "candidate_first": "EVELYN",
+          "candidate_last": "CARLISLE",
+          "votes": 2748
+        },
+        {
+          "candidate_id": "5737",
+          "candidate_first": "AUSTIN",
+          "candidate_last": "KNUDSEN",
+          "votes": 408
+        }
+      ]
+    },
+    {
+      "id": "4348",
+      "race_id": "001450005547",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 35 HD 035",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "13",
+          "unit_name": "Richland"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 424
+        },
+        {
+          "candidate_id": "5996",
+          "candidate_first": "CHRIS",
+          "candidate_last": "TRUMPOWER",
+          "votes": 377
+        },
+        {
+          "candidate_id": "5622",
+          "candidate_first": "SCOTT",
+          "candidate_last": "STAFFANSON",
+          "votes": 96
+        }
+      ]
+    },
+    {
+      "id": "4349",
+      "race_id": "001450005548",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 36 HD 036",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "7",
+          "unit_name": "Dawson"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Wibaux"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1697
+        },
+        {
+          "candidate_id": "6220",
+          "candidate_first": "MIKE",
+          "candidate_last": "RUDDY",
+          "votes": 18
+        },
+        {
+          "candidate_id": "5623",
+          "candidate_first": "ALAN",
+          "candidate_last": "DOANE",
+          "votes": 48
+        }
+      ]
+    },
+    {
+      "id": "4350",
+      "race_id": "001450005549",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 37 HD 037",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Carter"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "7",
+          "unit_name": "Custer"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Fallon"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Garfield"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "3",
+          "unit_name": "McCone"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "2",
+          "unit_name": "Powder River"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Prairie"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 6204
+        },
+        {
+          "candidate_id": "5865",
+          "candidate_first": "JUDI",
+          "candidate_last": "CRAMER",
+          "votes": 2745
+        },
+        {
+          "candidate_id": "5739",
+          "candidate_first": "BILL",
+          "candidate_last": "HARRIS",
+          "votes": 5106
+        }
+      ]
+    },
+    {
+      "id": "4351",
+      "race_id": "001450005550",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 38 HD 038",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "4",
+          "unit_name": "Custer"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 935
+        },
+        {
+          "candidate_id": "5866",
+          "candidate_first": "STEVE",
+          "candidate_last": "MUGGLI",
+          "votes": 52
+        },
+        {
+          "candidate_id": "5624",
+          "candidate_first": "KENNETH",
+          "candidate_last": "HOLMLUND",
+          "votes": 2
+        }
+      ]
+    },
+    {
+      "id": "4352",
+      "race_id": "001450005551",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 39 HD 039",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "3",
+          "unit_name": "Custer"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "8",
+          "unit_name": "Rosebud"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "3",
+          "unit_name": "Treasure"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "2",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 2716
+        },
+        {
+          "candidate_id": "5998",
+          "candidate_first": "BRUCE",
+          "candidate_last": "MILLER",
+          "votes": 696
+        },
+        {
+          "candidate_id": "5625",
+          "candidate_first": "GERALDINE",
+          "candidate_last": "CUSTER",
+          "votes": 992
+        }
+      ]
+    },
+    {
+      "id": "4353",
+      "race_id": "001450005552",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 4 HD 004",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "6",
+          "unit_name": "Flathead"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "6213",
+          "candidate_first": "DEBORAH",
+          "candidate_last": "GENTRY",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5707",
+          "candidate_first": "MATT",
+          "candidate_last": "REGIER",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4354",
+      "race_id": "001450005553",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 40 HD 040",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "6",
+          "unit_name": "Musselshell"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 3990
+        },
+        {
+          "candidate_id": "6663",
+          "candidate_first": "SUE",
+          "candidate_last": "OLSON",
+          "votes": 84
+        },
+        {
+          "candidate_id": "5867",
+          "candidate_first": "BARRY",
+          "candidate_last": "USHER",
+          "votes": 811
+        }
+      ]
+    },
+    {
+      "id": "4355",
+      "race_id": "001450005554",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 41 HD 041",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "8",
+          "unit_name": "Big Horn"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "5",
+          "unit_name": "Powder River"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "4",
+          "unit_name": "Rosebud"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1377
+        },
+        {
+          "candidate_id": "5650",
+          "candidate_first": "RAE",
+          "candidate_last": "PEPPERS",
+          "votes": 606
+        }
+      ]
+    },
+    {
+      "id": "4356",
+      "race_id": "001450005555",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 42 HD 042",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 7,
+          "total_precincts": "11",
+          "unit_name": "Big Horn"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "2",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 5987
+        },
+        {
+          "candidate_id": "5741",
+          "candidate_first": "SHARON",
+          "candidate_last": "PEREGOY",
+          "votes": 491
+        }
+      ]
+    },
+    {
+      "id": "4357",
+      "race_id": "001450005556",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 43 HD 043",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "3",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 54
+        },
+        {
+          "candidate_id": "6624",
+          "candidate_first": "JOSH",
+          "candidate_last": "DANIELS",
+          "votes": 754
+        },
+        {
+          "candidate_id": "6000",
+          "candidate_first": "ELIZABETH",
+          "candidate_last": "PINCOLINI",
+          "votes": 71
+        },
+        {
+          "candidate_id": "5742",
+          "candidate_first": "PEGGY",
+          "candidate_last": "WEBB",
+          "votes": 77
+        }
+      ]
+    },
+    {
+      "id": "4358",
+      "race_id": "001450005557",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 44 HD 044",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "3",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 59
+        },
+        {
+          "candidate_id": "6222",
+          "candidate_first": "KARI",
+          "candidate_last": "BOITER",
+          "votes": 909
+        },
+        {
+          "candidate_id": "5626",
+          "candidate_first": "DALE",
+          "candidate_last": "MORTENSEN",
+          "votes": 5
+        }
+      ]
+    },
+    {
+      "id": "4359",
+      "race_id": "001450005558",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 45 HD 045",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "2",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1970
+        },
+        {
+          "candidate_id": "6224",
+          "candidate_first": "KEN",
+          "candidate_last": "CROUCH",
+          "votes": 18
+        },
+        {
+          "candidate_id": "5627",
+          "candidate_first": "DANIEL",
+          "candidate_last": "ZOLNIKOV",
+          "votes": 7
+        }
+      ]
+    },
+    {
+      "id": "4360",
+      "race_id": "001450005559",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 46 HD 046",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "2",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "6001",
+          "candidate_first": "ANGIE",
+          "candidate_last": "BUCKLEY",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5628",
+          "candidate_first": "DONALD",
+          "candidate_last": "JONES",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4361",
+      "race_id": "001450005560",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 47 HD 047",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "2",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 782
+        },
+        {
+          "candidate_id": "6225",
+          "candidate_first": "JASON",
+          "candidate_last": "THOMAS",
+          "votes": 245
+        },
+        {
+          "candidate_id": "5651",
+          "candidate_first": "KATHY",
+          "candidate_last": "KELKER",
+          "votes": 384
+        }
+      ]
+    },
+    {
+      "id": "4362",
+      "race_id": "001450005561",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 48 HD 048",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "2",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 361
+        },
+        {
+          "candidate_id": "5744",
+          "candidate_first": "ROBERT",
+          "candidate_last": "SAUNDERS",
+          "votes": 334
+        },
+        {
+          "candidate_id": "5652",
+          "candidate_first": "JESSICA",
+          "candidate_last": "KARJALA",
+          "votes": 264
+        }
+      ]
+    },
+    {
+      "id": "4363",
+      "race_id": "001450005562",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 49 HD 049",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "2",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "6627",
+          "candidate_first": "BENJAMIN",
+          "candidate_last": "HUNTER",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5653",
+          "candidate_first": "KELLY",
+          "candidate_last": "MCCARTHY",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4364",
+      "race_id": "001450005563",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 5 HD 005",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "5",
+          "unit_name": "Flathead"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 850
+        },
+        {
+          "candidate_id": "5709",
+          "candidate_first": "DAVE",
+          "candidate_last": "FERN",
+          "votes": 39
+        },
+        {
+          "candidate_id": "5708",
+          "candidate_first": "CHET",
+          "candidate_last": "BILLI",
+          "votes": 82
+        }
+      ]
+    },
+    {
+      "id": "4365",
+      "race_id": "001450005564",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 50 HD 050",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "2",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "6003",
+          "candidate_first": "KERRI",
+          "candidate_last": "SEEKINS-CROWE",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5654",
+          "candidate_first": "VIRGINIA",
+          "candidate_last": "COURT",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4366",
+      "race_id": "001450005565",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 51 HD 051",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "3",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 2986
+        },
+        {
+          "candidate_id": "5868",
+          "candidate_first": "ADAM",
+          "candidate_last": "ROSENDALE",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5745",
+          "candidate_first": "SHOOTS",
+          "candidate_last": "VEIS",
+          "votes": 10
+        }
+      ]
+    },
+    {
+      "id": "4367",
+      "race_id": "001450005566",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 52 HD 052",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "2",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1000
+        },
+        {
+          "candidate_id": "5747",
+          "candidate_first": "JIMMY",
+          "candidate_last": "PATELIS",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5746",
+          "candidate_first": "CHRIS",
+          "candidate_last": "GOODRIDGE",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4368",
+      "race_id": "001450005567",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 53 HD 053",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "3",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "6665",
+          "candidate_first": "DENNIS",
+          "candidate_last": "LENZ",
+          "votes": 0
+        },
+        {
+          "candidate_id": "6004",
+          "candidate_first": "JORDAN",
+          "candidate_last": "MATNEY",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4369",
+      "race_id": "001450005568",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 54 HD 054",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "2",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 359
+        },
+        {
+          "candidate_id": "5630",
+          "candidate_first": "JEFF",
+          "candidate_last": "ESSMANN",
+          "votes": 453
+        }
+      ]
+    },
+    {
+      "id": "4370",
+      "race_id": "001450005569",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 55 HD 055",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "5",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1474
+        },
+        {
+          "candidate_id": "6227",
+          "candidate_first": "RYAN",
+          "candidate_last": "ARNOLD",
+          "votes": 2183
+        },
+        {
+          "candidate_id": "5631",
+          "candidate_first": "VINCE",
+          "candidate_last": "RICCI",
+          "votes": 72
+        }
+      ]
+    },
+    {
+      "id": "4371",
+      "race_id": "001450005570",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 56 HD 056",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "3",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 143
+        },
+        {
+          "candidate_id": "6006",
+          "candidate_first": "DARYL",
+          "candidate_last": "TEMPLET",
+          "votes": 641
+        },
+        {
+          "candidate_id": "5748",
+          "candidate_first": "SUE",
+          "candidate_last": "VINTON",
+          "votes": 46
+        }
+      ]
+    },
+    {
+      "id": "4375",
+      "race_id": "001450005574",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 6 HD 006",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Flathead"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 706
+        },
+        {
+          "candidate_id": "6695",
+          "candidate_first": "IAN",
+          "candidate_last": "WHEELER",
+          "votes": 996
+        },
+        {
+          "candidate_id": "5985",
+          "candidate_first": "LISA",
+          "candidate_last": "MORROW",
+          "votes": 25
+        },
+        {
+          "candidate_id": "5612",
+          "candidate_first": "CARL",
+          "candidate_last": "GLIMM",
+          "votes": 259
+        }
+      ]
+    },
+    {
+      "id": "4376",
+      "race_id": "001450005575",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 60 HD 060",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "7",
+          "unit_name": "Park"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 2567
+        },
+        {
+          "candidate_id": "5783",
+          "candidate_first": "LAURIE",
+          "candidate_last": "BISHOP",
+          "votes": 897
+        },
+        {
+          "candidate_id": "5635",
+          "candidate_first": "DEBRA",
+          "candidate_last": "LAMM",
+          "votes": 191
+        }
+      ]
+    },
+    {
+      "id": "4377",
+      "race_id": "001450005576",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 61 HD 061",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "4",
+          "unit_name": "Gallatin"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 293
+        },
+        {
+          "candidate_id": "6620",
+          "candidate_first": "FRANCIS",
+          "candidate_last": "WENDT",
+          "votes": 339
+        },
+        {
+          "candidate_id": "6228",
+          "candidate_first": "NEAL",
+          "candidate_last": "GANSER",
+          "votes": 9
+        },
+        {
+          "candidate_id": "5749",
+          "candidate_first": "JIM",
+          "candidate_last": "HAMILTON",
+          "votes": 315
+        }
+      ]
+    },
+    {
+      "id": "4378",
+      "race_id": "001450005577",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 62 HD 062",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Gallatin"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 2097
+        },
+        {
+          "candidate_id": "5655",
+          "candidate_first": "TOM",
+          "candidate_last": "WOODS",
+          "votes": 1316
+        }
+      ]
+    },
+    {
+      "id": "4379",
+      "race_id": "001450005578",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 63 HD 063",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "3",
+          "unit_name": "Gallatin"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 715
+        },
+        {
+          "candidate_id": "6229",
+          "candidate_first": "JIM",
+          "candidate_last": "KING",
+          "votes": 839
+        },
+        {
+          "candidate_id": "5778",
+          "candidate_first": "ZACH",
+          "candidate_last": "BROWN",
+          "votes": 376
+        }
+      ]
+    },
+    {
+      "id": "4380",
+      "race_id": "001450005579",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 64 HD 064",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Gallatin"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1895
+        },
+        {
+          "candidate_id": "5750",
+          "candidate_first": "CHASE",
+          "candidate_last": "ELLISON",
+          "votes": 3
+        },
+        {
+          "candidate_id": "5636",
+          "candidate_first": "KERRY",
+          "candidate_last": "WHITE",
+          "votes": 20
+        }
+      ]
+    },
+    {
+      "id": "4381",
+      "race_id": "001450005580",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 65 HD 065",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "3",
+          "unit_name": "Gallatin"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 831
+        },
+        {
+          "candidate_id": "6230",
+          "candidate_first": "JON",
+          "candidate_last": "KNOKEY",
+          "votes": 405
+        },
+        {
+          "candidate_id": "5656",
+          "candidate_first": "CHRISTOPHER",
+          "candidate_last": "POPE",
+          "votes": 538
+        }
+      ]
+    },
+    {
+      "id": "4382",
+      "race_id": "001450005581",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 66 HD 066",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "3",
+          "unit_name": "Gallatin"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5657",
+          "candidate_first": "DENISE",
+          "candidate_last": "HAYMAN",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4383",
+      "race_id": "001450005582",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 67 HD 067",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "3",
+          "unit_name": "Gallatin"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 477
+        },
+        {
+          "candidate_id": "5869",
+          "candidate_first": "JOHN",
+          "candidate_last": "JURMU",
+          "votes": 509
+        },
+        {
+          "candidate_id": "5637",
+          "candidate_first": "TOM",
+          "candidate_last": "BURNETT",
+          "votes": 7
+        }
+      ]
+    },
+    {
+      "id": "4384",
+      "race_id": "001450005583",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 68 HD 068",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "3",
+          "unit_name": "Gallatin"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "6011",
+          "candidate_first": "DAVID",
+          "candidate_last": "ANDES",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5752",
+          "candidate_first": "BRUCE",
+          "candidate_last": "GRUBBS",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4385",
+      "race_id": "001450005584",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 69 HD 069",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Gallatin"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "6232",
+          "candidate_first": "ERIC",
+          "candidate_last": "DUNHAM",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5753",
+          "candidate_first": "WALT",
+          "candidate_last": "SALES",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4386",
+      "race_id": "001450005585",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 7 HD 007",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Flathead"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1141
+        },
+        {
+          "candidate_id": "5710",
+          "candidate_first": "LYNN",
+          "candidate_last": "STANLEY",
+          "votes": 447
+        },
+        {
+          "candidate_id": "5613",
+          "candidate_first": "FRANK",
+          "candidate_last": "GARNER",
+          "votes": 397
+        }
+      ]
+    },
+    {
+      "id": "4387",
+      "race_id": "001450005586",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 70 HD 070",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "5",
+          "unit_name": "Broadwater"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "3",
+          "unit_name": "Lewis & Clark"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 2454
+        },
+        {
+          "candidate_id": "6012",
+          "candidate_first": "MERLYN",
+          "candidate_last": "HUSO",
+          "votes": 203
+        },
+        {
+          "candidate_id": "5857",
+          "candidate_first": "KELLY",
+          "candidate_last": "FLYNN",
+          "votes": 279
+        }
+      ]
+    },
+    {
+      "id": "4388",
+      "race_id": "001450005587",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 71 HD 071",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Jefferson"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "8",
+          "unit_name": "Madison"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "1",
+          "unit_name": "Silver Bow"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1603
+        },
+        {
+          "candidate_id": "5638",
+          "candidate_first": "RAY",
+          "candidate_last": "SHAW",
+          "votes": 4360
+        }
+      ]
+    },
+    {
+      "id": "4389",
+      "race_id": "001450005588",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 72 HD 072",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "16",
+          "unit_name": "Beaverhead"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "3",
+          "unit_name": "Silver Bow"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1698
+        },
+        {
+          "candidate_id": "6014",
+          "candidate_first": "MIKE",
+          "candidate_last": "MOSOLF",
+          "votes": 2421
+        },
+        {
+          "candidate_id": "5756",
+          "candidate_first": "TOM",
+          "candidate_last": "WELCH",
+          "votes": 111
+        }
+      ]
+    },
+    {
+      "id": "4390",
+      "race_id": "001450005589",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 73 HD 073",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "8",
+          "unit_name": "Silver Bow"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 68
+        },
+        {
+          "candidate_id": "5757",
+          "candidate_first": "JIM",
+          "candidate_last": "KEANE",
+          "votes": 3282
+        }
+      ]
+    },
+    {
+      "id": "4391",
+      "race_id": "001450005590",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 74 HD 074",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "7",
+          "unit_name": "Silver Bow"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5758",
+          "candidate_first": "AMANDA",
+          "candidate_last": "CURTIS",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4392",
+      "race_id": "001450005591",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 75 HD 075",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 7,
+          "total_precincts": "9",
+          "unit_name": "Jefferson"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 2139
+        },
+        {
+          "candidate_id": "6016",
+          "candidate_first": "SABRINA",
+          "candidate_last": "STEKETEE",
+          "votes": 4348
+        },
+        {
+          "candidate_id": "5639",
+          "candidate_first": "KIRK",
+          "candidate_last": "WAGONER",
+          "votes": 409
+        }
+      ]
+    },
+    {
+      "id": "4393",
+      "race_id": "001450005592",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 76 HD 076",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "6",
+          "unit_name": "Silver Bow"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 361
+        },
+        {
+          "candidate_id": "5658",
+          "candidate_first": "RYAN",
+          "candidate_last": "LYNCH",
+          "votes": 82
+        }
+      ]
+    },
+    {
+      "id": "4394",
+      "race_id": "001450005593",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 77 HD 077",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "9",
+          "unit_name": "Deer Lodge"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Granite"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 300
+        },
+        {
+          "candidate_id": "5870",
+          "candidate_first": "KERRY",
+          "candidate_last": "GRAYBEAL",
+          "votes": 5069
+        },
+        {
+          "candidate_id": "5659",
+          "candidate_first": "KATHY",
+          "candidate_last": "SWANSON",
+          "votes": 443
+        }
+      ]
+    },
+    {
+      "id": "4395",
+      "race_id": "001450005594",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 78 HD 078",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "5",
+          "unit_name": "Deer Lodge"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "6",
+          "unit_name": "Powell"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "6",
+          "unit_name": "Silver Bow"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 452
+        },
+        {
+          "candidate_id": "6017",
+          "candidate_first": "DEAN",
+          "candidate_last": "DESILVA",
+          "votes": 2362
+        },
+        {
+          "candidate_id": "5660",
+          "candidate_first": "GORDON",
+          "candidate_last": "PIERSON",
+          "votes": 1729
+        }
+      ]
+    },
+    {
+      "id": "4396",
+      "race_id": "001450005595",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 79 HD 079",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Lewis & Clark"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1735
+        },
+        {
+          "candidate_id": "5661",
+          "candidate_first": "JENNY",
+          "candidate_last": "ECK",
+          "votes": 1098
+        }
+      ]
+    },
+    {
+      "id": "4397",
+      "race_id": "001450005596",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 8 HD 008",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "3",
+          "unit_name": "Flathead"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1287
+        },
+        {
+          "candidate_id": "5986",
+          "candidate_first": "C PAIGE",
+          "candidate_last": "RAPPLEYE",
+          "votes": 870
+        },
+        {
+          "candidate_id": "5614",
+          "candidate_first": "STEVE",
+          "candidate_last": "LAVIN",
+          "votes": 43
+        }
+      ]
+    },
+    {
+      "id": "4398",
+      "race_id": "001450005597",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 80 HD 080",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "5",
+          "unit_name": "Lewis & Clark"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "7",
+          "unit_name": "Powell"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1127
+        },
+        {
+          "candidate_id": "6621",
+          "candidate_first": "VALERIE",
+          "candidate_last": "CLAGUE",
+          "votes": 1271
+        },
+        {
+          "candidate_id": "6018",
+          "candidate_first": "ELIZABETH",
+          "candidate_last": "CAIN",
+          "votes": 380
+        },
+        {
+          "candidate_id": "5759",
+          "candidate_first": "BECKY",
+          "candidate_last": "BEARD",
+          "votes": 647
+        }
+      ]
+    },
+    {
+      "id": "4399",
+      "race_id": "001450005598",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 81 HD 081",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Lewis & Clark"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 749
+        },
+        {
+          "candidate_id": "5662",
+          "candidate_first": "JANET",
+          "candidate_last": "ELLIS",
+          "votes": 531
+        }
+      ]
+    },
+    {
+      "id": "4400",
+      "race_id": "001450005599",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 82 HD 082",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "5",
+          "unit_name": "Lewis & Clark"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 999
+        },
+        {
+          "candidate_id": "5663",
+          "candidate_first": "MOFFIE",
+          "candidate_last": "FUNK",
+          "votes": 1
+        }
+      ]
+    },
+    {
+      "id": "4401",
+      "race_id": "001450005600",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 83 HD 083",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Lewis & Clark"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1021
+        },
+        {
+          "candidate_id": "5871",
+          "candidate_first": "BOB",
+          "candidate_last": "LEACH",
+          "votes": 577
+        },
+        {
+          "candidate_id": "5761",
+          "candidate_first": "KIM",
+          "candidate_last": "ABBOTT",
+          "votes": 248
+        }
+      ]
+    },
+    {
+      "id": "4402",
+      "race_id": "001450005601",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 84 HD 084",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "6",
+          "unit_name": "Lewis & Clark"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "6622",
+          "candidate_first": "PAULA",
+          "candidate_last": "BONAR",
+          "votes": 0
+        },
+        {
+          "candidate_id": "6259",
+          "candidate_first": "MARY ANN",
+          "candidate_last": "DUNWELL",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5763",
+          "candidate_first": "STEVE",
+          "candidate_last": "GIBSON",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4403",
+      "race_id": "001450005602",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 85 HD 085",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 6,
+          "total_precincts": "7",
+          "unit_name": "Ravalli"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1232
+        },
+        {
+          "candidate_id": "6020",
+          "candidate_first": "A. JO",
+          "candidate_last": "YOUNG",
+          "votes": 3518
+        },
+        {
+          "candidate_id": "5640",
+          "candidate_first": "THERESA",
+          "candidate_last": "MANZELLA",
+          "votes": 629
+        }
+      ]
+    },
+    {
+      "id": "4404",
+      "race_id": "001450005603",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 86 HD 086",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 5,
+          "total_precincts": "5",
+          "unit_name": "Ravalli"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 4430
+        },
+        {
+          "candidate_id": "5764",
+          "candidate_first": "NANCY",
+          "candidate_last": "NEAL",
+          "votes": 325
+        },
+        {
+          "candidate_id": "5641",
+          "candidate_first": "RON",
+          "candidate_last": "EHLI",
+          "votes": 167
+        }
+      ]
+    },
+    {
+      "id": "4405",
+      "race_id": "001450005604",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 87 HD 087",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "7",
+          "unit_name": "Ravalli"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 3967
+        },
+        {
+          "candidate_id": "5642",
+          "candidate_first": "NANCY",
+          "candidate_last": "BALLANCE",
+          "votes": 7
+        }
+      ]
+    },
+    {
+      "id": "4406",
+      "race_id": "001450005605",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 88 HD 088",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "5",
+          "unit_name": "Ravalli"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5873",
+          "candidate_first": "MARGARET",
+          "candidate_last": "GORSKI",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5643",
+          "candidate_first": "ED",
+          "candidate_last": "GREEF",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4407",
+      "race_id": "001450005606",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 89 HD 089",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "7",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 3725
+        },
+        {
+          "candidate_id": "6238",
+          "candidate_first": "ALEX",
+          "candidate_last": "KRIGSVOLD",
+          "votes": 64
+        },
+        {
+          "candidate_id": "5765",
+          "candidate_first": "NATE",
+          "candidate_last": "MCCONNELL",
+          "votes": 79
+        }
+      ]
+    },
+    {
+      "id": "4408",
+      "race_id": "001450005607",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 9 HD 009",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Flathead"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 624
+        },
+        {
+          "candidate_id": "6214",
+          "candidate_first": "BRITTANY",
+          "candidate_last": "MACLEAN",
+          "votes": 2231
+        },
+        {
+          "candidate_id": "5615",
+          "candidate_first": "RANDY",
+          "candidate_last": "BRODEHL",
+          "votes": 71
+        }
+      ]
+    },
+    {
+      "id": "4409",
+      "race_id": "001450005608",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 90 HD 090",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "6239",
+          "candidate_first": "BILL",
+          "candidate_last": "MURRAY",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5664",
+          "candidate_first": "ELLIE",
+          "candidate_last": "SMITH",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4410",
+      "race_id": "001450005609",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 91 HD 091",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 3698
+        },
+        {
+          "candidate_id": "5665",
+          "candidate_first": "BRYCE",
+          "candidate_last": "BENNETT",
+          "votes": 102
+        }
+      ]
+    },
+    {
+      "id": "4411",
+      "race_id": "001450005610",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 92 HD 092",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "6",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 2844
+        },
+        {
+          "candidate_id": "5768",
+          "candidate_first": "ADDRIEN",
+          "candidate_last": "MARX",
+          "votes": 74
+        },
+        {
+          "candidate_id": "5767",
+          "candidate_first": "MIKE",
+          "candidate_last": "HOPKINS",
+          "votes": 708
+        }
+      ]
+    },
+    {
+      "id": "4412",
+      "race_id": "001450005611",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 93 HD 093",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "6",
+          "unit_name": "Lake"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1309
+        },
+        {
+          "candidate_id": "5770",
+          "candidate_first": "JOHN",
+          "candidate_last": "FLEMING",
+          "votes": 1617
+        },
+        {
+          "candidate_id": "5769",
+          "candidate_first": "JOHANNA",
+          "candidate_last": "CLARK",
+          "votes": 984
+        }
+      ]
+    },
+    {
+      "id": "4413",
+      "race_id": "001450005612",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 94 HD 094",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "5",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 927
+        },
+        {
+          "candidate_id": "6241",
+          "candidate_first": "LANCE",
+          "candidate_last": "COX",
+          "votes": 2877
+        },
+        {
+          "candidate_id": "5666",
+          "candidate_first": "KIMBERLY",
+          "candidate_last": "DUDIK",
+          "votes": 57
+        }
+      ]
+    },
+    {
+      "id": "4414",
+      "race_id": "001450005613",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 95 HD 095",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 2598
+        },
+        {
+          "candidate_id": "6242",
+          "candidate_first": "CYNDI",
+          "candidate_last": "KENCK",
+          "votes": 396
+        },
+        {
+          "candidate_id": "5772",
+          "candidate_first": "SHANE",
+          "candidate_last": "MORIGEAU",
+          "votes": 4
+        }
+      ]
+    },
+    {
+      "id": "4415",
+      "race_id": "001450005614",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 96 HD 096",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1784
+        },
+        {
+          "candidate_id": "5773",
+          "candidate_first": "ADAM",
+          "candidate_last": "HERTZ",
+          "votes": 5
+        },
+        {
+          "candidate_id": "5667",
+          "candidate_first": "ANDREW",
+          "candidate_last": "PERSON",
+          "votes": 86
+        }
+      ]
+    },
+    {
+      "id": "4416",
+      "race_id": "001450005615",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 97 HD 097",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5785",
+          "candidate_first": "NICK",
+          "candidate_last": "DAVIS",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5644",
+          "candidate_first": "BRAD",
+          "candidate_last": "TSCHIDA",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4417",
+      "race_id": "001450005616",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 98 HD 098",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5774",
+          "candidate_first": "MICHAEL",
+          "candidate_last": "ELLSWORTH",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5668",
+          "candidate_first": "WILLIS",
+          "candidate_last": "CURDY",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4418",
+      "race_id": "001450005617",
+      "race_name": "STATE REPRESENTATIVE DISTRICT 99 HD 099",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 2774
+        },
+        {
+          "candidate_id": "5776",
+          "candidate_first": "MARILYN",
+          "candidate_last": "RYAN",
+          "votes": 4
+        },
+        {
+          "candidate_id": "5775",
+          "candidate_first": "SUSAN",
+          "candidate_last": "CUNDIFF",
+          "votes": 48
+        }
+      ]
+    },
+    {
+      "id": "4433",
+      "race_id": "001450005643",
+      "race_name": "STATE SENATOR DISTRICT 10 SD 10",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 9,
+          "total_precincts": "11",
+          "unit_name": "Cascade"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 6586
+        },
+        {
+          "candidate_id": "6247",
+          "candidate_first": "DEBORAH",
+          "candidate_last": "MAGIN",
+          "votes": 1664
+        },
+        {
+          "candidate_id": "5681",
+          "candidate_first": "STEVE",
+          "candidate_last": "FITZPATRICK",
+          "votes": 128
+        }
+      ]
+    },
+    {
+      "id": "4434",
+      "race_id": "001450005644",
+      "race_name": "STATE SENATOR DISTRICT 15 SD 15",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Cascade"
+        },
+        {
+          "num_reporting": 13,
+          "total_precincts": "16",
+          "unit_name": "Fergus"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "2",
+          "unit_name": "Golden Valley"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Judith Basin"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "1",
+          "unit_name": "Meagher"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Petroleum"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "5",
+          "unit_name": "Wheatland"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 13320
+        },
+        {
+          "candidate_id": "5876",
+          "candidate_first": "SEAN",
+          "candidate_last": "MCCONNAHA",
+          "votes": 1584
+        },
+        {
+          "candidate_id": "5685",
+          "candidate_first": "RYAN",
+          "candidate_last": "OSMUNDSON",
+          "votes": 7
+        }
+      ]
+    },
+    {
+      "id": "4435",
+      "race_id": "001450005645",
+      "race_name": "STATE SENATOR DISTRICT 16 SD 16",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "5",
+          "unit_name": "Blaine"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Chouteau"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "3",
+          "unit_name": "Hill"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "6",
+          "unit_name": "Phillips"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "7",
+          "unit_name": "Roosevelt"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "2",
+          "unit_name": "Valley"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 6122
+        },
+        {
+          "candidate_id": "5788",
+          "candidate_first": "FRANK",
+          "candidate_last": "SMITH",
+          "votes": 8795
+        },
+        {
+          "candidate_id": "5686",
+          "candidate_first": "G. BRUCE",
+          "candidate_last": "MEYERS",
+          "votes": 243
+        }
+      ]
+    },
+    {
+      "id": "4436",
+      "race_id": "001450005646",
+      "race_name": "STATE SENATOR DISTRICT 17 SD 17",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "3",
+          "unit_name": "Blaine"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Daniels"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "1",
+          "unit_name": "Hill"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "7",
+          "unit_name": "Phillips"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "5",
+          "unit_name": "Roosevelt"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "6",
+          "unit_name": "Sheridan"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "6",
+          "unit_name": "Valley"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 8566
+        },
+        {
+          "candidate_id": "6028",
+          "candidate_first": "DOUGLAS",
+          "candidate_last": "ADOLPHSON",
+          "votes": 2318
+        },
+        {
+          "candidate_id": "5687",
+          "candidate_first": "MIKE",
+          "candidate_last": "LANG",
+          "votes": 1242
+        }
+      ]
+    },
+    {
+      "id": "4437",
+      "race_id": "001450005647",
+      "race_name": "STATE SENATOR DISTRICT 18 SD 18",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "7",
+          "unit_name": "Dawson"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "13",
+          "unit_name": "Richland"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "1",
+          "unit_name": "Wibaux"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 191
+        },
+        {
+          "candidate_id": "5689",
+          "candidate_first": "STEVE",
+          "candidate_last": "HINEBAUCH",
+          "votes": 1267
+        }
+      ]
+    },
+    {
+      "id": "4438",
+      "race_id": "001450005648",
+      "race_name": "STATE SENATOR DISTRICT 2 SD 02",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 10,
+          "total_precincts": "11",
+          "unit_name": "Flathead"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1103
+        },
+        {
+          "candidate_id": "5600",
+          "candidate_first": "DEE",
+          "candidate_last": "BROWN",
+          "votes": 8671
+        }
+      ]
+    },
+    {
+      "id": "4439",
+      "race_id": "001450005649",
+      "race_name": "STATE SENATOR DISTRICT 21 SD 21",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "19",
+          "unit_name": "Big Horn"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "5",
+          "unit_name": "Powder River"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Rosebud"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "2",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1644
+        },
+        {
+          "candidate_id": "6249",
+          "candidate_first": "JASON",
+          "candidate_last": "SMALL",
+          "votes": 1923
+        },
+        {
+          "candidate_id": "5691",
+          "candidate_first": "CAROLYN",
+          "candidate_last": "PEASE-LOPEZ",
+          "votes": 66
+        }
+      ]
+    },
+    {
+      "id": "4440",
+      "race_id": "001450005650",
+      "race_name": "STATE SENATOR DISTRICT 23 SD 23",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1399
+        },
+        {
+          "candidate_id": "6250",
+          "candidate_first": "PAUL",
+          "candidate_last": "VAN TRICHT",
+          "votes": 1228
+        },
+        {
+          "candidate_id": "5692",
+          "candidate_first": "ROGER",
+          "candidate_last": "WEBB",
+          "votes": 1269
+        }
+      ]
+    },
+    {
+      "id": "4441",
+      "race_id": "001450005651",
+      "race_name": "STATE SENATOR DISTRICT 25 SD 25",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1172
+        },
+        {
+          "candidate_id": "6694",
+          "candidate_first": "JEN",
+          "candidate_last": "GROSS",
+          "votes": 82
+        },
+        {
+          "candidate_id": "6029",
+          "candidate_first": "DONNA",
+          "candidate_last": "HUSTON",
+          "votes": 292
+        }
+      ]
+    },
+    {
+      "id": "4442",
+      "race_id": "001450005652",
+      "race_name": "STATE SENATOR DISTRICT 26 SD 26",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "5",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 840
+        },
+        {
+          "candidate_id": "5695",
+          "candidate_first": "DONALD",
+          "candidate_last": "ROBERTS",
+          "votes": 21
+        },
+        {
+          "candidate_id": "5693",
+          "candidate_first": "MARGIE",
+          "candidate_last": "MACDONALD",
+          "votes": 15
+        }
+      ]
+    },
+    {
+      "id": "4443",
+      "race_id": "001450005653",
+      "race_name": "STATE SENATOR DISTRICT 28 SD 28",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 3,
+          "total_precincts": "8",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 2070
+        },
+        {
+          "candidate_id": "6251",
+          "candidate_first": "DEBORAH",
+          "candidate_last": "ABBEY",
+          "votes": 97
+        },
+        {
+          "candidate_id": "5697",
+          "candidate_first": "TOM",
+          "candidate_last": "RICHMOND",
+          "votes": 213
+        }
+      ]
+    },
+    {
+      "id": "4444",
+      "race_id": "001450005654",
+      "race_name": "STATE SENATOR DISTRICT 3 SD 03",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "9",
+          "unit_name": "Flathead"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 833
+        },
+        {
+          "candidate_id": "6244",
+          "candidate_first": "MELISSA",
+          "candidate_last": "HARTMAN",
+          "votes": 107
+        },
+        {
+          "candidate_id": "5679",
+          "candidate_first": "KEITH",
+          "candidate_last": "REGIER",
+          "votes": 47
+        }
+      ]
+    },
+    {
+      "id": "4445",
+      "race_id": "001450005655",
+      "race_name": "STATE SENATOR DISTRICT 31 SD 31",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "8",
+          "unit_name": "Gallatin"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1932
+        },
+        {
+          "candidate_id": "5604",
+          "candidate_first": "MIKE",
+          "candidate_last": "PHILLIPS",
+          "votes": 109
+        }
+      ]
+    },
+    {
+      "id": "4446",
+      "race_id": "001450005656",
+      "race_name": "STATE SENATOR DISTRICT 35 SD 35",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 1,
+          "total_precincts": "5",
+          "unit_name": "Broadwater"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Gallatin"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "3",
+          "unit_name": "Lewis & Clark"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 661
+        },
+        {
+          "candidate_id": "5605",
+          "candidate_first": "SCOTT",
+          "candidate_last": "SALES",
+          "votes": 2456
+        }
+      ]
+    },
+    {
+      "id": "4447",
+      "race_id": "001450005657",
+      "race_name": "STATE SENATOR DISTRICT 36 SD 36",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 16,
+          "total_precincts": "16",
+          "unit_name": "Beaverhead"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "1",
+          "unit_name": "Jefferson"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "8",
+          "unit_name": "Madison"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Silver Bow"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 9517
+        },
+        {
+          "candidate_id": "5698",
+          "candidate_first": "JEFF",
+          "candidate_last": "WELBORN",
+          "votes": 5011
+        }
+      ]
+    },
+    {
+      "id": "4448",
+      "race_id": "001450005658",
+      "race_name": "STATE SENATOR DISTRICT 37 SD 37",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 0,
+          "total_precincts": "15",
+          "unit_name": "Silver Bow"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 0
+        },
+        {
+          "candidate_id": "5606",
+          "candidate_first": "JON",
+          "candidate_last": "SESSO",
+          "votes": 0
+        }
+      ]
+    },
+    {
+      "id": "4449",
+      "race_id": "001450005659",
+      "race_name": "STATE SENATOR DISTRICT 38 SD 38",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "9",
+          "unit_name": "Jefferson"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "6",
+          "unit_name": "Silver Bow"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1744
+        },
+        {
+          "candidate_id": "6032",
+          "candidate_first": "GLENN",
+          "candidate_last": "ROSENBAUM",
+          "votes": 190
+        },
+        {
+          "candidate_id": "5699",
+          "candidate_first": "EDITH (EDIE)",
+          "candidate_last": "MCCLAFFERTY",
+          "votes": 100
+        }
+      ]
+    },
+    {
+      "id": "4450",
+      "race_id": "001450005660",
+      "race_name": "STATE SENATOR DISTRICT 39 SD 39",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 12,
+          "total_precincts": "14",
+          "unit_name": "Deer Lodge"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Granite"
+        },
+        {
+          "num_reporting": 6,
+          "total_precincts": "6",
+          "unit_name": "Powell"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "6",
+          "unit_name": "Silver Bow"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 13683
+        },
+        {
+          "candidate_id": "6623",
+          "candidate_first": "DICK",
+          "candidate_last": "MOTTA",
+          "votes": 6792
+        },
+        {
+          "candidate_id": "6254",
+          "candidate_first": "SUZZANN",
+          "candidate_last": "NORDWICK",
+          "votes": 1235
+        },
+        {
+          "candidate_id": "5607",
+          "candidate_first": "GENE",
+          "candidate_last": "VUCKOVICH",
+          "votes": 28
+        }
+      ]
+    },
+    {
+      "id": "4451",
+      "race_id": "001450005661",
+      "race_name": "STATE SENATOR DISTRICT 40 SD 40",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "9",
+          "unit_name": "Lewis & Clark"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "7",
+          "unit_name": "Powell"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 3370
+        },
+        {
+          "candidate_id": "5701",
+          "candidate_first": "HAL",
+          "candidate_last": "JACOBSON",
+          "votes": 1749
+        },
+        {
+          "candidate_id": "5700",
+          "candidate_first": "TERRY",
+          "candidate_last": "GAUTHIER",
+          "votes": 522
+        }
+      ]
+    },
+    {
+      "id": "4452",
+      "race_id": "001450005662",
+      "race_name": "STATE SENATOR DISTRICT 44 SD 44",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 2,
+          "total_precincts": "12",
+          "unit_name": "Ravalli"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 365
+        },
+        {
+          "candidate_id": "6256",
+          "candidate_first": "JAMES",
+          "candidate_last": "OLSEN",
+          "votes": 620
+        },
+        {
+          "candidate_id": "5608",
+          "candidate_first": "FRED",
+          "candidate_last": "THOMAS",
+          "votes": 108
+        }
+      ]
+    },
+    {
+      "id": "4453",
+      "race_id": "001450005663",
+      "race_name": "STATE SENATOR DISTRICT 45 SD 45",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 9,
+          "total_precincts": "11",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 1565
+        },
+        {
+          "candidate_id": "6257",
+          "candidate_first": "SASHIN",
+          "candidate_last": "HUME",
+          "votes": 297
+        },
+        {
+          "candidate_id": "5609",
+          "candidate_first": "DICK",
+          "candidate_last": "BARRETT",
+          "votes": 1774
+        }
+      ]
+    },
+    {
+      "id": "4454",
+      "race_id": "001450005664",
+      "race_name": "STATE SENATOR DISTRICT 46 SD 46",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 5,
+          "total_precincts": "10",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 2049
+        },
+        {
+          "candidate_id": "6258",
+          "candidate_first": "ADAM",
+          "candidate_last": "PUMMILL",
+          "votes": 1720
+        },
+        {
+          "candidate_id": "5610",
+          "candidate_first": "SUE",
+          "candidate_last": "MALEK",
+          "votes": 677
+        }
+      ]
+    },
+    {
+      "id": "4455",
+      "race_id": "001450005665",
+      "race_name": "STATE SENATOR DISTRICT 47 SD 47",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 6,
+          "total_precincts": "6",
+          "unit_name": "Lake"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "5",
+          "unit_name": "Missoula"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 10622
+        },
+        {
+          "candidate_id": "5705",
+          "candidate_first": "DANIEL",
+          "candidate_last": "SALOMON",
+          "votes": 102
+        },
+        {
+          "candidate_id": "5703",
+          "candidate_first": "TOM",
+          "candidate_last": "FRANCE",
+          "votes": 144
+        }
+      ]
+    },
+    {
+      "id": "4456",
+      "race_id": "001450005666",
+      "race_name": "STATE SENATOR DISTRICT 6 SD 06",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Flathead"
+        },
+        {
+          "num_reporting": 6,
+          "total_precincts": "7",
+          "unit_name": "Lake"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 2289
+        },
+        {
+          "candidate_id": "6025",
+          "candidate_first": "ROLF",
+          "candidate_last": "HARMSEN",
+          "votes": 5961
+        },
+        {
+          "candidate_id": "5680",
+          "candidate_first": "ALBERT",
+          "candidate_last": "OLSZEWSKI",
+          "votes": 1427
+        }
+      ]
+    },
+    {
+      "id": "4318",
+      "race_id": "001450005517",
+      "race_name": "UNITED STATES REPRESENTATIVE CONG",
+      "election_type": "General",
+      "precincts": [
+        {
+          "num_reporting": 7,
+          "total_precincts": "16",
+          "unit_name": "Beaverhead"
+        },
+        {
+          "num_reporting": 11,
+          "total_precincts": "19",
+          "unit_name": "Big Horn"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "8",
+          "unit_name": "Blaine"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "5",
+          "unit_name": "Broadwater"
+        },
+        {
+          "num_reporting": 6,
+          "total_precincts": "13",
+          "unit_name": "Carbon"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "4",
+          "unit_name": "Carter"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "23",
+          "unit_name": "Cascade"
+        },
+        {
+          "num_reporting": 6,
+          "total_precincts": "9",
+          "unit_name": "Chouteau"
+        },
+        {
+          "num_reporting": 6,
+          "total_precincts": "14",
+          "unit_name": "Custer"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Daniels"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "7",
+          "unit_name": "Dawson"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "14",
+          "unit_name": "Deer Lodge"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Fallon"
+        },
+        {
+          "num_reporting": 14,
+          "total_precincts": "16",
+          "unit_name": "Fergus"
+        },
+        {
+          "num_reporting": 28,
+          "total_precincts": "42",
+          "unit_name": "Flathead"
+        },
+        {
+          "num_reporting": 10,
+          "total_precincts": "32",
+          "unit_name": "Gallatin"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "4",
+          "unit_name": "Garfield"
+        },
+        {
+          "num_reporting": 8,
+          "total_precincts": "16",
+          "unit_name": "Glacier"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "2",
+          "unit_name": "Golden Valley"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "4",
+          "unit_name": "Granite"
+        },
+        {
+          "num_reporting": 9,
+          "total_precincts": "17",
+          "unit_name": "Hill"
+        },
+        {
+          "num_reporting": 2,
+          "total_precincts": "10",
+          "unit_name": "Jefferson"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "4",
+          "unit_name": "Judith Basin"
+        },
+        {
+          "num_reporting": 6,
+          "total_precincts": "20",
+          "unit_name": "Lake"
+        },
+        {
+          "num_reporting": 35,
+          "total_precincts": "37",
+          "unit_name": "Lewis & Clark"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Liberty"
+        },
+        {
+          "num_reporting": 7,
+          "total_precincts": "14",
+          "unit_name": "Lincoln"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "8",
+          "unit_name": "Madison"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "3",
+          "unit_name": "McCone"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "1",
+          "unit_name": "Meagher"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "6",
+          "unit_name": "Mineral"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "52",
+          "unit_name": "Missoula"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "6",
+          "unit_name": "Musselshell"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "11",
+          "unit_name": "Park"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Petroleum"
+        },
+        {
+          "num_reporting": 13,
+          "total_precincts": "13",
+          "unit_name": "Phillips"
+        },
+        {
+          "num_reporting": 6,
+          "total_precincts": "8",
+          "unit_name": "Pondera"
+        },
+        {
+          "num_reporting": 5,
+          "total_precincts": "7",
+          "unit_name": "Powder River"
+        },
+        {
+          "num_reporting": 8,
+          "total_precincts": "13",
+          "unit_name": "Powell"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "4",
+          "unit_name": "Prairie"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "24",
+          "unit_name": "Ravalli"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "13",
+          "unit_name": "Richland"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "12",
+          "unit_name": "Roosevelt"
+        },
+        {
+          "num_reporting": 8,
+          "total_precincts": "12",
+          "unit_name": "Rosebud"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "9",
+          "unit_name": "Sanders"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "6",
+          "unit_name": "Sheridan"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "31",
+          "unit_name": "Silver Bow"
+        },
+        {
+          "num_reporting": 8,
+          "total_precincts": "8",
+          "unit_name": "Stillwater"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "5",
+          "unit_name": "Sweet Grass"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "5",
+          "unit_name": "Teton"
+        },
+        {
+          "num_reporting": 4,
+          "total_precincts": "5",
+          "unit_name": "Toole"
+        },
+        {
+          "num_reporting": 0,
+          "total_precincts": "3",
+          "unit_name": "Treasure"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "8",
+          "unit_name": "Valley"
+        },
+        {
+          "num_reporting": 3,
+          "total_precincts": "5",
+          "unit_name": "Wheatland"
+        },
+        {
+          "num_reporting": 1,
+          "total_precincts": "1",
+          "unit_name": "Wibaux"
+        },
+        {
+          "num_reporting": 13,
+          "total_precincts": "44",
+          "unit_name": "Yellowstone"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "9901",
+          "candidate_first": "",
+          "candidate_last": "Write-In",
+          "votes": 98495
+        },
+        {
+          "candidate_id": "6585",
+          "candidate_first": "RICK",
+          "candidate_last": "BRECKENRIDGE",
+          "votes": 95134
+        },
+        {
+          "candidate_id": "6034",
+          "candidate_first": "RYAN",
+          "candidate_last": "ZINKE",
+          "votes": 42882
+        },
+        {
+          "candidate_id": "5848",
+          "candidate_first": "DENISE",
+          "candidate_last": "JUNEAU",
+          "votes": 32486
+        }
+      ]
+    }
+  ]
+}

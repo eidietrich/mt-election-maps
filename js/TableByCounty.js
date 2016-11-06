@@ -82,7 +82,7 @@ TableByCounty.prototype.shapeData = function() {
 
   getCandidates();
   // console.log(this.candidateKeys);
-  console.log(this.candidates);
+  // console.log(this.candidates);
 
   // sort county data by number of precincts, descending
   this.data.features.sort(function(a,b){

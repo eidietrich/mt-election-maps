@@ -17,6 +17,11 @@ var BarGraph = function (props){
   this.height = props.height;
   this.margin = {top: 20, bottom: 20, right: 30, left: 100};
 
+  // Supporting text
+  this.title = props.title || "";
+  this.cutline = props.cutline || "";
+
+  console.log('BarGraph called with', this.data)
   this.draw()
 }
 BarGraph.prototype.draw = function() {
@@ -26,6 +31,12 @@ BarGraph.prototype.draw = function() {
   this.width = this.element.getBoundingClientRect().width;
   this.plotHeight = this.height - this.margin.top - this.margin.bottom;
   this.plotWidth = this.width - this.margin.left - this.margin.right;
+
+  // Supporting text
+  d3.select(this.element).append("h3")
+    .html(this.title);
+  d3.select(this.element).append("p")
+    .html(this.cutline);
 
   // Make svg & plot area
   this.svg = d3.select(this.element)
@@ -45,7 +56,7 @@ BarGraph.prototype.draw = function() {
     .domain(this.data.results.map(function(d) { return d.name; }));
   this.colorScale = d3.scaleOrdinal()
     .domain(this.data.results.map(function(d) { return d.name; }))
-    .range(["#b2182b","#2166ac","#31a354"])
+    .range(["#b2182b","#2166ac","#31a354","#666"])
 
   // Create axes
   this.xAxis = d3.axisBottom(this.xScale)
@@ -72,7 +83,7 @@ BarGraph.prototype.draw = function() {
     .attr("fill", function(d){ return that.colorScale(d.name); })
     .attr("x", 0)
     .attr("y", function(d){ return that.yScale(d.name); })
-    .attr("width", function(d){ return that.xScale(d.votes / that.data.max); })
+    .attr("width", function(d){ return that.xScale(d.votes / that.data.totalVotes); })
     .attr("height", that.yScale.bandwidth());
 
   // Draw axes

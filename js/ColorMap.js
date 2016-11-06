@@ -64,10 +64,11 @@ ColorMap.prototype.draw = function() {
   this.plotHeight = this.height - this.margin.top - this.margin.bottom;
   this.plotWidth = this.width - this.margin.left - this.margin.right;
 
+  // Supporting text
   d3.select(this.element).append("h3")
-    .html(this.title)
+    .html(this.title);
   d3.select(this.element).append("p")
-    .html(this.cutline)
+    .html(this.cutline);
 
   this.svg = d3.select(this.element)
     .append('svg')

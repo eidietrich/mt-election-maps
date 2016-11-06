@@ -21,6 +21,7 @@
     <div id="chart2" class="chart-container"></div>
     <div id="chart3" class="chart-container"></div>
     <div id="chart4" class="chart-container"></div>
+    <div id="chart5" class="chart-container"></div>
   </div>
 
   <!-- Libraries -->
@@ -105,8 +106,8 @@
 
     // Live data
     // TODO: Switch this from test data
-    {'name': 'races', 'file': './test/livedata-byrace-novotes.json', 'loader': d3.json},
-    {'name': 'counties', 'file': './test/livedata-bycounty-novotes.json', 'loader': d3.json},
+    {'name': 'races', 'file': './test/livedata-byrace-somevotes.json', 'loader': d3.json},
+    {'name': 'counties', 'file': './test/livedata-bycounty-somevotes.json', 'loader': d3.json},
 
   ];
   var dataJoins = [
@@ -130,7 +131,37 @@
       'functName': mergeResultsByCounty,
       'geoData': 'mtCounties', 'joinData': 'counties',
       'otherArgs': [['mtGov','usPresident','usRep','antiTrapping','medMarijuana']]
-    }
+    },
+    {
+      'name': 'mtGovResults',
+      'functName': summarizeRace,
+      'geoData': null, 'joinData': 'races',
+      'otherArgs': ['mtGov']
+    },
+    {
+      'name': 'usRepResults',
+      'functName': summarizeRace,
+      'geoData': null, 'joinData': 'races',
+      'otherArgs': ['usRep']
+    },
+    {
+      'name': 'usPresResults',
+      'functName': summarizeRace,
+      'geoData': null, 'joinData': 'races',
+      'otherArgs': ['usPresident']
+    },
+    {
+      'name': 'antiTrappingResults',
+      'functName': summarizeRace,
+      'geoData': null, 'joinData': 'races',
+      'otherArgs': ['antiTrapping']
+    },
+    {
+      'name': 'medMarijuanaResults',
+      'functName': summarizeRace,
+      'geoData': null, 'joinData': 'races',
+      'otherArgs': ['medMarijuana']
+    },
   ];
   // var testPanel = {
   //   'name': 'panel1',
@@ -157,38 +188,75 @@
     'home': { // TODO: Make this an overview of various races
       'name': 'home',
       'design': [
-
+        {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'mtGovResults',
+          'props': {
+            'height': 200,
+            'title': "Montana Governor vote",
+            'cutline': "This is a cutline",
+          }
+        },
+        {'id': 'chart2', 'Template': BarGraph, 'dataVar': 'usRepResults',
+          'props': {
+            'height': 200,
+            'title': "US House of Representatives vote",
+            'cutline': "This is a cutline",
+          }
+        },
+        {'id': 'chart3', 'Template': BarGraph, 'dataVar': 'usPresResults',
+          'props': {
+            'height': 200,
+            'title': "Montana Presidential vote",
+            'cutline': "This is a cutline",
+          }
+        },
 
       ]
     },
     'mtGov': {
       'name': 'mtGov',
       'design': [
-        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtResultsByCounty',
+        {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'mtGovResults',
           'props': {
-            'aspectRatio': 0.6,
-            'colorBy': function(d) { return 'green'; }
+            'height': 200,
+            'title': "Title here",
+            'cutline': "This is a cutline",
           }
         },
-        {'id': 'chart2', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
-        'props': {
-          'race': 'mtGov',
-          'extraCandidateInfo': extraCandidateInfo['mtGov'],
-          'title': "Title here",
-          'cutline': "This is a cutline"
-        } },
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtResultsByCounty',
+          'props': {
+            'aspectRatio': 0.6,
+            'colorBy': function(d) { return 'green'; },
+            'title': "Title here",
+            'cutline': "This is a cutline",
+          }
+        },
+        {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
+          'props': {
+            'race': 'mtGov',
+            'extraCandidateInfo': extraCandidateInfo['mtGov'],
+            'title': "Title here",
+            'cutline': "This is a cutline"
+          }
+        },
       ]
     },
     'usRep': {
       'name': 'usRep',
       'design': [
+        {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'usRepResults',
+          'props': {
+            'height': 200,
+            'title': "US House of Representatives vote",
+            'cutline': "This is a cutline",
+          }
+        },
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
         'props': {
           'aspectRatio': 0.6,
         } },
         {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
         'props': {
-          'race': 'usPresident',
+          'race': 'usRep',
           'extraCandidateInfo': extraCandidateInfo['usRep'],
           'title': "Title here",
           'cutline': "This is a cutline"
@@ -199,6 +267,13 @@
     'usPresident': {
       'name': 'usPresident',
       'design': [
+        {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'usPresResults',
+          'props': {
+            'height': 200,
+            'title': "Montana Presidential vote",
+            'cutline': "This is a cutline",
+          }
+        },
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
         'props': {
           'aspectRatio': 0.6,
@@ -245,6 +320,13 @@
     'medMarijuana': {
       'name': 'medMarijuana',
       'design': [
+        {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'medMarijuanaResults',
+          'props': {
+            'height': 200,
+            'title': "Title here",
+            'cutline': "This is a cutline",
+          }
+        },
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
          'props': {
           'aspectRatio': 0.6,
@@ -264,21 +346,28 @@
     'antiTrapping': {
       'name': 'antiTrapping',
       'design': [
+        {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'antiTrappingResults',
+          'props': {
+            'height': 200,
+            'title': "Title here",
+            'cutline': "This is a cutline",
+          }
+        },
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
          'props': {
           'aspectRatio': 0.6,
+          'title': "Votes by county",
+          'cutline': ""
           }
         },
         {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
           'props': {
             'race': 'antiTrapping',
             'extraCandidateInfo': {},
-            'title': "Title here",
-            'cutline': "This is a cutline"
+            'title': "",
+            'cutline': ""
           }
-        },
-        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoTrapping' }
-        // Tabulated
+        }
       ]
     }
   }

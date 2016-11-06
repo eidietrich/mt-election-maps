@@ -6,9 +6,7 @@ var RACE_IDS = {
     'antiTrapping': '002450001213',
     'medMarijuana': '002450001215',
     'usPresident': '001450005633',
-    'usRep': '001450005517',
-    'lawJusticeCenter': null,
-    'gcCommission': null,
+    'usRep': '001450005517'
   }
 
 function mergeData (geoJson, joinData, joinKey, dims) {
@@ -134,8 +132,49 @@ function getRaceResults(countyResults, countyName, raceName){
 function parseCandidates(candidateObj){
   // TODO: WRITE THIS
   // Will add vote totals, ranks, supplemental info, etc.
+  // Currently happening in TableByCounty.js, weird place for it
   return candidateObj;
 }
+
+
+function summarizeRace(_, raceResults, raceName){
+  // Takes results by race, returns object for BarGraph.js
+  // _ is a placeholder for geodata
+  var raceId = RACE_IDS[raceName];
+
+  var results = {};
+
+  var precincts, candidates;
+  raceResults.races.forEach(function(race){
+    if (race.race_id === raceId){
+      precincts = race.precincts;
+      candidates = race.candidates;
+    }
+  });
+  var precinctsReporting = 0, totalPrecincts = 0;
+  precincts.forEach(function(precinct){
+    totalPrecincts += +precinct.total_precincts;
+    precinctsReporting += +precinct.num_reporting;
+  })
+  var totalVotes = 0;
+  results.results = [];
+  candidates.forEach(function(candidate){
+    var output = {}
+    output.name = candidate.candidate_last
+    output.fullName = candidate.candidate_first + " " + candidate.candidate_last;
+    output.votes = +candidate.votes;
+    totalVotes += +candidate.votes;
+    results.results.push(output);
+  });
+  results.totalPrecincts = totalPrecincts;
+  results.precinctsReporting = precinctsReporting;
+  results.totalVotes = totalVotes;
+
+  console.log(results);
+  return results;
+}
+
+
 
 
   // // var raceResults =
