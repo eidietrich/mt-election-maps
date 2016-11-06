@@ -23,8 +23,23 @@ var Dashboard = function (dataFiles, dataJoins, initialPanel) {
   dataFiles.forEach(function(d){
     that.data[d.name] = null;
   });
-
+  this.addRefreshButton();
   this.getData(); // collects data and then renders
+}
+Dashboard.prototype.addRefreshButton = function(){
+  // Adds refresh button
+  var refresh = d3.select("#refresh-container")
+    .insert('div', ':first-child') // at top of container
+
+  refresh.append('button')
+    .attr("class", "btn btn-default")
+    .text('Refresh')
+    // HACK: assumes dashboard name is dashboard
+    .attr("onclick","dashboard.handleRefresh()")
+}
+Dashboard.prototype.handleRefresh = function(){
+  // runs getData >> processData >> render(this.panel) pathway again
+  this.getData();
 }
 Dashboard.prototype.getData = function(){
   // Collects data from external files

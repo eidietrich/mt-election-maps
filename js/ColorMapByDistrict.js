@@ -1,4 +1,4 @@
-// ColorMap
+// ColorMapByDistrict
 
 // Draws map with color
 // (Also works for cartograms when data is provided as a geojson)
@@ -6,7 +6,7 @@
 // Expects data as a geojson
 
 /* Sample initialization
-var senateMap = new ColorMap({
+var senateMap = new ColorMapByDistrict({
         'element': document.querySelector('#chart2'),
         'data': bindToGeoJson(mtSenDistricts, mtSenData, 'number', 'number',
             ['district', 'incum_party', 'district_label']),
@@ -20,10 +20,8 @@ var senateMap = new ColorMap({
   featureLabel = function(d) { return d.properties.district; };
   */
 
-// WEIRD PLACE FOR THIS
 
-var ColorMap = function (props){
-  // console.log('ColorMap called');
+var ColorMapByDistrict = function (props){
 
   this.data = props.data;
   this.element = props.element;
@@ -32,7 +30,7 @@ var ColorMap = function (props){
   this.aspectRatio = props.aspectRatio;
   this.margin = {top: 20, bottom: 20, right: 30, left: 30};
 
-  console.log('ColorMap called with', this.data);
+  console.log('ColorMapByDistrict called with', this.data);
 
   // Supporting text
   this.title = props.title || "";
@@ -57,10 +55,12 @@ var ColorMap = function (props){
   this.draw()
   // this.addTooltip() // TODO
 }
-ColorMap.prototype.shapeData = function(){
-
+ColorMapByDistrict.prototype.shapeData = function(){
+  this.data.features.forEach(function(feature){
+    feature.properties.fillColor = globals.classifyRace(feature.properties);
+  })
 }
-ColorMap.prototype.draw = function() {
+ColorMapByDistrict.prototype.draw = function() {
 
   d3.select(this.element).html("");
   this.width = this.element.getBoundingClientRect().width;
@@ -97,6 +97,7 @@ ColorMap.prototype.draw = function() {
   this.districts.append("path")
     .attr("d", path)
     // .attr("fill", this.colorBy)
+    .attr("fill", function(d){ return d.properties.fillColor; })
     .attr("class", "districts")
 
   // Add text labels

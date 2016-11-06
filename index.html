@@ -17,6 +17,7 @@
     <li role="presentation" id="antiTrapping" onclick="handleTabClick(this);"><a href="#">I-777</a></li>
   </ul>
   <div id="viz-container">
+    <div id="refresh-container"></div>
     <div id="chart1" class="chart-container"></div>
     <div id="chart2" class="chart-container"></div>
     <div id="chart3" class="chart-container"></div>
@@ -35,11 +36,10 @@
   <script src="js/Panel.js"></script>
 
   <!-- Component scripts -->
-  <!-- <script src="js/CircleShadeMap.js"></script> -->
   <script src="js/BarGraph.js"></script>
   <!-- <script src="js/OpposingBarGraph.js"></script> -->
-  <script src="js/DistrictArray.js"></script>
   <script src="js/ColorMap.js"></script>
+  <script src="js/ColorMapByDistrict.js"></script>
   <script src="js/Text.js"></script>
   <script src="js/TableByCounty.js"></script>
    <script src="js/TableByDistrict.js"></script>
@@ -49,14 +49,16 @@
 
   var main = function(){
     // Main function, called at bottom of file here
-    // dashboard = new Dashboard(dataFiles, dataJoins, panels['home']);
     dashboard = new Dashboard(dataFiles, dataJoins, testPanel);
+
+    // dashboard = new Dashboard(dataFiles, dataJoins, panels['home']);
   }
 
   var renderPane = function(paneId){
     // clear contents of chart-container divs and render pane with given id
     $('.chart-container').empty();
-    dashboard.render(panels[paneId]);
+    dashboard.currentPanel = panels[paneId];
+    dashboard.render(dashboard.currentPanel);
   }
 
   var handleTabClick = function(e){
@@ -83,7 +85,7 @@
 
     // Live data
     // TODO: Switch this from test data
-    {'name': 'races', 'file': './test/livedata-byrace-somevotes.json', 'loader': d3.json},
+    {'name': 'races', 'file': './test/livedata-byrace-fullvotes.json', 'loader': d3.json},
     {'name': 'counties', 'file': './test/livedata-bycounty-somevotes.json', 'loader': d3.json},
 
   ];
@@ -155,10 +157,11 @@
   var testPanel = {
     'name': 'test panel',
     'design': [
-      {'id': 'chart1', 'Template': TableByDistrict, 'dataVar': 'mtSenResults',
-          'props': {
-            'title': "District table",
-            'cutline': "This is a cutline"
+      {'id': 'chart1', 'Template': ColorMapByDistrict, 'dataVar': 'mtSenResults',
+        'props': {
+          'aspectRatio': 0.6,
+          // 'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
+          // 'featureLabel': function(d) { return d.properties.district; },
           }
         },
     ]
@@ -279,10 +282,10 @@
       'name': 'mtSenate',
       'design': [
         // ADD MT Senate control
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtSenResults',
+        {'id': 'chart2', 'Template': ColorMapByDistrict, 'dataVar': 'mtSenResults',
         'props': {
           'aspectRatio': 0.6,
-          'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
+          // 'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
           // 'featureLabel': function(d) { return d.properties.district; },
           }
         },
@@ -298,10 +301,10 @@
       'name': 'mtHouse',
       'design': [
         // MT house control
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtHouseResults',
+        {'id': 'chart2', 'Template': ColorMapByDistrict, 'dataVar': 'mtHouseResults',
         'props': {
           'aspectRatio': 0.6,
-          'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
+          // 'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
           // 'featureLabel': function(d) { return d.properties.district; },
           }
         },

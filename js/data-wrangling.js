@@ -1609,7 +1609,7 @@ function summarizeLegRaces(mergedGeoData, raceResults, chamber){
     }
   });
 
-  console.log('racesSummarized', mergedGeoData);
+  // console.log('racesSummarized', mergedGeoData);
   return mergedGeoData;
 }
 
