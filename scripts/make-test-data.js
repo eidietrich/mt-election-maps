@@ -6,7 +6,7 @@ Takes zero-vote testing data and returns non-zero vote testing data for 1) parti
 */
 
 var fs = require('fs');
-var util = require('util');
+// var util = require('util');
 
 var countyResultsPath = './test/livedata-bycounty-novotes.json';
 var raceResultsPath = './test/livedata-byrace-novotes.json';

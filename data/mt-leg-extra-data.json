@@ -1,1105 +1,884 @@
-// data-wrangling.js
-// Collection of functions for prepping / wrangling data
-
-/* LOGIC
-
-Two vote data sources, counties, and races.
-
-Races is used for race-summary bar charts, as well as for district-based maps and tables for state house/senate district races.
-
-Counties is used for county-based maps and tables in statewide races and ballot initiatives.
-
-
-
-*/
-
-// Supplemental info (e.g. party, incumbency)
-// TODO: Look at breaking this out into a separate file
-var extraCandidateInfo = {
-  'mtGov': {
-    'BULLOCK': {'party': 'D', 'incumbent': 'yes'},
-    'GIANFORTE': {'party': 'R', 'incumbent': 'no'},
-    'DUNLAP': {'party': 'L', 'incumbent': 'no'},
-  },
-  'usRep' : {
-    'ZINKE' : {'party': 'R', 'incumbent': 'yes'},
-    'JUNEAU': {'party': 'D', 'incumbent': 'no'},
-    'BRECKENRIDGE' : {'party': 'L', 'incumbent': 'no'},
-  },
-  'usPresident': {
-    'CLINTON': {'party': 'D', 'incumbent': 'no'},
-    'TRUMP': {'party': 'R', 'incumbent': 'no'},
-    'JOHNSON': {'party': 'L', 'incumbent': 'no'},
-    'STEIN': {'party': 'G', 'incumbent': 'no'},
-    'DE LA FUENTE': {'party': 'A', 'incumbent': 'no'},
-  },
-  'antiTrapping': {
-    'YES ON INITIATIVE I-177': {'party': 'Y', 'altName': 'YES'},
-    'NO ON INITIATIVE I-177': {'party': 'N', 'altName': 'NO'},
-  },
-  'medMarijuana': {
-    'YES ON INITIATIVE I-182': {'party': 'Y', 'altName': 'YES'},
-    'NO ON INITIATIVE I-182': {'party': 'N', 'altName': 'NO'},
-  },
-};
-
-var mtLegExtraCandidateInfo = {
+{
   "mtHouse": {
     "GUNDERSON": {
       "name": "Steve Gunderson",
       "party": "R",
-      "district": "HD 1",
-      "incumbent": "no"
+      "district": "HD 1"
     },
     "HAARSTICK": {
       "name": "Steve Haarstick",
       "party": "D",
-      "district": "HD 1",
-      "incumbent": "no"
+      "district": "HD 1"
     },
     "CUFFE": {
       "name": "Mike Cuffe",
       "party": "R",
-      "district": "HD 2",
-      "incumbent": "yes"
+      "district": "HD 2"
     },
     "MCGARRY": {
       "name": "David B. McGarry",
       "party": "D",
-      "district": "HD 2",
-      "incumbent": "no"
+      "district": "HD 2"
     },
     "PERRY": {
       "name": "Zac Perry",
       "party": "D",
-      "district": "HD 3",
-      "incumbent": "yes"
+      "district": "HD 3"
     },
     "ROSE": {
       "name": "Taylor Rose",
       "party": "R",
-      "district": "HD 3",
-      "incumbent": "no"
+      "district": "HD 3"
     },
     "GENTRY": {
       "name": "Deborah Gentry",
       "party": "D",
-      "district": "HD 4",
-      "incumbent": "no"
+      "district": "HD 4"
     },
     "REGIER": {
       "name": "Matt Regier",
       "party": "R",
-      "district": "HD 4",
-      "incumbent": "no"
+      "district": "HD 4"
     },
     "BILLI": {
       "name": "Chet Billi",
       "party": "R",
-      "district": "HD 5",
-      "incumbent": "no"
+      "district": "HD 5"
     },
     "FERN": {
       "name": "Dave Fern",
       "party": "D",
-      "district": "HD 5",
-      "incumbent": "no"
+      "district": "HD 5"
     },
     "GLIMM": {
       "name": "Carl Glimm",
       "party": "R",
-      "district": "HD 6",
-      "incumbent": "yes"
+      "district": "HD 6"
     },
     "MORROW": {
       "name": "Lisa Morrow",
       "party": "D",
-      "district": "HD 6",
-      "incumbent": "no"
+      "district": "HD 6"
     },
     "GARNER": {
       "name": "Frank Garner",
       "party": "R",
-      "district": "HD 7",
-      "incumbent": "yes"
+      "district": "HD 7"
     },
     "STANLEY": {
       "name": "Lynn Stanley",
       "party": "D",
-      "district": "HD 7",
-      "incumbent": "no"
+      "district": "HD 7"
     },
     "LAVIN": {
       "name": "Steve Lavin",
       "party": "R",
-      "district": "HD 8",
-      "incumbent": "yes"
+      "district": "HD 8"
     },
     "RAPPLEYE": {
       "name": "C Paige Rappleye",
       "party": "D",
-      "district": "HD 8",
-      "incumbent": "no"
+      "district": "HD 8"
     },
     "BRODEHL": {
       "name": "Randy Brodehl",
       "party": "R",
-      "district": "HD 9",
-      "incumbent": "yes"
+      "district": "HD 9"
     },
     "MACLEAN": {
       "name": "Brittany MacLean",
       "party": "D",
-      "district": "HD 9",
-      "incumbent": "no"
+      "district": "HD 9"
     },
     "NOLAND": {
       "name": "Mark Ray Noland",
       "party": "R",
-      "district": "HD 10",
-      "incumbent": "yes"
+      "district": "HD 10"
     },
     "SWANSON": {
       "name": "Kathy Swanson",
       "party": "D",
-      "district": "HD 77",
-      "incumbent": "yes"
+      "district": "HD 77"
     },
     "BECH": {
       "name": "Eileen Bach Bech",
       "party": "D",
-      "district": "HD 11",
-      "incumbent": "no"
+      "district": "HD 11"
     },
     "SKEES": {
       "name": "Derek Skees",
       "party": "R",
-      "district": "HD 11",
-      "incumbent": "no"
+      "district": "HD 11"
     },
     "EVANS": {
       "name": "Susan Evans",
       "party": "D",
-      "district": "HD 12",
-      "incumbent": "no"
+      "district": "HD 12"
     },
     "HERTZ": {
       "name": "Adam Hertz",
       "party": "R",
-      "district": "HD 96",
-      "incumbent": "no"
+      "district": "HD 96"
     },
     "ACHATZ": {
       "name": "Debra J Achatz",
       "party": "D",
-      "district": "HD 13",
-      "incumbent": "no"
+      "district": "HD 13"
     },
     "BROWN": {
       "name": "Zach Brown",
       "party": "D",
-      "district": "HD 63",
-      "incumbent": "yes"
+      "district": "HD 63"
     },
     "FOSTER": {
       "name": "Bryan Foster",
       "party": "D",
-      "district": "HD 14",
-      "incumbent": "no"
+      "district": "HD 14"
     },
     "LOGE": {
       "name": "Denley M. Loge",
       "party": "R",
-      "district": "HD 14",
-      "incumbent": "no"
+      "district": "HD 14"
     },
     "KIPP III": {
       "name": "George G. Kipp III",
       "party": "D",
-      "district": "HD 15",
-      "incumbent": "yes"
+      "district": "HD 15"
     },
     "WEBBER": {
       "name": "Susan A. Webber",
       "party": "D",
-      "district": "HD 16",
-      "incumbent": "yes"
+      "district": "HD 16"
     },
     "FITZGERALD": {
       "name": "Ross H. Fitzgerald",
       "party": "R",
-      "district": "HD 17",
-      "incumbent": "no"
+      "district": "HD 17"
     },
     "SPORKIN-MORRISON": {
       "name": "Barnett G. Sporkin-Morrison",
       "party": "D",
-      "district": "HD 17",
-      "incumbent": "no"
+      "district": "HD 17"
     },
     "COOK": {
       "name": "Rob Cook",
       "party": "R",
-      "district": "HD 18",
-      "incumbent": "yes"
+      "district": "HD 18"
     },
     "MCKAMEY": {
       "name": "Wendy McKamey",
       "party": "R",
-      "district": "HD 19",
-      "incumbent": "no"
+      "district": "HD 19"
     },
     "OLSEN": {
       "name": "Andrea Olsen",
       "party": "D",
-      "district": "HD 100",
-      "incumbent": "yes"
+      "district": "HD 100"
     },
     "ANDERSON": {
       "name": "Fred Anderson",
       "party": "R",
-      "district": "HD 20",
-      "incumbent": "no"
+      "district": "HD 20"
     },
     "RAPP": {
       "name": "Amy J. Rapp",
       "party": "D",
-      "district": "HD 20",
-      "incumbent": "no"
+      "district": "HD 20"
     },
     "JACOBSON": {
       "name": "Tom Jacobson",
       "party": "D",
-      "district": "HD 21",
-      "incumbent": "yes"
+      "district": "HD 21"
     },
     "FERDERER": {
       "name": "Albert J Ferderer",
       "party": "D",
-      "district": "HD 22",
-      "incumbent": "no"
+      "district": "HD 22"
     },
     "SHELDON-GALLOWAY": {
       "name": "Lola Sheldon-Galloway",
       "party": "R",
-      "district": "HD 22",
-      "incumbent": "no"
+      "district": "HD 22"
     },
     "DUNN": {
       "name": "Mark A. Dunn",
       "party": "R",
-      "district": "HD 23",
-      "incumbent": "no"
+      "district": "HD 23"
     },
     "HAMLETT": {
       "name": "Brad Hamlett",
       "party": "D",
-      "district": "HD 23",
-      "incumbent": "no"
+      "district": "HD 23"
     },
     "PRICE": {
       "name": "Jean Price",
       "party": "D",
-      "district": "HD 24",
-      "incumbent": "yes"
+      "district": "HD 24"
     },
     "RAAEN": {
       "name": "William Raaen",
       "party": "R",
-      "district": "HD 24",
-      "incumbent": "no"
+      "district": "HD 24"
     },
     "LANKFORD": {
       "name": "Garrett Lankford",
       "party": "D",
-      "district": "HD 25",
-      "incumbent": "no"
+      "district": "HD 25"
     },
     "TREBAS": {
       "name": "Jeremy Trebas",
       "party": "R",
-      "district": "HD 25",
-      "incumbent": "no"
+      "district": "HD 25"
     },
     "COOPER": {
       "name": "Michael K. Cooper Sr.",
       "party": "R",
-      "district": "HD 26",
-      "incumbent": "no"
+      "district": "HD 26"
     },
     "SCHREINER": {
       "name": "Casey J. Schreiner",
       "party": "D",
-      "district": "HD 26",
-      "incumbent": "no"
+      "district": "HD 26"
     },
     "O'HARA": {
       "name": "James O'Hara",
       "party": "R",
-      "district": "HD 27",
-      "incumbent": "no"
+      "district": "HD 27"
     },
     "ROMINGER": {
       "name": "Ryan Rominger",
       "party": "D",
-      "district": "HD 27",
-      "incumbent": "no"
+      "district": "HD 27"
     },
     "BACHMEIER": {
       "name": "Jacob Bachmeier",
       "party": "D",
-      "district": "HD 28",
-      "incumbent": "no"
+      "district": "HD 28"
     },
     "HESS": {
       "name": "Stephanie Hess",
       "party": "R",
-      "district": "HD 28",
-      "incumbent": "yes"
+      "district": "HD 28"
     },
     "BARTEL": {
       "name": "Dan Bartel",
       "party": "R",
-      "district": "HD 29",
-      "incumbent": "no"
+      "district": "HD 29"
     },
     "DURLEY": {
       "name": "Dryn Durley",
       "party": "D",
-      "district": "HD 29",
-      "incumbent": "no"
+      "district": "HD 29"
     },
     "GALT": {
       "name": "E. Wylie Galt",
       "party": "R",
-      "district": "HD 30",
-      "incumbent": "no"
+      "district": "HD 30"
     },
     "JOHNSON": {
       "name": "Linda Johnson",
       "party": "D",
-      "district": "HD 30",
-      "incumbent": "no"
+      "district": "HD 30"
     },
     "SMITH": {
       "name": "Bridget Smith",
       "party": "D",
-      "district": "HD 31",
-      "incumbent": "yes"
+      "district": "HD 31"
     },
     "WINDY BOY": {
       "name": "Jonathan Windy Boy",
       "party": "D",
-      "district": "HD 32",
-      "incumbent": "no"
+      "district": "HD 32"
     },
     "FINLEY": {
       "name": "Mike Finley",
       "party": "D",
-      "district": "HD 33",
-      "incumbent": "no"
+      "district": "HD 33"
     },
     "KNUDSEN": {
       "name": "Austin Knudsen",
       "party": "R",
-      "district": "HD 34",
-      "incumbent": "yes"
+      "district": "HD 34"
     },
     "CARLISLE": {
       "name": "Evelyn Carlisle",
       "party": "D",
-      "district": "HD 34",
-      "incumbent": "no"
+      "district": "HD 34"
     },
     "STAFFANSON": {
       "name": "Scott Staffanson",
       "party": "R",
-      "district": "HD 35",
-      "incumbent": "yes"
+      "district": "HD 35"
     },
     "TRUMPOWER": {
       "name": "Chris Trumpower",
       "party": "D",
-      "district": "HD 35",
-      "incumbent": "no"
+      "district": "HD 35"
     },
     "DOANE": {
       "name": "Alan Doane",
       "party": "R",
-      "district": "HD 36",
-      "incumbent": "yes"
+      "district": "HD 36"
     },
     "RUDDY": {
       "name": "Mike Ruddy",
       "party": "D",
-      "district": "HD 36",
-      "incumbent": "no"
+      "district": "HD 36"
     },
     "CRAMER": {
       "name": "Judi Cramer",
       "party": "D",
-      "district": "HD 37",
-      "incumbent": "no"
+      "district": "HD 37"
     },
     "HARRIS": {
       "name": "Bill Harris",
       "party": "R",
-      "district": "HD 37",
-      "incumbent": "no"
+      "district": "HD 37"
     },
     "HOLMLUND": {
       "name": "Kenneth L. Holmlund",
       "party": "R",
-      "district": "HD 38",
-      "incumbent": "yes"
+      "district": "HD 38"
     },
     "MUGGLI": {
       "name": "Steve Muggli",
       "party": "D",
-      "district": "HD 38",
-      "incumbent": "no"
+      "district": "HD 38"
     },
     "CUSTER": {
       "name": "Geraldine Custer",
       "party": "R",
-      "district": "HD 39",
-      "incumbent": "yes"
+      "district": "HD 39"
     },
     "MILLER": {
       "name": "Bruce Miller",
       "party": "D",
-      "district": "HD 39",
-      "incumbent": "no"
+      "district": "HD 39"
     },
     "USHER": {
       "name": "Barry Usher",
       "party": "R",
-      "district": "HD 40",
-      "incumbent": "no"
+      "district": "HD 40"
     },
     "PEPPERS": {
       "name": "Rae Peppers",
       "party": "D",
-      "district": "HD 41",
-      "incumbent": "yes"
+      "district": "HD 41"
     },
     "STEWART PEREGOY": {
       "name": "Sharon Stewart Peregoy",
       "party": "D",
-      "district": "HD 42",
-      "incumbent": "no"
+      "district": "HD 42"
     },
     "DANIELS": {
       "name": "Josh Daniels",
       "party": "L",
-      "district": "HD 43",
-      "incumbent": "no"
+      "district": "HD 43"
     },
     "PINCOLINI": {
       "name": "Elizabeth Pincolini",
       "party": "D",
-      "district": "HD 43",
-      "incumbent": "no"
+      "district": "HD 43"
     },
     "WEBB": {
       "name": "Peggy Webb",
       "party": "R",
-      "district": "HD 43",
-      "incumbent": "no"
+      "district": "HD 43"
     },
     "BOITER": {
       "name": "Kari Boiter",
       "party": "D",
-      "district": "HD 44",
-      "incumbent": "no"
+      "district": "HD 44"
     },
     "MORTENSEN": {
       "name": "Dale Mortensen",
       "party": "R",
-      "district": "HD 44",
-      "incumbent": "yes"
+      "district": "HD 44"
     },
     "CROUCH": {
       "name": "Ken Crouch",
       "party": "D",
-      "district": "HD 45",
-      "incumbent": "no"
+      "district": "HD 45"
     },
     "ZOLNIKOV": {
       "name": "Daniel Zolnikov",
       "party": "R",
-      "district": "HD 45",
-      "incumbent": "yes"
+      "district": "HD 45"
     },
     "BUCKLEY": {
       "name": "Angie Buckley",
       "party": "D",
-      "district": "HD 46",
-      "incumbent": "no"
+      "district": "HD 46"
     },
     "JONES": {
       "name": "Donald W. Jones",
       "party": "R",
-      "district": "HD 46",
-      "incumbent": "yes"
+      "district": "HD 46"
     },
     "KELKER": {
       "name": "Kathy Kelker",
       "party": "D",
-      "district": "HD 47",
-      "incumbent": "yes"
+      "district": "HD 47"
     },
     "THOMAS": {
       "name": "Jason Lee Thomas",
       "party": "R",
-      "district": "HD 47",
-      "incumbent": "no"
+      "district": "HD 47"
     },
     "KARJALA": {
       "name": "Jessica L. Karjala",
       "party": "D",
-      "district": "HD 48",
-      "incumbent": "yes"
+      "district": "HD 48"
     },
     "SAUNDERS": {
       "name": "Robert Saunders",
       "party": "R",
-      "district": "HD 48",
-      "incumbent": "no"
+      "district": "HD 48"
     },
     "MCCARTHY": {
       "name": "Kelly McCarthy",
       "party": "D",
-      "district": "HD 49",
-      "incumbent": "yes"
+      "district": "HD 49"
     },
     "COURT": {
       "name": "Virginia Court",
       "party": "D",
-      "district": "HD 50",
-      "incumbent": "yes"
+      "district": "HD 50"
     },
     "SEEKINS-CROWE": {
       "name": "Kerri Seekins-Crowe",
       "party": "R",
-      "district": "HD 50",
-      "incumbent": "no"
+      "district": "HD 50"
     },
     "ROSENDALE": {
       "name": "Adam Rosendale",
       "party": "R",
-      "district": "HD 51",
-      "incumbent": "no"
+      "district": "HD 51"
     },
     "VEIS": {
       "name": "Shoots Veis",
       "party": "D",
-      "district": "HD 51",
-      "incumbent": "no"
+      "district": "HD 51"
     },
     "GOODRIDGE": {
       "name": "Chris Goodridge",
       "party": "D",
-      "district": "HD 52",
-      "incumbent": "no"
+      "district": "HD 52"
     },
     "PATELIS": {
       "name": "Jimmy Patelis",
       "party": "R",
-      "district": "HD 52",
-      "incumbent": "no"
+      "district": "HD 52"
     },
     "LENZ": {
       "name": "Dennis Lenz",
       "party": "R",
-      "district": "HD 53",
-      "incumbent": "no"
+      "district": "HD 53"
     },
     "MATNEY": {
       "name": "Jordan Matney",
       "party": "D",
-      "district": "HD 53",
-      "incumbent": "no"
+      "district": "HD 53"
     },
     "ESSMANN": {
       "name": "Jeff Essmann",
       "party": "R",
-      "district": "HD 54",
-      "incumbent": "yes"
+      "district": "HD 54"
     },
     "ARNOLD": {
       "name": "Ryan Arnold",
       "party": "D",
-      "district": "HD 55",
-      "incumbent": "no"
+      "district": "HD 55"
     },
     "RICCI": {
       "name": "Vince Ricci",
       "party": "R",
-      "district": "HD 55",
-      "incumbent": "yes"
+      "district": "HD 55"
     },
     "TEMPLET": {
       "name": "Daryl L Templet",
       "party": "D",
-      "district": "HD 56",
-      "incumbent": "no"
+      "district": "HD 56"
     },
     "VINTON": {
       "name": "Sue Vinton",
       "party": "R",
-      "district": "HD 56",
-      "incumbent": "no"
+      "district": "HD 56"
     },
     "FORCIER": {
       "name": "Andrew T. Forcier",
       "party": "L",
-      "district": "HD 57",
-      "incumbent": "no"
+      "district": "HD 57"
     },
     "MANDEVILLE": {
       "name": "Forrest J. Mandeville",
       "party": "R",
-      "district": "HD 57",
-      "incumbent": "yes"
+      "district": "HD 57"
     },
     "BERGLEE": {
       "name": "Seth Berglee",
       "party": "R",
-      "district": "HD 58",
-      "incumbent": "yes"
+      "district": "HD 58"
     },
     "CRABTREE": {
       "name": "Mike Crabtree",
       "party": "D",
-      "district": "HD 58",
-      "incumbent": "no"
+      "district": "HD 58"
     },
     "ADAMS": {
       "name": "Dirk Adams",
       "party": "D",
-      "district": "HD 59",
-      "incumbent": "no"
+      "district": "HD 59"
     },
     "REDFIELD": {
       "name": "Alan Redfield",
       "party": "R",
-      "district": "HD 59",
-      "incumbent": "yes"
+      "district": "HD 59"
     },
     "BISHOP": {
       "name": "Laurie Bishop",
       "party": "D",
-      "district": "HD 60",
-      "incumbent": "no"
+      "district": "HD 60"
     },
     "LAMM": {
       "name": "Debra Lamm",
       "party": "R",
-      "district": "HD 60",
-      "incumbent": "yes"
+      "district": "HD 60"
     },
     "GANSER": {
       "name": "Neal Ganser",
       "party": "R",
-      "district": "HD 61",
-      "incumbent": "no"
+      "district": "HD 61"
     },
     "HAMILTON": {
       "name": "Jim Hamilton",
       "party": "D",
-      "district": "HD 61",
-      "incumbent": "no"
+      "district": "HD 61"
     },
     "WENDT": {
       "name": "Francis Wendt",
       "party": "L",
-      "district": "HD 61",
-      "incumbent": "no"
+      "district": "HD 61"
     },
     "WOODS": {
       "name": "Tom Woods",
       "party": "D",
-      "district": "HD 62",
-      "incumbent": "yes"
+      "district": "HD 62"
     },
     "KING": {
       "name": "Jim King",
       "party": "R",
-      "district": "HD 63",
-      "incumbent": "no"
+      "district": "HD 63"
     },
     "ELLISON": {
       "name": "Chase Ellison",
       "party": "D",
-      "district": "HD 64",
-      "incumbent": "no"
+      "district": "HD 64"
     },
     "WHITE": {
       "name": "Kerry E White",
       "party": "R",
-      "district": "HD 64",
-      "incumbent": "yes"
+      "district": "HD 64"
     },
     "KNOKEY": {
       "name": "Jon A. Knokey",
       "party": "R",
-      "district": "HD 65",
-      "incumbent": "no"
+      "district": "HD 65"
     },
     "POPE": {
       "name": "Christopher Pope",
       "party": "D",
-      "district": "HD 65",
-      "incumbent": "yes"
+      "district": "HD 65"
     },
     "HAYMAN": {
       "name": "Denise Hayman",
       "party": "D",
-      "district": "HD 66",
-      "incumbent": "yes"
+      "district": "HD 66"
     },
     "BURNETT": {
       "name": "Tom Burnett",
       "party": "R",
-      "district": "HD 67",
-      "incumbent": "yes"
+      "district": "HD 67"
     },
     "JURMU": {
       "name": "John Jurmu",
       "party": "D",
-      "district": "HD 67",
-      "incumbent": "no"
+      "district": "HD 67"
     },
     "ANDES": {
       "name": "David K Andes",
       "party": "D",
-      "district": "HD 68",
-      "incumbent": "no"
+      "district": "HD 68"
     },
     "GRUBBS": {
       "name": "Bruce Grubbs",
       "party": "R",
-      "district": "HD 68",
-      "incumbent": "no"
+      "district": "HD 68"
     },
     "DUNHAM": {
       "name": "Eric Dunham",
       "party": "D",
-      "district": "HD 69",
-      "incumbent": "no"
+      "district": "HD 69"
     },
     "SALES": {
       "name": "Walt Sales",
       "party": "R",
-      "district": "HD 69",
-      "incumbent": "no"
+      "district": "HD 69"
     },
     "FLYNN": {
       "name": "Kelly Flynn",
       "party": "R",
-      "district": "HD 70",
-      "incumbent": "yes"
+      "district": "HD 70"
     },
     "HUSO": {
       "name": "Merlyn Huso",
       "party": "D",
-      "district": "HD 70",
-      "incumbent": "no"
+      "district": "HD 70"
     },
     "SHAW": {
       "name": "Ray L. Shaw",
       "party": "R",
-      "district": "HD 71",
-      "incumbent": "yes"
+      "district": "HD 71"
     },
     "MOSOLF": {
       "name": "Mike Mosolf",
       "party": "D",
-      "district": "HD 72",
-      "incumbent": "no"
+      "district": "HD 72"
     },
     "WELCH": {
       "name": "Tom Welch",
       "party": "R",
-      "district": "HD 72",
-      "incumbent": "no"
+      "district": "HD 72"
     },
     "KEANE": {
       "name": "Jim Keane",
       "party": "D",
-      "district": "HD 73",
-      "incumbent": "no"
+      "district": "HD 73"
     },
     "CURTIS": {
       "name": "Amanda Curtis",
       "party": "D",
-      "district": "HD 74",
-      "incumbent": "no"
+      "district": "HD 74"
     },
     "STEKETEE": {
       "name": "Sabrina Steketee",
       "party": "D",
-      "district": "HD 75",
-      "incumbent": "no"
+      "district": "HD 75"
     },
     "WAGONER": {
       "name": "Kirk B. Wagoner",
       "party": "R",
-      "district": "HD 75",
-      "incumbent": "yes"
+      "district": "HD 75"
     },
     "LYNCH": {
       "name": "Ryan Lynch",
       "party": "D",
-      "district": "HD 76",
-      "incumbent": "yes"
+      "district": "HD 76"
     },
     "GRAYBEAL": {
       "name": "Kerry Graybeal",
       "party": "R",
-      "district": "HD 77",
-      "incumbent": "no"
+      "district": "HD 77"
     },
     "DESILVA": {
       "name": "Dean K DeSilva",
       "party": "R",
-      "district": "HD 78",
-      "incumbent": "no"
+      "district": "HD 78"
     },
     "PIERSON": {
       "name": "Gordon Pierson Jr",
       "party": "D",
-      "district": "HD 78",
-      "incumbent": "yes"
+      "district": "HD 78"
     },
     "ECK": {
       "name": "Jenny Eck",
       "party": "D",
-      "district": "HD 79",
-      "incumbent": "yes"
+      "district": "HD 79"
     },
     "BEARD": {
       "name": "Becky Beard",
       "party": "R",
-      "district": "HD 80",
-      "incumbent": "no"
+      "district": "HD 80"
     },
     "CAIN": {
       "name": "Elizabeth Cain",
       "party": "D",
-      "district": "HD 80",
-      "incumbent": "no"
+      "district": "HD 80"
     },
     "CLAGUE": {
       "name": "Valerie Clague",
       "party": "I",
-      "district": "HD 80",
-      "incumbent": "no"
+      "district": "HD 80"
     },
     "ELLIS": {
       "name": "Janet Ellis",
       "party": "D",
-      "district": "HD 81",
-      "incumbent": "yes"
+      "district": "HD 81"
     },
     "FUNK": {
       "name": "Moffie Funk",
       "party": "D",
-      "district": "HD 82",
-      "incumbent": "yes"
+      "district": "HD 82"
     },
     "ABBOTT": {
       "name": "Kim Abbott",
       "party": "D",
-      "district": "HD 83",
-      "incumbent": "no"
+      "district": "HD 83"
     },
     "LEACH": {
       "name": "Bob Leach",
       "party": "R",
-      "district": "HD 83",
-      "incumbent": "no"
+      "district": "HD 83"
     },
     "BONAR": {
       "name": "Paula Bonar",
       "party": "L",
-      "district": "HD 84",
-      "incumbent": "no"
+      "district": "HD 84"
     },
     "DUNWELL": {
       "name": "Mary Ann Dunwell",
       "party": "D",
-      "district": "HD 84",
-      "incumbent": "yes"
+      "district": "HD 84"
     },
     "GIBSON": {
       "name": "Steve Gibson",
       "party": "R",
-      "district": "HD 84",
-      "incumbent": "no"
+      "district": "HD 84"
     },
     "MANZELLA": {
       "name": "Theresa Manzella",
       "party": "R",
-      "district": "HD 85",
-      "incumbent": "yes"
+      "district": "HD 85"
     },
     "YOUNG": {
       "name": "A. Jo Young",
       "party": "D",
-      "district": "HD 85",
-      "incumbent": "no"
+      "district": "HD 85"
     },
     "EHLI": {
       "name": "Ron Ehli",
       "party": "R",
-      "district": "HD 86",
-      "incumbent": "yes"
+      "district": "HD 86"
     },
     "NEAL": {
       "name": "Nancy A. Neal",
       "party": "D",
-      "district": "HD 86",
-      "incumbent": "no"
+      "district": "HD 86"
     },
     "BALLANCE": {
       "name": "Nancy Ballance",
       "party": "R",
-      "district": "HD 87",
-      "incumbent": "yes"
+      "district": "HD 87"
     },
     "GORSKI": {
       "name": "Margaret J. Gorski",
       "party": "D",
-      "district": "HD 88",
-      "incumbent": "no"
+      "district": "HD 88"
     },
     "GREEF": {
       "name": "Ed Greef",
       "party": "R",
-      "district": "HD 88",
-      "incumbent": "yes"
+      "district": "HD 88"
     },
     "KRIGSVOLD": {
       "name": "Alex Krigsvold",
       "party": "R",
-      "district": "HD 89",
-      "incumbent": "no"
+      "district": "HD 89"
     },
     "MCCONNELL": {
       "name": "Nate McConnell",
       "party": "D",
-      "district": "HD 89",
-      "incumbent": "yes"
+      "district": "HD 89"
     },
     "MURRAY": {
       "name": "Bill Murray",
       "party": "R",
-      "district": "HD 90",
-      "incumbent": "no"
+      "district": "HD 90"
     },
     "HILL": {
       "name": "Ellie Hill Smith",
       "party": "D",
-      "district": "HD 90",
-      "incumbent": "yes"
+      "district": "HD 90"
     },
     "BENNETT": {
       "name": "Bryce Bennett",
       "party": "D",
-      "district": "HD 91",
-      "incumbent": "yes"
+      "district": "HD 91"
     },
     "HOPKINS": {
       "name": "Mike Hopkins",
       "party": "R",
-      "district": "HD 92",
-      "incumbent": "no"
+      "district": "HD 92"
     },
     "MARX": {
       "name": "Addrien Marx",
       "party": "D",
-      "district": "HD 92",
-      "incumbent": "no"
+      "district": "HD 92"
     },
     "CLARK": {
       "name": "Johanna Clark",
       "party": "R",
-      "district": "HD 93",
-      "incumbent": "no"
+      "district": "HD 93"
     },
     "FLEMING": {
       "name": "John Fleming",
       "party": "D",
-      "district": "HD 93",
-      "incumbent": "no"
+      "district": "HD 93"
     },
     "COX": {
       "name": "Lance Cox",
       "party": "R",
-      "district": "HD 94",
-      "incumbent": "no"
+      "district": "HD 94"
     },
     "DUDIK": {
       "name": "Kimberly P. Dudik",
       "party": "D",
-      "district": "HD 94",
-      "incumbent": "yes"
+      "district": "HD 94"
     },
     "KENCK": {
       "name": "Cyndi Kenck",
       "party": "R",
-      "district": "HD 95",
-      "incumbent": "no"
+      "district": "HD 95"
     },
     "MORIGEAU": {
       "name": "Shane A. Morigeau",
       "party": "D",
-      "district": "HD 95",
-      "incumbent": "no"
+      "district": "HD 95"
     },
     "PERSON": {
       "name": "Andrew Person",
       "party": "D",
-      "district": "HD 96",
-      "incumbent": "yes"
+      "district": "HD 96"
     },
     "TSCHIDA": {
       "name": "Brad Tschida",
       "party": "R",
-      "district": "HD 97",
-      "incumbent": "yes"
+      "district": "HD 97"
     },
     "CURDY": {
       "name": "Willis Curdy",
       "party": "D",
-      "district": "HD 98",
-      "incumbent": "yes"
+      "district": "HD 98"
     },
     "ELLSWORTH": {
       "name": "Michael Ellsworth",
       "party": "R",
-      "district": "HD 98",
-      "incumbent": "no"
+      "district": "HD 98"
     },
     "CUNDIFF": {
       "name": "Susan Cundiff",
       "party": "R",
-      "district": "HD 99",
-      "incumbent": "no"
+      "district": "HD 99"
     },
     "RYAN": {
       "name": "Marilyn Ryan",
       "party": "D",
-      "district": "HD 99",
-      "incumbent": "no"
+      "district": "HD 99"
     },
     "MOORE": {
       "name": "David \"Doc\" Moore",
       "party": "R",
-      "district": "HD 100",
-      "incumbent": "no"
+      "district": "HD 100"
     }
   },
   "mtSen": {
@@ -1414,238 +1193,3 @@ var mtLegExtraCandidateInfo = {
   }
 }
 
-var partyOrder = ['R','D','L','G','A','I','Y','N',null]; // Y and N for initiatives
-
-var RACE_IDS = {
-  'mtGov': '001450005632',
-  'antiTrapping': '002450001213',
-  'medMarijuana': '002450001215',
-  'usPresident': '001450005633',
-  'usRep': '001450005517',
-  'mtSenate': null, // 001450005643 to 5666
-  'mtHouse': null, // 001450005518 to 001450005617
-};
-
-function getLastUpdate(){
-  // TODO: Write this
-  // Will return time of last data refresh
-}
-
-function parseCandidates(candidates, extraInfo){
-  // Parsing for candidates arrays, used by several different functions
-  // Takes raw list candidates from either race or county source files,
-  // pulls in extra data where available and does a bit of other massaging
-
-  var output = candidates.map(function(d){
-    var cand = {};
-    cand.name = d.candidate_last;
-    cand.fullName = d.candidate_first + " " + d.candidate_last;
-    cand.party = null;
-    cand.incumbent = 'no'
-    cand.votes = +d.votes;
-
-    var key = d.candidate_last;
-    // var extraInfo = extraCandidateInfo[raceName]
-    if (key in extraInfo) {
-      cand.party = extraInfo[key].party;
-      cand.incumbent = extraInfo[key].incumbent;
-      // overwrite name for ballot initiatives
-      if (extraInfo[key].altName) { cand.name = extraInfo[key].altName; }
-    }
-    return cand;
-  });
-
-  // sort by party
-  output.sort(function(a,b){
-    return partyOrder.indexOf(a.party) < partyOrder.indexOf(b.party) ? -1 : 1;
-  });
-
-  return output;
-}
-
-function mergeResultsByCounty(countyGeo, countyResults, raceNames){
-  // add results object to countyGeo properties for each raceName in raceNames
-  // console.log('mergeResultsIn', countyGeo, countyResults, raceNames)
-
-  raceNames.forEach(function(raceName){
-    countyGeo.features.forEach(function(county){
-      var countyName = county.properties.NAME;
-      county.properties[raceName] = getRaceResults(countyResults, countyName, raceName);
-    });
-  });
-
-  // console.log('mergeResultsOut', countyGeo);
-  return countyGeo;
-}
-function getRaceResults(countyResults, countyName, raceName){
-  // gets results for specific county and race
-  var raceId = RACE_IDS[raceName];
-  // console.log('getRaceIn', countyResults, countyName)
-
-  var results = {}
-
-  countyResults.records.forEach(function(countyResult){
-    // Match to countyName
-    if (countyResult.name.toUpperCase() === countyName){
-      results.county = countyResult.name;
-      countyResult.races.forEach(function(race){
-        if (race.race_id === raceId){
-          results.candidates = parseCandidates(race.candidates, extraCandidateInfo[raceName]);
-          results.precincts = +race.total_precincts;
-          results.precinctsReporting = +race.num_reporting;
-        }
-      });
-    }
-  });
-  // console.log('getRaceOut', countyName, raceName, results);
-  return results;
-}
-
-function summarizePrecincts(precincts){
-  // takes precincts array from race-formatted results,
-  // returns [precinctsReporting, totalPrecincts]
-  var precinctsReporting = 0, totalPrecincts = 0;
-  precincts.forEach(function(precinct){
-    totalPrecincts += +precinct.total_precincts;
-    precinctsReporting += +precinct.num_reporting;
-  });
-  return [precinctsReporting, totalPrecincts];
-}
-
-function summarizeRace(_, raceResults, raceName){
-  // Takes results by race, returns object for BarGraph.js
-  // _ is a placeholder for geodata
-  var raceId = RACE_IDS[raceName];
-
-  var results = {};
-
-  var precincts, candidates;
-  raceResults.races.forEach(function(race){
-    if (race.race_id === raceId){
-      precincts = race.precincts;
-      candidates = race.candidates;
-    }
-  });
-  // Replaced with function on following line - left here in case it breaks something unexpectedly
-  // var precinctsReporting = 0, totalPrecincts = 0;
-  // precincts.forEach(function(precinct){
-  //   totalPrecincts += +precinct.total_precincts;
-  //   precinctsReporting += +precinct.num_reporting;
-  // })
-  var pSumr = summarizePrecincts(precincts);
-  results.precinctsReporting = pSumr[0];
-  results.totalPrecincts = pSumr[1];
-
-  results.results = parseCandidates(candidates, extraCandidateInfo[raceName]);
-
-  var totalVotes = 0;
-  results.results.forEach(function(result){
-    totalVotes += +result.votes;
-  })
-
-  results.totalVotes = totalVotes;
-
-  return results;
-}
-
-function mergeLegData(geoData, flatData){
-  // Binds .csv-sourced leg data for given house to districts geoJson
-  // console.log('geo', geoData)
-  // console.log('flat', flatData)
-
-
-  geoData.features.forEach(function(district){
-    var properties = district.properties;
-    var matchDistrict;
-    // find matching district in flatData
-    flatData.forEach(function(row){
-      if (+row.number === +properties.number) { matchDistrict = row; }
-    });
-    if (!properties) {
-      console.log('Hey, no matching properties for', district);
-    } else {
-      properties.name = matchDistrict.district;
-      properties.raceId = matchDistrict.id;
-      properties.in_cycle = matchDistrict.in_cycle;
-      properties.incum_party = matchDistrict.incum_party;
-      properties.incum_name =matchDistrict.incum_last;
-      if(matchDistrict.region) {properties.region = matchDistrict.region; } // for SDs only, right now
-      if(matchDistrict.sen_dist_match) {properties.sen_dist_match = matchDistrict.sen_dist_match; } // for HDs only
-    }
-  });
-  // console.log('merged', geoData);
-  return geoData;
-}
-
-function summarizeLegRaces(mergedGeoData, raceResults, chamber){
-  // takes merged district geoData for given legislative chamber, adds a results (candidates) array to each district
-  // console.log('geo merged', mergedGeoData)
-  // console.log('results', raceResults)
-  // console.log('chamber', chamber)
-
-  mergedGeoData.features.forEach(function(district){
-    var properties = district.properties;
-    if(properties.in_cycle == 'yes'){
-      var raceId = properties.raceId
-      var curRace = null;
-      raceResults.races.forEach(function(race){
-        if (race.race_id === raceId){ curRace = race; }
-      });
-
-      if (curRace === null){
-        // handles missing data
-        console.log('no race result data found for', district.properties.name);
-        properties.precinctsReporting = null;
-        properties.totalPrecincts = null;
-        properties.candidates = [];
-      } else {
-        pSumr = summarizePrecincts(curRace.precincts);
-        properties.precinctsReporting = pSumr[0];
-        properties.totalPrecincts = pSumr[1];
-        properties.candidates = parseCandidates(curRace.candidates, mtLegExtraCandidateInfo[chamber])
-      }
-    } else {
-      properties.candidates = 'district not in cycle';
-    }
-  });
-
-  console.log('racesSummarized', mergedGeoData);
-  return mergedGeoData;
-}
-
-// OLD, may want to resurrect these functions
-
-// function addRaceToCountyGeoJson(geoJson, countiesForRace, raceName){
-//   var geoKey = "NAME",
-//     dataKey = "name"
-
-//   var combined = geoJson;
-//   combined.features.forEach(function(feature){
-//     countiesForRace.counties.forEach(function(county){
-//       if (String(county[dataKey]) === String(feature.properties[geoKey])){
-//         feature.properties[raceName] = county.candidates;
-//         feature.properties.precincts = county.precincts;
-//         feature.properties.precinctsReporting = county.precinctsReporting;
-//       }
-//     });
-//   });
-//   console.log(combined);
-//   return combined;
-// }
-
-// function bindFlatToGeoJson(geoJson, data, geoKey, dataKey, includeCols){
-//   // Similar to mergeData -- binds "flat" json data (e.g. from a .csv import) to a geoJson object
-//   // include cols is an array of fields from the merging data to include
-
-//   var combined = geoJson;
-//   combined.features.forEach(function(feature){
-//     data.forEach(function(row){
-//       if (String(row[dataKey]) === String(feature.properties[geoKey])){
-//         includeCols.forEach(function(col){
-//           feature.properties[col] = row[col];
-//         });
-//       }
-//     });
-//   });
-//   return combined;
-// }

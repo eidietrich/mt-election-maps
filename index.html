@@ -42,13 +42,15 @@
   <script src="js/ColorMap.js"></script>
   <script src="js/Text.js"></script>
   <script src="js/TableByCounty.js"></script>
+   <script src="js/TableByDistrict.js"></script>
 
 
   <script type="text/javascript">
 
   var main = function(){
     // Main function, called at bottom of file here
-    dashboard = new Dashboard(dataFiles, dataJoins, panels['home']);
+    // dashboard = new Dashboard(dataFiles, dataJoins, panels['home']);
+    dashboard = new Dashboard(dataFiles, dataJoins, testPanel);
   }
 
   var renderPane = function(paneId){
@@ -76,8 +78,8 @@
     // Add: House cartogram
 
     // Static data
-    // {'name': 'mtSenData', 'file': './../data/mt-senate.csv', 'loader': d3.csv},
-    // {'name': 'mtHouseData', 'file': './../data/mt-house.csv', 'loader': d3.csv},
+    {'name': 'mtSen', 'file': './../data/mt-senate.csv', 'loader': d3.csv},
+    {'name': 'mtHouse', 'file': './../data/mt-house.csv', 'loader': d3.csv},
 
     // Live data
     // TODO: Switch this from test data
@@ -125,16 +127,42 @@
       'geoData': null, 'joinData': 'races',
       'otherArgs': ['medMarijuana']
     },
+    {
+      'name': 'mtSenMerged',
+      'functName': mergeLegData,
+      'geoData': 'mtSenDistricts', 'joinData': 'mtSen',
+      'otherArgs': null
+    },
+    {
+      'name': 'mtSenResults',
+      'functName': summarizeLegRaces,
+      'geoData': 'mtSenMerged', 'joinData': 'races',
+      'otherArgs': ['mtSen']
+    },
+    {
+      'name': 'mtHouseMerged',
+      'functName': mergeLegData,
+      'geoData': 'mtHouseDistricts', 'joinData': 'mtHouse',
+      'otherArgs': null
+    },
+    {
+      'name': 'mtHouseResults',
+      'functName': summarizeLegRaces,
+      'geoData': 'mtHouseMerged', 'joinData': 'races',
+      'otherArgs': ['mtHouse']
+    },
   ];
-  // var testPanel = {
-  //   'name': 'panel1',
-  //   'design': [
-  //     {'id': 'chart1', 'Template': TableByCounty, 'dataVar': 'usRepByCounty',
-  //     'props': {
-  //       'extraCandidateInfo': extraCandidateInfo['usRep']
-  //     } },
-  //   ]
-  // };
+  var testPanel = {
+    'name': 'test panel',
+    'design': [
+      {'id': 'chart1', 'Template': TableByDistrict, 'dataVar': 'mtSenResults',
+          'props': {
+            'title': "District table",
+            'cutline': "This is a cutline"
+          }
+        },
+    ]
+  };
 
   /*
 
@@ -195,7 +223,6 @@
         {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
           'props': {
             'race': 'mtGov',
-            'extraCandidateInfo': extraCandidateInfo['mtGov'],
             'title': "Title here",
             'cutline': "This is a cutline"
           }
@@ -251,12 +278,18 @@
     'mtSenate': {
       'name': 'mtSenate',
       'design': [
-        // MT Senate control
-        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtSenDistricts',
+        // ADD MT Senate control
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtSenResults',
         'props': {
           'aspectRatio': 0.6,
           'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
           // 'featureLabel': function(d) { return d.properties.district; },
+          }
+        },
+        {'id': 'chart3', 'Template': TableByDistrict, 'dataVar': 'mtSenResults',
+          'props': {
+            'title': "District table",
+            'cutline': "This is a cutline"
           }
         },
       ]
@@ -265,11 +298,17 @@
       'name': 'mtHouse',
       'design': [
         // MT house control
-        {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtHouseDistricts',
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtHouseResults',
         'props': {
           'aspectRatio': 0.6,
           'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
           // 'featureLabel': function(d) { return d.properties.district; },
+          }
+        },
+        {'id': 'chart3', 'Template': TableByDistrict, 'dataVar': 'mtHouseResults',
+          'props': {
+            'title': "District table",
+            'cutline': "This is a cutline"
           }
         },
       ]

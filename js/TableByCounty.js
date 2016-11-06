@@ -17,7 +17,6 @@ var TableByCounty = function (props){
   this.race = props.race; // race to display
   this.tableData = {'columns': [], 'rows': []};
   // supplemental info (e.g. party, incumbency)
-  this.extraCandidateInfo = props.extraCandidateInfo;
   this.candidateKeys = []; // array of candidates, by last name
   this.candidates = []; // array of candidates in race, by info objects
 

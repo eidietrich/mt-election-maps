@@ -122,7 +122,7 @@ Necessary map templates:
 - Refine senate cartogram — figure out how to automate the process
 - Make local scope map Class (for honing in on particular places)
 - Add 'refresh' button to render class
-- Make house and senate district data table - RaceByDistrict.js
+- Make house and senate district data table - TableByDistrict.js
 - Make 'control of house/senate' bar graph - ChamberControl.js
 
 - Figure out how to translate county-level candidate objects into a meaningful color for chart — who's ahead and by how much
@@ -138,6 +138,9 @@ Necessary map templates:
 - Clean up data-wrangling.js
 - Order candidates by party (R, D, L, G, others, write-in) --> Put in candidate-parse function
 - Clean up design of everything
+- Email Joe — looks like state representative districts 57, 58 and 59 are missing from the results data (should be race_ids 001450005571, 001450005572, 001450005573)
+- Have Troy check incumbency data
+- Sort out bug - there is more than one BROWN running for mtHouse, unfortunately
 
 - Bar chart
     + Add vote counts to bars
