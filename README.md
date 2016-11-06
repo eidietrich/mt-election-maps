@@ -112,7 +112,7 @@ Necessary map templates:
 
 ## TODO:
 - Add to node-based development environment? (Webpack?)
-- Update CircleShadeMap.js for refactored data handling & responsiveness
+- Update CircleShadeMap.js for refactored data handling & responsiveness (or just give up on it and build new off of colorMap if I want to go there)
 - Retool DistrictArray.js so it doesn't take hideous data input (have it take multiple files, and move data nesting into the class)
 - Delete districts.json (blegh)
 - Make choropleth obsolete by adding a custom colorBy function to ColorMap
@@ -122,13 +122,18 @@ Necessary map templates:
 - Refine senate cartogram — figure out how to automate the process
 - Make local scope map Class (for honing in on particular places)
 - Add 'refresh' button to render class
-- Make House / Senate district table
-- Make county-level data table - TableByCounty.js
 - Make house and senate district data table - RaceByDistrict.js
 - Make 'control of house/senate' bar graph - ChamberControl.js
-- Make 'who's ahead' bar chart  for state-level races and ballot measures
+
 - Figure out how to translate county-level candidate objects into a meaningful color for chart — who's ahead and by how much
     + color scale based on percentage ahead, gray for zero votes counted
+        * Gray for < 10% of precincts reporting
+        * Red for GOP candidate ahead by > 10%
+        * Less red for GOP candidate ahead by > 2%
+        * Purple for tossup race (+/- 2%)
+        * Less blue for DEM ahead by > 2%
+        * Blue for Dem ahead by > 10%
+        * Some sort of indication for winner with 100% ballots
 - Figure out how to work tooltips and such
 - Clean up data-wrangling.js
 - Order candidates by party (R, D, L, G, others, write-in) --> Put in candidate-parse function
@@ -138,6 +143,12 @@ Necessary map templates:
     + Add vote counts to bars
     + Play with limits on horizontal scale (60% of vote, 80%?)
     + Add 50% line
+
+- County map
+    + Add city labels and major highways?
+
+- County table
+    + Organize by region (urban counties, others...)
 
 Conversation w Becker, Nov 1, pm:
 - He'll make dashboard template - with tabs for each race

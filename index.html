@@ -48,9 +48,6 @@
 
   var main = function(){
     // Main function, called at bottom of file here
-    // dashboard = new Dashboard(dataFiles, dataJoins, panels.mtGov);
-
-    // Test
     dashboard = new Dashboard(dataFiles, dataJoins, panels['home']);
   }
 
@@ -151,7 +148,7 @@
   */
 
   var panels = {
-    'home': { // TODO: Make this an overview of various races
+    'home': {
       'name': 'home',
       'design': [
         {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'mtGovResults',
@@ -175,7 +172,6 @@
             'cutline': "This is a cutline",
           }
         },
-
       ]
     },
     'mtGov': {
@@ -227,7 +223,6 @@
           'title': "Title here",
           'cutline': "This is a cutline"
         } },
-        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoUsHouse' }
       ]
     },
     'usPresident': {
@@ -251,7 +246,6 @@
           'title': "Title here",
           'cutline': "This is a cutline"
         } },
-        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoUsPres' }
       ]
     },
     'mtSenate': {
@@ -265,7 +259,6 @@
           // 'featureLabel': function(d) { return d.properties.district; },
           }
         },
-        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties' }
       ]
     },
     'mtHouse': {
@@ -277,10 +270,8 @@
           'aspectRatio': 0.6,
           'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
           // 'featureLabel': function(d) { return d.properties.district; },
-        }
-      }
-        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtHouseCartoHouse' }
-        // Add table
+          }
+        },
       ]
     },
     'medMarijuana': {
@@ -306,7 +297,6 @@
             'cutline': "This is a cutline"
           }
         },
-        // {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCartoMarij' }
       ]
     },
     'antiTrapping': {
@@ -333,7 +323,7 @@
             'title': "",
             'cutline': ""
           }
-        }
+        },
       ]
     }
   }
