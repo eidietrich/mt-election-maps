@@ -9,12 +9,15 @@ var TableByDistrict = function (props){
 
   // data variables
   this.data = props.data; // input data, as geoJson
+  this.race = props.race;
+
   // Supporting text
   this.title = props.title || "";
   this.cutline = props.cutline || "";
 
   // container for data passed to draw function
   this.tableData = {'columns': [], 'rows': []};
+
   // supplemental info (e.g. party, incumbency)
   this.candidateKeys = []; // array of candidates, by last name
   this.candidates = []; // array of candidates in race, by info objects
@@ -60,10 +63,11 @@ TableByDistrict.prototype.shapeData = function() {
   });
 
   this.data.features.forEach(function(feature){
-    var properties = feature.properties;
-    var results = properties.results;
+    var properties = feature.properties[that.race],
+      results = properties.results;
 
-    if (feature.properties.in_cycle != 'no'){
+    if (that.race != 'mtSen' || properties.in_cycle === 'yes'){
+      // Skip out-of-cycle senate races
       var row = {};
       row.values = {
         'precincts': String(properties.totalPrecincts),
@@ -75,7 +79,7 @@ TableByDistrict.prototype.shapeData = function() {
         'writeIn': getCandidateForParty(results, null),
       };
       row.display = { // Keys here become column headers
-        'District': feature.properties.name,
+        'District': properties.name,
         'Counted':  row.values.precinctsReporting
           + '/' + row.values.precincts + '<br />precincts',
         'Incumbent': properties.incum_name

@@ -48,7 +48,7 @@
 
   var main = function(){
     // Main function, called at bottom of file here
-    dashboard = new Dashboard(dataFiles, dataJoins, testPanel);
+    dashboard = new Dashboard(dataFiles, dataJoins, panels['mtSenate']);
 
     // dashboard = new Dashboard(dataFiles, dataJoins, panels['home']);
   }
@@ -132,10 +132,10 @@
       'name': 'mtSenMerged',
       'functName': mergeLegData,
       'geoData': 'mtSenDistricts', 'joinData': 'mtSen',
-      'otherArgs': null
+      'otherArgs': ['mtSen']
     },
     {
-      'name': 'mtSenResults',
+      'name': 'mtSenResultsByDistrict',
       'functName': summarizeLegRaces,
       'geoData': 'mtSenMerged', 'joinData': 'races',
       'otherArgs': ['mtSen']
@@ -144,10 +144,10 @@
       'name': 'mtHouseMerged',
       'functName': mergeLegData,
       'geoData': 'mtHouseDistricts', 'joinData': 'mtHouse',
-      'otherArgs': null
+      'otherArgs': ['mtHouse']
     },
     {
-      'name': 'mtHouseResults',
+      'name': 'mtHouseResultsByDistrict',
       'functName': summarizeLegRaces,
       'geoData': 'mtHouseMerged', 'joinData': 'races',
       'otherArgs': ['mtHouse']
@@ -284,15 +284,17 @@
       'name': 'mtSenate',
       'design': [
         // ADD MT Senate control
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtSenResults',
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtSenResultsByDistrict',
         'props': {
+          'race': 'mtSen',
           'aspectRatio': 0.6,
           // 'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
           // 'featureLabel': function(d) { return d.properties.district; },
           }
         },
-        {'id': 'chart3', 'Template': TableByDistrict, 'dataVar': 'mtSenResults',
+        {'id': 'chart3', 'Template': TableByDistrict, 'dataVar': 'mtSenResultsByDistrict',
           'props': {
+            'race': 'mtSen',
             'title': "District table",
             'cutline': "This is a cutline"
           }
@@ -303,15 +305,17 @@
       'name': 'mtHouse',
       'design': [
         // MT house control
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtHouseResults',
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtHouseResultsByDistrict',
         'props': {
+          'race': 'mtHouse',
           'aspectRatio': 0.6,
           // 'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
           // 'featureLabel': function(d) { return d.properties.district; },
           }
         },
-        {'id': 'chart3', 'Template': TableByDistrict, 'dataVar': 'mtHouseResults',
+        {'id': 'chart3', 'Template': TableByDistrict, 'dataVar': 'mtHouseResultsByDistrict',
           'props': {
+            'race': 'mtHouse',
             'title': "District table",
             'cutline': "This is a cutline"
           }

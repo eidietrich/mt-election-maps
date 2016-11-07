@@ -5,7 +5,10 @@ var globals = {
       return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
     }).join(' ');
   },
-  voteFormat: d3.format(','),
+  voteFormat: function(vote){
+    if (isNaN(vote)) { return ""; }
+    else { return d3.format(',')(vote); }
+  },
   scale: d3.scaleLinear().range([0,1600]),
   voterScale: function(number){
     // returns radius for proportional area, I think

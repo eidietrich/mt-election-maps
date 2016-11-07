@@ -1543,7 +1543,7 @@ function summarizeRace(_, raceResults, raceName){
   return results;
 }
 
-function mergeLegData(geoData, flatData){
+function mergeLegData(geoData, flatData, chamber){
   // Binds .csv-sourced leg data for given house to districts geoJson
   // console.log('geo', geoData)
   // console.log('flat', flatData)
@@ -1559,13 +1559,15 @@ function mergeLegData(geoData, flatData){
     if (!properties) {
       console.log('Hey, no matching properties for', district);
     } else {
-      properties.name = matchDistrict.district;
-      properties.raceId = matchDistrict.id;
-      properties.in_cycle = matchDistrict.in_cycle;
-      properties.incum_party = matchDistrict.incum_party;
-      properties.incum_name =matchDistrict.incum_last;
-      if(matchDistrict.region) {properties.region = matchDistrict.region; } // for SDs only, right now
-      if(matchDistrict.sen_dist_match) {properties.sen_dist_match = matchDistrict.sen_dist_match; } // for HDs only
+      var results = properties[chamber] = {};
+      properties.NAME = matchDistrict.district;
+      results.name = matchDistrict.district;
+      results.raceId = matchDistrict.id;
+      results.in_cycle = matchDistrict.in_cycle;
+      results.incum_party = matchDistrict.incum_party;
+      results.incum_name =matchDistrict.incum_last;
+      if(matchDistrict.region) {results.region = matchDistrict.region; } // for SDs only, right now
+      if(matchDistrict.sen_dist_match) {results.sen_dist_match = matchDistrict.sen_dist_match; } // for HDs only
     }
   });
   // console.log('merged', geoData);
@@ -1579,9 +1581,9 @@ function summarizeLegRaces(mergedGeoData, raceResults, chamber){
   // console.log('chamber', chamber)
 
   mergedGeoData.features.forEach(function(district){
-    var properties = district.properties;
-    if(properties.in_cycle == 'yes'){
-      var raceId = properties.raceId
+    var results = district.properties[chamber];
+    if(results.in_cycle == 'yes'){
+      var raceId = results.raceId
       var curRace = null;
       raceResults.races.forEach(function(race){
         if (race.race_id === raceId){ curRace = race; }
@@ -1589,22 +1591,22 @@ function summarizeLegRaces(mergedGeoData, raceResults, chamber){
 
       if (curRace === null){
         // handles missing data
-        console.log('no race result data found for', district.properties.name);
-        properties.precinctsReporting = null;
-        properties.totalPrecincts = null;
-        properties.results = [];
+        console.log('no race result data found for', results.name);
+        results.precinctsReporting = null;
+        results.totalPrecincts = null;
+        results.results = [];
       } else {
         pSumr = summarizePrecincts(curRace.precincts);
-        properties.precinctsReporting = pSumr[0];
-        properties.totalPrecincts = pSumr[1];
-        properties.results = parseCandidates(curRace.candidates, mtLegExtraCandidateInfo[chamber])
+        results.precinctsReporting = pSumr[0];
+        results.totalPrecincts = pSumr[1];
+        results.results = parseCandidates(curRace.candidates, mtLegExtraCandidateInfo[chamber])
       }
     } else {
-      properties.results = 'district not in cycle';
+      results.results = []
     }
   });
 
-  // console.log('racesSummarized', mergedGeoData);
+  console.log('racesSummarized', mergedGeoData);
   return mergedGeoData;
 }
 

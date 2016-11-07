@@ -58,8 +58,9 @@ var ColorMap = function (props){
 }
 ColorMap.prototype.shapeData = function(){
   var that = this;
+  // Add color
   this.data.features.forEach(function(feature){
-    feature.properties.fillColor = globals.classifyRace(feature.properties, that.race);
+    feature.properties.fillColor = globals.classifyRace(feature.properties[that.race]);
   });
 }
 ColorMap.prototype.draw = function() {
@@ -145,22 +146,23 @@ ColorMap.prototype.draw = function() {
       .attr("fill", "#fff")
       .attr("stroke", "#777")
       .attr("opacity",0.9)
+    // Add district / county name
     that.tooltip.append('text')
       .attr("y", -15)
       .attr('text-anchor', 'middle')
       .attr("class", "tooltip-title")
       .style("font-weight", "bold")
       .text(feature.properties.NAME)
-    that.tooltip.append('text')
-      .attr("x", - (w / 2 - 8))
-      .attr("y", 5)
-      .text(globals.toTitleCase(results.results[0].name) + ": "
-        + globals.voteFormat(results.results[0].votes))
-    that.tooltip.append('text')
-      .attr("x", - (w / 2 - 8))
-      .attr("y", 25)
-      .text(globals.toTitleCase(results.results[1].name) + ": "
-        + globals.voteFormat(results.results[1].votes))
+    // Add results for first two votes
+    var lineOffset = 5;
+    results.results.slice(0,2).forEach(function(line){
+      that.tooltip.append('text')
+        .attr("x", - (w / 2 - 8))
+        .attr("y", lineOffset)
+        .text(globals.toTitleCase(line.name) + " - "
+          + globals.voteFormat(line.votes))
+      lineOffset += 20;
+    })
   }
 
   this.shapes
