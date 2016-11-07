@@ -29,9 +29,8 @@ var ColorMap = function (props){
   this.height = props.height;
   this.heightNotDefined = !props.height;
   this.aspectRatio = props.aspectRatio;
-  this.margin = {top: 30, bottom: 90, right: 20, left: 20};
 
-  console.log('ColorMap called with', this.data);
+  // console.log('ColorMap called with', this.data);
 
   // Supporting text
   this.title = props.title || "";
@@ -50,11 +49,8 @@ var ColorMap = function (props){
     this.featureLabel = null;
   }
 
-  // console.log(this.data);
-
   this.shapeData()
   this.draw()
-  // this.addTooltip() // TODO
 }
 ColorMap.prototype.shapeData = function(){
   var that = this;
@@ -66,13 +62,23 @@ ColorMap.prototype.shapeData = function(){
 ColorMap.prototype.draw = function() {
   var that = this;
 
+  this.margin = {top: 30, bottom: 90, right: 20, left: 20};
+
   d3.select(this.element).html("");
   this.width = this.element.getBoundingClientRect().width;
   if (this.heightNotDefined){
     this.height = this.width * this.aspectRatio
   }
+
+  // adjust bottom margin for no legend on small screens
+  if (this.width <= 500) {
+    this.margin.bottom = 20;
+  }
+
   this.plotHeight = this.height - this.margin.top - this.margin.bottom;
   this.plotWidth = this.width - this.margin.left - this.margin.right;
+
+
 
   // Supporting text
   d3.select(this.element).append("h3")
@@ -182,6 +188,20 @@ ColorMap.prototype.draw = function() {
     });
 
   // Add legend
+  // Only if width is >= 500px
+  if (this.width >= 500) {
+    this.drawLegend();
+  }
+
+  // // For testing
+  // this.shapes
+  //   .on("click", function(d){
+  //     console.log(d.properties);
+  //   })
+}
+ColorMap.prototype.drawLegend = function(){
+  var that = this;
+
   var legHeight = 40;
   this.legend = this.svg.append("g")
     .attr("class", "map-legend")
@@ -195,25 +215,37 @@ ColorMap.prototype.draw = function() {
   // Assumes 5 item color scale
   var colorScale;
   if (this.race === 'medMarijuana' || this.race === 'antiTrapping'){
-    labels = ["Yes ahead (>5%)", "Yes leading (2-5%)","Close race","No leading (2-5%)", "No ahead (>5%)"];
+    labels = ["Yes ahead (>5%)", "Yes leading (2-5%)","Close race (+/-2%)","No leading (2-5%)", "No ahead (>5%)"];
     colorScale = globals.colorByMarginReferendum;
-  } else {
-    labels = ["GOP ahead (>5%)", "GOP leading (2-5%)","Close race","Dem leading (2-5%)", "Dem ahead (>5%)"];
-    colorScale = globals.colorByMarginParty;
-  }
-  colorScale.range().forEach(function(d,i){
-    legendDisplay.push({
-      'label': labels[i],
-      'color': d
+    colorScale.range().forEach(function(d,i){
+      legendDisplay.push({
+        'label': labels[i],
+        'color': d
+      });
     });
-  });
-  // Add non-standard keys to legend object
-  Object.keys(globals.raceClassifications).forEach(function(key){
+    // Add some non-standard keys to legend object
+    Object.keys(globals.raceClassifications).slice(0,2).forEach(function(key){
     legendDisplay.push({
       'label': globals.raceClassifications[key].name,
       'color': globals.raceClassifications[key].color
     });
   })
+  } else {
+    labels = ["GOP ahead (>5%)", "GOP leading (2-5%)","Close race (+/-2%)","Dem leading (2-5%)", "Dem ahead (>5%)"];
+    colorScale = globals.colorByMarginParty;
+    colorScale.range().forEach(function(d,i){
+      legendDisplay.push({
+        'label': labels[i],
+        'color': d
+      });
+    });
+    Object.keys(globals.raceClassifications).forEach(function(key){
+      legendDisplay.push({
+        'label': globals.raceClassifications[key].name,
+        'color': globals.raceClassifications[key].color
+      });
+    })
+  }
 
   this.legendItems = this.legend.append('g')
     .selectAll('g')
@@ -234,12 +266,4 @@ ColorMap.prototype.draw = function() {
     .attr("r", 8)
     // .attr("cy", )
     .attr("fill", function(d){ return d.color; })
-
-
-
-  // For testing
-  this.shapes
-    .on("click", function(d){
-      console.log(d.properties);
-    })
 }

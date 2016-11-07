@@ -38,6 +38,14 @@ var extraCandidateInfo = {
     'YES ON INITIATIVE I-182': {'party': 'Y', 'altName': 'YES'},
     'NO ON INITIATIVE I-182': {'party': 'N', 'altName': 'NO'},
   },
+  'lAndJCounty': {
+    'BONDS - YES': {'party': 'Y', 'altName': 'YES'},
+    'BONDS - NO': {'party': 'N', 'altName': 'NO'},
+  },
+  'lAndJCity': {
+    'MILL LEVY - YES': {'party': 'Y', 'altName': 'YES'},
+    'MILL LEVY - NO': {'party': 'N', 'altName': 'NO'},
+  },
 };
 
 var mtLegExtraCandidateInfo = {
@@ -210,7 +218,7 @@ var mtLegExtraCandidateInfo = {
       "district": "HD 14",
       "incumbent": "no"
     },
-    "KIPP III": {
+    "KIPP": {
       "name": "George G. Kipp III",
       "party": "D",
       "district": "HD 15",
@@ -480,7 +488,7 @@ var mtLegExtraCandidateInfo = {
       "district": "HD 41",
       "incumbent": "yes"
     },
-    "STEWART PEREGOY": {
+    "PEREGOY": {
       "name": "Sharon Stewart Peregoy",
       "party": "D",
       "district": "HD 42",
@@ -1419,7 +1427,9 @@ var RACE_IDS = {
   'antiTrapping': '002450001213',
   'medMarijuana': '002450001215',
   'usPresident': '001450005633',
-  'usRep': '001450005517'
+  'usRep': '001450005517',
+  'lAndJCounty': '002450001216',
+  'lAndJCity': '002450001217',
 };
 
 function getLastUpdate(){
@@ -1559,7 +1569,7 @@ function mergeLegData(geoData, flatData, chamber){
       if (+row.number === +properties.number) { matchDistrict = row; }
     });
     if (!properties) {
-      console.log('Hey, no matching properties for', district);
+      // console.log('Hey, no matching properties for', district);
     } else {
       var results = properties[chamber] = {};
       properties.NAME = matchDistrict.district;
@@ -1593,7 +1603,7 @@ function summarizeLegRaces(mergedGeoData, raceResults, chamber){
 
       if (curRace === null){
         // handles missing data
-        console.log('no race result data found for', results.name);
+        // console.log('no race result data found for', results.name);
         results.precinctsReporting = null;
         results.totalPrecincts = null;
         results.results = [];

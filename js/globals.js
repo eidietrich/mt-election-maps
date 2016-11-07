@@ -17,8 +17,8 @@ var globals = {
   colorByParty: d3.scaleOrdinal()
     .domain(['R','D','L','G',
       'A','I','Y','N',null]) // Y and N for initiatives
-    .range(['#b2182b',"#2166ac","#ff7f40","#ff7f40",
-      "#ff7f40","#666","#018571","#a6611a","#666"]),
+    .range(['#b2182b',"#2166ac","#a6611a","#a6611a",
+      "#a6611a","#a6611a","#1a9641","#d7191c","#a6611a"]),
   colorByRegion: d3.scaleOrdinal()
     .domain(['Kalispell / Whitefish','Great Falls', 'Billings','Bozeman','Helena','Missoula','Butte / Anaconda'])
     .range(['#b2df8a','#33a02c','#fb9a99','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a'])
@@ -27,25 +27,13 @@ var globals = {
   // TODO: Tweak these colors
   colorByMarginParty: d3.scaleThreshold()
     .domain([-0.05,-0.02,0.02,0.05])
-    .range(['#b2182b','#ef8a62','#998ec3','#67a9cf','#2166ac']),
+    .range(['#b2182b','#ef8a62','#756bb1','#67a9cf','#2166ac']),
   colorByMarginReferendum: d3.scaleThreshold()
     .domain([-0.05,-0.02,0.02,0.05])
-    .range(['#018571','#80cdc1','#f5f5f5','#dfc27d','#a6611a']),
+    .range(['#1a9641','#91cf60','#a6611a','#fc8d59','#d7191c']),
   raceClassifications: {
-    'noData': {'name': 'No data', 'color': "#bbb"},
-    'noRaceGOP': {'name': 'No race, GOP incumbent', 'color': "#bbb"},
-    'noRaceDEM': {'name': 'No race, Dem incumbent', 'color': "#bbb"},
-    'noVotesYet': {'name': 'Not yet counted', 'color': "#666"},
-    'uncontestedGOP': {'name': 'Uncontested, GOP', 'color': "#b2182b"},
-    'uncontestedDEM': {'name': 'Uncontested, Dem', 'color': "#2166ac"},
-    // 'partyRace': {
-    //   'name': 'Partisan race',
-    //   'color': ,
-    // },
-    // 'refRace' : {
-    //   'name': 'Referendum',
-    //   'color': this.,
-    // }
+    'noVotesYet': {'name': 'Not yet counted', 'color': "#dfc27d"},
+    'noRace': {'name': 'No race this year', 'color': "#ddd"},
   },
   classifyRace: function(raceObject, race) {
     // classifies a county / district based on vote tallies, returns color
@@ -71,15 +59,7 @@ var globals = {
 
     if (race === 'mtSen' && raceObject.in_cycle === 'no'){
       // Return incumbent color for out-of-district senate races
-      if (raceObject.incum_party === 'R'){
-        return globals.raceClassifications['noRaceGOP'].color
-      } else if (raceObject.incum_party === 'D') {
-        return globals.raceClassifications['noRaceDEM'].color
-      } else {
-        return globals.raceClassifications['noData'].color
-      }
-      // return globals.colorByParty(raceObject.incum_party);
-
+      return globals.raceClassifications['noRace'].color;
     } else if (raceObject.precinctsReporting === 0){
       // Return no results color for < threshold results in
       return globals.raceClassifications['noVotesYet'].color;
@@ -97,15 +77,15 @@ var globals = {
 
       // handle no data
       if (gop == null && dem == null){
-        return globals.raceClassifications['noData'].color;
+        return '#777';
       }
 
-      // Handle uncontested races
+      // Handle uncontested races, inelegantly
       if (gop == null) {
-        return globals.raceClassifications['uncontestedDEM'].color;
+        return "#2166ac";
       }
       if (dem == null) {
-        return globals.raceClassifications['uncontestedGOP'].color;
+        return "#b2182b";
       }
 
       var diff = (dem.votes - gop.votes) / totalVotes;

@@ -57,85 +57,29 @@ Index has what?
     - County-level choropleth
     - Population-based cartogram (hopefully)
     - Tabulated votes
-8. /gallatin-county-commission - Gallatin County Commission - Skinner v Leland
-    - Gallatin County precinct choropleth
-    - Table
-9. /law-and-justice Law and Justice - Yes v no on city and county measures
+8. /law-and-justice Law and Justice - Yes v no on city and county measures
     - Gallatin County precinct choropleth for city
     - Gallatin County precinct choropleth for county
     - Tablulated votes
 
 
-## Brainstorming
-
-- 10 most competitive house seats - based on 2014 results
-- X most competitive senate seats - based on 2014 results
-
-Things to present on election night
-
-Present state-level race
-- MT House 
-- MT Senate
-- Presidential - include libertarian votes (Map third part-votes alone, too)
-- Bullock-Gianforte
-- Zinke-Juneau
-- Medical Marijuana
-- Anti-trapping
-
-Gallatin County level
-- Leland-Skinner
-- L&J
-- 
-
-Need to think about how to represent partial vote counts (easier with a cartogram or other diagram?)
-
-Look at scaling counties by population for one view?
-
-Important issues at a county level:
-- L&J Bond (city and county measures)
-- Skinner-Leland
-- Local house/senate races?
-
-Important at a state level
-- Gov Race
-    + County or HD-level map
-- U.S. House Race
-- MT House & Senate power balances (even if nothing's going to change)
-
-Necessary map templates:
-- County choropleth (done)
-- House District choropleth (done)
-- county-scale cartogram (maybe?)
-- state-scale cartogram (done, sort of) 
-
-
-
-## TODO:
-- Add to node-based development environment? (Webpack?)
-- Update CircleShadeMap.js for refactored data handling & responsiveness (or just give up on it and build new off of colorMap if I want to go there)
-- Make choropleth obsolete by adding a custom colorBy function to ColorMap
-- Figure out how to work data linkages between house and senate districts
-- Make house cartogram
-- Refine senate cartogram — figure out how to automate the process
-- Make local scope map Class (for honing in on particular places)
-- Make 'control of house/senate' bar graph - ChamberControl.js
-- Clean up data-wrangling.js
-- Figure out how to handle table responsiveness
-
-- Email Joe — looks like state representative districts 57, 58 and 59 are missing from the results data (should be race_ids 001450005571, 001450005572, 001450005573 - Becker should have fixed this
-- 
-- Possible bug - there is more than one BROWN running for mtHouse, unfortunately (maybe one is a senator!)
-- Add percent of vote to candidate parsing - harder than expected
-
-
 ON-DEADLINE BUG TRACKING
-- Fine-tune colors for legends
-- Mobile display for map legend
-- Mobile display for tables
-- Play with table text formatting
-- Have Troy check incumbency data
-- Uncontested races don't seem to be showing properly on house/senate
-- Something may be off with color categorization - doesn't match vote counts on maps? (I think it's just non R/D vote counts in sample data screwing with the denomenators)
+- Have Troy look at this, make sure it works
+
+## NEXT-STEP REFINEMENTS:
+- Possible bug - there is more than one BROWN running for mtHouse, unfortunately (FIXED: turns out one is a senator!)
+- Add 50% threshold line to bar charts
+- Make map legend fully responsive instead of 'hide when small'
+- Develop cartograms / get them working
+ + Refine SD cartogram
+ + Make HD cartogram (fit into SD one)
+ + Make county cartogram
+- Make local focus map object (for focus on Bozeman, Billings, etc.) - ColorMapLocal.js
+- Make 'control of house / senate' bar diagram - ChamberControl.js
+- Refactor data-wrangling workflow to something maintainable (should have done this up-front)
+- Think about how I should have written unit tests.
+- Look at optimization (bundling, etc.)
+- Look at building this out for use as a template on further projects (e.g. add to build environment)
 
 - Bar chart
     + Play with limits on horizontal scale (60% of vote, 80%?)
@@ -145,16 +89,13 @@ ON-DEADLINE BUG TRACKING
     + Add city labels and major highways? (NOT NOW)
 
 - County table
-    + Organize by region (urban counties, others...)
-
+    + Organize by region (urban counties, others...
 Conversation w Becker, Nov 1:
 - He'll make dashboard template - with tabs for each race
 - I need to make self-contained javascript functions rendering each graphic using data.
 - Make a function that generates each tab, pulls in each graph.
 - Include an on-tab refresh button that checks for new data, re-renders graphs if there's new data
 
-Workplan:
-- Put together tabulations first, then figure out what/how to present in maps
 
 ## References
 

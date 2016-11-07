@@ -26,351 +26,38 @@
   </div>
 
   <!-- Libraries -->
-  <script src="js/d3.min.js"></script>
-  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="lib/d3.min.js"></script>
+  <script src="lib/jquery-3.1.1.min.js"></script>
 
   <!-- Interface scripts -->
   <script src="js/globals.js"></script>
   <script src="js/data-wrangling.js"></script>
-  <script src="js/Dashboard.js"></script>
-  <script src="js/Panel.js"></script>
 
   <!-- Component scripts -->
-  <script src="js/BarGraph.js"></script>
-  <!-- <script src="js/OpposingBarGraph.js"></script> -->
-  <script src="js/ColorMap.js"></script>
-  <script src="js/Text.js"></script>
-  <script src="js/TableByCounty.js"></script>
-   <script src="js/TableByDistrict.js"></script>
+  <script src="components/Dashboard.js"></script>
+  <script src="components/Panel.js"></script>
+  <script src="components/BarGraph.js"></script>
+  <script src="components/ColorMap.js"></script>
+  <script src="components/TableByCounty.js"></script>
+  <script src="components/TableByDistrict.js"></script>
 
-
+  <script src="js/index.js"></script>
   <script type="text/javascript">
-
-  var main = function(){
-    // Main function, called at bottom of file here
-    dashboard = new Dashboard(dataFiles, dataJoins, panels['home']);
-  }
-
-  var renderPane = function(paneId){
-    // clear contents of chart-container divs and render pane with given id
-    $('.chart-container').empty();
-    dashboard.currentPanel = panels[paneId];
-    dashboard.render(dashboard.currentPanel);
-  }
-
-  var handleTabClick = function(e){
-    // Adjust tab bar classses
-    $(e).addClass('active');
-    $(e).siblings().removeClass('active');
-    renderPane(e.id);
-  }
-
-  var dashboard;
-
-  // Array of files for Dashboard to pull in
-  var dataFiles = [
-    // Geodata
-    {'name': 'mtSenDistricts', 'file': './../geodata/mt_senate_districts.geojson', 'loader': d3.json},
-    {'name': 'mtHouseDistricts', 'file': './../geodata/mt_house_districts.geojson', 'loader': d3.json},
-    {'name': 'mtCounties', 'file': './../geodata/mt_counties.geojson', 'loader': d3.json},
-
-    // Static data
-    {'name': 'mtSen', 'file': './../data/mt-senate.csv', 'loader': d3.csv},
-    {'name': 'mtHouse', 'file': './../data/mt-house.csv', 'loader': d3.csv},
-
-    // Live data
-    // TODO: Switch this from test data
-    {'name': 'races', 'file': './test/livedata-byrace-fullvotes.json', 'loader': d3.json},
-    {'name': 'counties', 'file': './test/livedata-bycounty-fullvotes.json', 'loader': d3.json},
-
-  ];
-  var dataJoins = [
-    // Array of data processing functions for Dashboard to run on data refresh
-    // See data-wrangling.js for function documentation
-    {
-      'name': 'mtResultsByCounty',
-      'functName': mergeResultsByCounty,
-      'geoData': 'mtCounties', 'joinData': 'counties',
-      'otherArgs': [['mtGov','usPresident','usRep','antiTrapping','medMarijuana']]
-    },
-    {
-      'name': 'mtGovResults',
-      'functName': summarizeRace,
-      'geoData': null, 'joinData': 'races',
-      'otherArgs': ['mtGov']
-    },
-    {
-      'name': 'usRepResults',
-      'functName': summarizeRace,
-      'geoData': null, 'joinData': 'races',
-      'otherArgs': ['usRep']
-    },
-    {
-      'name': 'usPresResults',
-      'functName': summarizeRace,
-      'geoData': null, 'joinData': 'races',
-      'otherArgs': ['usPresident']
-    },
-    {
-      'name': 'antiTrappingResults',
-      'functName': summarizeRace,
-      'geoData': null, 'joinData': 'races',
-      'otherArgs': ['antiTrapping']
-    },
-    {
-      'name': 'medMarijuanaResults',
-      'functName': summarizeRace,
-      'geoData': null, 'joinData': 'races',
-      'otherArgs': ['medMarijuana']
-    },
-    {
-      'name': 'mtSenMerged',
-      'functName': mergeLegData,
-      'geoData': 'mtSenDistricts', 'joinData': 'mtSen',
-      'otherArgs': ['mtSen']
-    },
-    {
-      'name': 'mtSenResultsByDistrict',
-      'functName': summarizeLegRaces,
-      'geoData': 'mtSenMerged', 'joinData': 'races',
-      'otherArgs': ['mtSen']
-    },
-    {
-      'name': 'mtHouseMerged',
-      'functName': mergeLegData,
-      'geoData': 'mtHouseDistricts', 'joinData': 'mtHouse',
-      'otherArgs': ['mtHouse']
-    },
-    {
-      'name': 'mtHouseResultsByDistrict',
-      'functName': summarizeLegRaces,
-      'geoData': 'mtHouseMerged', 'joinData': 'races',
-      'otherArgs': ['mtHouse']
-    },
-  ];
-  var testPanel = {
-    'name': 'test panel',
-    'design': [
-      {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtResultsByCounty',
-        'props': {
-          'aspectRatio': 0.6,
-          'race': 'mtGov'
-          }
-        },
-    ]
-  };
-
-  /*
-
-  Each panel object gives Dashboard.js >> Panel.js a list of components to render
-  'id' is the id for the anchor the component will attach to
-  'Template' refers to the component class used to create the chart (or text element)
-  'dataVar' is a string used to reference data stored in Dashboard.data. It should match the name of of either a directly loaded data file in dataFiles above, or a name in dataJoins
-  'data' (optional) is a way to pass data directly into the component via props.data (may not work currently)
-  'props' object hands the Template constructor additional properties
-
-  */
-
-  var panels = {
-    'home': {
-      'name': 'home',
-      'design': [
-        {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'mtGovResults',
-          'props': {
-            'height': 150,
-            'title': "Montana Governor vote",
-            'cutline': "This is a cutline",
-          }
-        },
-        {'id': 'chart2', 'Template': BarGraph, 'dataVar': 'usRepResults',
-          'props': {
-            'height': 150,
-            'title': "US House of Representatives vote",
-            'cutline': "This is a cutline",
-          }
-        },
-        {'id': 'chart3', 'Template': BarGraph, 'dataVar': 'usPresResults',
-          'props': {
-            'height': 150,
-            'title': "Montana Presidential vote",
-            'cutline': "This is a cutline",
-          }
-        },
-      ]
-    },
-    'mtGov': {
-      'name': 'mtGov',
-      'design': [
-        {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'mtGovResults',
-          'props': {
-            'height': 150,
-            'title': "Title here",
-            'cutline': "This is a cutline",
-          }
-        },
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtResultsByCounty',
-          'props': {
-            'aspectRatio': 0.6,
-            'race': 'mtGov',
-            'title': "Title here",
-            'cutline': "This is a cutline",
-          }
-        },
-        {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
-          'props': {
-            'race': 'mtGov',
-            'title': "Title here",
-            'cutline': "This is a cutline"
-          }
-        },
-      ]
-    },
-    'usRep': {
-      'name': 'usRep',
-      'design': [
-        {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'usRepResults',
-          'props': {
-            'height': 150,
-            'title': "US House of Representatives vote",
-            'cutline': "This is a cutline",
-          }
-        },
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
-        'props': {
-          'aspectRatio': 0.6,
-          'race': 'usRep',
-        } },
-        {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
-        'props': {
-          'race': 'usRep',
-          'extraCandidateInfo': extraCandidateInfo['usRep'],
-          'title': "Title here",
-          'cutline': "This is a cutline"
-        } },
-      ]
-    },
-    'usPresident': {
-      'name': 'usPresident',
-      'design': [
-        {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'usPresResults',
-          'props': {
-            'height': 200,
-            'title': "Montana Presidential vote",
-            'cutline': "This is a cutline",
-          }
-        },
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
-        'props': {
-          'aspectRatio': 0.6,
-          'race': 'usPresident',
-        } },
-        {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
-        'props': {
-          'race': 'usPresident',
-          'extraCandidateInfo': extraCandidateInfo['usPresident'],
-          'title': "Title here",
-          'cutline': "This is a cutline"
-        } },
-      ]
-    },
-    'mtSenate': {
-      'name': 'mtSenate',
-      'design': [
-        // ADD MT Senate control
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtSenResultsByDistrict',
-        'props': {
-          'race': 'mtSen',
-          'aspectRatio': 0.6,
-          // 'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
-          // 'featureLabel': function(d) { return d.properties.district; },
-          }
-        },
-        {'id': 'chart3', 'Template': TableByDistrict, 'dataVar': 'mtSenResultsByDistrict',
-          'props': {
-            'race': 'mtSen',
-            'title': "District table",
-            'cutline': "This is a cutline"
-          }
-        },
-      ]
-    },
-    'mtHouse': {
-      'name': 'mtHouse',
-      'design': [
-        // MT house control
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtHouseResultsByDistrict',
-        'props': {
-          'race': 'mtHouse',
-          'aspectRatio': 0.6,
-          // 'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
-          // 'featureLabel': function(d) { return d.properties.district; },
-          }
-        },
-        {'id': 'chart3', 'Template': TableByDistrict, 'dataVar': 'mtHouseResultsByDistrict',
-          'props': {
-            'race': 'mtHouse',
-            'title': "District table",
-            'cutline': "This is a cutline"
-          }
-        },
-      ]
-    },
-    'medMarijuana': {
-      'name': 'medMarijuana',
-      'design': [
-        {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'medMarijuanaResults',
-          'props': {
-            'height': 100,
-            'title': "Title here",
-            'cutline': "This is a cutline",
-          }
-        },
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
-         'props': {
-          'aspectRatio': 0.6,
-          'race': 'medMarijuana',
-          }
-        },
-        {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
-          'props': {
-            'race': 'medMarijuana',
-            'extraCandidateInfo': {},
-            'title': "Title here",
-            'cutline': "This is a cutline"
-          }
-        },
-      ]
-    },
-    'antiTrapping': {
-      'name': 'antiTrapping',
-      'design': [
-        {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'antiTrappingResults',
-          'props': {
-            'height': 100,
-            'title': "Title here",
-            'cutline': "This is a cutline",
-          }
-        },
-        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
-         'props': {
-          'aspectRatio': 0.6,
-          'race': 'antiTrapping',
-          'title': "Votes by county",
-          'cutline': ""
-          }
-        },
-        {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
-          'props': {
-            'race': 'antiTrapping',
-            'extraCandidateInfo': {},
-            'title': "",
-            'cutline': ""
-          }
-        },
-      ]
+    // Scaffolding
+    var renderPane = function(paneId){
+      // clear contents of chart-container divs and render pane with given id
+      $('.chart-container').empty();
+      dashboard.currentPanel = panels[paneId];
+      dashboard.render(dashboard.currentPanel);
     }
-  }
 
-  main();
+    var handleTabClick = function(e){
+      // Adjust tab bar classses
+      $(e).addClass('active');
+      $(e).siblings().removeClass('active');
+      // Render new pane
+      renderPane(e.id);
+}
+
   </script>
 </html>

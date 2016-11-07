@@ -20,7 +20,7 @@ var TableByCounty = function (props){
   this.candidateKeys = []; // array of candidates, by last name
   this.candidates = []; // array of candidates in race, by info objects
 
-  console.log('TableByCounty called with', this.data);
+  // console.log('TableByCounty called with', this.data);
   this.shapeData();
   this.draw();
 }
@@ -86,8 +86,8 @@ TableByCounty.prototype.shapeData = function() {
       'totalVotes': totalOf(properties.results, 'votes'),
     };
     row.display = {
-      'County': feature.properties.NAME + "<br/>"
-        + row.values.precinctsReporting + '/' + row.values.precincts + " precincts",
+      'County': "<b>" + feature.properties.NAME + "</b><br/>"
+        + "<i>" + row.values.precinctsReporting + '/' + row.values.precincts + " precincts</i>",
     };
 
     // Add values for each candidate
@@ -97,7 +97,7 @@ TableByCounty.prototype.shapeData = function() {
 
       row.values[key + '_votes'] = votes;
       row.values[key + '_percent'] = percent;
-      row.display[key] = votes + " votes<br/>(" + percent + ")";
+      row.display[key] = "<b>" + votes + "</b> votes<br/>(<b>" + percent + "</b>)";
     })
 
     that.tableData.rows.push(row);
@@ -120,8 +120,9 @@ TableByCounty.prototype.draw = function() {
 
 
   var table = d3.select(this.element)
-    .append('table')
-    .attr("class", "table");
+    .append('div').attr("class","table-responsive")
+      .append('table')
+      .attr("class", "table table-striped");
   var thead = table.append('thead'),
     tbody = table.append('tbody');
   // headers

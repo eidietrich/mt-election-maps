@@ -12,7 +12,7 @@
   opacity: 0.9;
 }
 .grid line{
-  stroke: #bbb;
+  stroke: #eee;
   opacity: 0.8;
 }
 #viz-container {
@@ -30,4 +30,24 @@
 #tooltip {
   background-color: #fff;
   opacity 0.9;
+}
+
+/* for table cells */
+td span {
+  font-weight: bold;
+}
+
+td span.party-R {
+  color: #b2182b;
+}
+td span.party-D {
+  color: #2166ac;
+}
+
+/* bar graph */
+.item-label{
+  font-size: 11px;
+}
+.domain, .tick line {
+  stroke: #999;
 }

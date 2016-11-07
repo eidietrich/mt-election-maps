@@ -22,7 +22,7 @@ var TableByDistrict = function (props){
   this.candidateKeys = []; // array of candidates, by last name
   this.candidates = []; // array of candidates in race, by info objects
 
-  console.log('TableByDistrict called with', this.data);
+  // console.log('TableByDistrict called with', this.data);
   this.shapeData();
   this.draw();
 }
@@ -51,9 +51,10 @@ TableByDistrict.prototype.shapeData = function() {
   }
   function makeCandidateCell(candidate, voteTotal){
     if(candidate){
+      var tag = '<span class="party-' + candidate.party + '">';
       return candidate.fullName + "<br/>"
-        + calcPercent(candidate.votes, voteTotal)
-        + " (" + globals.voteFormat(candidate.votes) + " votes)";
+        + tag + calcPercent(candidate.votes, voteTotal) + "</span>"
+        + " (" + tag + globals.voteFormat(candidate.votes) + "</span> votes)";
     } else { return "--" }
   }
 
@@ -79,11 +80,10 @@ TableByDistrict.prototype.shapeData = function() {
         'writeIn': getCandidateForParty(results, null),
       };
       row.display = { // Keys here become column headers
-        'District': properties.name,
-        'Counted':  row.values.precinctsReporting
-          + '/' + row.values.precincts + '<br />precincts',
+        'District': "<b>" + properties.name + "</b><br/><i>"
+        + row.values.precinctsReporting + '/' + row.values.precincts + " precincts</i>",
         'Incumbent': properties.incum_name
-          + " (" + properties.incum_party+ ")",
+          + "<br/>(" + properties.incum_party+ ")",
         'Republican': makeCandidateCell(row.values.gop, row.values.totalVotes),
         'Democrat': makeCandidateCell(row.values.dem, row.values.totalVotes),
         'Other': makeCandidateCell(row.values.other, row.values.totalVotes)
@@ -92,7 +92,6 @@ TableByDistrict.prototype.shapeData = function() {
       that.tableData.columns = Object.keys(row.display);
     }
   });
-
 }
 TableByDistrict.prototype.draw = function() {
   var that = this;
@@ -106,8 +105,9 @@ TableByDistrict.prototype.draw = function() {
     .html(this.cutline)
 
   var table = d3.select(this.element)
-    .append('table')
-    .attr("class", "table");
+    .append('div').attr("class","table-responsive")
+      .append('table')
+      .attr("class", "table table-striped");
   var thead = table.append('thead'),
     tbody = table.append('tbody');
   // headers

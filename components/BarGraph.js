@@ -21,7 +21,7 @@ var BarGraph = function (props){
   this.title = props.title || "";
   this.cutline = props.cutline || "";
 
-  console.log('BarGraph called with', this.data)
+  // console.log('BarGraph called with', this.data)
   this.draw()
 }
 BarGraph.prototype.draw = function() {
@@ -96,6 +96,7 @@ BarGraph.prototype.draw = function() {
       if (that.data.totalVotes === 0) { return that.xScale(0) + 3; }
       else { return that.xScale(d.votes / that.data.totalVotes) + 3; }
      })
+    .attr("class", "item-label")
     .text(function(d){ return globals.voteFormat(d.votes) + " votes"; })
 
   // Draw axes
