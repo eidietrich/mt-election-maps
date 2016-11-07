@@ -61,18 +61,18 @@ TableByDistrict.prototype.shapeData = function() {
 
   this.data.features.forEach(function(feature){
     var properties = feature.properties;
-    var candidates = properties.candidates;
+    var results = properties.results;
 
     if (feature.properties.in_cycle != 'no'){
       var row = {};
       row.values = {
         'precincts': String(properties.totalPrecincts),
         'precinctsReporting': String(properties.precinctsReporting),
-        'totalVotes': totalVotes(properties.candidates, 'votes'),
-        'gop': getCandidateForParty(candidates, 'R'),
-        'dem': getCandidateForParty(candidates, 'D'),
-        'other': getCandidateForParty(candidates, 'L') || getCandidateForParty(candidates, 'I'),
-        'writeIn': getCandidateForParty(candidates, null),
+        'totalVotes': totalVotes(results, 'votes'),
+        'gop': getCandidateForParty(results, 'R'),
+        'dem': getCandidateForParty(results, 'D'),
+        'other': getCandidateForParty(results, 'L') || getCandidateForParty(results, 'I'),
+        'writeIn': getCandidateForParty(results, null),
       };
       row.display = { // Keys here become column headers
         'District': feature.properties.name,

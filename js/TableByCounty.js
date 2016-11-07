@@ -56,7 +56,7 @@ TableByCounty.prototype.shapeData = function() {
   function makeTableArrays(){
     // create arrays of candidates and keys (last name)
     that.data.features.forEach(function(feature){
-      feature.properties[that.race].candidates.forEach(function(candidate){
+      feature.properties[that.race].results.forEach(function(candidate){
         var key = candidate.name;
         if (that.candidateKeys.indexOf(key) < 0) {
           that.candidateKeys.push(key);
@@ -83,7 +83,7 @@ TableByCounty.prototype.shapeData = function() {
     row.values = {
       'precincts': String(properties.precincts),
       'precinctsReporting': String(properties.precinctsReporting),
-      'totalVotes': totalOf(properties.candidates, 'votes'),
+      'totalVotes': totalOf(properties.results, 'votes'),
     };
     row.display = {
       'County': feature.properties.NAME,
@@ -92,8 +92,8 @@ TableByCounty.prototype.shapeData = function() {
 
     // Add values for each candidate
     that.candidateKeys.forEach(function(key){
-      var votes = getVotesFor(properties.candidates, key);
-      var percent = getPercentFor(properties.candidates, key);
+      var votes = getVotesFor(properties.results, key);
+      var percent = getPercentFor(properties.results, key);
 
       row.values[key + '_votes'] = votes;
       row.values[key + '_percent'] = percent;
@@ -103,6 +103,9 @@ TableByCounty.prototype.shapeData = function() {
     that.tableData.rows.push(row);
   });
   this.tableData.columns = Object.keys(this.tableData.rows[0].display);
+
+  // limit to 3 candidates
+  this.tableData.columns = this.tableData.columns.slice(0,5);
 
 }
 TableByCounty.prototype.draw = function() {

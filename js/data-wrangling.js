@@ -1482,23 +1482,23 @@ function getRaceResults(countyResults, countyName, raceName){
   var raceId = RACE_IDS[raceName];
   // console.log('getRaceIn', countyResults, countyName)
 
-  var results = {}
+  var output = {}
 
   countyResults.records.forEach(function(countyResult){
     // Match to countyName
     if (countyResult.name.toUpperCase() === countyName){
-      results.county = countyResult.name;
+      output.county = countyResult.name;
       countyResult.races.forEach(function(race){
         if (race.race_id === raceId){
-          results.candidates = parseCandidates(race.candidates, extraCandidateInfo[raceName]);
-          results.precincts = +race.total_precincts;
-          results.precinctsReporting = +race.num_reporting;
+          output.results = parseCandidates(race.candidates, extraCandidateInfo[raceName]);
+          output.totalPrecincts = +race.total_precincts;
+          output.precinctsReporting = +race.num_reporting;
         }
       });
     }
   });
-  // console.log('getRaceOut', countyName, raceName, results);
-  return results;
+  // console.log('getRaceOut', countyName, raceName, output);
+  return output;
 }
 
 function summarizePrecincts(precincts){
@@ -1526,12 +1526,7 @@ function summarizeRace(_, raceResults, raceName){
       candidates = race.candidates;
     }
   });
-  // Replaced with function on following line - left here in case it breaks something unexpectedly
-  // var precinctsReporting = 0, totalPrecincts = 0;
-  // precincts.forEach(function(precinct){
-  //   totalPrecincts += +precinct.total_precincts;
-  //   precinctsReporting += +precinct.num_reporting;
-  // })
+
   var pSumr = summarizePrecincts(precincts);
   results.precinctsReporting = pSumr[0];
   results.totalPrecincts = pSumr[1];
@@ -1597,15 +1592,15 @@ function summarizeLegRaces(mergedGeoData, raceResults, chamber){
         console.log('no race result data found for', district.properties.name);
         properties.precinctsReporting = null;
         properties.totalPrecincts = null;
-        properties.candidates = [];
+        properties.results = [];
       } else {
         pSumr = summarizePrecincts(curRace.precincts);
         properties.precinctsReporting = pSumr[0];
         properties.totalPrecincts = pSumr[1];
-        properties.candidates = parseCandidates(curRace.candidates, mtLegExtraCandidateInfo[chamber])
+        properties.results = parseCandidates(curRace.candidates, mtLegExtraCandidateInfo[chamber])
       }
     } else {
-      properties.candidates = 'district not in cycle';
+      properties.results = 'district not in cycle';
     }
   });
 

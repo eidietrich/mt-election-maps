@@ -113,16 +113,11 @@ Necessary map templates:
 ## TODO:
 - Add to node-based development environment? (Webpack?)
 - Update CircleShadeMap.js for refactored data handling & responsiveness (or just give up on it and build new off of colorMap if I want to go there)
-- Retool DistrictArray.js so it doesn't take hideous data input (have it take multiple files, and move data nesting into the class)
-- Delete districts.json (blegh)
 - Make choropleth obsolete by adding a custom colorBy function to ColorMap
 - Figure out how to work data linkages between house and senate districts
-- Remove mergeData (replaced by bindToGeoJson)
 - Make house cartogram
 - Refine senate cartogram — figure out how to automate the process
 - Make local scope map Class (for honing in on particular places)
-- Add 'refresh' button to render class
-- Make house and senate district data table - TableByDistrict.js
 - Make 'control of house/senate' bar graph - ChamberControl.js
 
 - Figure out how to translate county-level candidate objects into a meaningful color for chart — who's ahead and by how much
@@ -134,13 +129,15 @@ Necessary map templates:
         * Less blue for DEM ahead by > 2%
         * Blue for Dem ahead by > 10%
         * Some sort of indication for winner with 100% ballots
-- Figure out how to work tooltips and such
+- Figure out how to work tooltops on map
 - Clean up data-wrangling.js
 - Order candidates by party (R, D, L, G, others, write-in) --> Put in candidate-parse function
 - Clean up design of everything
 - Email Joe — looks like state representative districts 57, 58 and 59 are missing from the results data (should be race_ids 001450005571, 001450005572, 001450005573)
 - Have Troy check incumbency data
 - Sort out bug - there is more than one BROWN running for mtHouse, unfortunately
+- Add extra hierarchy layer to house and senate district data so it parallels structure for by-county data (!!!) -- should make ColorMap less trouble
+- Add percent of vote to candidate parsing
 
 - Bar chart
     + Add vote counts to bars

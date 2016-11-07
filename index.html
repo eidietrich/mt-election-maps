@@ -39,7 +39,6 @@
   <script src="js/BarGraph.js"></script>
   <!-- <script src="js/OpposingBarGraph.js"></script> -->
   <script src="js/ColorMap.js"></script>
-  <script src="js/ColorMapByDistrict.js"></script>
   <script src="js/Text.js"></script>
   <script src="js/TableByCounty.js"></script>
    <script src="js/TableByDistrict.js"></script>
@@ -157,9 +156,10 @@
   var testPanel = {
     'name': 'test panel',
     'design': [
-      {'id': 'chart1', 'Template': ColorMapByDistrict, 'dataVar': 'mtSenResults',
+      {'id': 'chart1', 'Template': ColorMap, 'dataVar': 'mtResultsByCounty',
         'props': {
           'aspectRatio': 0.6,
+          'race': 'mtGov'
           // 'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
           // 'featureLabel': function(d) { return d.properties.district; },
           }
@@ -218,7 +218,7 @@
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtResultsByCounty',
           'props': {
             'aspectRatio': 0.6,
-            'colorBy': function(d) { return 'green'; },
+            'race': 'mtGov',
             'title': "Title here",
             'cutline': "This is a cutline",
           }
@@ -245,6 +245,7 @@
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
         'props': {
           'aspectRatio': 0.6,
+          'race': 'usRep',
         } },
         {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
         'props': {
@@ -268,6 +269,7 @@
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
         'props': {
           'aspectRatio': 0.6,
+          'race': 'usPresident',
         } },
         {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
         'props': {
@@ -282,7 +284,7 @@
       'name': 'mtSenate',
       'design': [
         // ADD MT Senate control
-        {'id': 'chart2', 'Template': ColorMapByDistrict, 'dataVar': 'mtSenResults',
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtSenResults',
         'props': {
           'aspectRatio': 0.6,
           // 'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
@@ -301,7 +303,7 @@
       'name': 'mtHouse',
       'design': [
         // MT house control
-        {'id': 'chart2', 'Template': ColorMapByDistrict, 'dataVar': 'mtHouseResults',
+        {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtHouseResults',
         'props': {
           'aspectRatio': 0.6,
           // 'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
@@ -329,6 +331,7 @@
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
          'props': {
           'aspectRatio': 0.6,
+          'race': 'medMarijuana',
           }
         },
         {'id': 'chart3', 'Template': TableByCounty, 'dataVar': 'mtResultsByCounty',
@@ -354,6 +357,7 @@
         {'id': 'chart2', 'Template': ColorMap, 'dataVar': 'mtCounties',
          'props': {
           'aspectRatio': 0.6,
+          'race': 'antiTrapping',
           'title': "Votes by county",
           'cutline': ""
           }

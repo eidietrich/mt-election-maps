@@ -22,3 +22,12 @@
   width: 100%;
   max-width: 1000px;
 }
+
+/* For tooltip */
+.hidden {
+  display: none;
+}
+#tooltip {
+  background-color: #fff;
+  opacity 0.9;
+}
