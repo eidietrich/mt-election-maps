@@ -14,36 +14,44 @@ var globals = {
     // returns radius for proportional area, I think
     return Math.sqrt(this.scale(number));
   },
-  colorScale: d3.scaleLinear()
-    .domain([0,0.35,0.5,0.65,1])
-    .range(["#b2182b","#d6604d","#756bb1","#4393c3","#2166ac"])
-    .interpolate(d3.interpolateLab),
   colorByParty: d3.scaleOrdinal()
-    .domain(["R","D"])
-    .range(["#b2182b", "#2166ac"])
-    .unknown("green"),
+    .domain(['R','D','L','G',
+      'A','I','Y','N',null]) // Y and N for initiatives
+    .range(['#b2182b',"#2166ac","#ff7f40","#ff7f40",
+      "#ff7f40","#666","#018571","#a6611a","#666"]),
   colorByRegion: d3.scaleOrdinal()
     .domain(['Kalispell / Whitefish','Great Falls', 'Billings','Bozeman','Helena','Missoula','Butte / Anaconda'])
     .range(['#b2df8a','#33a02c','#fb9a99','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a'])
     .unknown("#bbb"),
   format: d3.format(".0%"),
-  colorByMargin: d3.scaleThreshold()
-    .domain([-0.1,-0.05,-0.01,0.01,0.05,])
-    .range(['#2166ac','#67a9cf','#d1e5f0','#998ec3','#fddbc7','#ef8a62','#b2182b']),
-  classifyRace: function(feature, scope) {
+  // TODO: Tweak these colors
+  colorByMarginParty: d3.scaleThreshold()
+    .domain([-0.05,-0.02,0.02,0.05])
+    .range(['#b2182b','#ef8a62','#998ec3','#67a9cf','#2166ac']),
+  colorByMarginReferendum: d3.scaleThreshold()
+    .domain([-0.05,-0.02,0.02,0.05])
+    .range(['#018571','#80cdc1','#f5f5f5','#dfc27d','#a6611a']),
+  raceClassifications: {
+    'noData': {'name': 'No data', 'color': "#bbb"},
+    'noRaceGOP': {'name': 'No race, GOP incumbent', 'color': "#bbb"},
+    'noRaceDEM': {'name': 'No race, Dem incumbent', 'color': "#bbb"},
+    'noVotesYet': {'name': 'Not yet counted', 'color': "#666"},
+    'uncontestedGOP': {'name': 'Uncontested, GOP', 'color': "#b2182b"},
+    'uncontestedDEM': {'name': 'Uncontested, Dem', 'color': "#2166ac"},
+    // 'partyRace': {
+    //   'name': 'Partisan race',
+    //   'color': ,
+    // },
+    // 'refRace' : {
+    //   'name': 'Referendum',
+    //   'color': this.,
+    // }
+  },
+  classifyRace: function(raceObject, race) {
     // classifies a county / district based on vote tallies, returns color
     // could modify to include other styling
-    // console.log('args', feature, scope);
 
-    // TODO: Give up and make a separate one of these for districts and counties
-
-    // scope defines location of race results data (or props)
-    var distProps = feature;
-    if (scope != null) { distProps = feature[scope]; }
-
-    var threshold = 0.1 // fraction of precincts counted before 'calling' race
-
-    // REDUNDANT DECLARATIONS :( -- Fix
+    // REDUNDANT DECLARATIONS :(
     function getCandidateForParty(candidates, party){
       var match = null;
       candidates.forEach(function(candidate){
@@ -61,23 +69,48 @@ var globals = {
       return total;
     }
 
-    if (distProps.in_cycle === 'no'){
-      // case when there are no results, return incumbent
-      return globals.colorByParty(distProps.incum_party);
-    }
-    else if (distProps.totalPrecincts / distProps.precinctsReporting < threshold) {
-      return "#666";
+    if (race === 'mtSen' && raceObject.in_cycle === 'no'){
+      // Return incumbent color for out-of-district senate races
+      if (raceObject.incum_party === 'R'){
+        return globals.raceClassifications['noRaceGOP'].color
+      } else if (raceObject.incum_party === 'D') {
+        return globals.raceClassifications['noRaceDEM'].color
+      } else {
+        return globals.raceClassifications['noData'].color
+      }
+      // return globals.colorByParty(raceObject.incum_party);
+
+    } else if (raceObject.precinctsReporting === 0){
+      // Return no results color for < threshold results in
+      return globals.raceClassifications['noVotesYet'].color;
+    } else if (race === 'medMarijuana' || race === 'antiTrapping') {
+      var yes = getCandidateForParty(raceObject.results, 'Y'),
+        no = getCandidateForParty(raceObject.results, 'N'),
+        diff = (no.votes - yes.votes) / totalVotes(raceObject.results);
+      return globals.colorByMarginReferendum(diff);
     } else {
-      var gop = getCandidateForParty(distProps.results, 'R');
-      var dem = getCandidateForParty(distProps.results, 'D');
-      var totalVotes = totalVotes(distProps.results);
+      // Otherwise classify race based on which party is ahead
+      var gop = getCandidateForParty(raceObject.results, 'R'),
+        dem = getCandidateForParty(raceObject.results, 'D'),
+        totalVotes = totalVotes(raceObject.results);
       // TODO: Add logic to check that there isn't an I or L with higher votes
 
-      if (gop == null) { return "#2166ac"; }
-      if (dem == null) { return "#b2182b"; }
+      // handle no data
+      if (gop == null && dem == null){
+        return globals.raceClassifications['noData'].color;
+      }
 
-      var diff = (gop.votes - dem.votes) / totalVotes;
-      return globals.colorByMargin(diff);
+      // Handle uncontested races
+      if (gop == null) {
+        return globals.raceClassifications['uncontestedDEM'].color;
+      }
+      if (dem == null) {
+        return globals.raceClassifications['uncontestedGOP'].color;
+      }
+
+      var diff = (dem.votes - gop.votes) / totalVotes;
+      var color = globals.colorByMarginParty(diff);
+      return color;
     }
   }
 };

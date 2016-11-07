@@ -29,7 +29,7 @@ var ColorMap = function (props){
   this.height = props.height;
   this.heightNotDefined = !props.height;
   this.aspectRatio = props.aspectRatio;
-  this.margin = {top: 30, bottom: 10, right: 20, left: 20};
+  this.margin = {top: 30, bottom: 90, right: 20, left: 20};
 
   console.log('ColorMap called with', this.data);
 
@@ -52,7 +52,7 @@ var ColorMap = function (props){
 
   // console.log(this.data);
 
-  // this.shapeData()
+  this.shapeData()
   this.draw()
   // this.addTooltip() // TODO
 }
@@ -60,7 +60,7 @@ ColorMap.prototype.shapeData = function(){
   var that = this;
   // Add color
   this.data.features.forEach(function(feature){
-    feature.properties.fillColor = globals.classifyRace(feature.properties[that.race]);
+    feature.properties.fillColor = globals.classifyRace(feature.properties[that.race], that.race);
   });
 }
 ColorMap.prototype.draw = function() {
@@ -100,8 +100,8 @@ ColorMap.prototype.draw = function() {
     .enter();
   this.shapes = this.districts.append("path")
     .attr("d", path)
-    .attr("fill", this.colorBy)
-    // .attr("fill", function(d){ return d.properties.fillColor; })
+    // .attr("fill", this.colorBy)
+    .attr("fill", function(d){ return d.properties.fillColor; })
     .attr("class", "districts")
 
   // Add text labels
@@ -119,7 +119,7 @@ ColorMap.prototype.draw = function() {
     .attr("class","hidden")
 
   function buildTooltip(feature){
-    var w = 130, h = 70;
+    var w = 150, h = 70;
     var centroid = path.centroid(feature);
     var results = feature.properties[that.race];
     // avoid cropping at edges
@@ -134,10 +134,11 @@ ColorMap.prototype.draw = function() {
         + (centroid[1] - 50 + topOffset) + ")")
       .classed("hidden", false)
     that.tooltip.append('circle')
-      .attr("r", 2)
+      .attr("r", 3)
       .attr("cy", 50 - topOffset)
       .attr("cx", -rightOffset - leftOffset)
       .attr("fill", "#333")
+      .attr("stroke", "#fff")
     that.tooltip.append('rect')
       .attr("width",w)
       .attr("height",h)
@@ -163,6 +164,13 @@ ColorMap.prototype.draw = function() {
           + globals.voteFormat(line.votes))
       lineOffset += 20;
     })
+    // Add no data label
+    if (results.results.length === 0){
+      that.tooltip.append('text')
+        .attr('text-anchor', 'middle')
+        .attr("y", 15)
+        .text('No Race / No Data')
+    }
   }
 
   this.shapes
@@ -172,4 +180,66 @@ ColorMap.prototype.draw = function() {
       d3.select("#tooltip")
         .classed("hidden", true)
     });
+
+  // Add legend
+  var legHeight = 40;
+  this.legend = this.svg.append("g")
+    .attr("class", "map-legend")
+    .attr("transform","translate("
+      + (this.margin.left + 20) + ","
+      + (this.margin.top + this.plotHeight + 15) + ")")
+
+  var legendDisplay = [], labels; // data variable for legend
+
+  // Add legend items for current colorscale
+  // Assumes 5 item color scale
+  var colorScale;
+  if (this.race === 'medMarijuana' || this.race === 'antiTrapping'){
+    labels = ["Yes ahead (>5%)", "Yes leading (2-5%)","Close race","No leading (2-5%)", "No ahead (>5%)"];
+    colorScale = globals.colorByMarginReferendum;
+  } else {
+    labels = ["GOP ahead (>5%)", "GOP leading (2-5%)","Close race","Dem leading (2-5%)", "Dem ahead (>5%)"];
+    colorScale = globals.colorByMarginParty;
+  }
+  colorScale.range().forEach(function(d,i){
+    legendDisplay.push({
+      'label': labels[i],
+      'color': d
+    });
+  });
+  // Add non-standard keys to legend object
+  Object.keys(globals.raceClassifications).forEach(function(key){
+    legendDisplay.push({
+      'label': globals.raceClassifications[key].name,
+      'color': globals.raceClassifications[key].color
+    });
+  })
+
+  this.legendItems = this.legend.append('g')
+    .selectAll('g')
+    .data(legendDisplay).enter()
+    .append('g')
+    .attr("transform", function(d,i) {
+      var col = i % 3;
+      var row = Math.floor(i / 3);
+      return "translate("
+        + (col * that.plotWidth / 3) + ","
+        + (row * 20) + ")";
+    })
+  this.legendItems.append("text")
+    .attr("x", 12)
+    .attr("y", 4)
+    .text(function(d){ return d.label; })
+  this.legendItems.append("circle")
+    .attr("r", 8)
+    // .attr("cy", )
+    .attr("fill", function(d){ return d.color; })
+
+
+
+  // For testing
+  this.shapes
+    .on("click", function(d){
+      console.log(d.properties);
+    })
 }

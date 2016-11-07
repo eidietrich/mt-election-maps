@@ -54,9 +54,7 @@ BarGraph.prototype.draw = function() {
     .range([0, this.plotHeight])
     .padding(0.3)
     .domain(this.data.results.map(function(d) { return d.name; }));
-  this.colorScale = d3.scaleOrdinal()
-    .domain(this.data.results.map(function(d) { return d.name; }))
-    .range(["#b2182b","#2166ac","#31a354","#666"])
+  this.colorScale = globals.colorByParty;
 
   // Create axes
   this.xAxis = d3.axisBottom(this.xScale)
@@ -75,16 +73,30 @@ BarGraph.prototype.draw = function() {
 
   // Draw bars
   var that = this;
-  this.plot.append("g")
+  this.bars = this.plot.append("g")
     .selectAll('.bar')
-    .data(this.data.results).enter()
-    .append("rect")
     .attr("class","bar")
-    .attr("fill", function(d){ return that.colorScale(d.name); })
+    .data(this.data.results).enter();
+  this.bars.append("rect")
+    .attr("fill", function(d){ return that.colorScale(d.party); })
     .attr("x", 0)
     .attr("y", function(d){ return that.yScale(d.name); })
-    .attr("width", function(d){ return that.xScale(d.votes / that.data.totalVotes); })
+    .attr("width", function(d){
+      if (that.data.totalVotes === 0) { return that.xScale(0); }
+      else { return that.xScale(d.votes / that.data.totalVotes); }
+     })
     .attr("height", that.yScale.bandwidth());
+
+  // Add vote numbers
+  this.bars.append('text')
+    .attr("y", function(d){
+      return that.yScale(d.name)
+        + that.yScale.bandwidth() / 2 + 5; })
+    .attr("x", function(d){
+      if (that.data.totalVotes === 0) { return that.xScale(0) + 3; }
+      else { return that.xScale(d.votes / that.data.totalVotes) + 3; }
+     })
+    .text(function(d){ return globals.voteFormat(d.votes) + " votes"; })
 
   // Draw axes
   this.plot.append("g")

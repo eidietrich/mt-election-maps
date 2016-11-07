@@ -81,18 +81,18 @@ TableByCounty.prototype.shapeData = function() {
     // values and display separated here in the hope of making
     // value-specific formatting easier down the line
     row.values = {
-      'precincts': String(properties.precincts),
+      'precincts': String(properties.totalPrecincts),
       'precinctsReporting': String(properties.precinctsReporting),
       'totalVotes': totalOf(properties.results, 'votes'),
     };
     row.display = {
-      'County': feature.properties.NAME,
-      'Precincts In':  row.values.precinctsReporting + '/' + row.values.precincts,
+      'County': feature.properties.NAME + "<br/>"
+        + row.values.precinctsReporting + '/' + row.values.precincts + " precincts",
     };
 
     // Add values for each candidate
     that.candidateKeys.forEach(function(key){
-      var votes = getVotesFor(properties.results, key);
+      var votes = globals.voteFormat(getVotesFor(properties.results, key));
       var percent = getPercentFor(properties.results, key);
 
       row.values[key + '_votes'] = votes;
@@ -105,7 +105,7 @@ TableByCounty.prototype.shapeData = function() {
   this.tableData.columns = Object.keys(this.tableData.rows[0].display);
 
   // limit to 3 candidates
-  this.tableData.columns = this.tableData.columns.slice(0,5);
+  this.tableData.columns = this.tableData.columns.slice(0,4);
 
 }
 TableByCounty.prototype.draw = function() {

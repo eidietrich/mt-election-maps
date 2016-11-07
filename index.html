@@ -30,8 +30,8 @@
   <script src="js/jquery-3.1.1.min.js"></script>
 
   <!-- Interface scripts -->
-  <script src="js/data-wrangling.js"></script>
   <script src="js/globals.js"></script>
+  <script src="js/data-wrangling.js"></script>
   <script src="js/Dashboard.js"></script>
   <script src="js/Panel.js"></script>
 
@@ -48,9 +48,7 @@
 
   var main = function(){
     // Main function, called at bottom of file here
-    dashboard = new Dashboard(dataFiles, dataJoins, panels['mtSenate']);
-
-    // dashboard = new Dashboard(dataFiles, dataJoins, panels['home']);
+    dashboard = new Dashboard(dataFiles, dataJoins, panels['home']);
   }
 
   var renderPane = function(paneId){
@@ -75,8 +73,6 @@
     {'name': 'mtSenDistricts', 'file': './../geodata/mt_senate_districts.geojson', 'loader': d3.json},
     {'name': 'mtHouseDistricts', 'file': './../geodata/mt_house_districts.geojson', 'loader': d3.json},
     {'name': 'mtCounties', 'file': './../geodata/mt_counties.geojson', 'loader': d3.json},
-    // Add: Senate cartogram
-    // Add: House cartogram
 
     // Static data
     {'name': 'mtSen', 'file': './../data/mt-senate.csv', 'loader': d3.csv},
@@ -85,14 +81,13 @@
     // Live data
     // TODO: Switch this from test data
     {'name': 'races', 'file': './test/livedata-byrace-fullvotes.json', 'loader': d3.json},
-    {'name': 'counties', 'file': './test/livedata-bycounty-somevotes.json', 'loader': d3.json},
+    {'name': 'counties', 'file': './test/livedata-bycounty-fullvotes.json', 'loader': d3.json},
 
   ];
   var dataJoins = [
     // Array of data processing functions for Dashboard to run on data refresh
     // See data-wrangling.js for function documentation
     {
-      // Should add race-keyed results entries to geoJson properties field
       'name': 'mtResultsByCounty',
       'functName': mergeResultsByCounty,
       'geoData': 'mtCounties', 'joinData': 'counties',
@@ -160,8 +155,6 @@
         'props': {
           'aspectRatio': 0.6,
           'race': 'mtGov'
-          // 'colorBy': function(d) { return globals.colorByParty(d.properties.incum_party) },
-          // 'featureLabel': function(d) { return d.properties.district; },
           }
         },
     ]
@@ -184,21 +177,21 @@
       'design': [
         {'id': 'chart1', 'Template': BarGraph, 'dataVar': 'mtGovResults',
           'props': {
-            'height': 200,
+            'height': 150,
             'title': "Montana Governor vote",
             'cutline': "This is a cutline",
           }
         },
         {'id': 'chart2', 'Template': BarGraph, 'dataVar': 'usRepResults',
           'props': {
-            'height': 200,
+            'height': 150,
             'title': "US House of Representatives vote",
             'cutline': "This is a cutline",
           }
         },
         {'id': 'chart3', 'Template': BarGraph, 'dataVar': 'usPresResults',
           'props': {
-            'height': 200,
+            'height': 150,
             'title': "Montana Presidential vote",
             'cutline': "This is a cutline",
           }

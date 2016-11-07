@@ -8,9 +8,6 @@ Two vote data sources, counties, and races.
 Races is used for race-summary bar charts, as well as for district-based maps and tables for state house/senate district races.
 
 Counties is used for county-based maps and tables in statewide races and ballot initiatives.
-
-
-
 */
 
 // Supplemental info (e.g. party, incumbency)
@@ -1414,16 +1411,15 @@ var mtLegExtraCandidateInfo = {
   }
 }
 
-var partyOrder = ['R','D','L','G','A','I','Y','N',null]; // Y and N for initiatives
+var partyOrder = globals.colorByParty.domain();
 
 var RACE_IDS = {
+  // For races plotted by county districts
   'mtGov': '001450005632',
   'antiTrapping': '002450001213',
   'medMarijuana': '002450001215',
   'usPresident': '001450005633',
-  'usRep': '001450005517',
-  'mtSenate': null, // 001450005643 to 5666
-  'mtHouse': null, // 001450005518 to 001450005617
+  'usRep': '001450005517'
 };
 
 function getLastUpdate(){
@@ -1431,21 +1427,27 @@ function getLastUpdate(){
   // Will return time of last data refresh
 }
 
-function parseCandidates(candidates, extraInfo){
-  // Parsing for candidates arrays, used by several different functions
+function parseResults(raceResults, extraInfo){
+  // Parsing for results by-candidate arrays, used by several different functions
   // Takes raw list candidates from either race or county source files,
   // pulls in extra data where available and does a bit of other massaging
 
-  var output = candidates.map(function(d){
+  // Add here?
+  // Total votes for district, fraction of precincts reporting
+
+  // console.log(results);
+
+  var output = raceResults.map(function(d){
     var cand = {};
+    // Candidate-specific results
     cand.name = d.candidate_last;
     cand.fullName = d.candidate_first + " " + d.candidate_last;
     cand.party = null;
     cand.incumbent = 'no'
     cand.votes = +d.votes;
 
+    // Add supplemental info
     var key = d.candidate_last;
-    // var extraInfo = extraCandidateInfo[raceName]
     if (key in extraInfo) {
       cand.party = extraInfo[key].party;
       cand.incumbent = extraInfo[key].incumbent;
@@ -1490,7 +1492,7 @@ function getRaceResults(countyResults, countyName, raceName){
       output.county = countyResult.name;
       countyResult.races.forEach(function(race){
         if (race.race_id === raceId){
-          output.results = parseCandidates(race.candidates, extraCandidateInfo[raceName]);
+          output.results = parseResults(race.candidates, extraCandidateInfo[raceName]);
           output.totalPrecincts = +race.total_precincts;
           output.precinctsReporting = +race.num_reporting;
         }
@@ -1531,7 +1533,7 @@ function summarizeRace(_, raceResults, raceName){
   results.precinctsReporting = pSumr[0];
   results.totalPrecincts = pSumr[1];
 
-  results.results = parseCandidates(candidates, extraCandidateInfo[raceName]);
+  results.results = parseResults(candidates, extraCandidateInfo[raceName]);
 
   var totalVotes = 0;
   results.results.forEach(function(result){
@@ -1599,50 +1601,13 @@ function summarizeLegRaces(mergedGeoData, raceResults, chamber){
         pSumr = summarizePrecincts(curRace.precincts);
         results.precinctsReporting = pSumr[0];
         results.totalPrecincts = pSumr[1];
-        results.results = parseCandidates(curRace.candidates, mtLegExtraCandidateInfo[chamber])
+        results.results = parseResults(curRace.candidates, mtLegExtraCandidateInfo[chamber])
       }
     } else {
       results.results = []
     }
   });
 
-  console.log('racesSummarized', mergedGeoData);
+  // console.log('racesSummarized', mergedGeoData);
   return mergedGeoData;
 }
-
-// OLD, may want to resurrect these functions
-
-// function addRaceToCountyGeoJson(geoJson, countiesForRace, raceName){
-//   var geoKey = "NAME",
-//     dataKey = "name"
-
-//   var combined = geoJson;
-//   combined.features.forEach(function(feature){
-//     countiesForRace.counties.forEach(function(county){
-//       if (String(county[dataKey]) === String(feature.properties[geoKey])){
-//         feature.properties[raceName] = county.candidates;
-//         feature.properties.precincts = county.precincts;
-//         feature.properties.precinctsReporting = county.precinctsReporting;
-//       }
-//     });
-//   });
-//   console.log(combined);
-//   return combined;
-// }
-
-// function bindFlatToGeoJson(geoJson, data, geoKey, dataKey, includeCols){
-//   // Similar to mergeData -- binds "flat" json data (e.g. from a .csv import) to a geoJson object
-//   // include cols is an array of fields from the merging data to include
-
-//   var combined = geoJson;
-//   combined.features.forEach(function(feature){
-//     data.forEach(function(row){
-//       if (String(row[dataKey]) === String(feature.properties[geoKey])){
-//         includeCols.forEach(function(col){
-//           feature.properties[col] = row[col];
-//         });
-//       }
-//     });
-//   });
-//   return combined;
-// }

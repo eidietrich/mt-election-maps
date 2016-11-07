@@ -53,8 +53,8 @@ TableByDistrict.prototype.shapeData = function() {
     if(candidate){
       return candidate.fullName + "<br/>"
         + calcPercent(candidate.votes, voteTotal)
-        + " (" + candidate.votes + " votes)";
-    } else { return "No candidate" }
+        + " (" + globals.voteFormat(candidate.votes) + " votes)";
+    } else { return "--" }
   }
 
   // sort by district number

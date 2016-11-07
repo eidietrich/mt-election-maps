@@ -119,38 +119,35 @@ Necessary map templates:
 - Refine senate cartogram — figure out how to automate the process
 - Make local scope map Class (for honing in on particular places)
 - Make 'control of house/senate' bar graph - ChamberControl.js
-
-- Figure out how to translate county-level candidate objects into a meaningful color for chart — who's ahead and by how much
-    + color scale based on percentage ahead, gray for zero votes counted
-        * Gray for < 10% of precincts reporting
-        * Red for GOP candidate ahead by > 10%
-        * Less red for GOP candidate ahead by > 2%
-        * Purple for tossup race (+/- 2%)
-        * Less blue for DEM ahead by > 2%
-        * Blue for Dem ahead by > 10%
-        * Some sort of indication for winner with 100% ballots
-- Figure out how to work tooltops on map
 - Clean up data-wrangling.js
-- Order candidates by party (R, D, L, G, others, write-in) --> Put in candidate-parse function
-- Clean up design of everything
-- Email Joe — looks like state representative districts 57, 58 and 59 are missing from the results data (should be race_ids 001450005571, 001450005572, 001450005573)
+- Figure out how to handle table responsiveness
+
+- Email Joe — looks like state representative districts 57, 58 and 59 are missing from the results data (should be race_ids 001450005571, 001450005572, 001450005573 - Becker should have fixed this
+- 
+- Possible bug - there is more than one BROWN running for mtHouse, unfortunately (maybe one is a senator!)
+- Add percent of vote to candidate parsing - harder than expected
+
+
+ON-DEADLINE BUG TRACKING
+- Fine-tune colors for legends
+- Mobile display for map legend
+- Mobile display for tables
+- Play with table text formatting
 - Have Troy check incumbency data
-- Sort out bug - there is more than one BROWN running for mtHouse, unfortunately
-- Add extra hierarchy layer to house and senate district data so it parallels structure for by-county data (!!!) -- should make ColorMap less trouble
-- Add percent of vote to candidate parsing
+- Uncontested races don't seem to be showing properly on house/senate
+- Something may be off with color categorization - doesn't match vote counts on maps? (I think it's just non R/D vote counts in sample data screwing with the denomenators)
 
 - Bar chart
-    + Add vote counts to bars
     + Play with limits on horizontal scale (60% of vote, 80%?)
     + Add 50% line
 
 - County map
-    + Add city labels and major highways?
+    + Add city labels and major highways? (NOT NOW)
 
 - County table
     + Organize by region (urban counties, others...)
 
-Conversation w Becker, Nov 1, pm:
+Conversation w Becker, Nov 1:
 - He'll make dashboard template - with tabs for each race
 - I need to make self-contained javascript functions rendering each graphic using data.
 - Make a function that generates each tab, pulls in each graph.
